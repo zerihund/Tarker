@@ -3,6 +3,7 @@ const multer = require('multer');
 const app = express();
 const upload = multer({dest: 'upload'});
 
+app.use(express.static('public'));
 app.post('/ask', (req, res)=>{
   res.send('answered');
   console.log('asked');
