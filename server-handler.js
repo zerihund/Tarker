@@ -7,6 +7,7 @@ app.use(express.static('public'));
 app.get('/', (req, res)=>{
   res.send();
 });
+// :D :D :D :D :D :D :D :D
 app.post('/ask', (req, res)=>{
   res.send('answered');
   console.log('asked');
