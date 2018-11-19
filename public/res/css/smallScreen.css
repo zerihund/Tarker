@@ -1,7 +1,16 @@
 /*screen sizes less than 650px*/
 @media only screen and (max-width: 650px){
-
-  body{
-    background-color: red;
+  form{
+    width: 100%;
   }
+  .sign-up-container{
+    width: 100%;
+  }
+  .input-fieldset{
+    padding: 0.2rem 1rem;
+  }
+  .input-fieldset input{
+    width: 100%;
+  }
+
 }

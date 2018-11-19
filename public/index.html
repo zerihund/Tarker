@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+
 
     <link rel="stylesheet" href="res/css/reset.css">
 
@@ -14,7 +16,45 @@
     <title>Tarker</title>
   </head>
   <body>
+
   <div style="width: 30px; display: block">Test</div>
+
+  <section class="sign-up-container">
+    <h1 class="prelim-logo">StoryTeller</h1>
+
+    <form  action="" method="post">
+
+      <fieldset class="input-fieldset">
+        User name <br>
+        <input type="text" name="username" placeholder="Enter Username" required><br>
+      </fieldset>
+      <fieldset class="input-fieldset">
+        Email <br>
+        <input type="email" name="email" placeholder="Enter Email" required><br>
+      </fieldset>
+      <fieldset class="input-fieldset">
+        Password <br>
+        <input type="password" name="password" placeholder="Enter Password" required><br>
+      </fieldset>
+      <fieldset class="input-fieldset">
+        Retype Password <br>
+        <input type="password" name="retype-password" placeholder="Enter Password" required><br>
+      </fieldset>
+
+      <fieldset class="form-center btn-bottom-edge">
+        <input type="submit" class="form-submit-btn yellow-btn" name="sign-up" value="Sign Up">
+        <p>Already have an account? <br><a href="#">Sign in</a></p>
+      </fieldset>
+    </form>
+
+
+  </section>
+
+
+
+
+
+
   <script>
     document.querySelector('div').addEventListener('click',()=>{
       {

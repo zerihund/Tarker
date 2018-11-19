@@ -4,23 +4,50 @@ look for it all over the place*/
 
 /*      LARGE SCREEN          */
 @media only screen and (min-width: 1008px) and (max-width: 1900px){
-  body{
-    background-color: gray;
+  .sign-up-container{
+    width: 70%;
   }
 
 }
 
 /*       XXL-SCREENS          */
-@media only screen and (min-width: 1901px) and (max-width: 2099px){
-  body{
-    background-color: green;
+@media only screen and (min-width: 1901px){
+  .sign-up-container{
+    width: 70%;
+    font-size: 200%;
+    padding: 2rem;
+  }
+  .input-fieldset input,.btn-bottom-edge{
+    font-size: 150%;
+  }
+  .form-submit-btn{
+    border-radius: 4rem;
+    width: 20rem;
+    height: 4rem;
+    font-size: 100%;
   }
 
 }
+
+
+
+
+
+
 
 /*       COLORS          */
 /*Dark*/
 
 
 
+
 /*Light*/
+.yellow-btn{
+background-color: #eda948;
+}
+.sign-up-container,.sign-up-container a{
+color: #fee6b8;
+}
+body{
+  background-color: #454755;
+}

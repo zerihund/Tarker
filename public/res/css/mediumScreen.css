@@ -1,9 +1,62 @@
+/*Default*/
+*{
+  box-sizing: border-box;
+}
+/* the section containing the sign up form and the logo*/
+.sign-up-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:#282f3f;
+  padding: 1rem;
+  font-family: sans-serif;
+  margin: 0 auto;
+  width: 80%;
+}
+/* to have the button sit perfectly divided by the bottom border
+of the section, sign-up-container has to have its bottom padding
+equal to half the height of the button. specified in form-submit-btn*/
+
+.prelim-logo{
+  font-family: 'Dancing Script',cursive;
+  font-size: 200%;
+  font-weight: 600;
+}
+form{
+  width: 100%;
+}
+
+/* -group the input and the label so we can space them out well
+    -input-fieldset is different from the btn-bottom-edge because of the postioning*/
+.input-fieldset{
+  padding: 0.2rem 1rem;
+}
+.input-fieldset input{
+  width: 100%;
+}
+.form-center{
+  text-align: center;
+}
+.form-submit-btn{
+  border-radius: 4rem;
+  width: 8rem;
+  height: 2rem;
+  border: none;
+}
+
+.btn-bottom-edge{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+
 
 
 /* screen between  650px and 1007px*/
-body{
-  background-color: blue;
-}
+
 
 
 
