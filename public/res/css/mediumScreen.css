@@ -2,21 +2,64 @@
 *{
   box-sizing: border-box;
 }
+body{
+  font-family: Arial;
+}
+.topnav{
+  background-color: #282f3f;
+  display: flex;
+  flex-direction: row;
+  height: 3rem;
+  padding: 0 10%;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+}
+.topnav-left{
+  display: flex;
+}
+.topnav-searchbar-form{
+  display: flex;
+  max-width: 200px;
+  margin-left: 1rem;
+}
+.topnav-searchbar-form input[type=text]{
+  width: 80%;
+  padding: 10px;
+  border: 1px solid grey;
+}
+.topnav-searchbar-form button{
+  width: 20%;
+  padding: 10px;
+  border: 1px solid grey;
+}
+.btn{
+  height: 2rem;
+  padding: 0 1rem;
+  border:none;
+}
+.pink-btn{
+  background-color: #c61766;
+  color: #fee6b8;
+}
+
+
+
 /* the section containing the sign up form and the logo*/
 .sign-up-container{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color:#282f3f;
   padding: 1rem;
   font-family: sans-serif;
-  margin: 0 auto;
-  width: 80%;
+  margin: 1rem auto;
+  width: 60%;
 }
 /* to have the button sit perfectly divided by the bottom border
 of the section, sign-up-container has to have its bottom padding
 equal to half the height of the button. specified in form-submit-btn*/
-
 .prelim-logo{
   font-family: 'Dancing Script',cursive;
   font-size: 200%;
@@ -56,10 +99,6 @@ form{
 
 
 /* screen between  650px and 1007px*/
-
-
-
-
 @media only screen and (min-width: 651px) and (max-width: 1007px) {
 
 

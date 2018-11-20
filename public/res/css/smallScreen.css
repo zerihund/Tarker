@@ -1,6 +1,6 @@
 /*screen sizes less than 650px*/
 @media only screen and (max-width: 650px){
-  form{
+  .sign-up-form{
     width: 100%;
   }
   .sign-up-container{

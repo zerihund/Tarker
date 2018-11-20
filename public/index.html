@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- font for the "logo" for now. remove when we get the real logo -->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <link rel="stylesheet" href="res/css/reset.css">
@@ -17,12 +21,28 @@
   </head>
   <body>
 
-  <div style="width: 30px; display: block">Test</div>
+  <!-- <div style="width: 30px; display: block">Test</div> -->
+  <div class="topnav">
+
+    <div class="topnav-left">
+      <h1>LOGO</h1>
+      <form class="topnav-searchbar-form" action="/action_page.php">
+        <input type="text"  name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+    <div class="topnav-right">
+      <button class="btn pink-btn">Sign In</button>
+    </div>
+  </div>
+
+
+
 
   <section class="sign-up-container">
     <h1 class="prelim-logo">StoryTeller</h1>
 
-    <form  action="" method="post">
+    <form  class="sign-up-form"action="" method="post">
 
       <fieldset class="input-fieldset">
         User name <br>
@@ -49,10 +69,6 @@
 
 
   </section>
-
-
-
-
 
 
   <script>
