@@ -3,7 +3,8 @@ they can all be changed in one place instead of having to go
 look for it all over the place*/
 
 /*      LARGE SCREEN          */
-@media only screen and (min-width: 1008px) and (max-width: 1900px){
+@media only screen and (min-width: 1008px) {
+  html{font-size: 28px;}
   .sign-up-container{
     width: 70%;
   }
@@ -12,8 +13,8 @@ look for it all over the place*/
 
 /*       XXL-SCREENS          */
 @media only screen and (min-width: 1901px){
+  html{font-size: 36px;}
   .sign-up-container{
-    width: 70%;
     font-size: 200%;
     padding: 2rem;
   }
@@ -45,9 +46,9 @@ look for it all over the place*/
 .yellow-btn{
 background-color: #eda948;
 }
-.sign-up-container,.sign-up-container a{
+.sign-up-container,.sign-up-container a,.topnav-searchbar-form button{
 color: #fee6b8;
 }
-body{
+body,.topnav-searchbar-form button{
   background-color: #454755;
 }
