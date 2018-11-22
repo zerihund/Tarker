@@ -14,6 +14,36 @@ look for it all over the place*/
 /*       XXL-SCREENS          */
 @media only screen and (min-width: 1901px){
   html{font-size: 36px;}
+
+  .topnav{
+    height: 80px;
+    padding:0 10vw;
+  }
+
+  .topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
+  height: 56px;
+  }
+  .logo{
+    width:56px;
+    margin-right:32px;
+  }
+
+
+  .search-input{
+    width:20vw;
+    font-size: 32px;
+  }
+  .search-btn{
+    width:5vw;
+  }
+
+  .signin-button {
+    padding: 16px 48px;
+    font-size:24px;
+    border-radius: 8px;
+  }
+
+
   .sign-up-container{
     font-size: 200%;
     padding: 2rem;
@@ -46,9 +76,27 @@ look for it all over the place*/
 .yellow-btn{
 background-color: #eda948;
 }
-.sign-up-container,.sign-up-container a,.topnav-searchbar-form button{
+.sign-up-container,.sign-up-container a{
 color: #fee6b8;
 }
-body,.topnav-searchbar-form button{
+body{
   background-color: #454755;
+}
+
+
+
+.topnav{
+  background-color: #282f3f;
+}
+.logo{
+  background-color:#fee6b8;
+}
+.signin-button {
+  background-color: #c61766;
+  color: #fee6b8;
+}
+
+.search-btn{
+  background-color:#454755;
+  color:#fee6b8;
 }

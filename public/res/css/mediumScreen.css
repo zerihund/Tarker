@@ -1,5 +1,5 @@
 /*Default*/
-html{font-size: 18px;}
+html{/* font-size: 18px; */}
 *{
   box-sizing: border-box;
 }
@@ -7,53 +7,56 @@ body{
   font-family: Arial;
 }
 .topnav{
-  background-color: #282f3f;
   display: flex;
   flex-direction: row;
-  height: 3rem;
-  padding: 0 10%;
-  margin: 0 auto;
-  justify-content: space-around;
-  align-items: center;
+  height: 4rem;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 1rem;
 }
-.topnav-left{
-  display: flex;
-  align-items: center;
+
+.topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
+height: 3.2rem;
 }
 .logo{
-  height: 2rem;
-  width: 2rem;
-  background-color: wheat;
+  width:3.2rem;
+
+}
+.topnav-left{
+  display:flex;
 }
 .topnav-searchbar-form{
   display: flex;
-
-  margin-left: 1rem;
-  height: 2rem;
 }
-.topnav-searchbar-form input[type=text]{
-  width: 80%;
-  border: 1px solid grey;
+.search-input{
+  width:40vw;
+  font-size: 2rem;
+}
+.search-btn{
+  width:10vw;
+  border:none;
+}
+
+.signin-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size:1.8rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
 }
 
 
-.topnav-searchbar-form button{
-  width: 20%;
-  border: 1px solid grey;
-}
+
+
 .btn{
-  height: 2rem;
+  height: 1rem;
   padding: 0 1rem;
   border:none;
-  font-size: 1rem;
+  font-size: 0.5rem;
 }
-.pink-btn{
-  background-color: #c61766;
-  color: #fee6b8;
-}
-
-
-
 /* the section containing the sign up form and the logo*/
 .sign-up-container{
   display: flex;
@@ -110,7 +113,33 @@ form{
 
 /* screen between  650px and 1007px*/
 @media only screen and (min-width: 651px)  {
-  .topnav-searchbar-form{
-    width:40vw;
-  }
+  .topnav{
+   height: 2rem;
+   padding:0 1rem;
+ }
+
+ .topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
+ height: 1.6rem;
+ }
+ .logo{
+   width:1.6rem;
+   margin-right:1rem;
+ }
+
+
+ .search-input{
+   width:40vw;
+   font-size: 1rem;
+ }
+ .search-btn{
+   width:5vw;
+ }
+
+ .signin-button {
+   padding: 0.5rem 0.7rem;
+   font-size:0.8rem;
+   border-radius: 0.3rem;
+ }
+
+
 }
