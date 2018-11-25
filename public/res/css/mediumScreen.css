@@ -107,6 +107,40 @@ form{
   left: 0;
   right: 0;
 }
+.card,.next-card{
+  display: flex;
+  flex-direction: column;
+  }
+  .author-date{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  }
+
+  #author{
+  font-weight:700;
+  }
+  #time{
+  font-weight:100;
+  }
+  .title{
+  text-align:center;
+  }
+  .story p{
+  text-align:justify;
+  }
+  .story p,.title,.author-date,
+  .media-story,.next-media-story{
+  margin: 0 auto;
+  }
+  .media-story p,.next-media-story p{
+
+  }
+
+  .media-,.next-media-story{
+    display: flex;
+  }
+
 
 
 
@@ -140,6 +174,37 @@ form{
    font-size:0.8rem;
    border-radius: 0.3rem;
  }
+ .card,.next-card{
+   padding: 20px 10px;
+   width:90vw;
+   margin: 0 auto 1vw auto;
+   border-radius:10px;
+  }
+   #author{
+   font-size:15px;
+  }
+   #time{
+   font-weight:100;
+   font-size:15px;
+  }
+   .story p,.title,.author-date{
+   max-width: 75%;
+   width: 100%;
+  }
+    .media-story,.next-media-story{
+   display:block;
+  }
+    .media-story p,.next-media-story p{
+    margin-block-start: 0;
+  }
+   .media-story img,.media-story video,
+   .next-media-story img, .next-media-story video{
+     padding:0 15px 0 5px;
+    width:50%;
+    object-fit:contain;
+    height:50%;
+    float:left;
+  }
 
 
 }

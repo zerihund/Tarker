@@ -8,6 +8,45 @@ look for it all over the place*/
   .sign-up-container{
     width: 70%;
   }
+  .card,.next-card{
+      padding: 20px 10px;
+      width:80vw;
+      margin: 0 auto 1vw auto;
+      border-radius:2vw;
+      }
+      #author{
+      font-size:1.1vw;
+      }
+      #time{
+      font-weight:100;
+      font-size:1.1vw;
+      }
+      .story p,.title,.author-date{
+      max-width: 50vw;
+      width: 100%;
+      }
+        .title{
+      font-size:1.5vw;
+      }
+      .story p{
+      font-size:1.5vw;
+      text-align:justify;
+      }
+       .media-story,.next-media-story{
+      display:block;
+      }
+       .media-story p,.next-media-story p{
+       font-size:2vw;
+       margin-block-start: 0;
+      }
+      .media-story img,.media-story video,
+      .next-media-story img,.next-media-story video{
+       padding:0 15px 0 5px;
+       width:30%;
+       object-fit:contain;
+       height:50%;
+       float:left;
+      }
 
 }
 
@@ -82,7 +121,13 @@ color: #fee6b8;
 body{
   background-color: #454755;
 }
-
+.card,.next-card{
+background-color: #fee6b8;
+color: black;
+}
+#time{
+color:#7a6f73;
+}
 
 
 .topnav{
