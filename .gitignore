@@ -59,3 +59,7 @@ typings/
 
 # next.js build output
 .next
+
+# file: ~/.gitignore_global
+.DS_Store
+.idea
