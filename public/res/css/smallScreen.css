@@ -30,15 +30,6 @@
     font-size:1rem;
     border-radius: 0.5rem;
   }
-
-
-
-
-
-
-
-
-
   .sign-up-form{
     width: 100%;
   }
@@ -53,6 +44,29 @@
   }
   .form-submit-btn {
   font-size: 15px;
-}
+  }
+  .card{
+    padding: 16px 10px;
+    border-radius:10px;
+    margin: 0 auto 10px auto;
+  }
+  #author{
+  font-size:12px;
+  }
+  #time{
+  font-weight:100;
+  font-size:12px;
+  }
+  .story p,.title,.author-date{
+  max-width: 500px;
+  width: 100%;
+  }
+  .media-story, .next-media-story{
+  flex-direction: column;
+  }
+  .media-story img,.media-story video,
+  .next-media-story img,.next-media-story video{
+  width:100%;
+  }
 
 }
