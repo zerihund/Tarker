@@ -1,7 +1,7 @@
 /*screen sizes less than 650px*/
 @media only screen and (max-width: 650px){
   html{
-  font: size 18px;
+  font-size:18px;
   }
   .topnav{
     height: 2.5rem;

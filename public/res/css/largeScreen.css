@@ -41,12 +41,17 @@ look for it all over the place*/
     padding: 16px 48px;
     font-size:24px;
     border-radius: 8px;
+    text-decoration: none;
+    display: block;
   }
 
 
   .sign-up-container{
     font-size: 200%;
     padding: 2rem;
+    width: 100%;
+    background:rgba(69,71,85,0.8);
+    opacity:0;
   }
   .input-fieldset input,.btn-bottom-edge{
     font-size: 150%;
