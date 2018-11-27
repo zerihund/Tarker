@@ -1,7 +1,7 @@
 /*screen sizes less than 650px*/
 @media only screen and (max-width: 650px){
   html{
-  font-size:18px;
+    font-size: 16px;
   }
   .topnav{
     height: 2.5rem;
@@ -9,7 +9,7 @@
   }
 
   .topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
-  height: 2rem;
+    height: 2rem;
   }
   .logo{
     width:2rem;
@@ -24,18 +24,33 @@
   .search-btn{
     width:10vw;
   }
+  .new-to-text p{
+    padding:1rem;
+  }
 
   .signin-button {
     padding: 0.5rem 0.5rem;
     font-size:1rem;
     border-radius: 0.5rem;
   }
-  .sign-up-form{
+  .sign-up-form,.login-form{
     width: 100%;
   }
+
+
   .sign-up-container{
-    width: 100%;
+
   }
+  login-container{
+    height: 60vh;
+  }
+  .sign-up-container,.login-container{
+    margin-top: 15vh;
+    width: 90%;
+  }
+
+
+
   .input-fieldset{
     padding: 0.2rem 1rem;
   }
@@ -43,7 +58,8 @@
     width: 100%;
   }
   .form-submit-btn {
-  font-size: 15px;
+    font-size: 15px;
+    width:60%;
   }
   .card{
     padding: 16px 10px;
@@ -51,22 +67,25 @@
     margin: 0 auto 10px auto;
   }
   #author{
-  font-size:12px;
+    font-size:12px;
   }
   #time{
-  font-weight:100;
-  font-size:12px;
+    font-weight:100;
+    font-size:12px;
   }
   .story p,.title,.author-date{
-  max-width: 500px;
-  width: 100%;
+    max-width: 500px;
+    width: 100%;
+  }
+  .media-story p{
+    text-align:justify;
   }
   .media-story, .next-media-story{
-  flex-direction: column;
+    flex-direction: column;
   }
   .media-story img,.media-story video,
   .next-media-story img,.next-media-story video{
-  width:100%;
+    width:100%;
   }
 
 }
