@@ -26,8 +26,8 @@ function showTextStory(file) {
      <div class="title"><h2>${file.storyTitle}</h2></div>
      <div class="story">
        <p>
-       ${file.story}
-      </p>
+       ${file.story} 
+      </p>        
      </div>
    </div>
 
@@ -47,8 +47,8 @@ function showVideoStory(file) {
      <div class="media-story">
        <video controls src="${file.storyVideoUrl}"></video>
        <p>${file.story}
-
-      </p>
+        
+      </p>        
      </div>
    </div>
 
@@ -65,11 +65,11 @@ function showImageStory(file) {
      </div>
 
      <div class="title"><h2>${file.storyTitle}</h2></div>
-
+     
      <div class="media-story">
        <img  src="${file.storyImageUrl}" alt="random picture">
        <p>${file.story}
-       </p>
+       </p>        
      </div>
    </div>
 
@@ -78,8 +78,29 @@ function showImageStory(file) {
 
 
 
-    fetch('template.json').then((response)=>{
-      return response.json();
-    }).then((file)=>{
-      show(file);
-    })
+fetch('res/js/template.json').then((response)=>{
+  return response.json();
+}).then((file)=>{
+  show(file);
+
+});
+
+// Get the modal
+var loginPopup = document.getElementById('popup');
+
+// When the user clicks anywhere outside of the modal, close it
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == loginPopup) {
+    loginPopup.style.display = "none";
+  }
+}
+// Get the modal
+var signupPopup = document.getElementById('popup2');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == signupPopup) {
+    signupPopup.style.display = "none";
+  }
+}

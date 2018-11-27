@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- font for the "logo" for now. remove when we get the real logo -->
@@ -16,52 +16,104 @@
     <link rel="stylesheet" href="res/css/smallScreen.css">
     <link rel="stylesheet" href="res/css/largeScreen.css">
 
-    <script src="res/js/main.js"></script>
+
     <title>Tarker</title>
-  </head>
-  <body>
+</head>
+<body>
 
-  <!-- <div style="width: 30px; display: block">Test</div> -->
+<!-- <div style="width: 30px; display: block">Test</div> -->
+<div class="topnav">
+    <div class="topnav-left">
+        <div class="logo"></div>
+        <form class="topnav-searchbar-form" action="" method="get">
+            <input class="search-input" type="text" placeholder="Search.." name="search">
+            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+        </form>
 
- <section class="sign-up-container">
-    <h1 class="prelim-logo">StoryTeller</h1>
+    </div>
+    <div class="topnav-right">
+        <button onclick="document.getElementById('popup').style.display='block'"
+                class="signin-button">SIGN IN</button>
 
-    <form  class="sign-up-form"action="" method="post">
-
-      <fieldset class="input-fieldset">
-        User name <br>
-        <input type="text" name="username" placeholder="Enter Username" required><br>
-      </fieldset>
-      <fieldset class="input-fieldset">
-        Email <br>
-        <input type="email" name="email" placeholder="Enter Email" required><br>
-      </fieldset>
-      <fieldset class="input-fieldset">
-        Password <br>
-        <input type="password" name="password" placeholder="Enter Password" required><br>
-      </fieldset>
-      <fieldset class="input-fieldset">
-        Retype Password <br>
-        <input type="password" name="retype-password" placeholder="Enter Password" required><br>
-      </fieldset>
-
-      <fieldset class="form-center btn-bottom-edge">
-        <input type="submit" class="form-submit-btn yellow-btn" name="sign-up" value="Sign Up">
-        <p>Already have an account? <br><a href="#">Sign in</a></p>
-      </fieldset>
-    </form>
+    </div>
+</div>
 
 
-  </section>
 
-  <script>
-    document.querySelector('div').addEventListener('click',()=>{
-      {
-        fetch('http://10.114.32.123/node/ask',{
-          method: 'POST'
-        }).then(res => {console.log(res);})
-      }
-    })
-  </script>
-  </body>
+<section id="popup" class="modal modal1">
+    <div  class="login-container animate">
+        <h1 class="prelim-logo">StoryTeller</h1>
+
+        <form  class="login-form"action="" method="post">
+
+            <fieldset class="input-fieldset">
+                User name <br>
+                <input type="text" name="username"  required><br>
+            </fieldset>
+
+            <fieldset class="input-fieldset">
+                Password <br>
+                <input type="password" name="password"  required><br>
+            </fieldset>
+
+            <fieldset class="form-center new-to-text">
+                <p>New to StoryTellers? <a onclick="document.getElementById('popup2').style.display='block'"
+                                           class="pink-text" href="#">SIGN UP</a></p>
+                <input type="submit" class="form-submit-btn btn-sign-in gray-btn" name="sign-up" value="Sign In">
+            </fieldset>
+
+        </form>
+    </div>
+</section>
+
+<section id="popup2" class="modal modal2 ">
+    <div class="sign-up-container animate">
+        <h1 class="prelim-logo">StoryTeller</h1>
+
+        <form  class="sign-up-form"action="" method="post">
+
+            <fieldset class="input-fieldset">
+                User name <br>
+                <input type="text" name="username"  required><br>
+            </fieldset>
+
+            <fieldset class="input-fieldset">
+                Email <br>
+                <input type="email" name="email" required><br>
+            </fieldset>
+
+            <fieldset class="input-fieldset">
+                Password <br>
+                <input type="password" name="password"  required><br>
+            </fieldset>
+
+            <fieldset class="input-fieldset">
+                Retype Password <br>
+                <input type="password" name="retype-password"  required><br>
+                <br><p class="form-center">Already have an account? <a  class="pink-text" href="#">Sign in</a></p><br>
+            </fieldset>
+
+
+            <fieldset class="form-center btn-bottom-edge">
+                <input type="submit" class="form-submit-btn btn-sign-up yellow-btn" name="sign-up" value="Sign Up">
+
+            </fieldset>
+        </form>
+    </div>
+
+</section>
+
+
+
+<!--<script>
+  document.querySelector('div').addEventListener('click',()=>{
+    {
+      fetch('http://10.114.32.123/node/ask',{
+        method: 'POST'
+      }).then(res => {console.log(res);})
+    }
+  })
+</script>-->
+<script src="res/js/main.js"></script>
+</body>
 </html>
