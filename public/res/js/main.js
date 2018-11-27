@@ -12,7 +12,7 @@ const show= (files)=> {
       showTextStory(file);
     }
   })
-}
+};
 
 function showTextStory(file) {
   document.querySelector('.main').innerHTML += `
@@ -76,8 +76,6 @@ function showImageStory(file) {
 `;
 }
 
-
-
 fetch('res/js/template.json').then((response)=>{
   return response.json();
 }).then((file)=>{
@@ -86,21 +84,17 @@ fetch('res/js/template.json').then((response)=>{
 });
 
 // Get the modal
-var loginPopup = document.getElementById('popup');
-
 // When the user clicks anywhere outside of the modal, close it
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == loginPopup) {
-    loginPopup.style.display = "none";
+  if (event.target == document.getElementById('popup')) {
+    document.getElementById('popup').style.display = "none";
   }
-}
+};
 // Get the modal
-var signupPopup = document.getElementById('popup2');
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == signupPopup) {
-    signupPopup.style.display = "none";
+  if (event.target == document.getElementById('popup2')) {
+    document.getElementById('popup2').style.display = "none";
   }
-}
+};
