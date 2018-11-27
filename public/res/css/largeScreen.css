@@ -8,15 +8,89 @@ look for it all over the place*/
   .sign-up-container{
     width: 70%;
   }
+  .card,.next-card{
+      padding: 20px 10px;
+      width:80vw;
+      margin: 0 auto 1vw auto;
+      border-radius:2vw;
+      }
+      #author{
+      font-size:1.1vw;
+      }
+      #time{
+      font-weight:100;
+      font-size:1.1vw;
+      }
+      .story p,.title,.author-date{
+      max-width: 50vw;
+      width: 100%;
+      }
+        .title{
+      font-size:1.5vw;
+      }
+      .story p{
+      font-size:1.5vw;
+      text-align:justify;
+      }
+       .media-story,.next-media-story{
+      display:block;
+      }
+       .media-story p,.next-media-story p{
+       font-size:2vw;
+       margin-block-start: 0;
+      }
+      .media-story img,.media-story video,
+      .next-media-story img,.next-media-story video{
+       padding:0 15px 0 5px;
+       width:30%;
+       object-fit:contain;
+       height:50%;
+       float:left;
+      }
 
 }
 
 /*       XXL-SCREENS          */
 @media only screen and (min-width: 1901px){
   html{font-size: 36px;}
+
+  .topnav{
+    height: 80px;
+    padding:0 10vw;
+  }
+
+  .topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
+  height: 56px;
+  }
+  .logo{
+    width:56px;
+    margin-right:32px;
+  }
+
+
+  .search-input{
+    width:20vw;
+    font-size: 32px;
+  }
+  .search-btn{
+    width:5vw;
+  }
+
+  .signin-button {
+    padding: 16px 48px;
+    font-size:24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: block;
+  }
+
+
   .sign-up-container{
     font-size: 200%;
     padding: 2rem;
+    width: 100%;
+    background:rgba(69,71,85,0.8);
+    opacity:0;
   }
   .input-fieldset input,.btn-bottom-edge{
     font-size: 150%;
@@ -46,9 +120,33 @@ look for it all over the place*/
 .yellow-btn{
 background-color: #eda948;
 }
-.sign-up-container,.sign-up-container a,.topnav-searchbar-form button{
+.sign-up-container,.sign-up-container a{
 color: #fee6b8;
 }
-body,.topnav-searchbar-form button{
+body{
   background-color: #454755;
+}
+.card,.next-card{
+background-color: #fee6b8;
+color: black;
+}
+#time{
+color:#7a6f73;
+}
+
+
+.topnav{
+  background-color: #282f3f;
+}
+.logo{
+  background-color:#fee6b8;
+}
+.signin-button {
+  background-color: #c61766;
+  color: #fee6b8;
+}
+
+.search-btn{
+  background-color:#454755;
+  color:#fee6b8;
 }

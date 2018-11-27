@@ -1,25 +1,35 @@
 /*screen sizes less than 650px*/
 @media only screen and (max-width: 650px){
+  html{
+  font-size:18px;
+  }
   .topnav{
-    padding: 0;
-  }
-  .topnav-searchbar-form {
-    margin-left: 0.3rem;
-    max-width: 200px;
-  }
-  .btn{
-    font-size: 12px;
+    height: 2.5rem;
+    padding:0 0.5rem;
   }
 
+  .topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
+  height: 2rem;
+  }
+  .logo{
+    width:2rem;
+    margin-right:0.3rem;
+  }
 
 
+  .search-input{
+    width:40vw;
+    font-size: 1rem;
+  }
+  .search-btn{
+    width:10vw;
+  }
 
-
-
-
-
-
-
+  .signin-button {
+    padding: 0.5rem 0.5rem;
+    font-size:1rem;
+    border-radius: 0.5rem;
+  }
   .sign-up-form{
     width: 100%;
   }
@@ -34,6 +44,29 @@
   }
   .form-submit-btn {
   font-size: 15px;
-}
+  }
+  .card{
+    padding: 16px 10px;
+    border-radius:10px;
+    margin: 0 auto 10px auto;
+  }
+  #author{
+  font-size:12px;
+  }
+  #time{
+  font-weight:100;
+  font-size:12px;
+  }
+  .story p,.title,.author-date{
+  max-width: 500px;
+  width: 100%;
+  }
+  .media-story, .next-media-story{
+  flex-direction: column;
+  }
+  .media-story img,.media-story video,
+  .next-media-story img,.next-media-story video{
+  width:100%;
+  }
 
 }

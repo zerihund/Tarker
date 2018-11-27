@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+
+    <link rel="stylesheet" href="res/css/signIn.css" type="text/css">
+    <link rel="stylesheet" href="res/css/reset.css">
+
+    <link rel="stylesheet" href="res/css/mediumScreen.css">
+    <link rel="stylesheet" href="res/css/smallScreen.css">
+    <link rel="stylesheet" href="res/css/largeScreen.css">
+</head>
+<body>
+<div class="topnav">
+    <div class="topnav-left">
+        <div class="logo"></div>
+        <form class="topnav-searchbar-form" action="" method="get">
+            <input class="search-input" type="text" placeholder="Search.." name="search">
+            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+
+    </div>
+    <div class="topnav-right">
+        <button class="signin-button" onclick="document.getElementById('id01')" ><a href="#modal" class="loginLink">SIGN IN</a></button>
+
+    </div>
+</div>
+
+
+<div class="modal_container" id="modal">
+    <div class="modal">
+        <a href="#" class="close">X</a>
+        <span class="modal_heading">
+            <h1 class="prelim-logo">StoryTeller</h1>
+        </span>
+        <form action="#">
+            <input type="text" placeholder="Username"><br>
+            <input type="password" placeholder="Password"><br>
+            <input type="submit" class="btnRegister" value="SIGN IN"><br>
+            <span>New to StoryTeller? <a href="#">Sign UP</a></span>
+        </form>
+    </div>
+</div>
+</body>
+</html>

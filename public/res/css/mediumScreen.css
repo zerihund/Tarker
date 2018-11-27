@@ -1,5 +1,5 @@
 /*Default*/
-html{font-size: 18px;}
+html{/* font-size: 18px; */}
 *{
   box-sizing: border-box;
 }
@@ -7,53 +7,57 @@ body{
   font-family: Arial;
 }
 .topnav{
-  background-color: #282f3f;
   display: flex;
   flex-direction: row;
-  height: 3rem;
-  padding: 0 10%;
-  margin: 0 auto;
-  justify-content: space-around;
-  align-items: center;
+  height: 4rem;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 1rem;
 }
-.topnav-left{
-  display: flex;
-  align-items: center;
+
+.topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
+height: 3.2rem;
 }
 .logo{
-  height: 2rem;
-  width: 2rem;
-  background-color: wheat;
+  width:3.2rem;
+
+}
+.topnav-left{
+  display:flex;
 }
 .topnav-searchbar-form{
   display: flex;
-
-  margin-left: 1rem;
-  height: 2rem;
 }
-.topnav-searchbar-form input[type=text]{
-  width: 80%;
-  border: 1px solid grey;
+.search-input{
+  width:40vw;
+  font-size: 2rem;
+}
+.search-btn{
+  width:10vw;
+  border:none;
+}
+
+.signin-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size:1.8rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+
 }
 
 
-.topnav-searchbar-form button{
-  width: 20%;
-  border: 1px solid grey;
-}
+
+
 .btn{
-  height: 2rem;
+  height: 1rem;
   padding: 0 1rem;
   border:none;
-  font-size: 1rem;
+  font-size: 0.5rem;
 }
-.pink-btn{
-  background-color: #c61766;
-  color: #fee6b8;
-}
-
-
-
 /* the section containing the sign up form and the logo*/
 .sign-up-container{
   display: flex;
@@ -64,23 +68,7 @@ body{
   padding: 1rem;
   font-family: sans-serif;
   margin: 1rem auto;
-  width: 60%;
-}
-/* to have the button sit perfectly divided by the bottom border
-of the section, sign-up-container has to have its bottom padding
-equal to half the height of the button. specified in form-submit-btn*/
-.prelim-logo{
-  font-family: 'Dancing Script',cursive;
-  font-size: 200%;
-  font-weight: 600;
-}
-form{
   width: 100%;
-}
-
-/* -group the input and the label so we can space them out well
-    -input-fieldset is different from the btn-bottom-edge because of the postioning*/
-.input-fieldset{
   padding: 0.2rem 1rem;
 }
 .input-fieldset input{
@@ -104,13 +92,104 @@ form{
   left: 0;
   right: 0;
 }
+.card,.next-card{
+  display: flex;
+  flex-direction: column;
+  }
+  .author-date{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  }
+
+  #author{
+  font-weight:700;
+  }
+  #time{
+  font-weight:100;
+  }
+  .title{
+  text-align:center;
+  }
+  .story p{
+  text-align:justify;
+  }
+  .story p,.title,.author-date,
+  .media-story,.next-media-story{
+  margin: 0 auto;
+  }
+  .media-story p,.next-media-story p{
+
+  }
+
+  .media-,.next-media-story{
+    display: flex;
+  }
+
 
 
 
 
 /* screen between  650px and 1007px*/
 @media only screen and (min-width: 651px)  {
-  .topnav-searchbar-form{
-    width:40vw;
+  .topnav{
+   height: 2rem;
+   padding:0 1rem;
+ }
+
+ .topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
+ height: 1.6rem;
+ }
+ .logo{
+   width:1.6rem;
+   margin-right:1rem;
+ }
+
+
+ .search-input{
+   width:40vw;
+   font-size: 1rem;
+ }
+ .search-btn{
+   width:5vw;
+ }
+
+ .signin-button {
+   padding: 0.5rem 0.7rem;
+   font-size:0.8rem;
+   border-radius: 0.3rem;
+ }
+ .card,.next-card{
+   padding: 20px 10px;
+   width:90vw;
+   margin: 0 auto 1vw auto;
+   border-radius:10px;
   }
+   #author{
+   font-size:15px;
+  }
+   #time{
+   font-weight:100;
+   font-size:15px;
+  }
+   .story p,.title,.author-date{
+   max-width: 75%;
+   width: 100%;
+  }
+    .media-story,.next-media-story{
+   display:block;
+  }
+    .media-story p,.next-media-story p{
+    margin-block-start: 0;
+  }
+   .media-story img,.media-story video,
+   .next-media-story img, .next-media-story video{
+     padding:0 15px 0 5px;
+    width:50%;
+    object-fit:contain;
+    height:50%;
+    float:left;
+  }
+
+
 }
