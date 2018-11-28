@@ -1,20 +1,58 @@
-'use strict';
 const mysql = require('mysql2');
 
-const connect = () => {
-  // create the connection to database
-  const connection = mysql.createConnection({
+//set up connection to the database
+const connect = ()=>{
+  const x = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     database: process.env.DB_DATABASE,
-    password: process.env.DB_PASS,
+    password: process.env.DB_PASS
   });
-  return connection;
+  console.log('Connection to database established');
+  return x;
 };
 //user--------------------------------------------------
 //insert user
+const insertUser = (connection, data, res) =>{
+  connection.execute(
+      'INSERT INTO user (name, email, password) VALUE (?,?,?);', data,
+        (err, results, fields) =>{
+          console.log(err);
+          res.send('ok');
+        },
+  );
+};
 //check if user already exists
+const checkUser = (connection, username, res)=>{
+  connection.execute(
+    'SELECT * FROM user WHERE name = ?',  username,
+      (err, results, fields) =>{
+        console.log(results);
+        res.send();
+      },
+  )
+};
+
+//check if user email already exists
+const checkEmail = (connection, email, res)=>{
+  connection.execute(
+      'SELECT * FROM user WHERE email = ?',  email,
+      (err, results, fields) =>{
+        console.log(results);
+        res.send();
+      },
+  )
+};
 //check user credential
+const checkCredentials = (connection, username, password)=>{
+  connection.execute(
+    `SELECT COUNT(name) FROM user WHERE name = ${username} AND password = ${password}`,
+    (err, results, fields) =>{
+      console.log(results);
+      return results[0] != 0;
+    },
+  )
+};
 //log user in
 
 //story-------------------------------------------------
@@ -26,8 +64,10 @@ const connect = () => {
 //get comments, get comment writer, get comments date
 //send comments, send user
 
-
-
 module.exports = {
   connect:connect,
+  insertUser: insertUser,
+  checkUser: checkUser,
+  checkEmail: checkEmail,
+  checkCredentials: checkCredentials
 };
