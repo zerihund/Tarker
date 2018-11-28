@@ -18,7 +18,6 @@ const upload = multer({dest: 'upload'});
 const db = require('./modules/data-handler');
 const connection = db.connect();
 const bodyParser = require('body-parser');
-const app = express();
 
 //-----------------------------------------------------------------------------------------
 //set up passport and log in procedure
@@ -43,6 +42,7 @@ app.post('/login',
 //----------------------------------------------------------------------------------------
 //add user to user database
 app.post('/signup/',(req, res)=>{
+  console.log('sign up');
   const data = [
     req.body.username,
     req.body.email,
@@ -53,11 +53,13 @@ app.post('/signup/',(req, res)=>{
 
 //check user exists
 app.post('/usercheck', (req, res)=>{
+  console.log('user check');
   db.checkUser(connection, req.body.username, res);
 });
 
 //check email exists
 app.post('/emailcheck', (req, res)=>{
+  console.log('email check');
   db.checkEmail(connection, req.body.email, res);
 });
 
