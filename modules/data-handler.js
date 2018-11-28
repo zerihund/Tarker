@@ -27,8 +27,13 @@ const checkUser = (connection, username, res)=>{
   connection.query(
     'SELECT * FROM user WHERE name = ?',  username,
       (err, results, fields) =>{
-        console.log(results.length);
-        res.sendStatus(results.length);
+        const exist = results.length;
+        if(exist){
+          res.send('username already exists');
+        }
+        else{
+          res.send('username ok :)');
+        }
       },
   )
 };
@@ -38,8 +43,13 @@ const checkEmail = (connection, email, res)=>{
   connection.query(
       'SELECT * FROM user WHERE email = ?',  email,
       (err, results, fields) =>{
-        console.log(results.length);
-        res.sendStatus(results.length);
+        const exist = results.length;
+        if(exist){
+          res.send('email already exists');
+        }
+        else{
+          res.send('email ok :)');
+        }
       },
   )
 };
