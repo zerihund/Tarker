@@ -60,10 +60,11 @@ const checkEmail = (connection, email, res)=>{
 //check user credential
 const checkCredentials = (connection, username, password)=>{
   connection.execute(
-    `SELECT * FROM user WHERE name = ${username} AND password = ${password}`,
+    `SELECT * FROM user WHERE name = '${username}' AND password = '${password}'`,
     (err, results, fields) =>{
       console.log(results);
-      return results.length != 0;
+
+      return results.length !== 0;
     },
   )
 };
