@@ -7,6 +7,7 @@ const multer = require('multer');
 const img = require('./modules/img-handler');
 const fs = require('fs');
 const app = express();
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
@@ -18,7 +19,6 @@ const upload = multer({dest: 'upload'});
 //database thing
 const db = require('./modules/data-handler');
 const connection = db.connect();
-const bodyParser = require('body-parser');
 
 //-----------------------------------------------------------------------------------------
 //set up passport and log in procedure
