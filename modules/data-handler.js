@@ -31,11 +31,11 @@ const checkUser = (connection, username, res)=>{
         console.log(exist);
         if(exist == 1){
           console.log('xxxx');
-          res.send('username already exists');
+          res.send(results);
         }
         else{
           console.log('yyyy');
-          res.send('username ok :)');
+          res.send(results);
         }
       },
   )
