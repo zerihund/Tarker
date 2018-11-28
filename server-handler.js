@@ -9,6 +9,7 @@ const fs = require('fs');
 const app = express();
 const bodyParser =require('body-parser');
 const passport = require('passport');
+const  bcrypt = require('bcryptjs');
 const LocalStrategy = require('passport-local').Strategy;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
