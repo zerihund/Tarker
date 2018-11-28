@@ -27,7 +27,7 @@ const checkUser = (connection, username, res)=>{
   connection.query(
     'SELECT * FROM user WHERE name = ?',  username,
       (err, results, fields) =>{
-        console.log(results);
+        console.log(results.length);
         res.send();
       },
   )
@@ -38,7 +38,7 @@ const checkEmail = (connection, email, res)=>{
   connection.query(
       'SELECT * FROM user WHERE email = ?',  email,
       (err, results, fields) =>{
-        console.log(results);
+        console.log(results.length);
         res.send();
       },
   )
