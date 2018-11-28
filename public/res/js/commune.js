@@ -35,7 +35,8 @@ nameinput.addEventListener('focusout', (evt) =>{
     }),
     body: `username=${evt.target.value}`
   })
-  .then(res => console.log(res))
+  .then(res => res.json())
+  .then(json => console.log(json));
 
 });
 
