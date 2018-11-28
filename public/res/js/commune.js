@@ -36,8 +36,9 @@ nameinput.addEventListener('focusout', (evt) =>{
     body: `username=${evt.target.value}`
   })
   .then(res => {
-    console.log(res.text());
-    })
+    console.log(res);
+    return res.text();
+  }).then(text => console.log(text))
 });
 
 //check email existence when out of focus of name input
