@@ -68,7 +68,7 @@ app.post('/emailcheck', (req, res)=>{
 //set up the http and https redirection
 //set up secure certification for site
 app.set('trust proxy');
-const sslkey = fs.readFileSync('/etc/pki/tls/private/ca.ket');
+const sslkey = fs.readFileSync('/etc/pki/tls/private/ca.key');
 const sslcert = fs.readfileSync('/etc/pki/tls/certs/ca.crt');
 
 const options = {
