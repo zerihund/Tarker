@@ -6,11 +6,12 @@ const express = require('express');
 const multer = require('multer');
 const img = require('./modules/img-handler');
 const fs = require('fs');
+const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 //--------------------------------------------------------------------------------------
-const app = express();
+
 const upload = multer({dest: 'upload'});
 
 //---------------------------------------------------------------------------------------
