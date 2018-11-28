@@ -6,24 +6,28 @@ const express = require('express');
 const multer = require('multer');
 const img = require('./modules/img-handler');
 const fs = require('fs');
+const app = express();
+const bodyParser =require('body-parser');
+const passport = require('passport');
+const  bcrypt = require('bcryptjs');
+const LocalStrategy = require('passport-local').Strategy;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
+
 //--------------------------------------------------------------------------------------
-const app = express();
+
 const upload = multer({dest: 'upload'});
 
 //---------------------------------------------------------------------------------------
 //database thing
 const db = require('./modules/data-handler');
 const connection = db.connect();
-const bodyParser = require('body-parser');
-const app = express();
+
+//const app = express();
 
 //-----------------------------------------------------------------------------------------
 //set up passport and log in procedure
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy((username, password, done)=>{
@@ -43,14 +47,13 @@ app.post('/login',
 //set up the http and https redirection
 //set up secure certification for site
 app.set('trust proxy');
-const sslkey = fs.readFileSync('/etc/pki/tls/private/ca.ket');
-const sslcert = fs.readfileSync('/etc/pki/tls/certs/ca.crt');
+const sslkey = fs.readFileSync('/etc/pki/tls/private/ca.key');
+const sslcert = fs.readFileSync('/etc/pki/tls/certs/ca.crt');
 
 const options = {
   key: sslkey,
   cert: sslcert
-};
-
+}
 //set http and https set up
 const http = require('http');
 const https = require('https');

@@ -89,7 +89,12 @@ body{
     display: none; /* Hidden by default */
     z-index: 2; /* Sit on top */
 }
-
+span{
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
 .login-container{
     height: 45vh;
