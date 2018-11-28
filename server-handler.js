@@ -30,6 +30,7 @@ app.use(passport.session());
 passport.use(new LocalStrategy((username, password, done)=>{
   console.log('user named '+ username +'tries to logs in');
   const valid = db.checkCredentials(connection, username,  password);
+  console.log(valid);
   if(valid == true){
     return done(null, {username: username} );
   }
