@@ -13,11 +13,10 @@ document.querySelector('.login-form')
       }),
       body: `username=${username}&password=${password}`
     })
-    .then((res) => res.json())
-    .then( json => {
-      console.log(json);
-    })
+    .then((res) => console.log(res))
+
 });
+
 
 //------------------------------------------------------------------------------
 //concerning sign up form
@@ -36,10 +35,8 @@ nameinput.addEventListener('focusout', (evt) =>{
     }),
     body: `username=${evt.target.value}`
   })
-  .then(res => res.json())
-  .then(json =>{
-    console.log(json);
-  })
+  .then(res => console.log(res))
+
 });
 
 //check email existence when out of focus of name input
