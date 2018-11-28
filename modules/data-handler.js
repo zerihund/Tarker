@@ -31,11 +31,11 @@ const checkUser = (connection, username, res)=>{
         console.log(exist);
         if(exist == 1){
           console.log('xxxx');
-          res.send(results);
+          res.send('Username already exists.');
         }
         else{
           console.log('yyyy');
-          res.send(results);
+          res.send('Username ok :P.');
         }
       },
   )
@@ -47,8 +47,9 @@ const checkEmail = (connection, email, res)=>{
       'SELECT * FROM user WHERE email = ?',  email,
       (err, results, fields) =>{
         const exist = results.length;
-        if(exist){
-          res.send('email already exists');
+        if(exist == 1){
+          console.log('xxxx');
+          res.send('Email already exists.');
         }
         else{
           res.send('email ok :)');
