@@ -14,7 +14,7 @@ const connect = ()=>{
 //user--------------------------------------------------
 //insert user
 const insertUser = (connection, data, res) =>{
-  connection.execute(
+  connection.query(
       'INSERT INTO user (name, email, password) VALUE (?,?,?);', data,
         (err, results, fields) =>{
           console.log(err);
@@ -25,7 +25,7 @@ const insertUser = (connection, data, res) =>{
 //check if user already exists
 const checkUser = (connection, username, res)=>{
   connection.execute(
-    'SELECT * FROM user WHERE name = ?',  username,
+    'SELECT COUNT(name) FROM user WHERE name = ?',  username,
       (err, results, fields) =>{
         console.log(results);
         res.send();
@@ -35,7 +35,7 @@ const checkUser = (connection, username, res)=>{
 
 //check if user email already exists
 const checkEmail = (connection, email, res)=>{
-  connection.execute(
+  connection.query(
       'SELECT * FROM user WHERE email = ?',  email,
       (err, results, fields) =>{
         console.log(results);
