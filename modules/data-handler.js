@@ -28,10 +28,13 @@ const checkUser = (connection, username, res)=>{
     'SELECT * FROM user WHERE name = ?',  username,
       (err, results, fields) =>{
         const exist = results.length;
-        if(exist){
+        console.log(exist);
+        if(exist == 1){
+          console.log('xxxx');
           res.send('username already exists');
         }
         else{
+          console.log('yyyy');
           res.send('username ok :)');
         }
       },
