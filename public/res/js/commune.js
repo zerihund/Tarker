@@ -29,7 +29,7 @@ const passwordcheck = document.querySelectorAll('.sign-up-form input')[3];
 nameinput.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
   fetch('/node/usercheck', {
-    method: 'POST',
+    method: 'GET',
     headers: new Headers({
       'Content-Type': 'application/x-www-form-urlencoded',
     }),
@@ -44,7 +44,7 @@ nameinput.addEventListener('focusout', (evt) =>{
 email.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
   fetch('/node/emailcheck', {
-    method: 'POST',
+    method: 'GET',
     headers: new Headers({
       'Content-Type': 'application/x-www-form-urlencoded',
     }),

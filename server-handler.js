@@ -53,13 +53,13 @@ app.post('/signup/',(req, res)=>{
 });
 
 //check user exists
-app.post('/usercheck', (req, res)=>{
+app.get('/usercheck', (req, res)=>{
   console.log('user check');
   db.checkUser(connection, req.body.username, res);
 });
 
 //check email exists
-app.post('/emailcheck', (req, res)=>{
+app.get('/emailcheck', (req, res)=>{
   console.log('email check');
   db.checkEmail(connection, req.body.email, res);
 });
