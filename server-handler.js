@@ -31,10 +31,10 @@ passport.use(new LocalStrategy((username, password, done)=>{
   console.log('user named '+ username +'tries to logs in');
   const valid = db.checkCredentials(connection, username,  password);
   if(valid){
-    return done(null, false);
+    return done(null, {username: username} );
   }
   else{
-    return done(null, {username: username} );
+    return done(null, false);
   }
 }));
 app.post('/login',

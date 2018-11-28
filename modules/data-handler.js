@@ -62,9 +62,15 @@ const checkCredentials = (connection, username, password)=>{
   connection.execute(
     `SELECT * FROM user WHERE name = '${username}' AND password = '${password}'`,
     (err, results, fields) =>{
-      console.log(results);
-
-      return results.length !== 0;
+      const exist = results.length;
+      if(exist == 1){
+        console.log('xxxx');
+        return true
+      }
+      else{
+        console.log('yyyy');
+        return false
+      }
     },
   )
 };
