@@ -18,7 +18,7 @@ const insertUser = (connection, data, res) =>{
       'INSERT INTO user (name, email, password) VALUE (?,?,?);', data,
         (err, results, fields) =>{
           console.log(err);
-          res.send('ok');
+          res.sendStatus('ok');
         },
   );
 };
@@ -28,7 +28,7 @@ const checkUser = (connection, username, res)=>{
     'SELECT * FROM user WHERE name = ?',  username,
       (err, results, fields) =>{
         console.log(results.length);
-        res.send(results.length);
+        res.sendStatus(results.length);
       },
   )
 };
@@ -39,7 +39,7 @@ const checkEmail = (connection, email, res)=>{
       'SELECT * FROM user WHERE email = ?',  email,
       (err, results, fields) =>{
         console.log(results.length);
-        res.send(results.length);
+        res.sendStatus(results.length);
       },
   )
 };
