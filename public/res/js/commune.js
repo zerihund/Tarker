@@ -81,9 +81,9 @@ document.querySelector('.sign-up-form')
     }),
     body: `username=${username}&email=${email}&password=${password}`
   })
-  .then((res) => res.json())
-  .then( json => {
-    console.log(json);
+  .then((res) => res.text())
+  .then( text => {
+    console.log(text);
   })
 });
 

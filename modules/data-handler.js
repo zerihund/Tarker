@@ -18,7 +18,7 @@ const insertUser = (connection, data, res) =>{
       'INSERT INTO user (name, email, password) VALUE (?,?,?);', data,
         (err, results, fields) =>{
           console.log(err);
-          res.sendStatus('ok');
+          res.send('User registered success. Yay!!!!!!');
         },
   );
 };
