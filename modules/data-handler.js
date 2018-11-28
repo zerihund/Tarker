@@ -24,8 +24,8 @@ const insertUser = (connection, data, res) =>{
 };
 //check if user already exists
 const checkUser = (connection, username, res)=>{
-  connection.execute(
-    'SELECT COUNT(name) FROM user WHERE name = ?',  username,
+  connection.query(
+    'SELECT * FROM user WHERE name = ?',  username,
       (err, results, fields) =>{
         console.log(results);
         res.send();
