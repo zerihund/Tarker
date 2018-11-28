@@ -15,6 +15,6 @@ const doResize = (filePath, width, newPath, next) => {
   });
 };
 
-modules.exports = {
+module.exports = {
   doResize: doResize,
 };
