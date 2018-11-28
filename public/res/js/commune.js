@@ -29,22 +29,22 @@ const passwordcheck = document.querySelectorAll('.sign-up-form input')[3];
 nameinput.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
   fetch('/node/usercheck', {
-    method: 'GET',
+    method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/x-www-form-urlencoded',
     }),
     body: `username=${evt.target.value}`
   })
-  .then(res => res.json())
-  .then(json => console.log(json));
-
+  .then(res => {
+    console.log(res.text());
+    })
 });
 
 //check email existence when out of focus of name input
 email.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
   fetch('/node/emailcheck', {
-    method: 'GET',
+    method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/x-www-form-urlencoded',
     }),
