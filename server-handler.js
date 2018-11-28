@@ -38,8 +38,15 @@ passport.use(new LocalStrategy((username, password, done)=>{
   }
 }));
 app.post('/login',
-    passport.authenticate('local', {successRedirect: '/', failureRedirect: '/node/xyz', session: false}));
+    passport.authenticate('local', {successRedirect: '/node/abc', failureRedirect: '/node/xyz', session: false}));
 
+app.get('/abc', (req, res)=>{
+  res.send('You have logged in');
+});
+
+app.get('/xyz', (req, res)=>{
+  res.send('failed logged in');
+});
 //----------------------------------------------------------------------------------------
 //add user to user database
 app.post('/signup/',(req, res)=>{

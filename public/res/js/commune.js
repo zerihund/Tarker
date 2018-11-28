@@ -13,8 +13,8 @@ document.querySelector('.login-form')
       }),
       body: `username=${username}&password=${password}`
     })
-    .then((res) => console.log(res))
-
+    .then((res) => res.text())
+    .then(text => console.log(text))
 });
 
 

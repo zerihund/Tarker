@@ -63,7 +63,7 @@ const checkCredentials = (connection, username, password)=>{
     `SELECT COUNT(name) FROM user WHERE name = ${username} AND password = ${password}`,
     (err, results, fields) =>{
       console.log(results);
-      return results[0] != 0;
+      return results.length != 0;
     },
   )
 };
