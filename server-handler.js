@@ -29,14 +29,15 @@ app.use(passport.session());
 
 passport.use(new LocalStrategy((username, password, done)=>{
   console.log('user named '+ username +'tries to logs in');
-  const valid = db.checkCredentials(connection, username,  password);
-  console.log(valid);
-  if(valid == true){
-    return done(null, {username: username} );
-  }
-  else{
-    return done(null, false);
-  }
+  db.checkCredentials(connection, username,  password).then(valid =>{
+    console.log(valid);
+    if(valid == true){
+      return done(null, {username: username} );
+    }
+    else{
+      return done(null, false);
+    }
+  })
 }));
 app.post('/login',
     passport.authenticate('local', {successRedirect: '/node/abc', failureRedirect: '/node/xyz', session: false}));
