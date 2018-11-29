@@ -89,7 +89,7 @@ app.get('/grabstory', (req, res)=>{
       .then(result =>
           storybranch.unshift(result))
     }while(storybranch[0].parent !== 0 || i==1);*/
-
+    console.log('12345');
     console.log(storybranch);
     //get comments for each story
     for(let i =0;i<storybranch.length;i++){

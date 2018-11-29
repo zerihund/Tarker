@@ -82,8 +82,8 @@ const getInitStory = (connection)=>{
        FROM (SELECT a.story_Id FROM story a, story b WHERE a.story_Id=b.parent_story GROUP BY a.story_Id) Isparent,story c
        WHERE c.story_Id != Isparent.story_Id`,
       (err, results)=>{
-        console.log(results[0]);
-        resolve(results[0]);
+        console.log(results);
+        resolve(results);
       }
     )
   })
