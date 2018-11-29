@@ -41,20 +41,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
+            <state relative-caret-position="170">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="106" column="39" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+            <state relative-caret-position="442">
+              <caret line="86" column="34" lean-forward="true" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -106,8 +106,8 @@
         <option value="$PROJECT_DIR$/public/res/js/commune.js" />
         <option value="$PROJECT_DIR$/public/res/js/main.js" />
         <option value="$PROJECT_DIR$/modules/math.js" />
-        <option value="$PROJECT_DIR$/modules/data-handler.js" />
         <option value="$PROJECT_DIR$/server-handler.js" />
+        <option value="$PROJECT_DIR$/modules/data-handler.js" />
       </list>
     </option>
   </component>
@@ -199,14 +199,7 @@
       <workItem from="1543348636520" duration="3564000" />
       <workItem from="1543359608043" duration="6966000" />
       <workItem from="1543440141809" duration="9891000" />
-      <workItem from="1543491391597" duration="6288000" />
-    </task>
-    <task id="LOCAL-00001" summary="commit workspace.xml">
-      <created>1543349463908</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1543349463908</updated>
+      <workItem from="1543491391597" duration="6966000" />
     </task>
     <task id="LOCAL-00002" summary="-_-">
       <created>1543404569925</created>
@@ -523,11 +516,39 @@
       <option name="project" value="LOCAL" />
       <updated>1543498250156</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="continuous bug fixing 0.10">
+      <created>1543498602436</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1543498602436</updated>
+    </task>
+    <task id="LOCAL-00048" summary="continuous bug fixing 0.11">
+      <created>1543498727616</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1543498727616</updated>
+    </task>
+    <task id="LOCAL-00049" summary="continuous bug fixing 0.12">
+      <created>1543498811862</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1543498811862</updated>
+    </task>
+    <task id="LOCAL-00050" summary="continuous bug fixing 0.13">
+      <created>1543498982362</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1543498982362</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62373000" />
+    <option name="totallyTimeSpent" value="63051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -545,7 +566,7 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49920633" visible="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49920633" weight="0.32872504" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50079364" side_tool="true" weight="0.32872504" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -579,9 +600,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifying data-handler .0.02" />
-    <MESSAGE value="change send to sendStatus" />
-    <MESSAGE value="still debugging data stuff" />
     <MESSAGE value="finalizing username check and email check" />
     <MESSAGE value="init test for sign up" />
     <MESSAGE value="testing log in" />
@@ -604,7 +622,10 @@
     <MESSAGE value="continuous bug fixing 0.8" />
     <MESSAGE value="continuous bug fixing 0.9" />
     <MESSAGE value="continuous bug fixing 0.10" />
-    <option name="LAST_COMMIT_MESSAGE" value="continuous bug fixing 0.10" />
+    <MESSAGE value="continuous bug fixing 0.11" />
+    <MESSAGE value="continuous bug fixing 0.12" />
+    <MESSAGE value="continuous bug fixing 0.13" />
+    <option name="LAST_COMMIT_MESSAGE" value="continuous bug fixing 0.13" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -685,17 +706,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
+    <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="106" column="39" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server-handler.js">
+    <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
+        <state relative-caret-position="442">
+          <caret line="86" column="34" lean-forward="true" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
         </state>
       </provider>
     </entry>

@@ -75,12 +75,12 @@ app.get('/grabstory', (req, res)=>{
 
   //get init story
   db.getInitStory(connection)
-  .then(results => {results.json()}).then(json =>
+  .then(results =>
   {
-    const storybranch = json;
+    const storybranch = results;
     console.log('--------');
     console.log(storybranch);
-    let i =0;
+
     //get parent story and append it to begin of story branch array
     /*do{
       i++;
