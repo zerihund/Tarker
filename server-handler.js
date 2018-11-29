@@ -81,6 +81,7 @@ app.get('/grabstory', (req, res)=>{
     .then(storybranch=>{
       //get comments for each story
       familyTalk(storybranch,0).then(familyTalk =>{
+        console.log(familyTalk);
         res.send(familyTalk);
       })
     });
@@ -111,10 +112,12 @@ const familyTalk = (storybranch, i)=>{
     .then(result =>{
       storybranch[i].comment = result; //this may not work but let's see
       i++;
+      console.log(i);
       if(i < storybranch.length){
         familyTalk(storybranch, i);
       }
       else{
+        console.log('99999999');
         resolve(storybranch);
       }
     });
