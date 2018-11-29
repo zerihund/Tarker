@@ -1,4 +1,4 @@
-const show= (files)=> {
+const show = (files)=> {
 
   files.forEach((file) => {
     if(file.mediaType){
@@ -14,7 +14,7 @@ const show= (files)=> {
   })
 };
 
-function showTextStory(file) {
+const showTextStory = (file)=> {
   document.querySelector('.main').innerHTML += `
   <div class="card">
 
@@ -34,7 +34,7 @@ function showTextStory(file) {
 `;
 }
 
-function showVideoStory(file) {
+const showVideoStory = (file)=> {
   document.querySelector('.main').innerHTML += `
   <div class="card">
 
@@ -53,7 +53,7 @@ function showVideoStory(file) {
    </div>
 
 `;
-}
+};
 
 function showImageStory(file) {
   document.querySelector('.main').innerHTML += `

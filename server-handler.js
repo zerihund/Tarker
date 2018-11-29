@@ -10,10 +10,7 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
-
-//--------------------------------------------------------------------------------------
-
-const upload = multer({dest: 'upload'});
+const upload = multer({dest: 'public/res'});
 
 //---------------------------------------------------------------------------------------
 //database thing
@@ -21,6 +18,7 @@ const db = require('./modules/data-handler');
 const connection = db.connect();
 
 //-----------------------------------------------------------------------------------------
+//concerning passport
 //set up passport and log in procedure
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -49,6 +47,7 @@ app.get('/xyz', (req, res)=>{
   res.send('failed logged in');
 });
 //----------------------------------------------------------------------------------------
+//concerning users
 //add user to user database
 app.post('/signup/',(req, res)=>{
   const data = [
@@ -73,32 +72,34 @@ app.post('/emailcheck', (req, res)=>{
 //concerning stories
 //get story to display
 app.get('/grabstory', (req, res)=>{
-  const storybrach = [];
+  const storybranch = [];
   console.log('story is being grabbed');
 
   //get init story
   db.getInitStory(connection)
   .then(results =>
-    storybrach.unshift(results));
+    storybranch.unshift(results));
 
   //get parent story and append it to begin of story branch array
   do{
-    db.getParentStory(connection,storybrach[0].id)
+    db.getParentStory(connection,storybranch[0].id)
     .then(result =>
-      storybrach.unshift(result))
-  }while(storybrach[0].parent != 0);
+      storybranch.unshift(result))
+  }while(storybranch[0].parent !== 0);
 
-  console.log(storybrach);
+  console.log(storybranch);
   //get comments for each story
-  for(let i =0;i<storybrach.length;i++){
-     db.getStoryComment(connection,  storybrach[i].id)
+  for(let i =0;i<storybranch.length;i++){
+     db.getStoryComment(connection,  storybranch[i].id)
        .then(result =>{
-         storybrach[i].id[comment] = result; //this may not work but let's see
+         storybranch[i].id[comment] = result; //this may not work but let's see
      })
   }
-  console.log(storybrach);
-  res.send(storybrach);
+  console.log(storybranch);
+  //res.send(storybranch);
 });
+
+
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site

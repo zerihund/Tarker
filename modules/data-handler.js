@@ -1,4 +1,5 @@
 const mysql = require('mysql2');
+const math = require('modules/math');
 
 //set up connection to the database
 const connect = ()=>{
@@ -76,11 +77,14 @@ const checkCredentials = (connection, username, password)=>{
 const getInitStory = (connection)=>{
   console.log('xxxx');
   return new Promise((resolve, reject)=>{
-    connection.executeSql(
-      ``,
+    connection.execute(
+      `SELECT c.story_Id, c.parent_story, c.content
+       FROM (SELECT a.story_Id FROM story a, story b WHERE a.story_Id=b.parent_story GROUP BY a.story_Id) Isparent,story c
+       WHERE c.story_Id != Isparent.story_Id`,
       (err, results)=>{
         console.log(results);
-        resolve(results);
+        console.log(results[math.random(results.length)]);
+        //resolve(results);
       }
     )
   })
@@ -89,8 +93,10 @@ const getInitStory = (connection)=>{
 const getParentStory = (connection, id) =>{
   console.log('get parent story of story '+id);
   return new Promise((resolve, reject)=>{
-    connection.executeSql(
-      ``, id,
+    connection.execute(
+      `SELECT c.story_Id, c.parent_story, c.content
+      FROM story c, story d
+      WHERE c.story_id = d.parent_story AND d.story = ?`, id,
       (err, results)=>{
         console.log(results);
         resolve(results);
@@ -102,8 +108,10 @@ const getParentStory = (connection, id) =>{
 const getStoryComment = (connection, id)=>{
   console.log('grab comments of' + id);
   return new Promise((resolve, reject)=>{
-    connection.executeSql(
-        ``, id,
+    connection.execute(
+        `SELECT user.name, comments.comment, comments.comment_time 
+         FROM comments, user 
+         WHERE comments.story_id = ? AND user.user_Id = comments.user_Id`, id,
         (err, results)=>{
           console.log(results);
           resolve(results);
