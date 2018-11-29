@@ -98,16 +98,13 @@ const getInitStory = (connection)=>{
 
 const getParentStory = (connection, id) =>{
   console.log('get parent story of story '+ id);
-  return new Promise((resolve, reject)=>{
     connection.query(
       `SELECT c.story_Id, c.parent_story, c.content
       FROM story c, story d
       WHERE c.story_id = d.parent_story AND d.story = ?`, id,
       (err, results)=>{
         console.log(results);
-        resolve(results);
-      }
-    )
+        return(results);
   })
 };
 
