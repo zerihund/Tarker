@@ -80,11 +80,7 @@ app.get('/grabstory', (req, res)=>{
     storyFamily([results])
     .then(storybranch=>{
       //get comments for each story
-      familyTalk(storybranch,0)
-      .then(familyTalk =>{
-        console.log(familyTalk);
-        res.send(familyTalk);
-      })
+      familyTalk(storybranch,0, res);
     });
   });
 });
@@ -105,24 +101,22 @@ const storyFamily = (storybranch)=>{
 
 };
 
-const familyTalk = (storybranch, i)=>{
-  return new Promise((resolve, reject) => {
+const familyTalk = (storybranch, i, res)=>{
     db.getStoryComment(connection,  storybranch[i].story_Id)
-    .then(result =>{
+    .then(result => {
       storybranch[i].comment = result; //this may not work but let's see
       i++;
       console.log(i);
-      if(i < storybranch.length){
-        familyTalk(storybranch, i);
+      if (i < storybranch.length) {
+        familyTalk(storybranch, i, res);
       }
-      else{
+      else {
         console.log('99999999');
         console.log(storybranch);
-        resolve(storybranch);
+        res.send(storybranch);
       }
     });
-  })};
-
+};
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site
