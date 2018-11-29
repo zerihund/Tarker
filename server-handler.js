@@ -76,18 +76,10 @@ app.get('/grabstory', (req, res)=>{
   db.getInitStory(connection)
   .then(results =>
   {
-    const storybranch = [results];
     //get parent story and append it to begin of story branch array
-    do{
-      const results = db.getParentStory(connection,storybranch[0].story_Id);
-      storybranch.unshift(results);
-      console.log(storybranch);
-    }while(storybranch[0].parent_story !== 0);
-    console.log('12345');
-    console.log(storybranch);
-
+    const storybranch = storyFamily([results]);
     //get comments for each story
-    console.log(':v :v :v');
+    console.log(':v :v :v ' + storybranch);
     for(let i =0;i<storybranch.length;i++){
       db.getStoryComment(connection,  storybranch[i].story_Id)
       .then(result =>{
@@ -99,7 +91,19 @@ app.get('/grabstory', (req, res)=>{
   //res.send(storybranch);
 });
 
-
+const storyFamily = (storybranch)=>{
+    db.getParentStory(connection,storybranch[0].story_Id)
+    .then(results =>{
+      storybranch.unshift(results);
+      console.log(storybranch);
+      if (storybranch[0].parent_story !== 0){
+        storyFamily(storybranch);
+      }
+      else{
+        return storybranch;
+      }
+    })
+};
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site
