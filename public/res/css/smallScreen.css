@@ -49,7 +49,9 @@
     width: 90%;
   }
 
-
+  .input-fieldset input{
+    height: 1.5rem;
+  }
 
   .input-fieldset{
     padding: 0.2rem 1rem;

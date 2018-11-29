@@ -1,10 +1,13 @@
 /*Default*/
-html{/* font-size: 18px; */}
+html{
+
+}
+
 *{
     box-sizing: border-box;
 }
 body{
-    font-family: Arial;
+    font-family: 'Raleway', sans-serif;
 }
 .topnav{
     display: flex;
@@ -77,8 +80,6 @@ body{
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(255, 255, 255); /* Fallback color */
-    background-color: rgba(69,71,85,0.9); /* White w/ opacity */
     padding-top: 60px;
 }
 .modal1{
@@ -89,16 +90,23 @@ body{
     display: none; /* Hidden by default */
     z-index: 2; /* Sit on top */
 }
-span{
-    color: #aaaaaa;
+.form-error{
+    margin:0;
+    padding:0;
+    line-height: 0.5rem;
+    font-size: 0.5rem;
+    text-align: right;
+
+}
+.close{
     float: right;
     font-size: 28px;
     font-weight: bold;
     position: absolute;
     top: 10px;
     right: 3vw;
+    cursor: pointer;
 }
-
 .login-container{
     /* height: 45vh; */
 
@@ -113,9 +121,8 @@ span{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:#282f3f;
     font-family: sans-serif;
-    margin: 1rem auto;
+    margin:0rem auto 1rem auto;
     width: 60%;
     max-width:500px;
 }
@@ -126,6 +133,7 @@ equal to half the height of the button. specified in form-submit-btn*/
     font-family: 'Dancing Script',cursive;
     font-size: 200%;
     font-weight: 600;
+    margin: 0.7rem;
 }
 form{
     width: 100%;
@@ -146,8 +154,9 @@ fieldset{
 .form-center{
     text-align: center;
 }
-.new-to-text p{
-    padding:0.5rem;
+.new-to-text{
+    margin-bottom: 0rem;
+    font-size: 0.7rem;
 }
 .form-submit-btn{
     border-radius: 4rem;
