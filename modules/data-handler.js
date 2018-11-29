@@ -105,7 +105,7 @@ const getParentStory = (connection, id) =>{
 };
 
 const getStoryComment = (connection, id)=>{
-  console.log('grab comments of' + id);
+  console.log('grab comments of ' + id);
   return new Promise((resolve, reject)=>{
     connection.execute(
         `SELECT user.name, comments.comment, comments.comment_time 
