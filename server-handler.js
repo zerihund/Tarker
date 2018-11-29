@@ -77,18 +77,18 @@ app.get('/grabstory', (req, res)=>{
   .then(results =>
   {
     //get parent story and append it to begin of story branch array
-    const storybranch = storyFamily([results]);
-    //get comments for each story
-    console.log(':v :v :v ' + storybranch);
-    for(let i =0;i<storybranch.length;i++){
-      db.getStoryComment(connection,  storybranch[i].story_Id)
-      .then(result =>{
-        storybranch[i].story_Id[comment] = result; //this may not work but let's see
-      })
-    }
-    console.log(storybranch);
+    storyFamily([results]).then(storybranch=>{
+      //get comments for each story
+      console.log(':v :v :v ' + storybranch);
+      for(let i =0; i < storybranch.length;i++){
+        db.getStoryComment(connection,  storybranch[i].story_Id)
+        .then(result =>{
+          storybranch[i].story_Id[comment] = result; //this may not work but let's see
+        })
+      }
+      console.log(storybranch);
+    });
   });
-  //res.send(storybranch);
 });
 
 const storyFamily = (storybranch)=>{
