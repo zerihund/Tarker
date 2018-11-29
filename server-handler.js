@@ -77,9 +77,10 @@ app.get('/grabstory', (req, res)=>{
   db.getInitStory(connection)
   .then(results =>
   {
-    const storybranch = results;
+    const storybranch = [results];
     console.log('--------');
     console.log(storybranch);
+    console.log(storybranch[0]);
 
     //get parent story and append it to begin of story branch array
     /*do{
@@ -89,12 +90,12 @@ app.get('/grabstory', (req, res)=>{
           storybranch.unshift(result))
     }while(storybranch[0].parent !== 0 || i==1);*/
     console.log('12345');
-    console.log(storybranch[0]);
+    console.log(storybranch.story_Id);
     //get comments for each story
     for(let i =0;i<storybranch.length;i++){
-      db.getStoryComment(connection,  storybranch[i].story_id)
+      db.getStoryComment(connection,  storybranch[i].story_Id)
       .then(result =>{
-        storybranch[i].story_id[comment] = result; //this may not work but let's see
+        storybranch[i].story_Id[comment] = result; //this may not work but let's see
       })
     }
     console.log(storybranch);
