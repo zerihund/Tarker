@@ -82,13 +82,9 @@ const getInitStory = (connection)=>{
        FROM (SELECT a.story_Id FROM story a, story b WHERE a.story_Id=b.parent_story GROUP BY a.story_Id) Isparent,story c
        WHERE c.story_Id != Isparent.story_Id`,
       (err, results)=>{
-        console.log(results.length);
-        console.log('12321312312313123123');
-        const x = Math.floor(Math.random() * results.length);
-        console.log(x);
-        console.log(results[x]);
 
-        console.log('1<<<<<<<<<<<<<<<<<<<');
+        const x = Math.floor(Math.random() * results.length);
+
         console.log(results[0].story_Id);
         resolve(results[x]);
       }
