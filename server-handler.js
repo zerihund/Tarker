@@ -72,20 +72,17 @@ app.post('/emailcheck', (req, res)=>{
 //concerning stories
 //get story to display
 app.get('/grabstory', (req, res)=>{
-
   //get init story
   db.getInitStory(connection)
   .then(results =>
   {
     const storybranch = [results];
-    console.log('--------');
-    console.log(storybranch);
-    console.log(storybranch[0]);
     //get parent story and append it to begin of story branch array
     do{
       const results = db.getParentStory(connection,storybranch[0].story_Id);
       storybranch.unshift(results);
-    }while(storybranch[0].parent !== 0);
+      console.log(storybranch);
+    }while(storybranch[0].parent_story !== 0);
     console.log('12345');
     console.log(storybranch);
 
