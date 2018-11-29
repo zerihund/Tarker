@@ -1,93 +1,125 @@
-/*screen sizes less than 650px*/
-@media only screen and (max-width: 650px){
-html{
-font-size: 16px;
-}
-.topnav{
-height: 2.5rem;
-padding:0 0.5rem;
-}
-
-.topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
-height: 2rem;
-}
-.logo{
-width:2rem;
-margin-right:0.3rem;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- font for the "logo" for now. remove when we get the real logo -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <!-- Raleway Font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
 
 
-.search-input{
-width:40vw;
-font-size: 1rem;
-}
-.search-btn{
-width:10vw;
-}
-.new-to-text p{
-padding:1rem;
-}
-
-.signin-button {
-padding: 0.5rem 0.5rem;
-font-size:1rem;
-border-radius: 0.5rem;
-}
-.sign-up-form,.login-form{
-width: 100%;
-}
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-.sign-up-container{
+    <link rel="stylesheet" href="res/css/reset.css">
 
-}
-login-container{
-height: 60vh;
-}
-.sign-up-container,.login-container{
-margin-top: 7vh;
-width: 90%;
-}
+    <link rel="stylesheet" href="res/css/mediumScreen.css">
+    <link rel="stylesheet" href="res/css/smallScreen.css">
+    <link rel="stylesheet" href="res/css/largeScreen.css">
+    <title>The Archive</title>
+</head>
+<body>
 
-.input-fieldset input{
-height: 1.5rem;
-}
+<!-- <div style="width: 30px; display: block">Test</div> -->
+<div class="topnav">
+    <div class="topnav-left">
+        <div class="logo"></div>
+        <form class="topnav-searchbar-form" action="" method="get">
+            <input class="search-input" type="text" placeholder="Search.." name="search">
+            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+        </form>
 
-.input-fieldset{
-padding: 0.2rem 1rem;
-}
-.input-fieldset input{
-width: 100%;
-}
-.form-submit-btn {
-font-size: 15px;
-width:60%;
-}
-.card{
-padding: 16px 10px;
-border-radius:10px;
-margin: 0 auto 10px auto;
-}
-#author{
-font-size:12px;
-}
-#time{
-font-weight:100;
-font-size:12px;
-}
-.story p,.title,.author-date{
-max-width: 500px;
-width: 100%;
-}
-.media-story p{
-text-align:justify;
-}
-.media-story, .next-media-story{
-flex-direction: column;
-}
-.media-story img,.media-story video,
-.next-media-story img,.next-media-story video{
-width:100%;
-}
+    </div>
+    <div class="topnav-right">
+        <button onclick="document.getElementById('popup').style.display='block'"
+                class="signin-button">SIGN IN</button>
 
-}
+    </div>
+</div>
+
+<section id="popup" class="modal modal1">
+    <div  class="login-container animate">
+        <span class="close" id="login-close">&times;</span>
+        <h1 class="prelim-logo">StoryTeller</h1>
+
+        <form  class="login-form" action="/" method="post">
+
+            <fieldset class="input-fieldset">
+                User name <br>
+                <input type="text" name="username"  required>
+                <p class="form-error">smth somewhere over the rainbow</p>
+
+            </fieldset>
+
+            <fieldset class="input-fieldset">
+                Password <br>
+                <input type="password" name="password"  required>
+                <p class="form-error">smth somewhere over the rainbow</p>
+                <p class="new-to-text">New to StoryTellers? <a onclick="document.getElementById('popup2').style.display='block'"
+                                                               class="pink-text" href="#">Sign Up</a></p>
+            </fieldset>
+
+            <fieldset class="form-center ">
+
+                <input type="submit" class="form-submit-btn btn-sign-in gray-btn" name="sign-up" value="Sign In">
+            </fieldset>
+
+        </form>
+    </div>
+</section>
+
+<section id="popup2" class="modal modal2 ">
+    <div class="sign-up-container animate">
+        <h1 class="prelim-logo">StoryTeller</h1>
+
+        <form  class="sign-up-form" action="/" method="post">
+
+            <fieldset class="input-fieldset">
+                User name <br>
+                <input type="text" name="username"  required>
+                <p class="form-error">smth somewhere over the rainbow</p>
+            </fieldset>
+
+            <fieldset class="input-fieldset">
+                Email <br>
+                <input type="email" name="email" required>
+                <p class="form-error">smth somewhere over the rainbow</p>
+            </fieldset>
+
+            <fieldset class="input-fieldset">
+                Password <br>
+                <input type="password" name="password"  required>
+                <p class="form-error">smth somewhere over the rainbow</p>
+            </fieldset>
+
+            <fieldset class="input-fieldset">
+                Retype Password <br>
+                <input type="password" name="retype-password"  required>
+                <p class="form-error">smth somewhere over the rainbow</p>
+                <br><p class="new-to-text">Already have an account? <a  class="pink-text" href="#">Sign in</a></p><br>
+            </fieldset>
+
+
+            <fieldset class="form-center btn-bottom-edge">
+                <input type="submit" class="form-submit-btn btn-sign-up yellow-btn" name="sign-up" value="Sign Up">
+
+            </fieldset>
+        </form>
+    </div>
+
+</section>
+<!--<script>
+  document.querySelector('div').addEventListener('click',()=>{
+    {
+      fetch('http://10.114.32.123/node/ask',{
+        method: 'POST'
+      }).then(res => {console.log(res);})
+    }
+  })
+</script>-->
+<script src="res/js/main.js"></script>
+<script src="res/js/commune.js"></script>
+</body>
+</html>
