@@ -97,9 +97,9 @@ const getInitStory = (connection)=>{
 };
 
 const getParentStory = (connection, id) =>{
-  console.log('get parent story of story '+id);
+  console.log('get parent story of story '+ id);
   return new Promise((resolve, reject)=>{
-    connection.execute(
+    connection.query(
       `SELECT c.story_Id, c.parent_story, c.content
       FROM story c, story d
       WHERE c.story_id = d.parent_story AND d.story = ?`, id,
@@ -114,7 +114,7 @@ const getParentStory = (connection, id) =>{
 const getStoryComment = (connection, id)=>{
   console.log('grab comments of ' + id);
   return new Promise((resolve, reject)=>{
-    connection.execute(
+    connection.query(
         `SELECT user.name, comments.comment, comments.comment_time 
          FROM comments, user 
          WHERE comments.story_id = ? AND user.user_Id = comments.user_Id`, id,
