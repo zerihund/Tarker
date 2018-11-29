@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const math = require('modules/math');
+const math = require('math');
 
 //set up connection to the database
 const connect = ()=>{
