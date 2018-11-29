@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="" />
+    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
+            <state relative-caret-position="518">
+              <caret line="119" column="32" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -195,21 +197,7 @@
       <workItem from="1543348636520" duration="3564000" />
       <workItem from="1543359608043" duration="6966000" />
       <workItem from="1543440141809" duration="9891000" />
-      <workItem from="1543491391597" duration="12090000" />
-    </task>
-    <task id="LOCAL-00019" summary="still debugging data stuff">
-      <created>1543410443367</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1543410443367</updated>
-    </task>
-    <task id="LOCAL-00020" summary="still debugging data stuff">
-      <created>1543410644858</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1543410644858</updated>
+      <workItem from="1543491391597" duration="12363000" />
     </task>
     <task id="LOCAL-00021" summary="still debugging data stuff">
       <created>1543410826835</created>
@@ -540,11 +528,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543504308655</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="grab story 1.0.0.3 i hope it still works correctly">
+      <created>1543504590190</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1543504590190</updated>
+    </task>
+    <task id="LOCAL-00069" summary="grab story 1.0.0.4 i hope it works now">
+      <created>1543504713277</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1543504713277</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68175000" />
+    <option name="totallyTimeSpent" value="68448000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -596,8 +598,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="continuous bug fixing 0.4" />
-    <MESSAGE value="continuous bug fixing 0.5" />
     <MESSAGE value="continuous bug fixing 0.7" />
     <MESSAGE value="continuous bug fixing 0.8" />
     <MESSAGE value="continuous bug fixing 0.9" />
@@ -621,7 +621,9 @@
     <MESSAGE value="grab story 1.0 i hope it works correctly" />
     <MESSAGE value="grab story 1.0.0.1 i hope it still works correctly" />
     <MESSAGE value="grab story 1.0.0.2 i hope it still works correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="grab story 1.0.0.2 i hope it still works correctly" />
+    <MESSAGE value="grab story 1.0.0.3 i hope it still works correctly" />
+    <MESSAGE value="grab story 1.0.0.4 i hope it works now" />
+    <option name="LAST_COMMIT_MESSAGE" value="grab story 1.0.0.4 i hope it works now" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -711,8 +713,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
+        <state relative-caret-position="518">
+          <caret line="119" column="32" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
         </state>
       </provider>
     </entry>

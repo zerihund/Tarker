@@ -80,7 +80,8 @@ app.get('/grabstory', (req, res)=>{
     storyFamily([results])
     .then(storybranch=>{
       //get comments for each story
-      familyTalk(storybranch,0).then(familyTalk =>{
+      familyTalk(storybranch,0)
+      .then(familyTalk =>{
         console.log(familyTalk);
         res.send(familyTalk);
       })
@@ -93,7 +94,6 @@ const storyFamily = (storybranch)=>{
     db.getParentStory(connection,storybranch[0].story_Id)
     .then(results =>{
       storybranch.unshift(results[0]);
-      console.log(storybranch);
       if (storybranch[0].parent_story === 0){
         resolve(storybranch);
       }
@@ -106,7 +106,6 @@ const storyFamily = (storybranch)=>{
 };
 
 const familyTalk = (storybranch, i)=>{
-  console.log(storybranch);
   return new Promise((resolve, reject) => {
     db.getStoryComment(connection,  storybranch[i].story_Id)
     .then(result =>{
@@ -118,6 +117,7 @@ const familyTalk = (storybranch, i)=>{
       }
       else{
         console.log('99999999');
+        console.log(storybranch);
         resolve(storybranch);
       }
     });
