@@ -72,7 +72,7 @@ app.post('/emailcheck', (req, res)=>{
 //concerning stories
 //get story to display
 app.get('/grabstory', (req, res)=>{
-  const storybranch = [].json();
+  const storybranch = [];
 
   //get init story
   db.getInitStory(connection)
