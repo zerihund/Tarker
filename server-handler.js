@@ -107,10 +107,10 @@ const storyFamily = (storybranch)=>{
 const familyTalk = (storybranch, i)=>{
   console.log(storybranch);
   return new Promise((resolve, reject) => {
-    i++;
     db.getStoryComment(connection,  storybranch[i].story_Id)
     .then(result =>{
       storybranch[i].comment = result; //this may not work but let's see
+      i++;
       if(i < storybranch.length){
         familyTalk(storybranch, i);
       }
