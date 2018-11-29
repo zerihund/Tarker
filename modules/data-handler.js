@@ -83,8 +83,7 @@ const getInitStory = (connection)=>{
        WHERE c.story_Id != Isparent.story_Id`,
       (err, results)=>{
         console.log(results);
-        console.log(results[0]);
-        resolve(results[0]);
+        resolve(results);
       }
     )
   })
