@@ -80,15 +80,13 @@ app.get('/grabstory', (req, res)=>{
     storyFamily([results]).then(storybranch=>{
       //get comments for each story
       console.log(':v :v :v ' + storybranch);
-
       for(let i =0; i < storybranch.length;i++){
         db.getStoryComment(connection,  storybranch[i].story_Id)
         .then(result =>{
           storybranch[i].comment = result; //this may not work but let's see
-          res.send(storybranch);
-        })
+        });
+        res.send(storybranch);
       }
-
     });
   });
 });
