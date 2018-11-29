@@ -85,9 +85,10 @@ app.get('/grabstory', (req, res)=>{
         db.getStoryComment(connection,  storybranch[i].story_Id)
         .then(result =>{
           storybranch[i].comment = result; //this may not work but let's see
+          res.send(storybranch);
         })
       }
-      console.log(storybranch);
+
     });
   });
 });
