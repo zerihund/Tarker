@@ -92,17 +92,20 @@ app.get('/grabstory', (req, res)=>{
 });
 
 const storyFamily = (storybranch)=>{
+  return new Promise((resolve, reject)=>{
     db.getParentStory(connection,storybranch[0].story_Id)
     .then(results =>{
       storybranch.unshift(results[0]);
       console.log(storybranch);
       if (storybranch[0].parent_story === 0){
-        return storybranch;
+        resolve(storybranch);
       }
       else{
         storyFamily(storybranch);
       }
     })
+  })
+
 };
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
