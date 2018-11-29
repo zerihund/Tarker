@@ -94,11 +94,16 @@ span{
     float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 3vw;
 }
 
 .login-container{
-    height: 45vh;
+    /* height: 45vh; */
+
     padding: 1rem;
+    position: relative;
 }
 .sign-up-container{
     padding: 1rem;
@@ -112,6 +117,7 @@ span{
     font-family: sans-serif;
     margin: 1rem auto;
     width: 60%;
+    max-width:500px;
 }
 /* to have the button sit perfectly divided by the bottom border
 of the section, sign-up-container has to have its bottom padding
@@ -128,12 +134,14 @@ form{
 
 /* -group the input and the label so we can space them out well
     -input-fieldset is different from the btn-bottom-edge because of the postioning*/
-.input-fieldset{
-    padding: 0.2rem 1rem;
+
+
+fieldset{
+    border:none;
 }
 .input-fieldset input{
     width: 100%;
-    height: 1.5rem;
+    height: 1.15rem;
 }
 .form-center{
     text-align: center;
@@ -272,6 +280,10 @@ form{
     .logo{
         width:1.6rem;
         margin-right:1rem;
+    }
+    .input-fieldset input{
+        width: 100%;
+        height: 1.5rem;
     }
 
 
