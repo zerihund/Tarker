@@ -76,9 +76,9 @@ app.get('/grabstory', (req, res)=>{
 
   //get init story
   db.getInitStory(connection)
-  .then(results => results.json())
-  .then(json => {
-    storybranch.unshift(json)
+  .then(results =>
+  {
+    storybranch.unshift(results);
     console.log('--------');
     console.log(storybranch);
 
