@@ -105,6 +105,7 @@ const storyFamily = (storybranch)=>{
 };
 
 const familyTalk = (storybranch, i)=>{
+  console.log(storybranch);
   return new Promise((resolve, reject) => {
     i++;
     db.getStoryComment(connection,  storybranch[i].story_Id)
