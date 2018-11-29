@@ -30,11 +30,9 @@ const checkUser = (connection, username, res)=>{
         const exist = results.length;
         console.log(exist);
         if(exist == 1){
-          console.log('xxxx');
           res.send('Username already exists.');
         }
         else{
-          console.log('yyyy');
           res.send('Username ok :P.');
         }
       },
@@ -48,7 +46,6 @@ const checkEmail = (connection, email, res)=>{
       (err, results, fields) =>{
         const exist = results.length;
         if(exist == 1){
-          console.log('xxxx');
           res.send('Email already exists.');
         }
         else{
@@ -65,11 +62,9 @@ const checkCredentials = (connection, username, password)=>{
         (err, results, fields) => {
           const exist = results.length;
           if (exist == 1) {
-            console.log('xxxx');
             resolve(true)
           } else {
-            console.log('yyyy');
-            return(false)
+            resolve(false)
           }
         })
   })
@@ -78,6 +73,45 @@ const checkCredentials = (connection, username, password)=>{
 
 //story-------------------------------------------------
 //send story
+const getInitStory = (connection)=>{
+  console.log('xxxx');
+  return new Promise((resolve, reject)=>{
+    connection.executeSql(
+      ``,
+      (err, results)=>{
+        console.log(results);
+        resolve(results);
+      }
+    )
+  })
+};
+
+const getParentStory = (connection, id) =>{
+  console.log('get parent story of story '+id);
+  return new Promise((resolve, reject)=>{
+    connection.executeSql(
+      ``, id,
+      (err, results)=>{
+        console.log(results);
+        resolve(results);
+      }
+    )
+  })
+};
+
+const getStoryComment = (connection, id)=>{
+  console.log('grab comments of' + id);
+  return new Promise((resolve, reject)=>{
+    connection.executeSql(
+        ``, id,
+        (err, results)=>{
+          console.log(results);
+          resolve(results);
+        }
+    )
+  })
+};
+
 //get story, get story like, get story dislike, get story author, get story date
 //send like-dislike
 
@@ -90,5 +124,8 @@ module.exports = {
   insertUser: insertUser,
   checkUser: checkUser,
   checkEmail: checkEmail,
-  checkCredentials: checkCredentials
+  checkCredentials: checkCredentials,
+  getInitStory:getInitStory,
+  getParentStory:getParentStory,
+  getStoryComment:getStoryComment
 };

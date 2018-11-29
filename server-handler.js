@@ -28,7 +28,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new LocalStrategy((username, password, done)=>{
-  console.log('user named '+ username +'tries to logs in');
   db.checkCredentials(connection, username,  password).then(valid =>{
     console.log(valid);
     if(valid == true){
@@ -52,7 +51,6 @@ app.get('/xyz', (req, res)=>{
 //----------------------------------------------------------------------------------------
 //add user to user database
 app.post('/signup/',(req, res)=>{
-  console.log('sign up');
   const data = [
     req.body.username,
     req.body.email,
@@ -63,16 +61,44 @@ app.post('/signup/',(req, res)=>{
 
 //check user exists
 app.post('/usercheck', (req, res)=>{
-  console.log('user check');
   db.checkUser(connection, req.body.username, res);
 });
 
 //check email exists
 app.post('/emailcheck', (req, res)=>{
-  console.log('email check');
   db.checkEmail(connection, req.body.email, res);
 });
 
+//-----------------------------------------------------------------------------------------
+//concerning stories
+//get story to display
+app.get('/grabstory', (req, res)=>{
+  const storybrach = [];
+  console.log('story is being grabbed');
+
+  //get init story
+  db.getInitStory(connection)
+  .then(results =>
+    storybrach.unshift(results));
+
+  //get parent story and append it to begin of story branch array
+  do{
+    db.getParentStory(connection,storybrach[0].id)
+    .then(result =>
+      storybrach.unshift(result))
+  }while(storybrach[0].parent != 0);
+
+  console.log(storybrach);
+  //get comments for each story
+  for(let i =0;i<storybrach.length;i++){
+     db.getStoryComment(connection,  storybrach[i].id)
+       .then(result =>{
+         storybrach[i].id[comment] = result; //this may not work but let's see
+     })
+  }
+  console.log(storybrach);
+  res.send(storybrach);
+});
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site
