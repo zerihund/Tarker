@@ -75,9 +75,9 @@ app.get('/grabstory', (req, res)=>{
 
   //get init story
   db.getInitStory(connection)
-  .then(results =>
+  .then(results => {results.json()}).then(json =>
   {
-    const storybranch = results;
+    const storybranch = json;
     console.log('--------');
     console.log(storybranch);
     let i =0;
@@ -99,8 +99,6 @@ app.get('/grabstory', (req, res)=>{
     }
     console.log(storybranch);
   });
-
-
   //res.send(storybranch);
 });
 
