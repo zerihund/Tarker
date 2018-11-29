@@ -111,13 +111,13 @@ const getStoryComment = (connection, id)=>{
   console.log('grab comments of ' + id);
   return new Promise((resolve, reject)=>{
     connection.query(
-        `SELECT user.name, comments.comment, comments.comment_time 
-         FROM comments, user 
-         WHERE comments.story_id = ? AND user.user_Id = comments.user_Id`, id,
-        (err, results)=>{
-          console.log(results);
-          resolve(results);
-        }
+      `SELECT user.name, comments.comment, comments.comment_time 
+       FROM comments, user 
+       WHERE comments.story_id = ? AND user.user_Id = comments.user_Id`, id,
+      (err, results)=>{
+        console.log(results);
+        resolve(results);
+      }
     )
   })
 };
