@@ -73,16 +73,18 @@ app.post('/emailcheck', (req, res)=>{
 //get story to display
 app.get('/grabstory', (req, res)=>{
   const storybranch = [];
-  console.log('story is being grabbed');
 
   //get init story
   db.getInitStory(connection)
   .then(results =>
     storybranch.unshift(results));
 
+  console.log('--------');
+  console.log(storybranch);
+
   //get parent story and append it to begin of story branch array
   do{
-    db.getParentStory(connection,storybranch[0].id)
+    db.getParentStory(connection,storybranch[0].story_id)
     .then(result =>
       storybranch.unshift(result))
   }while(storybranch[0].parent !== 0);
@@ -92,7 +94,7 @@ app.get('/grabstory', (req, res)=>{
   for(let i =0;i<storybranch.length;i++){
      db.getStoryComment(connection,  storybranch[i].id)
        .then(result =>{
-         storybranch[i].id[comment] = result; //this may not work but let's see
+         storybranch[i].story_id[comment] = result; //this may not work but let's see
      })
   }
   console.log(storybranch);
