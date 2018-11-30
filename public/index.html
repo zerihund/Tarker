@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- font for the "logo" for now. remove when we get the real logo -->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <!-- Raleway Font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
+
 
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,24 +41,27 @@
 
 <section id="popup" class="modal modal1">
     <div  class="login-container animate">
-        <span class="close">&times;</span>
+        <span class="close" id="login-close">&times;</span>
         <h1 class="prelim-logo">StoryTeller</h1>
 
         <form  class="login-form" action="/" method="post">
 
             <fieldset class="input-fieldset">
                 User name <br>
-                <input type="text" name="username"  required><br>
+                <input type="text" name="username"  required>
+                <span class="form-error"></span>
+
             </fieldset>
 
             <fieldset class="input-fieldset">
                 Password <br>
-                <input type="password" name="password"  required><br>
-                <p>New to StoryTellers? <a onclick="document.getElementById('popup2').style.display='block'"
-                                           class="pink-text" href="#">SIGN UP</a></p>
+                <input type="password" name="password"  required>
+                <span class="form-error"></span>
+                <p class="new-to-text">New to StoryTellers? <a onclick="document.getElementById('popup2').style.display='block'"
+                                                               class="pink-text" href="#">Sign Up</a></p>
             </fieldset>
 
-            <fieldset class="form-center new-to-text">
+            <fieldset class="form-center ">
 
                 <input type="submit" class="form-submit-btn btn-sign-in gray-btn" name="sign-up" value="Sign In">
             </fieldset>
@@ -72,23 +78,27 @@
 
             <fieldset class="input-fieldset">
                 User name <br>
-                <input type="text" name="username"  required><br>
+                <input type="text" name="username"  required>
+                <span class="form-error"></span>
             </fieldset>
 
             <fieldset class="input-fieldset">
                 Email <br>
-                <input type="email" name="email" required><br>
+                <input type="email" name="email" required>
+                <span class="form-error"></span>
             </fieldset>
 
             <fieldset class="input-fieldset">
                 Password <br>
-                <input type="password" name="password"  required><br>
+                <input type="password" name="password"  required>
+                <span class="form-error"></span>
             </fieldset>
 
             <fieldset class="input-fieldset">
                 Retype Password <br>
-                <input type="password" name="retype-password"  required><br>
-                <br><p class="form-center">Already have an account? <a  class="pink-text" href="#">Sign in</a></p><br>
+                <input type="password" name="retype-password"  required>
+                <span class="form-error"></span>
+                <br><p class="new-to-text">Already have an account? <a  class="pink-text" href="#">Sign in</a></p><br>
             </fieldset>
 
 

@@ -5,7 +5,7 @@
       <paths name="virtual server">
         <serverdata>
           <mappings>
-            <mapping deploy="/Tarker" local="$PROJECT_DIR$" web="/Tarker" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

@@ -83,13 +83,11 @@ fetch('res/js/template.json').then((response)=>{
 
 });
 
-// Get the modal
-// When the user clicks anywhere outside of the modal, close it
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == document.getElementById('popup')) {
-    document.getElementById('popup').style.display = "none";
-  }
+
+//close button turns modal display to none
+const loginClose= document.querySelector('#login-close');
+loginClose.onclick = function(event) {
+  document.getElementById('popup').style.display = "none";
 };
 // Get the modal
 // When the user clicks anywhere outside of the modal, close it
