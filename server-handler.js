@@ -124,7 +124,8 @@ const familyTalk = (storybranch, i, res)=>{
 const authorTalk = (storybranch, i, res)=>{
   db.getAuthor(connection,  storybranch[i].story_Id)
   .then(result => {
-    storybranch[i].author = result; //this may not work but let's see
+    storybranch[i].author = result[0];
+    storybranch[i].time = result[1];//this may not work but let's see
     i++;
     console.log(i);
     if (i < storybranch.length) {

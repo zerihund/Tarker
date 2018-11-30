@@ -129,7 +129,7 @@ const getAuthor = (connection, id)=>{
   console.log('grab author of '+id);
   return new Promise((resolve, reject)=>{
     connection.query(
-      `SELECT user.name, writes.story_Id,writes.story_time 
+      `SELECT user.name, writes.story_time 
       FROM writes, user 
       WHERE writes.story_Id=${id} AND writes.user_Id = user.user_Id`,
       (err, results)=>{
