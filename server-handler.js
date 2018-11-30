@@ -124,8 +124,8 @@ const familyTalk = (storybranch, i, res)=>{
 const authorTalk = (storybranch, i, res)=>{
   db.getAuthor(connection,  storybranch[i].story_Id)
   .then(result => {
-    storybranch[i].author = result[0][0];
-    storybranch[i].time = result[0][1];//this may not work but let's see
+    storybranch[i].author = result[0].name;
+    storybranch[i].time = result[0].story_time;//this may not work but let's see
     i++;
     console.log(i);
     if (i < storybranch.length) {
@@ -144,8 +144,8 @@ const authorTalk = (storybranch, i, res)=>{
 const storyOpinion = (storybranch, i, res)=>{
   db.getOpinion(connection,  storybranch[i].story_Id)
   .then(result => {
-    storybranch[i].like = result[0][1];
-    storybranch[i].dislike = result[0][0];//this may not work but let's see
+    storybranch[i].like = result[0].plus;
+    storybranch[i].dislike = result[0].minus;//this may not work but let's see
     i++;
     console.log(i);
     if (i < storybranch.length) {
