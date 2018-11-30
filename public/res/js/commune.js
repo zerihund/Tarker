@@ -96,7 +96,6 @@ const grabStory = ()=>{
     for(let i = 0; i<json.length;i++){
       console.log(json[i]);
       //const storynode = document.createElement('div');
-
       //const author = document.createElement('p');
       //const time = document.createElement('p');
       //const content = document.createElement('div');

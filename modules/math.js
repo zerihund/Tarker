@@ -3,6 +3,9 @@ const random = (max)=>{
   Math.floor(Math.random() * max);
 };
 
+//zerihund do your wilson thing here :3
+
+
 module.exports = {
-  random:random
+  random:random,
 };
