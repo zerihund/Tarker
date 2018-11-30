@@ -115,7 +115,7 @@ const familyTalk = (storybranch, i, res)=>{
       else {
         console.log(storybranch);
         //res.send(storybranch);
-        authorTalk(storybranch, res);
+        authorTalk(storybranch, 0, res);
       }
     });
 };
