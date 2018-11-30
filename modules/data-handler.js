@@ -92,6 +92,7 @@ const getInitStory = (connection)=>{
   })
 };
 
+//get parent of story
 const getParentStory = (connection, id) =>{
   console.log('get parent story of story '+ id);
   return new Promise((resolve, reject)=>{
@@ -107,6 +108,7 @@ const getParentStory = (connection, id) =>{
   })
 };
 
+//get comments
 const getStoryComment = (connection, id)=>{
   console.log('grab comments of ' + id);
   return new Promise((resolve, reject)=>{
@@ -122,9 +124,36 @@ const getStoryComment = (connection, id)=>{
   })
 };
 
-//get story, get story like, get story dislike, get story author, get story date
+//get story author
+const getAuthor = (connection, id)=>{
+  console.log('grab author of '+id);
+  return new Promise((resolve, reject)=>{
+    connection.query(
+      `SELECT user.name
+       FROM story, user 
+       WHERE story.story_id = ? AND user.user_Id = story.user_Id`, id,
+      (err, results)=>{
+        console.log(results);
+        resolve(results);
+      }
+    )
+  })
+};
 //send like-dislike
-
+const getOpinion = (connection, id)=>{
+  console.log('grab opinion of '+id);
+  return new Promise((resolve, reject)=>{
+    connection.query(
+        `SELECT SUM(likes.like), SUM(likes.dislikes)
+       FROM story, likes 
+       WHERE story.story_id = ? AND likes.story_Id = story.story_Id`, id,
+        (err, results)=>{
+          console.log(results);
+          resolve(results);
+        }
+    )
+  })
+};
 //comments
 //get comments, get comment writer, get comments date
 //send comments, send user
@@ -137,5 +166,6 @@ module.exports = {
   checkCredentials: checkCredentials,
   getInitStory:getInitStory,
   getParentStory:getParentStory,
-  getStoryComment:getStoryComment
+  getStoryComment:getStoryComment,
+  getAuthor:getAuthor
 };

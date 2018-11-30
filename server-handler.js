@@ -70,7 +70,7 @@ app.post('/emailcheck', (req, res)=>{
 
 //-----------------------------------------------------------------------------------------
 //concerning stories
-//get story to display
+//get random story to display
 app.get('/grabstory', (req, res)=>{
   //get init story
   db.getInitStory(connection)
@@ -85,6 +85,7 @@ app.get('/grabstory', (req, res)=>{
   });
 });
 
+//get story from top to end
 const storyFamily = (storybranch)=>{
   return new Promise((resolve, reject)=>{
     db.getParentStory(connection,storybranch[0].story_Id)
@@ -101,6 +102,7 @@ const storyFamily = (storybranch)=>{
 
 };
 
+//get comments
 const familyTalk = (storybranch, i, res)=>{
     db.getStoryComment(connection,  storybranch[i].story_Id)
     .then(result => {
@@ -111,11 +113,50 @@ const familyTalk = (storybranch, i, res)=>{
         familyTalk(storybranch, i, res);
       }
       else {
-        console.log('99999999');
         console.log(storybranch);
-        res.send(storybranch);
+        //res.send(storybranch);
+        authorTalk(storybranch, res);
       }
     });
+};
+
+//get author
+const authorTalk = (storybranch, i, res)=>{
+  db.getAuthor(connection,  storybranch[i].story_Id)
+  .then(result => {
+    storybranch[i].author = result; //this may not work but let's see
+    i++;
+    console.log(i);
+    if (i < storybranch.length) {
+      authorTalk(storybranch, i, res);
+    }
+    else {
+      console.log('<><><><><>');
+      console.log(storybranch);
+      storyOpinion(storybranch, 0, res)
+      //res.send(storybranch);
+    }
+  });
+};
+
+//get likes and dislikes
+const storyOpinion = (storybranch, i, res)=>{
+  db.getAuthor(connection,  storybranch[i].story_Id)
+  .then(result => {
+    storybranch[i].like = result[0];
+    storybranch[i].dislike = result[0];//this may not work but let's see
+    i++;
+    console.log(i);
+    if (i < storybranch.length) {
+      storyOpinion(storybranch, i, res);
+    }
+    else {
+      console.log('^^^^^^^-------');
+      console.log(storybranch);
+      //storyOpinion(storybranch, i, res)
+      res.send(storybranch);
+    }
+  });
 };
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
