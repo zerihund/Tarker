@@ -141,9 +141,9 @@ const authorTalk = (storybranch, i, res)=>{
 
 //get likes and dislikes
 const storyOpinion = (storybranch, i, res)=>{
-  db.getAuthor(connection,  storybranch[i].story_Id)
+  db.getOpinion(connection,  storybranch[i].story_Id)
   .then(result => {
-    storybranch[i].like = result[0];
+    storybranch[i].like = result[1];
     storybranch[i].dislike = result[0];//this may not work but let's see
     i++;
     console.log(i);

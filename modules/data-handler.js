@@ -129,9 +129,9 @@ const getAuthor = (connection, id)=>{
   console.log('grab author of '+id);
   return new Promise((resolve, reject)=>{
     connection.query(
-      `SELECT user.name
-       FROM story, user 
-       WHERE story.story_id = ? AND user.user_Id = story.user_Id`, id,
+      `SELECT user.name, writes.story_Id,writes.story_time 
+      FROM writes, user 
+      WHERE writes.story_Id=${id} AND writes.user_Id = user.user_Id`,
       (err, results)=>{
         console.log(results);
         resolve(results);
@@ -144,9 +144,9 @@ const getOpinion = (connection, id)=>{
   console.log('grab opinion of '+id);
   return new Promise((resolve, reject)=>{
     connection.query(
-        `SELECT SUM(likes.like), SUM(likes.dislikes)
-       FROM story, likes 
-       WHERE story.story_id = ? AND likes.story_Id = story.story_Id`, id,
+        `SELECT * 
+        FROM(SELECT sum(Views.like_story) as minus FROM Views WHERE Views.story_Id = ${id} AND Views.like_story = -1) minus,
+        (SELECT sum(Views.like_story) as plus FROM Views WHERE Views.story_Id = ${id} AND Views.like_story = 1) added`,
         (err, results)=>{
           console.log(results);
           resolve(results);
@@ -167,5 +167,6 @@ module.exports = {
   getInitStory:getInitStory,
   getParentStory:getParentStory,
   getStoryComment:getStoryComment,
-  getAuthor:getAuthor
+  getAuthor:getAuthor,
+  getOpinion:getOpinion
 };
