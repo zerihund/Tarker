@@ -83,16 +83,31 @@ fetch('res/js/template.json').then((response)=>{
 
 });
 
-
 //close button turns modal display to none
 const loginClose= document.querySelector('#login-close');
-loginClose.onclick = function(event) {
+loginClose.onclick = (event)=> {
   document.getElementById('popup').style.display = "none";
 };
 // Get the modal
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+/**window.onclick = function(event) {
   if (event.target == document.getElementById('popup2')) {
     document.getElementById('popup2').style.display = "none";
   }
+};
+ */
+
+//toggles the mobile dropdown menu on or off
+window.onclick = (event)=> {
+  if(event.target == document.getElementById('user-icon')) {
+    document.getElementById('login-dropdown').style.display = "block";
+  }
+  else if(event.target != document.getElementById('user-icon')){
+    document.getElementById('login-dropdown').style.display = "none";
+  }
+};
+
+const signupClose= document.querySelector('#popup2');
+signupClose.onclick = (event)=> {
+  document.getElementById('popup2').style.display = "none";
 };

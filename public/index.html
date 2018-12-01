@@ -33,8 +33,23 @@
 
     </div>
     <div class="topnav-right">
+        <button id="user-icon" class="user-icon">
+            <i class="fa fa-user fa-2x "></i>
+            <i class="fa fa-caret-down fa-2x " aria-hidden="true"></i>
+        </button>
+        <div id="login-dropdown" class="login-dropdown">
+            <ul class="login-dropdown-content">
+                <li href="#smth">some function</li>
+                <li href="#smth">some function</li>
+                <hr>
+                <li href="#smth" onclick="document.getElementById('popup2').style.display='block'">Sign Up/Log In</li>
+                <li href="#smth" onclick="document.getElementById('popup').style.display='block'">Log In</li>
+            </ul>
+        </div>
+        <button onclick="document.getElementById('popup2').style.display='block'"
+                class="signin-button pink-btn">SIGN UP</button>
         <button onclick="document.getElementById('popup').style.display='block'"
-                class="signin-button">SIGN IN</button>
+                class="signin-button grey-btn">LOGIN</button>
 
     </div>
 </div>
@@ -49,14 +64,14 @@
             <fieldset class="input-fieldset">
                 User name <br>
                 <input type="text" name="username"  required>
-                <span class="form-error"></span>
+                <span class="form-error"> span was applied here</span>
 
             </fieldset>
 
             <fieldset class="input-fieldset">
                 Password <br>
                 <input type="password" name="password"  required>
-                <span class="form-error"></span>
+                <span class="form-error">span was applied here</span>
                 <p class="new-to-text">New to StoryTellers? <a onclick="document.getElementById('popup2').style.display='block'"
                                                                class="pink-text" href="#">Sign Up</a></p>
             </fieldset>

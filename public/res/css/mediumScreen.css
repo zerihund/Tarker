@@ -34,10 +34,12 @@ body{
 .search-input{
     width:40vw;
     font-size: 2rem;
+
 }
 .search-btn{
     width:10vw;
     border:none;
+    cursor: pointer;
 }
 
 .signin-button {
@@ -48,9 +50,12 @@ body{
     display: inline-block;
     font-size:1.8rem;
     cursor: pointer;
+    margin-right:1rem;
     border-radius: 0.5rem;
 }
-
+.login-dropdown{
+    display: none;
+}
 .btn{
     height: 1rem;
     padding: 0 1rem;
@@ -96,6 +101,7 @@ body{
     line-height: 0.5rem;
     font-size: 0.5rem;
     text-align: right;
+    float: right;
 
 }
 .close{
@@ -215,7 +221,7 @@ fieldset{
 
 
 /* screen between  650px and 1007px*/
-@media only screen and (min-width: 651px)  {
+@media only screen and (min-width: 650px)  {
     .topnav{
         height: 1.5rem;
         padding:0 1rem;
@@ -243,6 +249,10 @@ fieldset{
         font-size:0.6rem;
         border-radius: 0.3rem;
     }
+    .user-icon{
+        display:none;
+    }
+
     .card,.next-card{
         padding: 20px 10px;
         width:90vw;
@@ -277,7 +287,7 @@ fieldset{
 
 
 }
-@media only screen and (min-width: 651px)and (max-width: 1007px)  {
+@media only screen and (min-width: 650px)and (max-width: 1007px)  {
     .topnav{
         height: 2rem;
         padding:0 1rem;
