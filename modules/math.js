@@ -5,15 +5,13 @@ const random = (max)=>{
 
 //zerihund do your wilson thing here :3
 
-const lowerBound = (upVotes, n = 0, confidence = 0.95) => {
+const lowerBound = (pos, n) => {
   if (n === 0) {
     return 0
   }
   else {
-    // the widely accepted wilson level
-    const z = stats.probit(1 - (1 - confidence) / 2)
 
-    // the fraction of up votes
+    const z = 1.96;
     const pbound = 1.0 * upvotes / n
 
     return (pbound + z * z / (2 * n) - z *
