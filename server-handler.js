@@ -12,6 +12,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 const upload = multer({dest: 'public/res'});
 
+//nodeJs builtin module, we might need to use this one
+const wilson = require('wilson-score')
+
 //---------------------------------------------------------------------------------------
 //database thing
 const db = require('./modules/data-handler');
