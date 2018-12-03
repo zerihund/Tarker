@@ -63,6 +63,7 @@
   .sign-up-container,.login-container{
     margin-top: 7vh;
     width: 90%;
+    max-width: 380px;
   }
 
   .input-fieldset input{
@@ -78,6 +79,7 @@
   .form-submit-btn {
     font-size: 15px;
     width:60%;
+    max-width: 150px;
   }
   .card{
     padding: 16px 10px;
