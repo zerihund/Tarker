@@ -185,6 +185,7 @@ app.use('/uploadvideo/', (req, res, next)=>{
     req.body.title,
     req.body.story,
   ];
+  console.log(data);
   db.upload(connection,data, res);
 });
 
@@ -201,13 +202,14 @@ app.use('/uploadaudio/', (req, res, next)=>{
       req.body.title,
       req.body.story,
     ];
+    console.log(data);
   db.upload(connection,data, res);
 });
 
 //----------------------------------------------------------------------
 //upload image
 app.post('/uploadimage/', imgupload.single('media'), (req, res, next)=>{
-  console.log('receiving uplo')
+  console.log('receiving uplo');
   next();
 });
 
@@ -218,6 +220,7 @@ app.use('/uploadimage/', (req, res, next)=>{
     req.body.title,
     req.body.story,
   ];
+  console.log(data);
   db.upload(connection,data, res);
 });
 
@@ -229,6 +232,7 @@ app.post('/uploadtext/', (req, res, next)=>{
     req.body.title,
     req.body.story,
   ];
+  console.log(data);
   db.upload(connection,data, res);
 });
 

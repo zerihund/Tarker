@@ -154,13 +154,17 @@ const getOpinion = (connection, id)=>{
     )
   })
 };
-
+//req.body.author_id,
+//       req.body.parent_id,
+//       req.body.title,
+//       req.body.story,
 //add story to database
 const upload = (connection, data, res)=>{
   console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
   const storyid = math.idGenerate();
   connection.query(
-      '',
+      `INSERT INTO story (story_Id, title, content,parent_story,media,story_Flag) 
+       VALUES(${storyid},${data[2]},${data[3]},${data[1]},'something here', null})`,
       (err, results)=>{
         console.log(results);
         connection.query(
