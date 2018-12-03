@@ -173,13 +173,19 @@ const upload = (connection, data, res)=>{
   connection.query(
       //'INSERT INTO story (story_Id,content,parent_story,media,story_Flag) VALUES (12345,"heloolwo oid",14,"ddi",null)',
       `INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag)
-       VALUES ('${storyid}','${title}','${story}',${parent},'something here', null);
-       INSERT INTO writes (user_Id,story_Id) VALUES (${author},'${storyid}')`,
-      (err, results)=>{
-        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
-        console.log(err);
-        console.log(results);
-        res.send('123');
+       VALUES ('${storyid}','${title}','${story}',${parent},'something here', null);`
+       , (err, results)=>{
+        connection.query(
+            `INSERT INTO writes (user_Id,story_Id) VALUES (${author},'${storyid}')`
+            ,(error, result)=>{
+              console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+              console.log(err);
+              console.log(error);
+              console.log(result);
+              console.log(results);
+              res.send('123');
+            });
+
       }
   )
 };
