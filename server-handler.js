@@ -100,26 +100,24 @@ const storyFamily = (storybranch)=>{
     const x = findParent(storybranch);
     resolve(x);
   });
-
-
-  const findParent = (storybranch)=>{
-    if(storybranch[0].parent_story === 0){
-      console.log('999999999999999999999999999999');
-      console.log(storybranch);
-      return storybranch;
-    }
-    else{
-      db.getParentStory(connection,storybranch[0].story_Id)
-      .then(results =>{
-        storybranch.unshift(results[0]);
-        console.log('1111');
-        console.log(storybranch);
-        findParent(storybranch);
-      })
-    }
-  }
 };
 
+const findParent = (storybranch)=>{
+  if(storybranch[0].parent_story === 0){
+    console.log('999999999999999999999999999999');
+    console.log(storybranch);
+    return storybranch;
+  }
+  else{
+    db.getParentStory(connection,storybranch[0].story_Id)
+    .then(results =>{
+      storybranch.unshift(results[0]);
+      console.log('1111');
+      console.log(storybranch);
+      findParent(storybranch);
+    })
+  }
+}
 //get comments
 const familyTalk = (storybranch, i, res)=>{
     db.getStoryComment(connection,  storybranch[i].story_Id)
