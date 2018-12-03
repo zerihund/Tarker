@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="init storm 0.0.8&#10;fix math random">
+    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/data-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/data-handler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/math.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/math.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="181" column="37" selection-start-line="181" selection-start-column="37" selection-end-line="181" selection-end-column="37" />
+            <state relative-caret-position="425">
+              <caret line="220" column="23" lean-forward="true" selection-start-line="220" selection-start-column="23" selection-end-line="220" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -44,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="170" column="93" selection-start-line="170" selection-start-column="93" selection-end-line="170" selection-end-column="93" />
+            <state relative-caret-position="518">
+              <caret line="175" column="31" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -111,9 +109,9 @@
         <option value="$PROJECT_DIR$/public/res/css/mediumScreen.css" />
         <option value="$PROJECT_DIR$/public/res/css/largeScreen.css" />
         <option value="$PROJECT_DIR$/public/res/css/smallScreen.css" />
-        <option value="$PROJECT_DIR$/server-handler.js" />
         <option value="$PROJECT_DIR$/public/test.html" />
         <option value="$PROJECT_DIR$/modules/math.js" />
+        <option value="$PROJECT_DIR$/server-handler.js" />
         <option value="$PROJECT_DIR$/modules/data-handler.js" />
       </list>
     </option>
@@ -223,41 +221,6 @@
       <workItem from="1543505945716" duration="1902000" />
       <workItem from="1543562692007" duration="2468000" />
       <workItem from="1543577928628" duration="439000" />
-    </task>
-    <task id="LOCAL-00032" summary="log in should be working maybe 0.2">
-      <created>1543413153871</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1543413153871</updated>
-    </task>
-    <task id="LOCAL-00033" summary="added some story grabbing function">
-      <created>1543491574121</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1543491574121</updated>
-    </task>
-    <task id="LOCAL-00034" summary="added queries for grabbing stories">
-      <created>1543496959675</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1543496959675</updated>
-    </task>
-    <task id="LOCAL-00035" summary="bug fixing">
-      <created>1543497090776</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1543497090776</updated>
-    </task>
-    <task id="LOCAL-00036" summary="continuous bug fixing">
-      <created>1543497167628</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1543497167628</updated>
     </task>
     <task id="LOCAL-00037" summary="continuous bug fixing 0.1">
       <created>1543497345997</created>
@@ -567,11 +530,46 @@
       <option name="project" value="LOCAL" />
       <updated>1543834491110</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="init storm 0.0.9&#10;continue upload test">
+      <created>1543834760612</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1543834760612</updated>
+    </task>
+    <task id="LOCAL-00082" summary="init storm 0.0.10&#10;continue upload test">
+      <created>1543835201854</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1543835201854</updated>
+    </task>
+    <task id="LOCAL-00083" summary="init storm 0.0.11&#10;continue upload test">
+      <created>1543836239632</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1543836239632</updated>
+    </task>
+    <task id="LOCAL-00084" summary="init storm 0.0.12&#10;continue upload test">
+      <created>1543836321852</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1543836321852</updated>
+    </task>
+    <task id="LOCAL-00085" summary="init storm 0.0.13&#10;continue upload test">
+      <created>1543836466120</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1543836466120</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91023000" />
+    <option name="totallyTimeSpent" value="92526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -633,11 +631,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="continuous bug fixing 0.19" />
-    <MESSAGE value="continuous bug fixing 0.20" />
-    <MESSAGE value="continuous bug fixing 0.21" />
-    <MESSAGE value="continuous bug fixing 0.22" />
-    <MESSAGE value="continuous bug fixing 0.23" />
     <MESSAGE value="continuous bug fixing 0.24" />
     <MESSAGE value="continuous bug fixing 0.25" />
     <MESSAGE value="continuous bug fixing 0.26" />
@@ -658,7 +651,12 @@
     <MESSAGE value="init storm 0.0.6&#10;testing upload query" />
     <MESSAGE value="init storm 0.0.7&#10;testing upload query" />
     <MESSAGE value="init storm 0.0.8&#10;fix math random" />
-    <option name="LAST_COMMIT_MESSAGE" value="init storm 0.0.8&#10;fix math random" />
+    <MESSAGE value="init storm 0.0.9&#10;continue upload test" />
+    <MESSAGE value="init storm 0.0.10&#10;continue upload test" />
+    <MESSAGE value="init storm 0.0.11&#10;continue upload test" />
+    <MESSAGE value="init storm 0.0.12&#10;continue upload test" />
+    <MESSAGE value="init storm 0.0.13&#10;continue upload test" />
+    <option name="LAST_COMMIT_MESSAGE" value="init storm 0.0.13&#10;continue upload test" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -730,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server-handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="181" column="37" selection-start-line="181" selection-start-column="37" selection-end-line="181" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/math.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -744,10 +735,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server-handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="220" column="23" lean-forward="true" selection-start-line="220" selection-start-column="23" selection-end-line="220" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="170" column="93" selection-start-line="170" selection-start-column="93" selection-end-line="170" selection-end-column="93" />
+        <state relative-caret-position="518">
+          <caret line="175" column="31" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
         </state>
       </provider>
     </entry>
