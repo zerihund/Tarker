@@ -179,6 +179,7 @@ app.post('/uploadvideo/', vidupload.single('media'), (req, res, next)=>{
 });
 
 app.use('/uploadvideo/', (req, res, next)=>{
+  console.log('receiving upload video');
   const data = [
     req.body.author_id,
     req.body.parent_id,
@@ -192,6 +193,7 @@ app.use('/uploadvideo/', (req, res, next)=>{
 //----------------------------------------------------------------------
 //upload audio
 app.post('/uploadaudio/', audupload.single('media'), (req, res, next)=>{
+  console.log('receiving upload audio');
   next();
 });
 
@@ -209,7 +211,7 @@ app.use('/uploadaudio/', (req, res, next)=>{
 //----------------------------------------------------------------------
 //upload image
 app.post('/uploadimage/', imgupload.single('media'), (req, res, next)=>{
-  console.log('receiving uplo');
+  console.log('receiving upload image');
   next();
 });
 

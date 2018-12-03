@@ -161,6 +161,10 @@ const getOpinion = (connection, id)=>{
 //add story to database
 const upload = (connection, data, res)=>{
   console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
+  console.log(data[0]);
+  console.log(data[1]);
+  console.log(data[2]);
+  console.log(data[3]);
   const storyid = math.idGenerate();
   connection.query(
       `INSERT INTO story (story_Id, title, content,parent_story,media,story_Flag) 

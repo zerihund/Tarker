@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/data-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/data-handler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-handler.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,26 +26,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/res/css/mediumScreen.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1853">
+            <state relative-caret-position="569">
               <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="140" column="17" lean-forward="true" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+            <state relative-caret-position="68">
+              <caret line="181" column="37" selection-start-line="181" selection-start-column="37" selection-end-line="181" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="148" column="30" lean-forward="true" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
+            <state relative-caret-position="348">
+              <caret line="168" column="19" selection-start-line="168" selection-start-column="19" selection-end-line="168" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -111,8 +112,8 @@
         <option value="$PROJECT_DIR$/public/res/css/mediumScreen.css" />
         <option value="$PROJECT_DIR$/public/res/css/largeScreen.css" />
         <option value="$PROJECT_DIR$/public/res/css/smallScreen.css" />
-        <option value="$PROJECT_DIR$/modules/data-handler.js" />
         <option value="$PROJECT_DIR$/server-handler.js" />
+        <option value="$PROJECT_DIR$/modules/data-handler.js" />
       </list>
     </option>
   </component>
@@ -221,20 +222,6 @@
       <workItem from="1543505945716" duration="1902000" />
       <workItem from="1543562692007" duration="2468000" />
       <workItem from="1543577928628" duration="439000" />
-    </task>
-    <task id="LOCAL-00026" summary=" 0.01">
-      <created>1543412085062</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1543412085062</updated>
-    </task>
-    <task id="LOCAL-00027" summary=" log in 0.02">
-      <created>1543412276189</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1543412276189</updated>
     </task>
     <task id="LOCAL-00028" summary="log in should be working now">
       <created>1543412466140</created>
@@ -565,11 +552,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543832110319</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="init storm 0.0.3&#10;fix a small bugs in writes table when a story's user does not exit">
+      <created>1543832419104</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1543832419104</updated>
+    </task>
+    <task id="LOCAL-00076" summary="init storm 0.0.4&#10;added upload query">
+      <created>1543833328247</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1543833328247</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88675000" />
+    <option name="totallyTimeSpent" value="89850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -631,8 +632,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="continuous bug fixing 0.13" />
-    <MESSAGE value="continuous bug fixing 0.14" />
     <MESSAGE value="continuous bug fixing 0.15" />
     <MESSAGE value="continuous bug fixing 0.16" />
     <MESSAGE value="continuous bug fixing 0.17" />
@@ -656,7 +655,9 @@
     <MESSAGE value="fixing query for authortalk and opinion" />
     <MESSAGE value=":v" />
     <MESSAGE value="init storm 0.0.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="init storm 0.0.2" />
+    <MESSAGE value="init storm 0.0.3&#10;fix a small bugs in writes table when a story's user does not exit" />
+    <MESSAGE value="init storm 0.0.4&#10;added upload query" />
+    <option name="LAST_COMMIT_MESSAGE" value="init storm 0.0.4&#10;added upload query" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -700,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/css/mediumScreen.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/res/css/largeScreen.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -735,17 +729,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
+    <entry file="file://$PROJECT_DIR$/public/res/css/mediumScreen.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="148" column="30" lean-forward="true" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
+        <state relative-caret-position="569">
+          <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="140" column="17" lean-forward="true" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+        <state relative-caret-position="68">
+          <caret line="181" column="37" selection-start-line="181" selection-start-column="37" selection-end-line="181" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="168" column="19" selection-start-line="168" selection-start-column="19" selection-end-line="168" selection-end-column="19" />
         </state>
       </provider>
     </entry>
