@@ -166,6 +166,7 @@ const upload = (connection, data, res)=>{
   console.log(data[2]);
   console.log(data[3]);
   const storyid = math.idGenerate();
+  console.log(storyid);
   connection.query(
       `INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) 
        VALUES(${storyid},${data[2]},${data[3]},${data[1]},'something here', null})`,
