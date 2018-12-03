@@ -185,6 +185,7 @@ app.use('/uploadvideo/', (req, res, next)=>{
     req.body.parent_id,
     req.body.title,
     req.body.story,
+    'vid/'+req.file.filename
   ];
   console.log(data);
   db.upload(connection,data, res);
@@ -198,12 +199,13 @@ app.post('/uploadaudio/', audupload.single('media'), (req, res, next)=>{
 });
 
 app.use('/uploadaudio/', (req, res, next)=>{
-    const data = [
-      req.body.author_id,
-      req.body.parent_id,
-      req.body.title,
-      req.body.story,
-    ];
+  const data = [
+    req.body.author_id,
+    req.body.parent_id,
+    req.body.title,
+    req.body.story,
+    'bgm/'+req.file.filename
+  ];
     console.log(data);
   db.upload(connection,data, res);
 });
@@ -221,6 +223,7 @@ app.use('/uploadimage/', (req, res, next)=>{
     req.body.parent_id,
     req.body.title,
     req.body.story,
+    'img/'+req.file.filename
   ];
   console.log(data);
   db.upload(connection,data,res);
@@ -233,6 +236,7 @@ app.post('/uploadtext/', (req, res, next)=>{
     req.body.parent_id,
     req.body.title,
     req.body.story,
+    null
   ];
   console.log(data);
   db.upload(connection,data, res);

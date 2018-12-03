@@ -154,11 +154,13 @@ const getOpinion = (connection, id)=>{
     )
   })
 };
-//req.body.author_id,
-//       req.body.parent_id,
-//       req.body.title,
-//       req.body.story,
-//add story to database
+/*const data = [
+  req.body.author_id,
+  req.body.parent_id,
+  req.body.title,
+  req.body.story,
+  'img'+req.file.filename
+];*/
 const upload = (connection, data, res)=>{
   console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
 
@@ -166,6 +168,7 @@ const upload = (connection, data, res)=>{
   const parent = data[1];
   const title = data[2];
   const story = data[3];
+  const file = data[4];
   console.log(author +' '+ parent +' '+title + ' '+ story);
   const storyid = math.idGenerate();
   console.log(`INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) VALUES ('${storyid}','${title}','${story}',${parent},'something here', null)`);
@@ -173,7 +176,7 @@ const upload = (connection, data, res)=>{
   connection.query(
       //'INSERT INTO story (story_Id,content,parent_story,media,story_Flag) VALUES (12345,"heloolwo oid",14,"ddi",null)',
       `INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag)
-       VALUES ('${storyid}','${title}','${story}',${parent},'something here', null);`
+       VALUES ('${storyid}','${title}','${story}',${parent},'${file}', null);`
        , (err, results)=>{
         connection.query(
             `INSERT INTO writes (user_Id,story_Id) VALUES (${author},'${storyid}')`
