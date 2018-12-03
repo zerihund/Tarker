@@ -144,8 +144,8 @@ const getOpinion = (connection, id)=>{
   return new Promise((resolve, reject)=>{
     connection.query(
         `SELECT * 
-        FROM(SELECT sum(Views.like_story) as minus FROM Views WHERE Views.story_Id = ${id} AND Views.like_story = -1) minus,
-        (SELECT sum(Views.like_story) as plus FROM Views WHERE Views.story_Id = ${id} AND Views.like_story = 1) added`,
+        FROM(SELECT sum(Views.like_story) as minus FROM Views WHERE Views.story_Id = '${id}' AND Views.like_story = -1) minus,
+        (SELECT sum(Views.like_story) as plus FROM Views WHERE Views.story_Id = '${id}' AND Views.like_story = 1) added`,
         (err, results)=>{
           console.log(results);
           resolve(results);
