@@ -154,21 +154,25 @@ const getOpinion = (connection, id)=>{
     )
   })
 };
-
-
+//req.body.author_id,
+//       req.body.parent_id,
+//       req.body.title,
+//       req.body.story,
 //add story to database
 const upload = (connection, data, res)=>{
+  console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
+  console.log(data[0]);
+  console.log(data[1]);
+  console.log(data[2]);
+  console.log(data[3]);
   const storyid = math.idGenerate();
+  console.log(storyid);
   connection.query(
-      '',
+      `INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) 
+       VALUES(${storyid},${data[2]},${data[3]},${data[1]},'something here', null})`,
       (err, results)=>{
+        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
         console.log(results);
-        connection.query(
-            '',
-            (error, result)=>{
-              console.log(result);
-            }
-        )
       }
   )
 };

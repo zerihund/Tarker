@@ -129,7 +129,13 @@ const familyTalk = (storybranch, i, res)=>{
 const authorTalk = (storybranch, i, res)=>{
   db.getAuthor(connection,  storybranch[i].story_Id)
   .then(result => {
-    storybranch[i].author = result[0].name;
+    if(result[0].name){
+      storybranch[i].author = result[0].name;
+    }
+    else(
+        storybranch[i].author = 'undefined'
+    );
+
     storybranch[i].time = result[0].story_time;//this may not work but let's see
     i++;
     console.log(i);
@@ -173,18 +179,21 @@ app.post('/uploadvideo/', vidupload.single('media'), (req, res, next)=>{
 });
 
 app.use('/uploadvideo/', (req, res, next)=>{
+  console.log('receiving upload video');
   const data = [
     req.body.author_id,
     req.body.parent_id,
     req.body.title,
     req.body.story,
   ];
+  console.log(data);
   db.upload(connection,data, res);
 });
 
 //----------------------------------------------------------------------
 //upload audio
 app.post('/uploadaudio/', audupload.single('media'), (req, res, next)=>{
+  console.log('receiving upload audio');
   next();
 });
 
@@ -195,12 +204,14 @@ app.use('/uploadaudio/', (req, res, next)=>{
       req.body.title,
       req.body.story,
     ];
+    console.log(data);
   db.upload(connection,data, res);
 });
 
 //----------------------------------------------------------------------
 //upload image
 app.post('/uploadimage/', imgupload.single('media'), (req, res, next)=>{
+  console.log('receiving upload image');
   next();
 });
 
@@ -211,6 +222,7 @@ app.use('/uploadimage/', (req, res, next)=>{
     req.body.title,
     req.body.story,
   ];
+  console.log(data);
   db.upload(connection,data, res);
 });
 
@@ -222,9 +234,15 @@ app.post('/uploadtext/', (req, res, next)=>{
     req.body.title,
     req.body.story,
   ];
+  console.log(data);
   db.upload(connection,data, res);
 });
 
+
+//add like, dislike to +database
+app.post('/opinion/', (req, res)=>{
+
+});
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site
