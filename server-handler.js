@@ -94,18 +94,23 @@ app.get('/grabstory', (req, res)=>{
 //get story from top to end
 const storyFamily = (storybranch)=>{
   return new Promise((resolve, reject)=>{
-    db.getParentStory(connection,storybranch[0].story_Id)
-    .then(results =>{
-      if(results.length !==0){
-        storybranch.unshift(results[0]);
-        if (storybranch[0].parent_story === 0){
-          resolve(storybranch);
+    if(storybranch[0].story_Id !== 0){
+      db.getParentStory(connection,storybranch[0].story_Id)
+      .then(results =>{
+        if(results.length !==0){
+          storybranch.unshift(results[0]);
+          if (storybranch[0].parent_story === 0){
+            resolve(storybranch);
+          }
+          else{
+            storyFamily(storybranch);
+          }
         }
-        else{
-          storyFamily(storybranch);
-        }
-      }
-    })
+      })
+    }
+    else{
+      resolve(storybranch);
+    }
   })
 };
 
