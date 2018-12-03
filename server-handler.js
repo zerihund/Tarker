@@ -96,19 +96,17 @@ const storyFamily = (storybranch)=>{
   console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxx');
   return new Promise((resolve, reject)=>{
     if(storybranch[0].story_Id === 0){
+      console.log('999999999999999999999999999999');
       console.log(storybranch);
       resolve(storybranch);
     }
     else{
       db.getParentStory(connection,storybranch[0].story_Id)
       .then(results =>{
+        console.log(storybranch);
         storybranch.unshift(results);
-        if (storybranch[0].parent_story === 0){
-          resolve(storybranch);
-        }
-        else{
-          storyFamily(storybranch);
-        }
+        storyFamily(storybranch);
+
       })
     }
   })
