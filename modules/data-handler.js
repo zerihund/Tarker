@@ -173,6 +173,7 @@ const upload = (connection, data, res)=>{
       (err, results)=>{
         console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
         console.log(results);
+        res.send('123');
       }
   )
 };
