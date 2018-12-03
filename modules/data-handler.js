@@ -84,7 +84,7 @@ const getInitStory = (connection)=>{
       (err, results)=>{
 
         const x = Math.floor(Math.random() * results.length);
-        console.log(results[0].story_Id);
+        console.log(results[0]);
         resolve(results[x]);
       }
     )

@@ -77,44 +77,30 @@ app.post('/emailcheck', (req, res)=>{
 //-----------------------------------------------------------------------------------------
 //concerning stories
 //get random story to display
-app.get('/grabstory', (req, res)=>{
+app.get('/grabstory', (req, res)=> {
   //get init story
   console.log('    ');
-  console.log('-------------------------------www-------------------------------------------------------------');
-  db.getInitStory(connection)
-  .then(results =>
-  {
+  console.log(
+      '-------------------------------www-------------------------------------------------------------');
+  db.getInitStory(connection).then(results => {
     //get parent story and append it to begin of story branch array
-    storyFamily([results])
-    .then(storybranch=>{
-      //get comments for each story
-      console.log('000000000000000');
-      console.log(storybranch);
-      familyTalk(storybranch,0, res);
-    });
-  });
+    findParent([results], res);
+  })
 });
 
 //get story from top to end
-const storyFamily = (storybranch)=>{
-  return new Promise((resolve, reject)=>{
-      const x = findParent(storybranch);
-      console.log(x);
-      resolve(x);
-  });
-};
 //get parent story
-const findParent = (storybranch)=>{
+const findParent = (storybranch, res)=>{
   if(storybranch[0].parent_story === 0){
     console.log('999999999999999999999999999999');
-    return storybranch;
+    familyTalk(storybranch, 0, res);
   }
   else{
     db.getParentStory(connection,storybranch[0].story_Id)
     .then(results =>{
       storybranch.unshift(results[0]);
       console.log('1111');
-      findParent(storybranch);
+      findParent(storybranch, res);
     })
   }
 };
