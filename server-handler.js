@@ -131,7 +131,7 @@ const authorTalk = (storybranch, i, res)=>{
       storybranch[i].author = result[0].name;
     }
     else{
-      storybranch[i].author = result[0];
+      storybranch[i].author = 'undefined';
     }
 
     storybranch[i].time = result[0].story_time;//this may not work but let's see
