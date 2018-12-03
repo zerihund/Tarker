@@ -21,9 +21,19 @@ const wilson = (pos, n) => {
         Math.sqrt((pBound * (1 - pBound) + z * z / (4 * n)) / n)) /
         (1 + z * z / n)
   }
-}
+};
+
+//random string
+const idGenerate = ()=>{
+  const string = '0123456789abcdefghijklmnopqrstuvxyz!@#$%^&*';
+  let x ='';
+  for(let i=0;i<60;i++){
+    x += string[random(string.length-1)];
+  }
+  return x;
+};
 
 module.exports = {
-  random:random,
-  wilson:wilson,
+  random : random,
+  idGenerate : idGenerate
 };

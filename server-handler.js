@@ -10,7 +10,9 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
-const upload = multer({dest: 'public/res'});
+const vidupload = multer({dest: 'public/res/media/vid'});
+const audupload = multer({dest: 'public/res/media/bgm'});
+const imgupload = multer({dest: 'public/res/media/img'});
 
 //nodeJs builtin module, we might need to use this one
 const wilson = require('wilson-score')
@@ -103,7 +105,6 @@ const storyFamily = (storybranch)=>{
       }
     })
   })
-
 };
 
 //get comments
@@ -163,6 +164,67 @@ const storyOpinion = (storybranch, i, res)=>{
     }
   });
 };
+
+//--------------------------------------------------------------------------------------------------------
+//concerning uploading stories
+//upload video
+app.post('/uploadvideo/', vidupload.single('media'), (req, res, next)=>{
+  next();
+});
+
+app.use('/uploadvideo/', (req, res, next)=>{
+  const data = [
+    req.body.author_id,
+    req.body.parent_id,
+    req.body.title,
+    req.body.story,
+  ];
+  db.upload(connection,data, res);
+});
+
+//----------------------------------------------------------------------
+//upload audio
+app.post('/uploadaudio/', audupload.single('media'), (req, res, next)=>{
+  next();
+});
+
+app.use('/uploadaudio/', (req, res, next)=>{
+    const data = [
+      req.body.author_id,
+      req.body.parent_id,
+      req.body.title,
+      req.body.story,
+    ];
+  db.upload(connection,data, res);
+});
+
+//----------------------------------------------------------------------
+//upload image
+app.post('/uploadimage/', imgupload.single('media'), (req, res, next)=>{
+  next();
+});
+
+app.use('/uploadimage/', (req, res, next)=>{
+  const data = [
+    req.body.author_id,
+    req.body.parent_id,
+    req.body.title,
+    req.body.story,
+  ];
+  db.upload(connection,data, res);
+});
+
+//upload text only
+app.post('/uploadtext/', (req, res, next)=>{
+  const data = [
+    req.body.author_id,
+    req.body.parent_id,
+    req.body.title,
+    req.body.story,
+  ];
+  db.upload(connection,data, res);
+});
+
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site

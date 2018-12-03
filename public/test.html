@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Archive Test</title>
+</head>
+<body>
+
+Follow Form
+<!--form for uploading children story-->
+<form id="parent_story" enctype="multipart/form-data" method="post" class="follow_form">
+  <input type="file" name="file" accept="media">
+  <textarea name="story"></textarea>
+  <input type="submit">
+</form>
+<script>
+  document.querySelector('#parent_story').addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    if(document.querySelectorAll('#parent_story input')[0].files.length === 0){
+      uploadMedia('text',evt,'child');}
+
+    else if(document.querySelectorAll('#parent_story input')[0].files[0].type.substring(0,5) === 'audio'){
+      uploadMedia('audio',  evt,'child');
+    }
+    else if(document.querySelectorAll('#parent_story input')[0].files[0].type.substring(0,5) === 'image'){
+      uploadMedia('image',  evt,'child');
+    }
+    else if(document.querySelectorAll('#parent_story input')[0].files[0].type.substring(0,5) === 'video'){
+      uploadMedia('video',  evt,'child');
+    }
+    else {
+      console.log('incorrect file type');
+    }
+  });
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+Original Form
+<!--form for uploading original story-->
+<form id="0" enctype="multipart/form-data" method="post" class="original_form">
+  <input type="text" name="title">
+  <input type="file" name="file" accept="media">
+  <textarea name="story"></textarea>
+  <input type="submit">
+</form>
+
+<script>
+  document.querySelector('.original_form').addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    if(document.querySelectorAll('.original_form input')[1].files.length === 0){
+      uploadMedia('text',evt, 'original');}
+
+    else if(document.querySelectorAll('.original_form input')[1].files[0].type.substring(0,5) === 'audio'){
+      uploadMedia('audio',  evt, 'original');
+    }
+    else if(document.querySelectorAll('.original_form input')[1].files[0].type.substring(0,5) === 'image'){
+      uploadMedia('image',  evt, 'original');
+    }
+    else if(document.querySelectorAll('.original_form input')[1].files[0].type.substring(0,5) === 'video'){
+      uploadMedia('video',  evt, 'original');
+    }
+    else {
+      console.log('incorrect file type');
+    }
+  });
+</script>
+<!--script for uploading stuffs -->
+<script>
+  const uploadMedia = (type, evt, category)=>{
+    console.log('------------------------');
+    console.log('trying to /upload'+type+'/');
+    evt.preventDefault();
+    const fd = new FormData(evt.target);
+    const settings = {
+      method: 'post',
+      body: fd,
+    };
+    if(category === 'original'){
+
+    }
+    else{
+      settings.body.append('title', '0');
+    }
+    settings.body.append('author_id', document.querySelector('main').id);
+    settings.body.append('parent_id',evt.target.id);
+
+    console.log('author: '+settings.body.get('author_id'));
+    console.log('parent: '+settings.body.get('parent_id'));
+    console.log('file: '+settings.body.get('file'));
+    console.log('title: '+settings.body.get('title'));
+    console.log('story: '+settings.body.get('story'));
+
+    fetch('/node/upload'+type+'/', settings)
+    .then((res) => {
+    });
+  };
+</script>
+
+<main id="author">
+
+</main>
+<script>
+  const grabStory = ()=>{
+    const main = document.querySelector('main');
+    fetch('/node/grabstory')
+    .then(res => res.json())
+    .then(json =>{
+      for(let i = 0; i<json.length;i++){
+        console.log(json[i]);
+        const container = document.createElement('div');
+        container.id = json.story_id;
+
+        const author = document.createElement('p');
+        author.innerText = json.author;
+
+        const time = document.createElement('p');
+        time.innerText = json.time;
+
+        const text = document.createElement('p');
+        text.innerText = json.content;
+
+        const like = document.createElement('p');
+        like.innerText = json.plus;
+
+        const dislike = document.createElement('p');
+        dislike.innerText = json.minus;
+
+        const commentbox = document.createElement('div');
+        for(let j=0;j<json.comment.length;j++){
+          const comment_segment = document.createElement('div');
+          const comment_writer = document.createElement('p');
+          comment_writer.innerText = json.comment[j].name;
+          const comment_time = document.createElement('p');
+          comment_time.innerText = json.comment[j].comment_time;
+          const comment = document.createElement('p');
+          comment.innerText = json.comment[j].comment;
+
+          comment_segment.appendChild(comment_writer);
+          comment_segment.appendChild(comment_time);
+          comment_segment.appendChild(comment);
+          commentbox.appendChild(comment_segment);
+        }
+        container.appendChild(time);
+        container.appendChild(author);
+        container.appendChild(text);
+        container.appendChild(like);
+        container.appendChild(dislike);
+        container.appendChild(commentbox);
+        main.appendChild(container);
+      }
+    });
+  };
+
+  //init functions
+  grabStory();
+</script>
+</body>
+</html>
