@@ -108,6 +108,7 @@ const storyFamily = (storybranch)=>{
       })
     }
     else{
+      console.log(storybranch);
       resolve(storybranch);
     }
   })
