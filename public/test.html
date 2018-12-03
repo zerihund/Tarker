@@ -14,18 +14,18 @@ Follow Form
   <input type="submit">
 </form>
 <script>
-  document.querySelector('#parent_story').addEventListener('submit', (evt) => {
+  document.querySelector('#14').addEventListener('submit', (evt) => {
     evt.preventDefault();
-    if(document.querySelectorAll('#parent_story input')[0].files.length === 0){
+    if(document.querySelectorAll('#14')[0].files.length === 0){
       uploadMedia('text',evt,'child');}
 
-    else if(document.querySelectorAll('#parent_story input')[0].files[0].type.substring(0,5) === 'audio'){
+    else if(document.querySelectorAll('#14')[0].files[0].type.substring(0,5) === 'audio'){
       uploadMedia('audio',  evt,'child');
     }
-    else if(document.querySelectorAll('#parent_story input')[0].files[0].type.substring(0,5) === 'image'){
+    else if(document.querySelectorAll('#14')[0].files[0].type.substring(0,5) === 'image'){
       uploadMedia('image',  evt,'child');
     }
-    else if(document.querySelectorAll('#parent_story input')[0].files[0].type.substring(0,5) === 'video'){
+    else if(document.querySelectorAll('#14')[0].files[0].type.substring(0,5) === 'video'){
       uploadMedia('video',  evt,'child');
     }
     else {
