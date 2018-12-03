@@ -130,7 +130,7 @@ const getAuthor = (connection, id)=>{
     connection.query(
       `SELECT user.name, writes.story_time 
       FROM writes, user 
-      WHERE writes.story_Id=${id} AND writes.user_Id = user.user_Id`,
+      WHERE writes.story_Id='${id}' AND writes.user_Id = user.user_Id`,
       (err, results)=>{
         console.log(results);
         resolve(results);
