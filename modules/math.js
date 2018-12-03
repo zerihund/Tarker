@@ -21,7 +21,7 @@ const wilson = (pos, n) => {
         Math.sqrt((pBound * (1 - pBound) + z * z / (4 * n)) / n)) /
         (1 + z * z / n)
   }
-}
+};
 
 //random string
 const idGenerate = ()=>{
