@@ -98,11 +98,9 @@ app.get('/grabstory', (req, res)=>{
 //get story from top to end
 const storyFamily = (storybranch)=>{
   return new Promise((resolve, reject)=>{
-    findParent(storybranch).then(x =>{
+      const x = findParent(storybranch);
       console.log(x);
       resolve(x);
-      }
-    );
   });
 };
 //get parent story
