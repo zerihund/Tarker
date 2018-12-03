@@ -127,7 +127,8 @@ const authorTalk = (storybranch, i, res)=>{
   db.getAuthor(connection,  storybranch[i].story_Id)
   .then(result => {
     console.log(result);
-    if(result[0].name !==undefined){
+    console.log(result.length);
+    if(result.length === 0){
       storybranch[i].author = result[0].name;
     }
     else{

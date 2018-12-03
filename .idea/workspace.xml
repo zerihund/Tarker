@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="init storm 0.0.38&#10;trying to get the info">
-      <change beforePath="$PROJECT_DIR$/modules/data-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/data-handler.js" afterDir="false" />
+    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-handler.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1368">
-              <caret line="268" column="37" selection-start-line="268" selection-start-column="37" selection-end-line="268" selection-end-column="37" />
+            <state relative-caret-position="144">
+              <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -43,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-448">
-              <caret line="86" column="32" lean-forward="true" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
+            <state relative-caret-position="-91">
+              <caret line="95" column="22" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -226,27 +226,6 @@
       <workItem from="1543505945716" duration="1902000" />
       <workItem from="1543562692007" duration="2468000" />
       <workItem from="1543577928628" duration="439000" />
-    </task>
-    <task id="LOCAL-00067" summary="grab story 1.0.0.2 i hope it still works correctly">
-      <created>1543504308655</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1543504308655</updated>
-    </task>
-    <task id="LOCAL-00068" summary="grab story 1.0.0.3 i hope it still works correctly">
-      <created>1543504590190</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1543504590190</updated>
-    </task>
-    <task id="LOCAL-00069" summary="grab story 1.0.0.4 i hope it works now">
-      <created>1543504713277</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1543504713277</updated>
     </task>
     <task id="LOCAL-00070" summary="added back ima-handler">
       <created>1543581709593</created>
@@ -570,11 +549,32 @@
       <option name="project" value="LOCAL" />
       <updated>1543844387146</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="init storm 0.0.39&#10;trying to get the info">
+      <created>1543845196246</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1543845196246</updated>
+    </task>
+    <task id="LOCAL-00117" summary="0.0.40">
+      <created>1543845310210</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1543845310210</updated>
+    </task>
+    <task id="LOCAL-00118" summary="0.0.41">
+      <created>1543845519641</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1543845519641</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101068000" />
+    <option name="totallyTimeSpent" value="101606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -636,9 +636,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init storm 0.0.14&#10;continue upload test. hopefully it works now" />
-    <MESSAGE value="init storm 0.0.15&#10;continue upload test. hopefully it works now" />
-    <MESSAGE value="init storm 0.0.16&#10;continue upload test. hopefully it works now" />
     <MESSAGE value="init storm 0.0.17&#10;continue database add test" />
     <MESSAGE value="init storm 0.0.18&#10;continue database add test" />
     <MESSAGE value="init storm 0.0.19&#10;continue database add test" />
@@ -661,7 +658,10 @@
     <MESSAGE value="init storm 0.0.36&#10;trying to get the info" />
     <MESSAGE value="init storm 0.0.37&#10;trying to get the info" />
     <MESSAGE value="init storm 0.0.38&#10;trying to get the info" />
-    <option name="LAST_COMMIT_MESSAGE" value="init storm 0.0.38&#10;trying to get the info" />
+    <MESSAGE value="init storm 0.0.39&#10;trying to get the info" />
+    <MESSAGE value="0.0.40" />
+    <MESSAGE value="0.0.41" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.0.41" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -745,15 +745,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-448">
-          <caret line="86" column="32" lean-forward="true" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
+        <state relative-caret-position="-91">
+          <caret line="95" column="22" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="268" column="37" selection-start-line="268" selection-start-column="37" selection-end-line="268" selection-end-column="37" />
+        <state relative-caret-position="144">
+          <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
         </state>
       </provider>
     </entry>
