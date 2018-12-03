@@ -15,7 +15,7 @@ const audupload = multer({dest: 'public/res/media/bgm'});
 const imgupload = multer({dest: 'public/res/media/img'});
 
 //nodeJs builtin module, we might need to use this one
-const wilson = require('wilson-score')
+const wilson = require('wilson-score');
 
 //---------------------------------------------------------------------------------------
 //database thing
@@ -136,8 +136,6 @@ const authorTalk = (storybranch, i, res)=>{
       storybranch[i].time = result[0].story_time;//this may not work but let's see
       storybranch[i].author = result[0].name;
     }
-
-
     i++;
     console.log(i);
     if (i < storybranch.length) {

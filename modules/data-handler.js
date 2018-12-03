@@ -78,7 +78,7 @@ const getInitStory = (connection)=>{
   console.log('---------------------------------------------init-------------------------------------------');
   return new Promise((resolve, reject)=>{
     connection.execute(
-      `SELECT c.story_Id, c.parent_story, c.content
+      `SELECT c.story_Id, c.parent_story, c.content, c.media
        FROM (SELECT a.story_Id FROM story a, story b WHERE a.story_Id=b.parent_story GROUP BY a.story_Id) Isparent,story c
        WHERE c.story_Id != Isparent.story_Id`,
       (err, results)=>{
@@ -96,7 +96,7 @@ const getParentStory = (connection, id) =>{
   console.log('get parent story of story '+ id);
   return new Promise((resolve, reject)=>{
     connection.query(
-      `SELECT c.story_Id, c.parent_story, c.content
+      `SELECT c.story_Id, c.parent_story, c.content, c.media
       FROM story c, story d
       WHERE c.story_id = d.parent_story AND d.story_Id = '${id}'`,
       (err, results)=>{
