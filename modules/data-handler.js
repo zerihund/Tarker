@@ -98,7 +98,7 @@ const getParentStory = (connection, id) =>{
     connection.query(
       `SELECT c.story_Id, c.parent_story, c.content
       FROM story c, story d
-      WHERE c.story_id = d.parent_story AND d.story_Id = ${id}`,
+      WHERE c.story_id = d.parent_story AND d.story_Id = '${id}'`,
       (err, results)=>{
         console.log('------abc------');
         resolve(results);
