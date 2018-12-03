@@ -136,6 +136,25 @@ Original Form
         dislike.innerText = json[i].dislike;
         dislike.style.color = 'red';
 
+        if(json[i].media === undefined){
+
+        }
+        else if(json[i].media.substring(0,3) === 'img'){
+          const img = document.createElement('img');
+          img.src = './res/public/media/'+json[i].media;
+          container.appendChild(img);
+        }
+        else if(json[i].media.substring(0,3) === 'bgm'){
+          const aud = document.createElement('audio');
+          aud.src = './res/public/media/'+json[i].media;
+          container.appendChild(aud);
+        }
+        else if(json[i].media.substring(0,3) === 'vid'){
+          const vid = document.createElement('vid');
+          vid.src = './res/public/media/'+json[i].media;
+          container.appendChild(vid);
+        }
+
         const commentbox = document.createElement('div');
         for(let j=0;j<json[i].comment.length;j++){
           const comment_segment = document.createElement('div');
