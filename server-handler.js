@@ -98,7 +98,7 @@ const storyFamily = (storybranch)=>{
     if(storybranch[0].story_Id !== 0){
       db.getParentStory(connection,storybranch[0].story_Id)
       .then(results =>{
-          storybranch.unshift(results[0]);
+          storybranch.unshift(results);
           if (storybranch[0].parent_story === 0){
             resolve(storybranch);
           }
