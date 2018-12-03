@@ -105,6 +105,7 @@ Original Form
 
 </main>
 <script>
+  //init functions
   const grabStory = ()=>{
     const main = document.querySelector('main');
     fetch('/node/grabstory')
@@ -113,32 +114,32 @@ Original Form
       for(let i = 0; i<json.length;i++){
         console.log(json[i]);
         const container = document.createElement('div');
-        container.id = json.story_id;
+        container.id = json[i].story_Id;
 
         const author = document.createElement('p');
-        author.innerText = json.author;
+        author.innerText = json[i].author;
 
         const time = document.createElement('p');
-        time.innerText = json.time;
+        time.innerText = json[i].time;
 
         const text = document.createElement('p');
-        text.innerText = json.content;
+        text.innerText = json[i].content;
 
         const like = document.createElement('p');
-        like.innerText = json.plus;
+        like.innerText = json[i].plus;
 
         const dislike = document.createElement('p');
-        dislike.innerText = json.minus;
+        dislike.innerText = json[i].minus;
 
         const commentbox = document.createElement('div');
-        for(let j=0;j<json.comment.length;j++){
+        for(let j=0;j<json[i].comment.length;j++){
           const comment_segment = document.createElement('div');
           const comment_writer = document.createElement('p');
-          comment_writer.innerText = json.comment[j].name;
+          comment_writer.innerText = json[i].comment[j].name;
           const comment_time = document.createElement('p');
-          comment_time.innerText = json.comment[j].comment_time;
+          comment_time.innerText = json[i].comment[j].comment_time;
           const comment = document.createElement('p');
-          comment.innerText = json.comment[j].comment;
+          comment.innerText = json[i].comment[j].comment;
 
           comment_segment.appendChild(comment_writer);
           comment_segment.appendChild(comment_time);
