@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
+    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="init storm 0.0.8&#10;fix math random">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/data-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/data-handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/math.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/math.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="172" column="52" selection-start-line="172" selection-start-column="52" selection-end-line="172" selection-end-column="52" />
+            <state relative-caret-position="382">
+              <caret line="170" column="93" selection-start-line="170" selection-start-column="93" selection-end-line="170" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -51,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-731">
-              <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+            <state relative-caret-position="297">
+              <caret line="161" column="2" selection-start-line="161" selection-start-column="2" selection-end-line="170" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -60,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/math.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            <state relative-caret-position="306">
+              <caret line="27" column="61" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -106,11 +108,12 @@
         <option value="$PROJECT_DIR$/public/res/js/main.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/res/js/commune.js" />
-        <option value="$PROJECT_DIR$/modules/math.js" />
         <option value="$PROJECT_DIR$/public/res/css/mediumScreen.css" />
         <option value="$PROJECT_DIR$/public/res/css/largeScreen.css" />
         <option value="$PROJECT_DIR$/public/res/css/smallScreen.css" />
         <option value="$PROJECT_DIR$/server-handler.js" />
+        <option value="$PROJECT_DIR$/public/test.html" />
+        <option value="$PROJECT_DIR$/modules/math.js" />
         <option value="$PROJECT_DIR$/modules/data-handler.js" />
       </list>
     </option>
@@ -220,27 +223,6 @@
       <workItem from="1543505945716" duration="1902000" />
       <workItem from="1543562692007" duration="2468000" />
       <workItem from="1543577928628" duration="439000" />
-    </task>
-    <task id="LOCAL-00029" summary="log in should be working maybe">
-      <created>1543412754956</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1543412754956</updated>
-    </task>
-    <task id="LOCAL-00030" summary="log in should be working maybe">
-      <created>1543412858861</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1543412858861</updated>
-    </task>
-    <task id="LOCAL-00031" summary="log in should be working maybe 0.1">
-      <created>1543412881656</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1543412881656</updated>
     </task>
     <task id="LOCAL-00032" summary="log in should be working maybe 0.2">
       <created>1543413153871</created>
@@ -564,11 +546,32 @@
       <option name="project" value="LOCAL" />
       <updated>1543833576730</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="init storm 0.0.6&#10;testing upload query">
+      <created>1543833985080</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1543833985080</updated>
+    </task>
+    <task id="LOCAL-00079" summary="init storm 0.0.7&#10;testing upload query">
+      <created>1543834063727</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1543834063727</updated>
+    </task>
+    <task id="LOCAL-00080" summary="init storm 0.0.8&#10;fix math random">
+      <created>1543834491110</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1543834491110</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90265000" />
+    <option name="totallyTimeSpent" value="91023000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -630,9 +633,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="continuous bug fixing 0.16" />
-    <MESSAGE value="continuous bug fixing 0.17" />
-    <MESSAGE value="continuous bug fixing 0.18" />
     <MESSAGE value="continuous bug fixing 0.19" />
     <MESSAGE value="continuous bug fixing 0.20" />
     <MESSAGE value="continuous bug fixing 0.21" />
@@ -655,7 +655,10 @@
     <MESSAGE value="init storm 0.0.3&#10;fix a small bugs in writes table when a story's user does not exit" />
     <MESSAGE value="init storm 0.0.4&#10;added upload query" />
     <MESSAGE value="init storm 0.0.5&#10;testing upload query" />
-    <option name="LAST_COMMIT_MESSAGE" value="init storm 0.0.5&#10;testing upload query" />
+    <MESSAGE value="init storm 0.0.6&#10;testing upload query" />
+    <MESSAGE value="init storm 0.0.7&#10;testing upload query" />
+    <MESSAGE value="init storm 0.0.8&#10;fix math random" />
+    <option name="LAST_COMMIT_MESSAGE" value="init storm 0.0.8&#10;fix math random" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -685,13 +688,6 @@
     <entry file="file://$PROJECT_DIR$/public/family2.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/math.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/res/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -720,17 +716,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-731">
-          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/res/css/mediumScreen.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="569">
           <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="161" column="2" selection-start-line="161" selection-start-column="2" selection-end-line="170" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -741,10 +737,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modules/math.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="61" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="172" column="52" selection-start-line="172" selection-start-column="52" selection-end-line="172" selection-end-column="52" />
+        <state relative-caret-position="382">
+          <caret line="170" column="93" selection-start-line="170" selection-start-column="93" selection-end-line="170" selection-end-column="93" />
         </state>
       </provider>
     </entry>

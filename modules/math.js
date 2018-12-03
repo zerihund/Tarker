@@ -31,7 +31,6 @@ const idGenerate = ()=>{
     const y = random(string.length-1);
     x += string[random(y)];
   }
-  console.log(x);
   return x;
 };
 
