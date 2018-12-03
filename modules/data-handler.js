@@ -108,7 +108,7 @@ const getParentStory = (connection, id) =>{
   })
 };
 
-//get comments
+//get comments get comment writer, get comments date
 const getStoryComment = (connection, id)=>{
   console.log('grab comments of ' + id);
   return new Promise((resolve, reject)=>{
@@ -154,9 +154,24 @@ const getOpinion = (connection, id)=>{
     )
   })
 };
-//comments
-//get comments, get comment writer, get comments date
-//send comments, send user
+
+
+//add story to database
+const upload = (connection, data, res)=>{
+  const storyid = math.idGenerate();
+  connection.query(
+      '',
+      (err, results)=>{
+        console.log(results);
+        connection.query(
+            '',
+            (error, result)=>{
+              console.log(result);
+            }
+        )
+      }
+  )
+};
 
 module.exports = {
   connect:connect,
@@ -168,5 +183,6 @@ module.exports = {
   getParentStory:getParentStory,
   getStoryComment:getStoryComment,
   getAuthor:getAuthor,
-  getOpinion:getOpinion
+  getOpinion:getOpinion,
+  upload:upload
 };
