@@ -97,10 +97,16 @@ app.get('/grabstory', (req, res)=>{
 //get story from top to end
 const storyFamily = (storybranch)=>{
   return new Promise((resolve, reject)=>{
+    const x = findParent(storybranch);
+    resolve(x);
+  });
+
+
+  const findParent = (storybranch)=>{
     if(storybranch[0].parent_story === 0){
       console.log('999999999999999999999999999999');
       console.log(storybranch);
-      resolve(storybranch);
+      return storybranch;
     }
     else{
       db.getParentStory(connection,storybranch[0].story_Id)
@@ -108,10 +114,10 @@ const storyFamily = (storybranch)=>{
         storybranch.unshift(results[0]);
         console.log('1111');
         console.log(storybranch);
-        storyFamily(storybranch);
+        findParent(storybranch);
       })
     }
-  })
+  }
 };
 
 //get comments
