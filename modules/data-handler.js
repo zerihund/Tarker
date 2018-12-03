@@ -75,7 +75,7 @@ const checkCredentials = (connection, username, password)=>{
 //story-------------------------------------------------
 //send story
 const getInitStory = (connection)=>{
-  console.log('xxxx');
+  console.log('---------------------------------------------init-------------------------------------------');
   return new Promise((resolve, reject)=>{
     connection.execute(
       `SELECT c.story_Id, c.parent_story, c.content
@@ -84,7 +84,6 @@ const getInitStory = (connection)=>{
       (err, results)=>{
 
         const x = Math.floor(Math.random() * results.length);
-        console.log('------xxx------');
         console.log(results[0].story_Id);
         resolve(results[x]);
       }
@@ -102,7 +101,6 @@ const getParentStory = (connection, id) =>{
       WHERE c.story_id = d.parent_story AND d.story_Id = ${id}`,
       (err, results)=>{
         console.log('------abc------');
-        console.log(results);
         resolve(results);
       }
     )

@@ -79,7 +79,8 @@ app.post('/emailcheck', (req, res)=>{
 //get random story to display
 app.get('/grabstory', (req, res)=>{
   //get init story
-  console.log('www');
+  console.log('    ');
+  console.log('-------------------------------www-------------------------------------------------------------');
   db.getInitStory(connection)
   .then(results =>
   {
@@ -98,6 +99,7 @@ app.get('/grabstory', (req, res)=>{
 const storyFamily = (storybranch)=>{
   return new Promise((resolve, reject)=>{
     const x = findParent(storybranch);
+    console.log(x);
     resolve(x);
   });
 };
@@ -105,7 +107,6 @@ const storyFamily = (storybranch)=>{
 const findParent = (storybranch)=>{
   if(storybranch[0].parent_story === 0){
     console.log('999999999999999999999999999999');
-    console.log(storybranch);
     return storybranch;
   }
   else{
@@ -113,7 +114,6 @@ const findParent = (storybranch)=>{
     .then(results =>{
       storybranch.unshift(results[0]);
       console.log('1111');
-      console.log(storybranch);
       findParent(storybranch);
     })
   }
