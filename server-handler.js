@@ -87,6 +87,8 @@ app.get('/grabstory', (req, res)=>{
     storyFamily([results])
     .then(storybranch=>{
       //get comments for each story
+      console.log('000000000000000');
+      console.log(storybranch);
       familyTalk(storybranch,0, res);
     });
   });
