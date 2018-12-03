@@ -115,21 +115,26 @@ Original Form
         console.log(json[i]);
         const container = document.createElement('div');
         container.id = json[i].story_Id;
+        container.style.border = 'solid 1px black';
 
         const author = document.createElement('p');
         author.innerText = json[i].author;
+        author.style.color = 'red';
 
         const time = document.createElement('p');
         time.innerText = json[i].time;
+        time.style.color = 'blue';
 
         const text = document.createElement('p');
         text.innerText = json[i].content;
 
         const like = document.createElement('p');
-        like.innerText = json[i].plus;
+        like.innerText = json[i].like;
+        like.style.color = 'blue';
 
         const dislike = document.createElement('p');
-        dislike.innerText = json[i].minus;
+        dislike.innerText = json[i].dislike;
+        dislike.style.color = 'red';
 
         const commentbox = document.createElement('div');
         for(let j=0;j<json[i].comment.length;j++){
@@ -146,6 +151,8 @@ Original Form
           comment_segment.appendChild(comment);
           commentbox.appendChild(comment_segment);
         }
+        commentbox.style.fontSize = 'small';
+        commentbox.style.backgroundColor = 'wheat';
         container.appendChild(time);
         container.appendChild(author);
         container.appendChild(text);
