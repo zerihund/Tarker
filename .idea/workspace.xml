@@ -31,16 +31,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="97" column="35" lean-forward="true" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
+            <state relative-caret-position="493">
+              <caret line="113" selection-start-line="113" selection-end-line="113" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="419">
@@ -226,20 +226,6 @@
       <workItem from="1543505945716" duration="1902000" />
       <workItem from="1543562692007" duration="2468000" />
       <workItem from="1543577928628" duration="439000" />
-    </task>
-    <task id="LOCAL-00057" summary="continuous bug fixing 0.20">
-      <created>1543501015192</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1543501015192</updated>
-    </task>
-    <task id="LOCAL-00058" summary="continuous bug fixing 0.21">
-      <created>1543501097439</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1543501097439</updated>
     </task>
     <task id="LOCAL-00059" summary="continuous bug fixing 0.22">
       <created>1543501976397</created>
@@ -570,11 +556,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543840959741</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="init storm 0.0.29&#10;trying to get the info">
+      <created>1543841390260</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1543841390260</updated>
+    </task>
+    <task id="LOCAL-00107" summary="init storm 0.0.30&#10;trying to get the info">
+      <created>1543841511145</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1543841511145</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97275000" />
+    <option name="totallyTimeSpent" value="98269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -636,8 +636,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init storm 0.0.6&#10;testing upload query" />
-    <MESSAGE value="init storm 0.0.7&#10;testing upload query" />
     <MESSAGE value="init storm 0.0.8&#10;fix math random" />
     <MESSAGE value="init storm 0.0.9&#10;continue upload test" />
     <MESSAGE value="init storm 0.0.10&#10;continue upload test" />
@@ -661,7 +659,9 @@
     <MESSAGE value="init storm 0.0.26&#10;trying to get the info" />
     <MESSAGE value="init storm 0.0.27&#10;trying to get the info" />
     <MESSAGE value="init storm 0.0.28&#10;trying to get the info" />
-    <option name="LAST_COMMIT_MESSAGE" value="init storm 0.0.28&#10;trying to get the info" />
+    <MESSAGE value="init storm 0.0.29&#10;trying to get the info" />
+    <MESSAGE value="init storm 0.0.30&#10;trying to get the info" />
+    <option name="LAST_COMMIT_MESSAGE" value="init storm 0.0.30&#10;trying to get the info" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -743,17 +743,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server-handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="97" column="35" lean-forward="true" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
           <caret line="104" column="29" lean-forward="true" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
         </state>
       </provider>
     </entry>

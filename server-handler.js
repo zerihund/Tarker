@@ -79,6 +79,7 @@ app.post('/emailcheck', (req, res)=>{
 //get random story to display
 app.get('/grabstory', (req, res)=>{
   //get init story
+  console.log('www');
   db.getInitStory(connection)
   .then(results =>
   {
@@ -93,7 +94,6 @@ app.get('/grabstory', (req, res)=>{
 
 //get story from top to end
 const storyFamily = (storybranch)=>{
-  console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxx');
   return new Promise((resolve, reject)=>{
     if(storybranch[0].parent_story === 0){
       console.log('999999999999999999999999999999');
@@ -103,8 +103,9 @@ const storyFamily = (storybranch)=>{
     else{
       db.getParentStory(connection,storybranch[0].story_Id)
       .then(results =>{
+        storybranch.unshift(results[0]);
+        console.log('1111');
         console.log(storybranch);
-        storybranch.unshift(results);
         storyFamily(storybranch);
       })
     }
