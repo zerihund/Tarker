@@ -14,6 +14,9 @@ const vidupload = multer({dest: 'public/res/media/vid'});
 const audupload = multer({dest: 'public/res/media/bgm'});
 const imgupload = multer({dest: 'public/res/media/img'});
 
+//nodeJs builtin module, we might need to use this one
+const wilson = require('wilson-score')
+
 //---------------------------------------------------------------------------------------
 //database thing
 const db = require('./modules/data-handler');
@@ -24,6 +27,7 @@ const connection = db.connect();
 //set up passport and log in procedure
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+
 app.use(passport.initialize());
 app.use(passport.session());
 

@@ -120,7 +120,10 @@ look for it all over the place*/
     background-color: #eda948;
 }
 .sign-up-container,
-.login-container{
+.login-container,
+.user-icon,
+.login-dropdown-content a,.login-dropdown
+{
     color: #fee6b8;
 }
 body{
@@ -134,24 +137,25 @@ body{
     color:#7a6f73;
 }
 
-.close, .form-error{
+.close{
     color: #aaaaaa;
 }
-.topnav,.sign-up-container,.login-container{
+.topnav,.sign-up-container,.login-container,
+.login-dropdown-content, .login-dropdown{
     background-color: #282f3f;
 }
 .logo{
     background-color:#fee6b8;
 }
-.signin-button {
+.pink-btn {
     background-color: #c61766;
     color: #fee6b8;
 }
-.search-btn,.btn-sign-in{
+.search-btn,.btn-sign-in, .grey-btn{
     background-color:#454755;
     color:#fee6b8;
 }
-.pink-text,.close:hover{
+.pink-text,.close:hover, .form-error{
     color: #c61766;
 }
 .modal{

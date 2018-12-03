@@ -29,21 +29,37 @@
   }
 
   .signin-button {
-    padding: 0.5rem 0.5rem;
-    font-size:1rem;
-    border-radius: 0.5rem;
+    display:none;
+  }
+  .user-icon{
+    margin-right: 1rem;
+    background-color: #282f3f;
+    border: 1px solid #fee6b8;
+    border-radius:3px;
+  }
+  .login-dropdown{
+    position: relative;
+    display: none;
+  }
+
+  .login-dropdown-content{
+    display: block;
+    list-style-type: none;
+    width:120px;
+    border-radius: 0  0 5px 5px;
+    position: absolute;
+    top: 5px;
+    right: -8px;
+    z-index: 3;
+    padding: 0 3px 5px 3px;
+    margin: 0;
   }
   .sign-up-form,.login-form{
     width: 100%;
   }
 
 
-  .sign-up-container{
 
-  }
-  login-container{
-    height: 60vh;
-  }
   .sign-up-container,.login-container{
     margin-top: 7vh;
     width: 90%;
@@ -89,5 +105,6 @@
   .next-media-story img,.next-media-story video{
     width:100%;
   }
+
 
 }
