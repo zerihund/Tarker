@@ -170,7 +170,8 @@ const upload = (connection, data, res)=>{
   const storyid = math.idGenerate();
   console.log(storyid);
   connection.query(
-      `INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) VALUES(${storyid},'${title}','${story}',${parent},'something here', null})`,
+      //'INSERT INTO story (story_Id,content,parent_story,media,story_Flag) VALUES (,"heloolwo oid",14,"ddi",null)',
+      `INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) VALUES (${storyid},'${title}','${story}',${parent},'something here', null})`,
       (err, results)=>{
         console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
         console.log(results);
