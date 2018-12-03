@@ -95,7 +95,7 @@ app.get('/grabstory', (req, res)=>{
 const storyFamily = (storybranch)=>{
   console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxx');
   return new Promise((resolve, reject)=>{
-    if(storybranch[0].story_Id == 0){
+    if(storybranch[0].parent_story === 0){
       console.log('999999999999999999999999999999');
       console.log(storybranch);
       resolve(storybranch);
