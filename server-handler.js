@@ -93,6 +93,7 @@ app.get('/grabstory', (req, res)=>{
 
 //get story from top to end
 const storyFamily = (storybranch)=>{
+  console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxx');
   return new Promise((resolve, reject)=>{
     if(storybranch[0].story_Id !== 0){
       db.getParentStory(connection,storybranch[0].story_Id)
