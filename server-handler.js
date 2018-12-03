@@ -95,21 +95,21 @@ app.get('/grabstory', (req, res)=>{
 const storyFamily = (storybranch)=>{
   console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxx');
   return new Promise((resolve, reject)=>{
-    if(storybranch[0].story_Id !== 0){
-      db.getParentStory(connection,storybranch[0].story_Id)
-      .then(results =>{
-          storybranch.unshift(results);
-          if (storybranch[0].parent_story === 0){
-            resolve(storybranch);
-          }
-          else{
-            storyFamily(storybranch);
-          }
-      })
-    }
-    else{
+    if(storybranch[0].story_Id === 0){
       console.log(storybranch);
       resolve(storybranch);
+    }
+    else{
+      db.getParentStory(connection,storybranch[0].story_Id)
+      .then(results =>{
+        storybranch.unshift(results);
+        if (storybranch[0].parent_story === 0){
+          resolve(storybranch);
+        }
+        else{
+          storyFamily(storybranch);
+        }
+      })
     }
   })
 };
