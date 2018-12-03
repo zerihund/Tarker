@@ -101,7 +101,7 @@ const storyFamily = (storybranch)=>{
     resolve(x);
   });
 };
-
+//get parent story
 const findParent = (storybranch)=>{
   if(storybranch[0].parent_story === 0){
     console.log('999999999999999999999999999999');
@@ -117,7 +117,7 @@ const findParent = (storybranch)=>{
       findParent(storybranch);
     })
   }
-}
+};
 //get comments
 const familyTalk = (storybranch, i, res)=>{
     db.getStoryComment(connection,  storybranch[i].story_Id)
@@ -140,13 +140,13 @@ const familyTalk = (storybranch, i, res)=>{
 const authorTalk = (storybranch, i, res)=>{
   db.getAuthor(connection,  storybranch[i].story_Id)
   .then(result => {
+    console.log(result);
     if(result[0].name){
       storybranch[i].author = result[0].name;
     }
     else(
         storybranch[i].author = 'undefined'
     );
-
     storybranch[i].time = result[0].story_time;//this may not work but let's see
     i++;
     console.log(i);
