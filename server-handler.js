@@ -201,6 +201,7 @@ app.use('/uploadaudio/', (req, res, next)=>{
 //----------------------------------------------------------------------
 //upload image
 app.post('/uploadimage/', imgupload.single('media'), (req, res, next)=>{
+  console.log('receiving uplo')
   next();
 });
 
@@ -225,6 +226,11 @@ app.post('/uploadtext/', (req, res, next)=>{
   db.upload(connection,data, res);
 });
 
+
+//add like, dislike to +database
+app.post('/opinion/', (req, res)=>{
+
+});
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site

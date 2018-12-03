@@ -155,7 +155,6 @@ const getOpinion = (connection, id)=>{
   })
 };
 
-
 //add story to database
 const upload = (connection, data, res)=>{
   const storyid = math.idGenerate();
