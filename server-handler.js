@@ -127,12 +127,13 @@ const authorTalk = (storybranch, i, res)=>{
   db.getAuthor(connection,  storybranch[i].story_Id)
   .then(result => {
     console.log(result);
-    if(result[0].name){
+    if(result[0].name !==undefined){
       storybranch[i].author = result[0].name;
     }
-    else(
-        storybranch[i].author = 'undefined'
-    );
+    else{
+      storybranch[i].author = result[0];
+    }
+
     storybranch[i].time = result[0].story_time;//this may not work but let's see
     i++;
     console.log(i);
