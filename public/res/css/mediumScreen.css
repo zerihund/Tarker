@@ -129,7 +129,9 @@ body{
     justify-content: center;
     font-family: sans-serif;
     margin:0rem auto 1rem auto;
-    width: 60%;
+    width: 40%;
+    height: 50%;
+    top: 25%;
     max-width:500px;
 }
 /* to have the button sit perfectly divided by the bottom border
@@ -167,9 +169,9 @@ fieldset{
 .form-submit-btn{
     border-radius: 4rem;
     width: 8rem;
-    height: 2rem;
+    height: 1.5rem;
     border: none;
-    font-size: 1rem
+    font-size: 1rem;
 }
 
 .btn-bottom-edge{

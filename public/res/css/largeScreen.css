@@ -4,9 +4,11 @@ look for it all over the place*/
 
 /*      LARGE SCREEN          */
 @media only screen and (min-width: 1008px) {
-    html{font-size: 28px;}
+    html{font-size: 24px;}
     .sign-up-container,.login-container{
-        width: 50%;
+        width: 30%;
+        height: 60%;
+        top: 20%;
     }
     .card,.next-card{
         padding: 20px 10px;

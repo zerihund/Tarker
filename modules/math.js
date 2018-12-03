@@ -13,7 +13,7 @@ const wilson = (pos, n) => {
   }
   else {
     //z score for 95% confidence. we can also calculate z using z = Statistics2.pNormalDist(1-(1-confidence)/2) the result is between 1.64 and 2.3
-    //for simplicity we use 1.96 most known approximation 
+    //for simplicity we use 1.96 most known approximation
     const z = 1.96;
     const pBound = pos/ n;
 
