@@ -172,7 +172,7 @@ const storyOpinion = (storybranch, i, res)=>{
 };
 
 //--------------------------------------------------------------------------------------------------------
-//concerning uploading stories
+//concerning uploading stories----------------------------------------------------------------------------
 //upload video
 app.post('/uploadvideo/', vidupload.single('media'), (req, res, next)=>{
   next();
@@ -223,7 +223,7 @@ app.use('/uploadimage/', (req, res, next)=>{
     req.body.story,
   ];
   console.log(data);
-  db.upload(connection,data, res);
+  db.upload(connection,data,res);
 });
 
 //upload text only

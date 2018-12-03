@@ -161,14 +161,16 @@ const getOpinion = (connection, id)=>{
 //add story to database
 const upload = (connection, data, res)=>{
   console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
-  console.log(data[0]);
-  console.log(data[1]);
-  console.log(data[2]);
-  console.log(data[3]);
+
+  const author = data[0];
+  const parent = data[1];
+  const title = data[2];
+  const story = data[3];
+  console.log(author +' '+ parent +' '+title + ' '+ story);
   const storyid = math.idGenerate();
   console.log(storyid);
   connection.query(
-      `INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) VALUES('${storyid}','${data[2]}','${data[3]}','${data[1]}','something here', null})`,
+      `INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) VALUES(${storyid},'${title}','${story}',${parent},'something here', null})`,
       (err, results)=>{
         console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
         console.log(results);
