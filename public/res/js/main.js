@@ -19,8 +19,8 @@ const showTextStory = (file)=> {
   <div class="card">
 
      <div class="author-date">
-       <p id="author">${file.author}</p>
-       <p id="time">${file.storyDate} </p>
+       <p class="author">${file.author}</p>
+       <p class="time">${file.storyDate} </p>
      </div>
 
      <div class="title"><h2>${file.storyTitle}</h2></div>
@@ -39,8 +39,8 @@ const showVideoStory = (file)=> {
   <div class="card">
 
      <div class="author-date">
-       <p id="author">${file.author}</p>
-       <p id="time">${file.storyDate} </p>
+       <p class="author">${file.author}</p>
+       <p class="time">${file.storyDate} </p>
      </div>
 
      <div class="title"><h2>${file.storyTitle}</h2></div>
@@ -60,8 +60,8 @@ function showImageStory(file) {
   <div class="card">
 
      <div class="author-date">
-       <p id="author">${file.author}</p>
-       <p id="time">${file.storyDate} </p>
+       <p class="author">${file.author}</p>
+       <p class="time">${file.storyDate} </p>
      </div>
 
      <div class="title"><h2>${file.storyTitle}</h2></div>

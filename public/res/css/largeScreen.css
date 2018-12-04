@@ -14,10 +14,10 @@ look for it all over the place*/
         margin: 0 auto 1vw auto;
         border-radius: 0.5vw;
     }
-    #author{
+    .author{
         font-size:1.1vw;
     }
-    #time{
+    .time{
         font-weight:100;
         font-size:1.1vw;
     }
@@ -139,7 +139,7 @@ body{
     background-color: #fff;
     color: black;
 }
-#time{
+.time{
     color:#7a6f73;
 }
 

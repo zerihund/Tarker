@@ -185,10 +185,10 @@ fieldset{
     justify-content: space-between;
 }
 
-#author{
+.author{
     font-weight:700;
 }
-#time{
+.time{
     font-weight:100;
 }
 .title{
@@ -255,10 +255,10 @@ fieldset{
         margin: 0 auto 1vw auto;
         border-radius:10px;
     }
-    #author{
+    .author{
         font-size:15px;
     }
-    #time{
+    .time{
         font-weight:100;
         font-size:15px;
     }

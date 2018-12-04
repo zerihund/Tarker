@@ -3,8 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- font for the "logo" for now. remove when we get the real logo -->
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,15 +13,54 @@
   <link rel="stylesheet" href="res/css/mediumScreen.css">
   <link rel="stylesheet" href="res/css/smallScreen.css">
   <link rel="stylesheet" href="res/css/largeScreen.css">
+  <link rel="stylesheet" href="res/css/test.css">
 
   <title>Tarker</title>
 </head>
 <body>
+<div class="card">
+
+  <div class="author-date">
+    <p id="author">${file.author}</p>
+    <p id="time">${file.storyDate} </p>
+  </div>
+
+  <div class="title"><h2>${file.storyTitle}</h2></div>
+  <div class="story">
+    <p>
+      ${file.story}
+    </p>
+  </div>
+  <div class="impression">
+    <i id="thumbs-up" class="fa fa-thumbs-up" onclick="likeOrNot()"></i>
+    <span id="likes"></span>
+    <i id="thumbs-down"  class="fa fa-thumbs-down" onclick="dislikeOrNot()"></i>
+    <span id="dislikes"></span>
+  </div>
+
+</div>
+<div class="card">
+  <div class="author-date">
+    <p class="author">${file.author}</p>
+    <p class="time">${file.storyDate} </p>
+  </div>
+
+  <div class="title"><h2>${file.storyTitle}</h2></div>
+  <div class="media-story">
+    <video controls src="${file.storyVideoUrl}"></video>
+    <p>${file.story}
+
+    </p>
+  </div>
+</div>
+
 <section class="main">
+
 
 
 
 </section>
 <script src="res/js/main.js"></script>
+<script src="res/js/testLikes.js"></script>
 </body>
 </html>

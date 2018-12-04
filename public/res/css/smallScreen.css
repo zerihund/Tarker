@@ -86,10 +86,10 @@
     border-radius:10px;
     margin: 0 auto 10px auto;
   }
-  #author{
+  .author{
     font-size:12px;
   }
-  #time{
+  .time{
     font-weight:100;
     font-size:12px;
   }
