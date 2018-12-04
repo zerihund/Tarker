@@ -76,30 +76,9 @@ function showImageStory(file) {
 `;
 }
 
-fetch('res/js/template.json').then((response)=>{
+fetch('/node/grabstory').then((response)=>{
   return response.json();
 }).then((file)=>{
   show(file);
 
 });
-
-//close button turns login's display to none
-const loginClose= document.querySelector('#login-close');
-loginClose.onclick = (event)=> {
-  document.getElementById('popup').style.display = "none";
-};
-
-//toggles the mobile dropdown menu on or off
-window.onclick = (event)=> {
-  if(event.target == document.getElementById('user-icon')) {
-    document.getElementById('login-dropdown').style.display = "block";
-  }
-  else if(event.target != document.getElementById('user-icon')){
-    document.getElementById('login-dropdown').style.display = "none";
-  }
-};
-
-const signupClose= document.querySelector('#signup-close');
-signupClose.onclick = (event)=> {
-  document.getElementById('popup2').style.display = "none";
-};
