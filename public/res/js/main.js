@@ -16,7 +16,7 @@ const grabStory = ()=>{
       container.id = json[i].story_Id;
       container.className = 'card';
 
-      const author_date = document.createElement('dive');
+      const author_date = document.createElement('div');
       author_date.className = 'author-date';
       const author = document.createElement('p');
       author.className = 'author';

@@ -43,14 +43,11 @@ passport.use(new LocalStrategy((username, password, done)=>{
   })
 }));
 app.post('/login',
-    passport.authenticate('local', {successRedirect: '/node/abc', failureRedirect: '/node/xyz', session: false}));
+    passport.authenticate('local', {successRedirect: '/node/content.html', failureRedirect: '/node/', session: false}));
 
-app.get('/abc', (req, res)=>{
-  res.send('You have logged in');
-});
-
-app.get('/xyz', (req, res)=>{
-  res.send('failed logged in');
+app.post('/check/', (req, res)=>{
+  console.log(req);
+  res.send(':v')
 });
 //----------------------------------------------------------------------------------------
 //concerning users

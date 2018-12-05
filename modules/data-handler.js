@@ -35,7 +35,7 @@ const checkUser = (connection, username, res)=>{
           res.send('Username already exists.');
         }
         else{
-          res.send('Username ok :P.');
+          res.send('Username ok.');
         }
       },
   )
@@ -51,7 +51,7 @@ const checkEmail = (connection, email, res)=>{
           res.send('Email already exists.');
         }
         else{
-          res.send('email ok :)');
+          res.send('email ok');
         }
       },
   )

@@ -1,4 +1,7 @@
 'use strict';
+let name_error = true;
+let email_error = true;
+let password_error = true;
 //------------------------------------------------------------------------------
 //concerning log in form
 document.querySelector('.login-form')
@@ -43,7 +46,14 @@ nameinput.addEventListener('focusout', (evt) =>{
       console.log(res);
       return res.text();
     }).then(
-        text => error_span[0].innerText = text)
+        text => {
+          error_span[0].innerText = text;
+          name_error = true;
+          if (text === 'Username ok.'){
+            error_span[0].style.color = 'green';
+            name_error = false;
+          }
+        })
   }
 });
 
@@ -62,7 +72,12 @@ email.addEventListener('focusout', (evt) =>{
     })
     .then(res => res.text())
     .then(text =>{
-      error_span[1].innerText = text
+      error_span[1].innerText = text;
+      email_error = true;
+      if (text === 'email ok.'){
+        error_span[1].style.color = 'green';
+        email_error = false;
+      }
     })
   }
 });
@@ -74,6 +89,14 @@ passwordcheck.addEventListener('focusout', (evt) =>{
     password.value = '';
     passwordcheck.value = '';
     password.focus();
+    password_error = true;
+  }
+  else{
+    password_error = false;
+    error_span[2].innerHTML = 'OK';
+    error_span[2].style.color = 'green';
+    error_span[3].style.color = 'green';
+    error_span[3].innerHTML = 'OK';
   }
 });
 
@@ -84,16 +107,18 @@ document.querySelector('.sign-up-form')
   const username = evt.target.elements['username'].value;
   const email = evt.target.elements['email'].value;
   const password = evt.target.elements['password'].value;
-  fetch('/node/signup/', {
-    method: 'POST',
-    headers: new Headers({
-      'Content-Type': 'application/x-www-form-urlencoded',
-    }),
-    body: `username=${username}&email=${email}&password=${password}`
-  })
-  .then((res) => res.text())
-  .then( text => {
-    console.log(text);
-  })
+  if(!name_error && !email_error && !password_error){
+    fetch('/node/signup/', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }),
+      body: `username=${username}&email=${email}&password=${password}`
+    })
+    .then((res) => res.text())
+    .then( text => {
+      console.log(text);
+    })
+  }
 });
 
