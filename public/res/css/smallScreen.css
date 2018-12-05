@@ -1,24 +1,32 @@
 /*screen sizes less than 650px*/
-@media only screen and (max-width: 650px){
-  html{
-    font-size: 16px;
-  }
+@media only screen and (max-width: 480px){
+
   .topnav{
     height: 2.5rem;
     padding:0 0.5rem;
   }
 
   .topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
-    height: 2rem;
+    height: 24px;
+  }
+
+  .topnav-left{
+    left: 4px;
+  }
+
+  .topnav-right{
+    right: 4px;
   }
   .logo{
-    width:2rem;
-    margin-right:0.3rem;
+    width: 80px;
   }
 
-
+  .user-icon{
+    color: #c61766;
+    border: #c61766 solid 1px;
+  }
   .search-input{
-    width:40vw;
+    width: 100px;
     font-size: 1rem;
   }
   .search-btn{
@@ -31,12 +39,7 @@
   .signin-button {
     display:none;
   }
-  .user-icon{
-    margin-right: 1rem;
-    background-color: #282f3f;
-    border: 1px solid #fee6b8;
-    border-radius:3px;
-  }
+
   .login-dropdown{
     position: relative;
     display: none;
@@ -58,14 +61,6 @@
     width: 100%;
   }
 
-
-
-  .sign-up-container,.login-container{
-    margin-top: 7vh;
-    width: 90%;
-    max-width: 380px;
-  }
-
   .input-fieldset input{
     height: 1.5rem;
   }
@@ -81,6 +76,8 @@
     width:60%;
     max-width: 150px;
   }
+
+
   .card{
     padding: 16px 10px;
     border-radius:10px;
@@ -107,6 +104,4 @@
   .next-media-story img,.next-media-story video{
     width:100%;
   }
-
-
 }

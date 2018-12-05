@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="english">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- font for the "logo" for now. remove when we get the real logo -->
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-    <!-- Raleway Font -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
-
-
-    <!-- font awesome -->
+    <!--<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">-->
+    <!--&lt;!&ndash; Raleway Font &ndash;&gt;-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">-->
+    <!--&lt;!&ndash; font awesome &ndash;&gt;-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
     <link rel="stylesheet" href="res/css/reset.css">
-
+    <link rel="stylesheet" href="res/css/default.css">
+    <link rel="stylesheet" href="res/css/color.css">
     <link rel="stylesheet" href="res/css/mediumScreen.css">
     <link rel="stylesheet" href="res/css/smallScreen.css">
-    <link rel="stylesheet" href="res/css/largeScreen.css">
+    <!--<link rel="stylesheet" href="res/css/largeScreen.css">-->
     <title>The Archive</title>
 </head>
 <body>
@@ -27,16 +24,12 @@
     <div class="topnav-left">
         <div class="logo"></div>
         <form class="topnav-searchbar-form" action="" method="get">
-            <input class="search-input" type="text" placeholder="Search.." name="search">
+            <input class="search-input" type="text" placeholder="search" name="search">
             <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
         </form>
 
     </div>
     <div class="topnav-right">
-        <button id="user-icon" class="user-icon">
-            <i class="fa fa-user fa-2x "></i>
-            <i class="fa fa-caret-down fa-2x " aria-hidden="true"></i>
-        </button>
         <div id="login-dropdown" class="login-dropdown">
             <ul class="login-dropdown-content">
                 <li href="#smth">some function</li>
@@ -49,7 +42,10 @@
         <button onclick="document.getElementById('popup2').style.display='block'"
                 class="signin-button pink-btn">SIGN UP</button>
         <button onclick="document.getElementById('popup').style.display='block'"
-                class="signin-button grey-btn">LOGIN</button>
+                class="signin-button yellow-btn">LOG IN</button>
+        <button id="user-icon" class="user-icon">
+            <i class="fa fa-caret-down fa-2x " aria-hidden="true"></i>
+        </button>
 
     </div>
 </div>
@@ -57,26 +53,24 @@
 <section id="popup" class="modal modal1">
     <div  class="login-container animate">
         <span class="close" id="login-close">&times;</span>
-        <h1 class="prelim-logo">StoryTeller</h1>
+        <h1 class="prelim-logo">The Archive</h1>
 
         <form  class="login-form" action="/" method="post">
 
             <fieldset class="input-fieldset">
-                User name <br>
+                USER NAME <br>
                 <input type="text" name="username"  required>
-                <span class="form-error"> span was applied here</span>
 
             </fieldset>
 
             <fieldset class="input-fieldset">
-                Password <br>
+                PASSWORD <br>
                 <input type="password" name="password"  required>
-                <span class="form-error">span was applied here</span>
-                <p class="new-to-text">New to StoryTellers? <a onclick="document.getElementById('popup2').style.display='block'"
+                <p class="new-to-text">New to The Archive? <a onclick="document.getElementById('popup2').style.display='block'"
                                                                class="pink-text" href="#">Sign Up</a></p>
             </fieldset>
 
-            <fieldset class="form-center ">
+            <fieldset class="form-center btn-bottom-edge">
 
                 <input type="submit" class="form-submit-btn btn-sign-in gray-btn" name="sign-up" value="Sign In">
             </fieldset>
@@ -88,30 +82,30 @@
 <section id="popup2" class="modal modal2 ">
     <div class="sign-up-container animate">
         <span class="close" id="signup-close">&times;</span>
-        <h1 class="prelim-logo">StoryTeller</h1>
+        <h1 class="prelim-logo">The Archive</h1>
 
         <form  class="sign-up-form" action="/" method="post">
 
             <fieldset class="input-fieldset">
-                User name <br>
+                USER NAME <br>
                 <input type="text" name="username"  required>
                 <span class="form-error"></span>
             </fieldset>
 
             <fieldset class="input-fieldset">
-                Email <br>
+                EMAIL <br>
                 <input type="email" name="email" required>
                 <span class="form-error"></span>
             </fieldset>
 
             <fieldset class="input-fieldset">
-                Password <br>
+                PASSWORD <br>
                 <input type="password" name="password"  required>
                 <span class="form-error"></span>
             </fieldset>
 
             <fieldset class="input-fieldset">
-                Retype Password <br>
+                CONFIRM PASSWORD <br>
                 <input type="password" name="retype-password"  required>
                 <span class="form-error"></span>
                 <br><p class="new-to-text">Already have an account? <a  class="pink-text" href="#">Sign in</a></p><br>
@@ -124,7 +118,6 @@
             </fieldset>
         </form>
     </div>
-
 </section>
 <!--<script>
   document.querySelector('div').addEventListener('click',()=>{
@@ -135,6 +128,12 @@
     }
   })
 </script>-->
+<aside>
+
+</aside>
+<main>
+
+</main>
 <script src="res/js/main.js"></script>
 <script src="res/js/commune.js"></script>
 </body>

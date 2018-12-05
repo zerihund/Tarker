@@ -179,24 +179,6 @@ Original Form
       }
     });
   };
-
-  const random = (max)=>{
-    return Math.floor(Math.random() * max);
-  };
-  const idGenerate = ()=>{
-    const string = '0123456789abcdefghijklmnopqrstuvxyz!@#$%^&*';
-    let x ='';
-    for(let i=0;i<60;i++){
-      const y = random(string.length-1);
-      x += string[random(y)];
-    }
-    console.log(x);
-    return x;
-  };
-
-  idGenerate();
-  idGenerate();
-  idGenerate();
   //init functions
   grabStory();
 </script>

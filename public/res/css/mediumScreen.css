@@ -1,318 +1,95 @@
-/*Default*/
-html{
-
-}
-
-*{
-    box-sizing: border-box;
-}
-body{
-    font-family: 'Raleway', sans-serif;
-}
-.topnav{
-    display: flex;
-    flex-direction: row;
-    height: 4rem;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 1rem;
-}
-
-.topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
-    height: 3.2rem;
-}
-.logo{
-    width:3.2rem;
-
-}
-.topnav-left{
-    display:flex;
-}
-.topnav-searchbar-form{
-    display: flex;
-}
-.search-input{
-    width:40vw;
-    font-size: 2rem;
-
-}
-.search-btn{
-    width:10vw;
-    border:none;
-    cursor: pointer;
-}
-
-.signin-button {
-    border: none;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size:1.8rem;
-    cursor: pointer;
-    margin-right:1rem;
-    border-radius: 0.5rem;
-}
-.login-dropdown{
-    display: none;
-}
-.btn{
-    height: 1rem;
-    padding: 0 1rem;
-    border:none;
-    font-size: 0.5rem;
-}
-/* the section containing the sign up form and the logo*/
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
-}
-
-@keyframes animatezoom {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
-}
-.modal {
-    position: fixed; /* Stay in place */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    padding-top: 60px;
-}
-.modal1{
-    display: none; /* Hidden by default */
-    z-index: 1; /* Sit on top */
-}
-.modal2{
-    display: none; /* Hidden by default */
-    z-index: 2; /* Sit on top */
-}
-.form-error{
-    margin:0;
-    padding:0;
-    line-height: 0.5rem;
-    font-size: 0.5rem;
-    text-align: right;
-    float: right;
-
-}
-.close{
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 3vw;
-    cursor: pointer;
-}
-
-.sign-up-container,.login-container{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
-    margin:0rem auto 1rem auto;
-    width: 40%;
-    top: 15%;
-    max-width:500px;
-    padding: 1rem;
-}
-/* to have the button sit perfectly divided by the bottom border
-of the section, sign-up-container has to have its bottom padding
-equal to half the height of the button. specified in form-submit-btn*/
-.prelim-logo{
-    font-family: 'Dancing Script',cursive;
-    font-size: 200%;
-    font-weight: 600;
-    margin: 0.7rem;
-}
-form{
-    width: 100%;
-    font-size:0.7rem;
-}
-
-/* -group the input and the label so we can space them out well
-    -input-fieldset is different from the btn-bottom-edge because of the postioning*/
-
-
-fieldset{
-    border:none;
-}
-.input-fieldset input{
-    width: 100%;
-    height: 1.15rem;
-}
-.form-center{
-    text-align: center;
-}
-.new-to-text{
-    margin-bottom: 0rem;
-    font-size: 0.7rem;
-}
-.form-submit-btn{
-    border-radius: 4rem;
-    width: 8rem;
-    height: 1.5rem;
-    border: none;
-    font-size: 1rem;
-}
-
-.btn-bottom-edge{
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    /* padding: 0; */
-}
-.card,.next-card{
-    display: flex;
-    flex-direction: column;
-}
-.author-date{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.author{
-    font-weight:700;
-}
-.time{
-    font-weight:100;
-}
-.title{
-    text-align:center;
-    font-size:1rem;
-    font-weight:700;
-    padding:0.2rem;
-}
-.story p{
-    text-align:justify;
-}
-.story p,.title,.author-date,
-.media-story,.next-media-story{
-    margin: 0 auto;
-}
-.media-story p,.next-media-story p{
-
-}
-
-.media-,.next-media-story{
-    display: flex;
-}
-
-
-
-
 
 /* screen between  650px and 1007px*/
-@media only screen and (min-width: 650px)  {
-    .topnav{
-        height: 1.5rem;
-        padding:0 1rem;
-    }
+@media only screen and (min-width: 481px) and (max-width: 1023px)  {
 
-    .topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
-        height: 1.1rem;
-    }
-    .logo{
-        width:1.6rem;
-        margin-right:1rem;
-    }
+  .topnav-left{
+    left: 8px;
+  }
 
+  .topnav-right{
+    right: 8px;
+  }
+  .search-input{
+      font-size: 0.8rem;
+      width: 9rem;
+  }
+  .search-btn{
+      width:5vw;
+  }
+  .logo{
+    width: 120px;
+  }
+  .signin-button {
+      padding: 0.3rem 0.7rem;
+      font-size:0.6rem;
+      border-radius: 0.3rem;
+      margin-left: 4px;
+      margin-right: 4px;
+      width: 64px;
+  }
 
-    .search-input{
-        width:40vw;
-        font-size: 0.8rem;
-    }
-    .search-btn{
-        width:5vw;
-    }
-
-    .signin-button {
-        padding: 0.3rem 0.7rem;
-        font-size:0.6rem;
-        border-radius: 0.3rem;
-    }
-    .user-icon{
-        display:none;
-    }
-
-    .card,.next-card{
-        padding: 20px 10px;
-        width:90vw;
-        margin: 0 auto 1vw auto;
-        border-radius:10px;
-    }
-    .author{
-        font-size:15px;
-    }
-    .time{
-        font-weight:100;
-        font-size:15px;
-    }
-    .story p,.title,.author-date{
-        max-width: 75%;
-        width: 100%;
-    }
-    .media-story,.next-media-story{
-        display:block;
-    }
-    .media-story p,.next-media-story p{
-        margin-block-start: 0;
-    }
-    .media-story img,.media-story video,
-    .next-media-story img, .next-media-story video{
-        padding:0 15px 0 5px;
-        width:50%;
-        object-fit:contain;
-        height:50%;
-        float:left;
-    }
-
-
+  .card,.next-card{
+      padding: 20px 10px;
+      width:90vw;
+      margin: 0 auto 1vw auto;
+      border-radius:10px;
+  }
+  .author{
+      font-size:15px;
+  }
+  .time{
+      font-weight:100;
+      font-size:15px;
+  }
+  .story p,.title,.author-date{
+      max-width: 75%;
+      width: 100%;
+  }
+  .media-story,.next-media-story{
+      display:block;
+  }
+  .media-story p,.next-media-story p{
+      margin-block-start: 0;
+  }
+  .media-story img,.media-story video,
+  .next-media-story img, .next-media-story video{
+      padding:0 15px 0 5px;
+      width:50%;
+      object-fit:contain;
+      height:50%;
+      float:left;
+  }
 }
-@media only screen and (min-width: 650px)and (max-width: 1007px)  {
-    .topnav{
-        height: 2rem;
-        padding:0 1rem;
-    }
+/*@media only screen and (min-width: 481px)and (max-width: 1023px)  {*/
+    /*.topnav{*/
+        /*height: 2rem;*/
+        /*padding:0 1rem;*/
+    /*}*/
 
-    .topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
-        height: 1.5rem;
-    }
-    .logo{
-        width:1.6rem;
-        margin-right:1rem;
-    }
-    .input-fieldset input{
-        width: 100%;
-        height: 1.5rem;
-    }
+    /*.topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{*/
+        /*height: 1.5rem;*/
+    /*}*/
+    /*.logo{*/
+        /*width:1.6rem;*/
+        /*margin-right:1rem;*/
+    /*}*/
+    /*.input-fieldset input{*/
+        /*width: 100%;*/
+        /*height: 1.5rem;*/
+    /*}*/
 
 
-    .search-input{
-        width:40vw;
-        font-size: 0.8rem;
-    }
-    .search-btn{
-        width:5vw;
-    }
+    /*.search-input{*/
+        /*width:40vw;*/
+        /*font-size: 0.8rem;*/
+    /*}*/
+    /*.search-btn{*/
+        /*width:5vw;*/
+    /*}*/
 
-    .signin-button {
-        padding: 0.3rem 0.7rem;
-        font-size:0.8rem;
-        border-radius: 0.3rem;
-    }
-}
+    /*.signin-button {*/
+        /*padding: 0.3rem 0.7rem;*/
+        /*font-size:0.8rem;*/
+        /*border-radius: 0.3rem;*/
+    /*}*/
+/*}*/

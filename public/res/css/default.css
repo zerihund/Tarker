@@ -1,0 +1,322 @@
+/*Default*/
+@font-face {
+  font-family: Raleway-BoldItalic;
+  src: url(typeface/Raleway-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(typeface/Raleway-Regular.ttf);
+}
+
+@font-face {
+  font-family: Raleway-Thin;
+  src: url(typeface/Raleway-Thin.ttf);
+}
+
+@font-face {
+  font-family: Raleway-Light;
+  src: url(typeface/Raleway-Light.ttf);
+}
+
+@font-face {
+  font-family: Raleway-Medium;
+  src: url(typeface/Raleway-Medium.ttf);
+}
+
+@font-face {
+  font-family: Raleway-SemiBold;
+  src: url(typeface/Raleway-SemiBold.ttf);
+}
+
+html{
+
+}
+
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: Raleway, sans-serif;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+a{
+  text-decoration: none;
+  background-color: #7a6f73;
+}
+
+aside{
+  width: 72px;
+  background-color: #aaaaaa;
+  height: 400px;
+}
+
+main{
+  width: 720px;
+  height: 3000px;
+  background-color: black;
+}
+.topnav{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  height: 42px;
+  justify-content:space-between;
+  align-items:center;
+  margin: 0;
+}
+
+.topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
+  height: 24px;
+}
+.logo{
+  margin: auto 5px;
+  width: 240px;
+  height: 24px;
+}
+.topnav-left{
+  display:flex;
+  position: absolute;
+  left: 48px;
+}
+
+.topnav-right{
+  display:flex;
+  position: absolute;
+  right: 48px;
+}
+.topnav-searchbar-form{
+  display: flex;
+  margin-left: 4px;
+}
+.search-input{
+  width: 320px;
+  font-size: 1rem;
+  color: wheat;
+  background-color:#282f3f;
+  border: solid #fee6b8 1px;
+  padding: 2px 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.search-btn{
+  width: 48px;
+  height: 24px;
+  margin-left: 4px;
+  border:none;
+  cursor: pointer;
+}
+
+.search-btn i{
+  margin: auto;
+}
+
+.signin-button {
+  font-family: Raleway-BoldItalic, sans-serif;
+  border: none;
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin: auto 8px;
+  border-radius: 0.5rem;
+}
+.login-dropdown{
+  display: none;
+}
+.btn{
+  height: 1rem;
+  padding: 0 1rem;
+  border:none;
+  font-size: 0.5rem;
+}
+/* the section containing the sign up form and the logo*/
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+/*for text inside input-------------------------------------------------*/
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-size: 1rem;
+  color: rgba(69,71,85,0.9);
+  opacity: 0.1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-size: 1rem;
+  color: rgba(69,71,85,0.9);
+  opacity: 0.1;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  font-size: 1rem;
+  color: rgba(69,71,85,0.9);
+  opacity: 0.1;
+}
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+.modal {
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  padding-top: 60px;
+}
+.modal1{
+  display: none; /* Hidden by default */
+  z-index: 1; /* Sit on top */
+}
+.modal2{
+  display: none; /* Hidden by default */
+  z-index: 2; /* Sit on top */
+}
+.form-error{
+  margin: 5px 0 0;
+  padding:0;
+  line-height: 0.5rem;
+  font-size: 0.7rem;
+  text-align: right;
+  float: right;
+
+}
+.close{
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: -0.5rem;
+  top: -1rem;
+  cursor: pointer;
+}
+
+.sign-up-container,.login-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  margin:0 auto 1rem auto;
+  width: 320px;
+  top: 15%;
+  max-width:500px;
+  padding: 2rem 1rem;
+}
+/* to have the button sit perfectly divided by the bottom border
+of the section, sign-up-container has to have its bottom padding
+equal to half the height of the button. specified in form-submit-btn*/
+.user-icon{
+  font-size: 0.6rem;
+}
+form{
+  width: 100%;
+  font-size:1rem;
+  font-family: Raleway-Light, sans-serif;
+  font-weight: 100;
+}
+
+/* -group the input and the label so we can space them out well
+    -input-fieldset is different from the btn-bottom-edge because of the postioning*/
+
+.prelim-logo{
+  position: absolute;
+  font-family: Raleway-SemiBold,cursive;
+  font-size: 300%;
+  font-weight: 600;
+  width: 100%;
+  top: -4rem;
+  padding: 0;
+  text-align: center;
+}
+fieldset{
+  border:none;
+}
+.input-fieldset input{
+  margin-top: 4px;
+  padding-left: 4px;
+  width: 100%;
+  height: 24px;
+}
+.form-center{
+  text-align: center;
+}
+.new-to-text{
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.new-to-text a{
+  font-family: Raleway-SemiBold, sans-serif;
+}
+
+.form-submit-btn{
+  border-radius: 4rem;
+  width: 8rem;
+  height: 3rem;
+  border: none;
+  font-size: 1rem;
+  font-family: Raleway-SemiBold, sans-serif;
+  cursor: pointer;
+}
+
+.btn-bottom-edge{
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.card,.next-card{
+  display: flex;
+  flex-direction: column;
+}
+.author-date{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.author{
+  font-weight:700;
+}
+.time{
+  font-weight:100;
+}
+.title{
+  text-align:center;
+  font-size:1rem;
+  font-weight:700;
+  padding:0.2rem;
+}
+.story p{
+  text-align:justify;
+}
+.story p,.title,.author-date,
+.media-story,.next-media-story{
+  margin: 0 auto;
+}
+.media-story p,.next-media-story p{
+
+}
+
+.media-,.next-media-story{
+  display: flex;
+}
