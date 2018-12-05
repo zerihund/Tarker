@@ -58,9 +58,7 @@ app.post('/login', (req, res)=>{
       res.send('failed log in');
     }
     else{
-      contentGiver.giveContent(req.body.username).then(result =>{
-      res.send(result);
-    });
+      res.send('');
     }
   })
 });
