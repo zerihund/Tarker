@@ -1,5 +1,5 @@
-const giveContent =(username)=>{
-  return `<!-- <div style="width: 30px; display: block">Test</div> -->
+const giveContent =(username, id)=>{
+  return `MY NAME IS ${username}<!-- <div style="width: 30px; display: block">Test</div> -->
 <div class="topnav">
     <div class="topnav-left">
         <div class="logo"></div>
@@ -111,7 +111,7 @@ const giveContent =(username)=>{
 <aside>
 
 </aside>
-<main>
+<main id="${id}">
 
 </main>
 <script>

@@ -55,10 +55,11 @@ app.post('/login', (req, res)=>{
   db.checkCredentials(connection, req.body.username, req.body.password)
   .then(valid=>{
     if(valid === 'not exist'){
-      res.send('failed log in');
+      res.send('log in failed');
     }
     else{
-      res.send('');
+      const content = contentGiver.giveContent(req.body.username, valid);
+      res.send(content);
     }
   })
 });
