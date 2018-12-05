@@ -16,7 +16,8 @@ const imgupload = multer({dest: 'public/res/media/img'});
 
 //nodeJs builtin module, we might need to use this one
 const wilson = require('wilson-score');
-const content = `hello world`;
+const contentGiver = require('./modules/content');
+const content = contentGiver.giveContent();
 //---------------------------------------------------------------------------------------
 //database thing
 const db = require('./modules/data-handler');
