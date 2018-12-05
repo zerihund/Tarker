@@ -29,30 +29,42 @@ const connection = db.connect();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
+//
+// passport.use(new LocalStrategy((username, password, done)=>{
+//   db.checkCredentials(connection, username,  password).then(valid =>{
+//     console.log(valid);
+//     if(valid === true){
+//       return done(null, {username: username} );
+//     }
+//     else{
+//       return done(null, false);
+//     }
+//   })
+// }));
+// app.post('/login',
+//     passport.authenticate('local', {successRedirect: '/node/abc/', failureRedirect: '/node/xyz/', session: false}));
+//
+// app.get('/abc/', (req, res)=>{
+//   console.log(req);
+//   res.send(content);
+// });
+//
+// app.get('/xyz/', (req, res)=>{
+//   res.send('failed log in');
+// });
 
-passport.use(new LocalStrategy((username, password, done)=>{
-  db.checkCredentials(connection, username,  password).then(valid =>{
-    console.log(valid);
+app.post('/login', (req, res)=>{
+  db.checkCredentials(connection, req.body.username, req.body.password)
+  .then(valid=>{
     if(valid === true){
-      return done(null, {username: username} );
+      res.send(content)
     }
     else{
-      return done(null, false);
+      res.send('failed log in');
     }
   })
-}));
-app.post('/login',
-    passport.authenticate('local', {successRedirect: '/node/abc/', failureRedirect: '/node/xyz/', session: false}));
-
-app.get('/abc/', (req, res)=>{
-  console.log(req.body.username);
-  res.send(content);
-});
-
-app.get('/xyz/', (req, res)=>{
-  res.send('failed log in');
 });
 app.post('/check/', (req, res)=>{
   console.log(req);
