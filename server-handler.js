@@ -16,7 +16,7 @@ const imgupload = multer({dest: 'public/res/media/img'});
 
 //nodeJs builtin module, we might need to use this one
 const wilson = require('wilson-score');
-
+const content = `hello world`;
 //---------------------------------------------------------------------------------------
 //database thing
 const db = require('./modules/data-handler');
@@ -34,7 +34,7 @@ app.use(passport.session());
 passport.use(new LocalStrategy((username, password, done)=>{
   db.checkCredentials(connection, username,  password).then(valid =>{
     console.log(valid);
-    if(valid == true){
+    if(valid === true){
       return done(null, {username: username} );
     }
     else{
@@ -45,12 +45,16 @@ passport.use(new LocalStrategy((username, password, done)=>{
 app.post('/login',
     passport.authenticate('local', {successRedirect: '/node/abc', failureRedirect: '/node/xyz', session: false}));
 
-app.get('/abc', (req, res)=>{
-  res.send('You have logged in');
+app.post('/abc', (req, res)=>{
+  res.send(content);
 });
 
-app.get('/xyz', (req, res)=>{
-  res.send('failed logged in');
+app.post('/xyz', (req, res)=>{
+  res.send('failed log in');
+});
+app.post('/check/', (req, res)=>{
+  console.log(req);
+  res.send(':v')
 });
 //----------------------------------------------------------------------------------------
 //concerning users
@@ -177,7 +181,7 @@ app.post('/uploadvideo/', vidupload.single('media'), (req, res, next)=>{
   next();
 });
 
-app.use('/uploadvideo/', (req, res, next)=>{
+app.use('/uploadvideo/', (req, res)=>{
   console.log('receiving upload video');
   const data = [
     req.body.author_id,
@@ -197,7 +201,7 @@ app.post('/uploadaudio/', audupload.single('media'), (req, res, next)=>{
   next();
 });
 
-app.use('/uploadaudio/', (req, res, next)=>{
+app.use('/uploadaudio/', (req, res)=>{
   const data = [
     req.body.author_id,
     req.body.parent_id,
@@ -216,7 +220,7 @@ app.post('/uploadimage/', imgupload.single('media'), (req, res, next)=>{
   next();
 });
 
-app.use('/uploadimage/', (req, res, next)=>{
+app.use('/uploadimage/', (req, res)=>{
   const data = [
     req.body.author_id,
     req.body.parent_id,
@@ -229,7 +233,7 @@ app.use('/uploadimage/', (req, res, next)=>{
 });
 
 //upload text only
-app.post('/uploadtext/', (req, res, next)=>{
+app.post('/uploadtext/', (req, res)=>{
   const data = [
     req.body.author_id,
     req.body.parent_id,

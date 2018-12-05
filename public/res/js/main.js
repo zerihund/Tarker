@@ -121,17 +121,3 @@ const signupClose= document.querySelector('#popup2');
 signupClose.onclick = (event)=> {
   document.getElementById('popup2').style.display = "none";
 };
-// form validation
-
-const signInValidation =()=>{
-
-  let user = document.querySelector('#userName').value;
-  let pass = document.querySelector('#paassWord').value;
-
-  if (user ===""|| (user.length<3||user.length>20)){
-    document.getElementById('userName').innerHTML="* please fill your user name/use the correct format*"
-  }
-  if (pass ===""|| (user.length<3||user.length>20)){
-    document.querySelector('#passWord"').innerHTML="* please fill your user name/use the correct format*"
-  }
-};
