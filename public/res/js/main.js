@@ -93,19 +93,13 @@ grabStory();
 
 
 //------------------------------------------------------------------------------
-//close button turns modal display to none
+
+
+//close button turns login's display to none
 const loginClose= document.querySelector('#login-close');
 loginClose.onclick = ()=> {
   document.getElementById('popup').style.display = "none";
 };
-// Get the modal
-// When the user clicks anywhere outside of the modal, close it
-/**window.onclick = function(event) {
-  if (event.target == document.getElementById('popup2')) {
-    document.getElementById('popup2').style.display = "none";
-  }
-};
- */
 
 //toggles the mobile dropdown menu on or off
 window.onclick = (event)=> {
@@ -117,7 +111,7 @@ window.onclick = (event)=> {
   }
 };
 
-const signupClose= document.querySelector('#popup2');
+const signupClose= document.querySelector('#signup-close');
 signupClose.onclick = ()=> {
   document.getElementById('popup2').style.display = "none";
 };
