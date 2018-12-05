@@ -64,10 +64,11 @@ const checkCredentials = (connection, username, password)=>{
         (err, results) => {
           const exist = results.length;
           if (exist === 1) {
-            console.log(results);
+            console.log(results[0]);
+            console.log(results[0].username);
             resolve(results[0])
           } else {
-            resolve(false)
+            resolve('not exist')
           }
         })
   })

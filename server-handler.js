@@ -54,7 +54,7 @@ const connection = db.connect();
 app.post('/login', (req, res)=>{
   db.checkCredentials(connection, req.body.username, req.body.password)
   .then(valid=>{
-    if(valid !== true){
+    if(valid === 'not exist'){
       res.send('failed log in');
     }
     else{
