@@ -17,7 +17,7 @@ document.querySelector('.login-form')
       body: `username=${username}&password=${password}`
     })
     .then((res) => res.text())
-    .then(text => console.log(text))
+    .then(text => document.body.innerHTML = text)
 });
 
 
@@ -117,7 +117,7 @@ document.querySelector('.sign-up-form')
     })
     .then((res) => res.text())
     .then( text => {
-      document.body.innerHTML = text;
+      console.log(text);
     })
   }
 });
