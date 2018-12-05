@@ -43,7 +43,7 @@ passport.use(new LocalStrategy((username, password, done)=>{
   })
 }));
 app.post('/login',
-    passport.authenticate('local', {successRedirect: '/node/abc/', failureRedirect: '/node/xyz/', session: true}));
+    passport.authenticate('local', {successRedirect: '/node/abc/', failureRedirect: '/node/xyz/', session: false}));
 
 app.post('/abc/', (req, res)=>{
   res.send(content);
