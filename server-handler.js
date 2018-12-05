@@ -47,7 +47,7 @@ app.post('/login',
     passport.authenticate('local', {successRedirect: '/node/abc/', failureRedirect: '/node/xyz/', session: false}));
 
 app.get('/abc/', (req, res)=>{
-  console.log(req);
+  console.log(req.body.username);
   res.send(content);
 });
 
