@@ -36,5 +36,6 @@ const idGenerate = ()=>{
 
 module.exports = {
   random : random,
-  idGenerate : idGenerate
+  idGenerate : idGenerate,
+  wilson:wilson,
 };
