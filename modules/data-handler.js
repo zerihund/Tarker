@@ -60,13 +60,13 @@ const checkEmail = (connection, email, res)=>{
 const checkCredentials = (connection, username, password)=>{
   return new Promise((resolve)=> {
     connection.execute(
-        `SELECT * FROM user WHERE name = '${username}' AND password = '${password}'`,
+        `SELECT user.user_Id FROM user WHERE name = '${username}' AND password = '${password}'`,
         (err, results) => {
           const exist = results.length;
           if (exist === 1) {
-            resolve(true)
+            resolve(results[0].user_Id)
           } else {
-            resolve(false)
+            resolve('not exist')
           }
         })
   })

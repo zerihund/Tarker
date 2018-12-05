@@ -17,7 +17,13 @@ document.querySelector('.login-form')
       body: `username=${username}&password=${password}`
     })
     .then((res) => res.text())
-    .then(text => document.body.innerHTML = text)
+    .then(text =>{
+      if(text === 'log in failed'){
+        console.log(text);
+      }else{
+        document.body.innerHTML = text;
+      }
+  });
 });
 
 

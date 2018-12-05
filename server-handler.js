@@ -17,7 +17,6 @@ const imgupload = multer({dest: 'public/res/media/img'});
 //nodeJs builtin module, we might need to use this one
 const wilson = require('wilson-score');
 const contentGiver = require('./modules/content');
-const content = contentGiver.giveContent();
 //---------------------------------------------------------------------------------------
 //database thing
 const db = require('./modules/data-handler');
@@ -26,32 +25,43 @@ const connection = db.connect();
 //-----------------------------------------------------------------------------------------
 //concerning passport
 //set up passport and log in procedure
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+// app.use(passport.initialize());
+// app.use(passport.session());
+//
+// passport.use(new LocalStrategy((username, password, done)=>{
+//   db.checkCredentials(connection, username,  password).then(valid =>{
+//     console.log(valid);
+//     if(valid === true){
+//       return done(null, {username: username} );
+//     }
+//     else{
+//       return done(null, false);
+//     }
+//   })
+// }));
+// app.post('/login',
+//     passport.authenticate('local', {successRedirect: '/node/abc/', failureRedirect: '/node/xyz/', session: false}));
+//
+// app.get('/abc/', (req, res)=>{
+//   console.log(req);
+//   res.send(content);
+// });
+//
+// app.get('/xyz/', (req, res)=>{
+//   res.send('failed log in');
+// });
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.use(new LocalStrategy((username, password, done)=>{
-  db.checkCredentials(connection, username,  password).then(valid =>{
-    console.log(valid);
-    if(valid === true){
-      return done(null, {username: username} );
+app.post('/login', (req, res)=>{
+  db.checkCredentials(connection, req.body.username, req.body.password)
+  .then(valid=>{
+    if(valid === 'not exist'){
+      res.send('log in failed');
     }
     else{
-      return done(null, false);
+      const content = contentGiver.giveContent(req.body.username, valid);
+      res.send(content);
     }
   })
-}));
-app.post('/login',
-    passport.authenticate('local', {successRedirect: '/node/abc/', failureRedirect: '/node/xyz/', session: false}));
-
-app.get('/abc/', (req, res)=>{
-  res.send(content);
-});
-
-app.get('/xyz/', (req, res)=>{
-  res.send('failed log in');
 });
 app.post('/check/', (req, res)=>{
   console.log(req);
