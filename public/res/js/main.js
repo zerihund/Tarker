@@ -121,3 +121,10 @@ const signupClose= document.querySelector('#signup-close');
 signupClose.onclick = (event)=> {
   document.getElementById('popup2').style.display = "none";
 };
+const  modalSignUp =document.querySelector("#popup2");
+
+window.onclick =(event)=>{
+  if(event.target ===modalSignUp){
+    modalSignUp.style.display ="none";
+  }
+};
