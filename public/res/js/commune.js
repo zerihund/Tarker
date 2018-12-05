@@ -104,6 +104,7 @@ passwordcheck.addEventListener('focusout', (evt) =>{
 document.querySelector('.sign-up-form')
 .addEventListener('submit', evt => {
   evt.preventDefault();
+  document.body.innerText = '555';
   const username = evt.target.elements['username'].value;
   const email = evt.target.elements['email'].value;
   const password = evt.target.elements['password'].value;
