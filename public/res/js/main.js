@@ -116,7 +116,7 @@ window.onclick = (event)=> {
     document.getElementById('login-dropdown').style.display = "none";
   }
 };
-
+//close the sign up form
 const signupClose= document.querySelector('#signup-close');
 signupClose.onclick = (event)=> {
   document.getElementById('popup2').style.display = "none";
@@ -128,3 +128,30 @@ window.onclick =(event)=>{
     modalSignUp.style.display ="none";
   }
 };
+//front end form validation for sign up
+const signUpForm =()=>{
+const user=document.querySelector("username").value;
+const email=document.querySelector("#email").value;
+const pass=document.querySelector("#password").value;
+const passRepeat=document.querySelector("#passwordRpeat").value;
+
+  if (user ===""|| (user.length<3 || user>20)) {
+    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
+    return false;
+  }
+  if (email==="" || (email.length<5||!email.includes('@') || (!email.includes('.')))) {
+    document.querySelector('#userE').innerHTML="** please fill your email/use the correct format**";
+    return false;
+  }
+  if (pass ===""|| (pass.length<6 || pass>20)) {
+    document.querySelector('#userP1').innerHTML="** please fill your password/use the correct format**";
+    return false;
+  }
+  if (user ===""|| (passRepeat!==pass)) {
+    document.querySelector('#userp2').innerHTML="**password do not match**";
+    return false;
+  }
+}
+
+
+

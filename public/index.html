@@ -84,37 +84,37 @@
         <span class="close" id="signup-close">&times;</span>
         <h1 class="prelim-logo">The Archive</h1>
 
-        <form  class="sign-up-form" action="/" method="post">
+        <form onsubmit="return signUpForm()" class="sign-up-form" action="/" method="post">
 
             <fieldset class="input-fieldset">
                 USER NAME <br>
-                <input type="text" name="username"  required>
-                <span class="form-error"></span>
+                <input type="text" name="username"  id="username">
+                <span class="form-error" id="userN"></span>
             </fieldset>
 
             <fieldset class="input-fieldset">
                 EMAIL <br>
-                <input type="email" name="email" required>
-                <span class="form-error"></span>
+                <input type="text" name="email" id="email">
+                <span class="form-error" id="userE"></span>
             </fieldset>
 
             <fieldset class="input-fieldset">
                 PASSWORD <br>
-                <input type="password" name="password"  required>
-                <span class="form-error"></span>
+                <input type="password" name="password"  id="password">
+                <span class="form-error" id="userP1"></span>
             </fieldset>
 
             <fieldset class="input-fieldset">
                 CONFIRM PASSWORD <br>
-                <input type="password" name="retype-password"  required>
-                <span class="form-error"></span>
+                <input type="password" name="retype-password"  id="passwordRepeat">
+                <span class="form-error" id="userP2"></span>
                 <br><p class="new-to-text">Already have an account? <a onclick="document.getElementById('popup').style.display='block'"
                                                                        class="pink-text" href="#">Sign in</a></p><br>
             </fieldset>
 
 
             <fieldset class="form-center btn-bottom-edge">
-                <input type="submit" class="form-submit-btn btn-sign-up yellow-btn" name="sign-up" value="Sign Up">
+                <input type="submit" class="form-submit-btn btn-sign-up yellow-btn" name="submit" value="Sign Up">
 
             </fieldset>
         </form>
