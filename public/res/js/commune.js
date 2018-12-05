@@ -24,43 +24,53 @@ const nameinput = document.querySelectorAll('.sign-up-form input')[0];
 const email = document.querySelectorAll('.sign-up-form input')[1];
 const password = document.querySelectorAll('.sign-up-form input')[2];
 const passwordcheck = document.querySelectorAll('.sign-up-form input')[3];
-
+const error_span = document.querySelectorAll('.form-error');
 //check user existence when out of focus of name input
 nameinput.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
-  fetch('/node/usercheck', {
-    method: 'POST',
-    headers: new Headers({
-      'Content-Type': 'application/x-www-form-urlencoded',
-    }),
-    body: `username=${evt.target.value}`
-  })
-  .then(res => {
-    console.log(res);
-    return res.text();
-  }).then(text => console.log(text))
+  if(evt.target.value === ''){
+    error_span[0].innerText = '*Must have username';
+  }
+  else{
+    fetch('/node/usercheck', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }),
+      body: `username=${evt.target.value}`
+    })
+    .then(res => {
+      console.log(res);
+      return res.text();
+    }).then(
+        text => error_span[0].innerText = text)
+  }
 });
 
 //check email existence when out of focus of name input
 email.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
-  fetch('/node/emailcheck', {
-    method: 'POST',
-    headers: new Headers({
-      'Content-Type': 'application/x-www-form-urlencoded',
-    }),
-    body: `email=${evt.target.value}`
-  })
-  .then(res => res.text())
-  .then(text =>{
-    console.log(text);
-  })
+  if(evt.target.value === ''){
+    error_span[1].innerText = '*Must have email';
+  }else{
+    fetch('/node/emailcheck', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }),
+      body: `email=${evt.target.value}`
+    })
+    .then(res => res.text())
+    .then(text =>{
+      error_span[1].innerText = text
+    })
+  }
 });
 
 //check password matches retyping
 passwordcheck.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
-  if(passwordcheck.value != password.value){
+  if(passwordcheck.value !== password.value){
     password.value = '';
     passwordcheck.value = '';
     password.focus();

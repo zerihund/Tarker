@@ -95,7 +95,7 @@ grabStory();
 //------------------------------------------------------------------------------
 //close button turns modal display to none
 const loginClose= document.querySelector('#login-close');
-loginClose.onclick = (event)=> {
+loginClose.onclick = ()=> {
   document.getElementById('popup').style.display = "none";
 };
 // Get the modal
@@ -109,15 +109,15 @@ loginClose.onclick = (event)=> {
 
 //toggles the mobile dropdown menu on or off
 window.onclick = (event)=> {
-  if(event.target == document.getElementById('user-icon')) {
+  if(event.target === document.getElementById('user-icon')) {
     document.getElementById('login-dropdown').style.display = "block";
   }
-  else if(event.target != document.getElementById('user-icon')){
+  else if(event.target !== document.getElementById('user-icon')){
     document.getElementById('login-dropdown').style.display = "none";
   }
 };
 
 const signupClose= document.querySelector('#popup2');
-signupClose.onclick = (event)=> {
+signupClose.onclick = ()=> {
   document.getElementById('popup2').style.display = "none";
 };

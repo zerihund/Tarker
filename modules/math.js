@@ -7,7 +7,7 @@ const random = (max)=>{
 //let n be the sample size, and pos be the amount of positive(liked stories in our case score =-1)
 // calculates the binomial proportion confidence interval
 // lower bound of a bernoulli parameter....we take the lower bound to decide which is story is most liked
-const wilson = (pos, n) => {
+const wilsonOutput = (pos, n) => {
   if (n === 0) {
     return 0
   }
@@ -36,5 +36,6 @@ const idGenerate = ()=>{
 
 module.exports = {
   random : random,
-  idGenerate : idGenerate
+  idGenerate : idGenerate,
+  wilsonOutput:wilsonOutput
 };

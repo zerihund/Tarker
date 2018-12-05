@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const math = require('./math');
+const math  = require('./math');
 
 //set up connection to the database
 const connect = ()=>{
@@ -17,8 +17,9 @@ const connect = ()=>{
 const insertUser = (connection, data, res) =>{
   connection.query(
       'INSERT INTO user (name, email, password) VALUE (?,?,?);', data,
-        (err, results, fields) =>{
+        (err, results) =>{
           console.log(err);
+          console.log(results);
           res.send('User registered success. Yay!!!!!!');
         },
   );
@@ -27,10 +28,10 @@ const insertUser = (connection, data, res) =>{
 const checkUser = (connection, username, res)=>{
   connection.query(
     'SELECT * FROM user WHERE name = ?',  username,
-      (err, results, fields) =>{
+      (err, results) =>{
         const exist = results.length;
         console.log(exist);
-        if(exist == 1){
+        if(exist === 1){
           res.send('Username already exists.');
         }
         else{
@@ -44,9 +45,9 @@ const checkUser = (connection, username, res)=>{
 const checkEmail = (connection, email, res)=>{
   connection.query(
       'SELECT * FROM user WHERE email = ?',  email,
-      (err, results, fields) =>{
+      (err, results) =>{
         const exist = results.length;
-        if(exist == 1){
+        if(exist === 1){
           res.send('Email already exists.');
         }
         else{
@@ -57,12 +58,12 @@ const checkEmail = (connection, email, res)=>{
 };
 //check user credential
 const checkCredentials = (connection, username, password)=>{
-  return new Promise((resolve, reject)=> {
+  return new Promise((resolve)=> {
     connection.execute(
         `SELECT * FROM user WHERE name = '${username}' AND password = '${password}'`,
-        (err, results, fields) => {
+        (err, results) => {
           const exist = results.length;
-          if (exist == 1) {
+          if (exist === 1) {
             resolve(true)
           } else {
             resolve(false)
@@ -82,10 +83,10 @@ const getInitStory = (connection)=>{
        FROM (SELECT a.story_Id FROM story a, story b WHERE a.story_Id=b.parent_story GROUP BY a.story_Id) Isparent,story c
        WHERE c.story_Id != Isparent.story_Id GROUP BY c.story_Id`,
       (err, results)=> {
-
+        const y = math.random(results.length);
         const x = Math.floor(Math.random() * results.length);
         console.log(results[0]);
-        resolve(results[x]);
+        resolve(results[y]);
       }
     )
   })
@@ -94,7 +95,7 @@ const getInitStory = (connection)=>{
 //get parent of story
 const getParentStory = (connection, id) =>{
   console.log('get parent story of story '+ id);
-  return new Promise((resolve, reject)=>{
+  return new Promise((resolve)=>{
     connection.query(
       `SELECT c.story_Id, c.parent_story, c.content, c.media
       FROM story c, story d
@@ -110,7 +111,7 @@ const getParentStory = (connection, id) =>{
 //get comments get comment writer, get comments date
 const getStoryComment = (connection, id)=>{
   console.log('grab comments of ' + id);
-  return new Promise((resolve, reject)=>{
+  return new Promise((resolve)=>{
     connection.query(
       `SELECT user.name, comments.comment, comments.comment_time 
        FROM comments, user 
@@ -126,7 +127,7 @@ const getStoryComment = (connection, id)=>{
 //get story author
 const getAuthor = (connection, id)=>{
   console.log('grab author of '+id);
-  return new Promise((resolve, reject)=>{
+  return new Promise((resolve)=>{
     connection.query(
       `SELECT user.name, writes.story_time 
       FROM writes, user 
@@ -141,7 +142,7 @@ const getAuthor = (connection, id)=>{
 //send like-dislike
 const getOpinion = (connection, id)=>{
   console.log('grab opinion of '+id);
-  return new Promise((resolve, reject)=>{
+  return new Promise((resolve)=>{
     connection.query(
         `SELECT * 
         FROM(SELECT sum(Views.like_story) as minus FROM Views WHERE Views.story_Id = '${id}' AND Views.like_story = -1) minus,
