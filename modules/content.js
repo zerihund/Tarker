@@ -1,4 +1,4 @@
-const giveContent =()=>{
+const giveContent =(username)=>{
   return `<!-- <div style="width: 30px; display: block">Test</div> -->
 <div class="topnav">
     <div class="topnav-left">

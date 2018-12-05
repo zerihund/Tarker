@@ -17,7 +17,6 @@ const imgupload = multer({dest: 'public/res/media/img'});
 //nodeJs builtin module, we might need to use this one
 const wilson = require('wilson-score');
 const contentGiver = require('./modules/content');
-const content = contentGiver.giveContent();
 //---------------------------------------------------------------------------------------
 //database thing
 const db = require('./modules/data-handler');
@@ -26,9 +25,6 @@ const connection = db.connect();
 //-----------------------------------------------------------------------------------------
 //concerning passport
 //set up passport and log in procedure
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-
 // app.use(passport.initialize());
 // app.use(passport.session());
 //
@@ -58,11 +54,13 @@ const LocalStrategy = require('passport-local').Strategy;
 app.post('/login', (req, res)=>{
   db.checkCredentials(connection, req.body.username, req.body.password)
   .then(valid=>{
-    if(valid === true){
-      res.send(content)
+    if(valid !== true){
+      res.send('failed log in');
     }
     else{
-      res.send('failed log in');
+      contentGiver.giveContent(req.body.username).then(result =>{
+      res.send(result);
+    });
     }
   })
 });
