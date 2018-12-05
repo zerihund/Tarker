@@ -117,7 +117,7 @@ window.onclick = (event)=> {
   }
 };
 
-const signupClose= document.querySelector('#popup2');
+const signupClose= document.querySelector('#signup-close');
 signupClose.onclick = (event)=> {
   document.getElementById('popup2').style.display = "none";
 };

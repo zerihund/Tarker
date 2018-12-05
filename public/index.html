@@ -66,7 +66,7 @@
             <fieldset class="input-fieldset">
                 PASSWORD <br>
                 <input type="password" name="password"  required>
-                <p class="new-to-text">New to The Archive? <a onclick= return signIn
+                <p class="new-to-text">New to The Archive? <a onclick="document.getElementById('popup2').style.display='block'"
                                                                class="pink-text" href="#">Sign Up</a></p>
             </fieldset>
 
@@ -108,7 +108,8 @@
                 CONFIRM PASSWORD <br>
                 <input type="password" name="retype-password"  required>
                 <span class="form-error"></span>
-                <br><p class="new-to-text">Already have an account? <a  class="pink-text" href="#">Sign in</a></p><br>
+                <br><p class="new-to-text">Already have an account? <a onclick="document.getElementById('popup').style.display='block'"
+                                                                       class="pink-text" href="#">Sign in</a></p><br>
             </fieldset>
 
 
