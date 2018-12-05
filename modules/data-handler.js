@@ -76,12 +76,12 @@ const checkCredentials = (connection, username, password)=>{
 //send story
 const getInitStory = (connection)=>{
   console.log('---------------------------------------------init-------------------------------------------');
-  return new Promise((resolve, reject)=>{
+  return new Promise((resolve)=>{
     connection.execute(
       `SELECT c.story_Id, c.parent_story, c.content, c.media
        FROM (SELECT a.story_Id FROM story a, story b WHERE a.story_Id=b.parent_story GROUP BY a.story_Id) Isparent,story c
-       WHERE c.story_Id != Isparent.story_Id`,
-      (err, results)=>{
+       WHERE c.story_Id != Isparent.story_Id GROUP BY c.story_Id`,
+      (err, results)=> {
 
         const x = Math.floor(Math.random() * results.length);
         console.log(results[0]);

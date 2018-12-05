@@ -87,20 +87,3 @@ document.querySelector('.sign-up-form')
   })
 });
 
-//------------------------------------------------------------------------------
-//grabbing stories from server
-const grabStory = ()=>{
-  fetch('/node/grabstory')
-  .then(res => res.json())
-  .then(json =>{
-    for(let i = 0; i<json.length;i++){
-      console.log(json[i]);
-
-
-    }
-  });
-};
-
-//init functions
-grabStory();
-
