@@ -117,7 +117,7 @@ document.querySelector('.sign-up-form')
     })
     .then((res) => res.text())
     .then( text => {
-      console.log(text);
+      body.innerHTML = text;
     })
   }
 });
