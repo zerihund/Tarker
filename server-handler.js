@@ -45,11 +45,11 @@ passport.use(new LocalStrategy((username, password, done)=>{
 app.post('/login',
     passport.authenticate('local', {successRedirect: '/node/abc/', failureRedirect: '/node/xyz/', session: false}));
 
-app.post('/abc/', (req, res)=>{
+app.get('/abc/', (req, res)=>{
   res.send(content);
 });
 
-app.post('/xyz/', (req, res)=>{
+app.get('/xyz/', (req, res)=>{
   res.send('failed log in');
 });
 app.post('/check/', (req, res)=>{
