@@ -259,6 +259,7 @@ app.post('/uploadtext/', (req, res)=>{
 
 //add like, dislike to +database
 app.post('/opinion/', (req, res)=>{
+  console.log('the eagle has landed');
   const data=[
       req.body.story_Id,
       req.body.likeDatabaseValue
