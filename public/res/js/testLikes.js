@@ -172,6 +172,9 @@ const sendToDb=()=>{
   })
 }
 
-/*INSERT Views
+/*UPDATE Views
         SET Views.like_story =1
         WHERE Views.user_Id =11 and Views.story_Id=14`*/
+/*
+* INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,view_count)
+VALUES(11,'14',1,6)*/
