@@ -157,8 +157,8 @@ const getOpinion = (connection, id)=>{
  const putOpinion= (connection, data) =>{
    connection.query(
        `UPDATE Views
-        SET Views.like_story =${data[1]}
-        WHERE Views.user_Id =${data[0]} and Views.story_Id=${data[2]}`,
+        SET Views.like_story = ${data[1]}
+        WHERE Views.user_Id = ${data[0]} && Views.story_Id= ${data[2]}`,
        (err, results)=>{
          console.log(results);
          return(results);

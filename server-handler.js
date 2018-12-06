@@ -266,7 +266,7 @@ app.post('/opinion/', (req, res)=>{
     req.body.likeDatabaseValue,
     req.body.storyID
   ]
-  db.putOpinion(connection,data);
+  db.putOpinion(connection,data,res);
 });
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
