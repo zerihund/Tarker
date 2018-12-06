@@ -171,3 +171,7 @@ const sendToDb=()=>{
     console.log(res);
   })
 }
+
+/*INSERT Views
+        SET Views.like_story =1
+        WHERE Views.user_Id =11 and Views.story_Id=14`*/
