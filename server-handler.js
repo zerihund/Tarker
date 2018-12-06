@@ -259,6 +259,10 @@ app.post('/uploadtext/', (req, res)=>{
 
 //add like, dislike to +database
 app.post('/opinion/', (req, res)=>{
+  const data=[
+      req.body.story_Id,
+      req.body.likeDatabaseValue
+  ];
 
 });
 //--------------------------------------------------------------------------------------------------------
