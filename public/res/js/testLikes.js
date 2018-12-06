@@ -1,13 +1,24 @@
+let numOfLikes= 0;
+let numOfDislikes= 0;
 const likeDisplay= document.getElementById("likes");
+likeDisplay.innerHTML=numOfLikes;
 const dislikeDisplay= document.getElementById("dislikes");
+dislikeDisplay.innerHTML= numOfDislikes;
 const thumbsUp = document.getElementById("thumbs-up");
 const thumbsDown = document.getElementById("thumbs-down");
 let likeExecuted=false;
 let dislikeExecuted=false;
-let numOfLikes= 5;
-let numOfDislikes= 5;
-likeDisplay.innerHTML=numOfLikes;
-dislikeDisplay.innerHTML= numOfDislikes;
+
+let likeDatabaseValue=0;
+const likeValueToDb= ()=>{
+  likeDatabaseValue= numOfLikes + numOfDislikes;
+  if(likeDatabaseValue==1 && numOfDislikes==1){
+    likeDatabaseValue=-1;
+
+  }
+  console.log(`likeDatabaseValue = ${likeDatabaseValue}`);
+  sendToDb();
+}
 //adds 1 each time you click like
 let likable=0;
 //modulo determines whether its a like or unlike
@@ -38,38 +49,54 @@ const redDislike=()=>{
 const unRedDislike=()=>{
   thumbsDown.style.color="black";
 }
+const addLike =()=>{
+  likeExecuted=true;
+  numOfLikes++;
+  showLike();
+  blueLike();
+}
+
+const addDislike =()=>{
+  dislikeExecuted=true;
+  numOfDislikes++;
+  showDislike();
+  redDislike();
+}
+const removeLike =()=>{
+  likeExecuted=false;
+  numOfLikes--;
+  showLike();
+  unBlueLike();
+}
+const removeDislike =()=>{
+  dislikeExecuted=false;
+  numOfDislikes--;
+  showDislike();
+  unRedDislike();
+}
+
+
 
 
 /*
 like only happens if like.executed= false.
-if i like, like.executed= true and i cant like again
-then add 1 to likes.
-
-if dislike is true (meaning they had first disliked)
-make dislike.executed=false;
+if i like, like.executed= true and i cant like again, then add 1 to likes.
+if dislike is true (meaning they had first disliked), make dislike.executed=false;
 and if dislike.executed is true at that point then subtract 1 from dislikes and set it to false
 display dislike- basically do nothing
-if dislike.executed is not true then that means they havent disliked before 
+if dislike.executed is not true then that means they havent disliked before
 liking and so i dont have to subtract from the dislike.
 */
-
 const like=()=>{
   //add to like
   if(likeExecuted==false){
-    likeExecuted=true;
-    numOfLikes++;
-    showLike();
-    blueLike();
+    addLike();
   }
-
   //remove dislike
   if(dislikeExecuted==true){
-    /* dislikeExecuted=false;
-    numOfDislikes--;
-    showDislike();
-    unRedDislike(); */
-    unDislike();
+    removeDislike();
   }
+  likeValueToDb();
 }
 
 /**dislike only happens if dislike.executed=false.
@@ -83,43 +110,32 @@ const like=()=>{
 const dislike=()=>{
   //dislike
   if(dislikeExecuted==false){
-    dislikeExecuted=true;
-    numOfDislikes++;
-    showDislike();
-    redDislike();
+    addDislike();
   }
 
   //remove like
   if(likeExecuted==true){
-    /* likeExecuted=false;
-    numOfLikes--;
-    showLike();
-    unBlueLike(); */
-    unlike();
-
+    //unlike();
+    removeLike();
   }
+  likeValueToDb();
 }
 /*you can only unlike if it has been liked
 i.e likeExecuted=true
 */
 const unlike=()=>{
   if(likeExecuted==true){
-    likeExecuted=false;
-    numOfLikes--;
-    showLike();
-    unBlueLike();
+    removeLike();
   }
-
+  likeValueToDb();
 }
 /*You can only undislike if you have disliked
 */
 const unDislike=()=>{
   if(dislikeExecuted==true){
-    dislikeExecuted=false;
-    numOfDislikes--;
-    showDislike();
-    unRedDislike();
+    removeDislike();
   }
+  likeValueToDb();
 }
 
 const likeOrNot=()=>{
@@ -134,16 +150,31 @@ const likeOrNot=()=>{
 }
 
 //increases likable each time it is clicked so we know is it a like or unlike
-
 const dislikeOrNot=()=>{
   if(dislikeModulo == 1){
     unDislike();
-
   }
   else if (dislikeModulo == 0){
     dislike();
-
   }
   dislikable++;
   dislikeModulo= dislikable % 2;
 }
+const sendToDb=()=>{
+  fetch('/node/opinion/',{
+    method: 'POST',
+    headers: new Headers({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    }),
+    body: `userId=11&likeDatabaseValue=${likeDatabaseValue}&storyID=${14}`
+  }).then(res =>{
+    console.log(res);
+  })
+}
+
+/*UPDATE Views
+        SET Views.like_story =1
+        WHERE Views.user_Id =11 and Views.story_Id=14`*/
+/*
+* INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,view_count)
+VALUES(11,'14',1,6)*/

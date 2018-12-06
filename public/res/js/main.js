@@ -16,7 +16,7 @@ const grabStory = ()=>{
       container.id = json[i].story_Id;
       container.className = 'card';
 
-      const author_date = document.createElement('div');
+      const author_date = document.createElement('dive');
       author_date.className = 'author-date';
       const author = document.createElement('p');
       author.className = 'author';
@@ -93,25 +93,65 @@ grabStory();
 
 
 //------------------------------------------------------------------------------
-
-
-//close button turns login's display to none
+//close button turns modal display to none
 const loginClose= document.querySelector('#login-close');
-loginClose.onclick = ()=> {
+loginClose.onclick = (event)=> {
   document.getElementById('popup').style.display = "none";
 };
+// Get the modal
+// When the user clicks anywhere outside of the modal, close it
+/**window.onclick = function(event) {
+  if (event.target == document.getElementById('popup2')) {
+    document.getElementById('popup2').style.display = "none";
+  }
+};
+ */
 
 //toggles the mobile dropdown menu on or off
 window.onclick = (event)=> {
-  if(event.target === document.getElementById('user-icon')) {
+  if(event.target == document.getElementById('user-icon')) {
     document.getElementById('login-dropdown').style.display = "block";
   }
-  else if(event.target !== document.getElementById('user-icon')){
+  else if(event.target != document.getElementById('user-icon')){
     document.getElementById('login-dropdown').style.display = "none";
   }
 };
-
+//close the sign up form
 const signupClose= document.querySelector('#signup-close');
-signupClose.onclick = ()=> {
+signupClose.onclick = (event)=> {
   document.getElementById('popup2').style.display = "none";
 };
+const  modalSignUp =document.querySelector("#popup2");
+
+window.onclick =(event)=>{
+  if(event.target ===modalSignUp){
+    modalSignUp.style.display ="none";
+  }
+};
+//front end form validation for sign up
+const signUpForm =()=>{
+const user=document.querySelector("username").value;
+const email=document.querySelector("#email").value;
+const pass=document.querySelector("#password").value;
+const passRepeat=document.querySelector("#passwordRpeat").value;
+
+  if (user ===""|| (user.length<3 || user>20)) {
+    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
+    return false;
+  }
+  if (email==="" || (email.length<5||!email.includes('@') || (!email.includes('.')))) {
+    document.querySelector('#userE').innerHTML="** please fill your email/use the correct format**";
+    return false;
+  }
+  if (pass ===""|| (pass.length<6 || pass>20)) {
+    document.querySelector('#userP1').innerHTML="** please fill your password/use the correct format**";
+    return false;
+  }
+  if (user ===""|| (passRepeat!==pass)) {
+    document.querySelector('#userp2').innerHTML="**password do not match**";
+    return false;
+  }
+}
+
+
+

@@ -139,7 +139,7 @@ const getAuthor = (connection, id)=>{
     )
   })
 };
-//send like-dislike
+//get from database total like-dislike
 const getOpinion = (connection, id)=>{
   console.log('grab opinion of '+id);
   return new Promise((resolve)=>{
@@ -154,6 +154,24 @@ const getOpinion = (connection, id)=>{
     )
   })
 };
+ const putOpinion= (connection, data) =>{
+   connection.query(
+       `INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,Views.view_count)
+        VALUES(${data[0]},${data[2]},${data[1]}, 5)`,
+       (err, results)=>{
+         console.log(results);
+         return(results);
+       }
+   )
+ }
+ //UPDATE OR INSERT QUERY
+/*      UPDATE Views
+        SET Views.like_story =1
+        WHERE Views.user_Id =11 and Views.story_Id=14`*/
+/*
+        `INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,view_count)
+        VALUES(${data[0]},${data[2]},${data[1]},null)`*/
+
 /*const data = [
   req.body.author_id,
   req.body.parent_id,
@@ -204,5 +222,6 @@ module.exports = {
   getStoryComment:getStoryComment,
   getAuthor:getAuthor,
   getOpinion:getOpinion,
-  upload:upload
+  upload:upload,
+  putOpinion:putOpinion
 };
