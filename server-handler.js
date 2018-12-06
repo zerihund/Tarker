@@ -260,7 +260,7 @@ app.post('/uploadtext/', (req, res)=>{
 //add like, dislike to +database
 app.post('/opinion/', (req, res)=>{
   console.log('the eagle has landed');
-  console.log(`user-> ${req.body.userId} ,did (${req.body.likeDatabaseValue}) for story-> ${req.body.storyID}, `);
+  console.log(`user-> ${req.body.userId} ,did (${req.body.likeDatabaseValue}) for story-> ${req.body.storyID}`);
   const data =[
     req.body.userId,
     req.body.likeDatabaseValue,
