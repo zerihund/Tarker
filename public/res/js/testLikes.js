@@ -166,7 +166,7 @@ const sendToDb=()=>{
     headers: new Headers({
       'Content-Type': 'application/x-www-form-urlencoded',
     }),
-    body: `userId=11&likeDatabaseValue=${likeDatabaseValue}&&storyID=${14}`
+    body: `userId=11&likeDatabaseValue=${likeDatabaseValue}&storyID=${14}`
   }).then(res =>{
     console.log(res);
   })
