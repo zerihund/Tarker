@@ -4,23 +4,13 @@ look for it all over the place*/
 
 /*      LARGE SCREEN          */
 @media only screen and (min-width: 1024px) and (max-width: 1919px) {
-    html{font-size: 28px;}
+    html{
+
+    }
     .sign-up-container,.login-container{
         width: 50%;
     }
-    .card,.next-card{
-        padding: 20px 10px;
-        width:80vw;
-        margin: 0 auto 1vw auto;
-        border-radius: 0.5vw;
-    }
-    .author{
-        font-size:1.1vw;
-    }
-    .time{
-        font-weight:100;
-        font-size:1.1vw;
-    }
+
     .story p,.title,.author-date{
         max-width: 50vw;
         width: 100%;
@@ -40,14 +30,27 @@ look for it all over the place*/
         display:block;
     }
 
-    .media-story img,.media-story video,
-    .next-media-story img,.next-media-story video{
-        padding:0 15px 0 5px;
-        width:30%;
-        object-fit:contain;
-        height:50%;
-        float:left;
-    }
+  .media-story{
+    text-align:justify;
+    font-family: Lato, sans-serif;
+    margin: 0 0 0 5px;
+    padding: 7px 5px;
+    font-size: 1rem;
+    width: 100%;
+    float: none;
+  }
+
+  .media-story img{
+    width: 75%;
+    float: left;
+    margin: 8px 8px auto;
+  }
+
+  .media-story video{
+    margin: 5px;
+    width: 75%;
+    float: left;
+  }
     /* .login-container{
         height: 55vh;
     } */

@@ -21,12 +21,9 @@
 body{
   background-color: #454755;
 }
-.card,.next-card{
-  background-color: #fff;
-  color: black;
-}
-.time{
-  color:#7a6f73;
+
+.author-date{
+  color:#282f3f;
 }
 
 .close{
@@ -35,9 +32,6 @@ body{
 .topnav,.sign-up-container,.login-container,
 .login-dropdown-content, .login-dropdown{
   background-color: #282f3f;
-}
-.logo{
-  background-color:#fee6b8;
 }
 .pink-btn {
   background-color: #c61766;
@@ -53,4 +47,59 @@ body{
 .modal{
   background-color: rgb(255, 255, 255); /* Fallback color */
   background-color: rgba(69,71,85,0.9); /* White w/ opacity */
+}
+
+.topnav-right p{
+  color: #fee6b8;
+}
+
+h1{
+  color: #282f3f;
+  background-color: #eda948;
+}
+
+.card,.next-card{
+  background-color: white;
+  color: #282f3f;
+}
+.author-date{
+  color: #aaaaaa;
+  background-color: #282f3f;
+}
+
+.impression{
+  color: #aaaaaa;
+}
+
+.see{
+  background-color: #282f3f;
+  color: #aaaaaa;
+}
+
+aside{
+  background-color: #282f3f;
+}
+
+.add{
+  color: #eda948;
+}
+
+.comment-box{
+  background-color: #282f3f;
+  color: #fee6b8;
+}
+
+.comment-time{
+  background-color: #282f3f;
+  color: #aaaaaa;
+}
+
+.comment-text{
+  color: white;
+  background-color: #454755;
+}
+
+.commenter{
+  color: #eda948;
+  background-color: #282f3f;
 }

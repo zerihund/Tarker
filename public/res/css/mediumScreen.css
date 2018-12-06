@@ -1,6 +1,6 @@
 
 /* screen between  650px and 1007px*/
-@media only screen and (min-width: 481px) and (max-width: 1023px)  {
+@media only screen and (min-width: 681px) and (max-width: 950px)  {
 
   .topnav-left{
     left: 8px;
@@ -16,9 +16,7 @@
   .search-btn{
       width:5vw;
   }
-  .logo{
-    width: 120px;
-  }
+
   .signin-button {
       padding: 0.3rem 0.7rem;
       font-size:0.6rem;
@@ -28,36 +26,32 @@
       width: 64px;
   }
 
-  .card,.next-card{
-      padding: 20px 10px;
-      width:90vw;
-      margin: 0 auto 1vw auto;
-      border-radius:10px;
+  h1{
+    width: 588px;
   }
-  .author{
-      font-size:15px;
+  main{
+    width: 600px;
   }
-  .time{
-      font-weight:100;
-      font-size:15px;
+
+  .card{
+    padding-right: 4px;
   }
-  .story p,.title,.author-date{
-      max-width: 75%;
-      width: 100%;
+
+  .media-story img{
+    width: 100%;
   }
-  .media-story,.next-media-story{
-      display:block;
+
+  .media-story p{
+    width: 100%;
   }
-  .media-story p,.next-media-story p{
-      margin-block-start: 0;
+
+  .media-story video{
+    width: 100%;
   }
-  .media-story img,.media-story video,
-  .next-media-story img, .next-media-story video{
-      padding:0 15px 0 5px;
-      width:50%;
-      object-fit:contain;
-      height:50%;
-      float:left;
+
+  .comment-box{
+    right: 1%;
+    width: 28%;
   }
 }
 /*@media only screen and (min-width: 481px)and (max-width: 1023px)  {*/

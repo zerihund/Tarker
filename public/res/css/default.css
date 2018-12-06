@@ -1,33 +1,45 @@
 /*Default*/
 /**/
+/*Raleway family */
 @font-face {
   font-family: Raleway-BoldItalic;
-  src: url(typeface/Raleway-BoldItalic.ttf);
+  src: url(typeface/Raleway/Raleway-BoldItalic.ttf);
 }
 
 @font-face {
   font-family: Raleway;
-  src: url(typeface/Raleway-Regular.ttf);
+  src: url(typeface/Raleway/Raleway-Regular.ttf);
 }
 
 @font-face {
   font-family: Raleway-Thin;
-  src: url(typeface/Raleway-Thin.ttf);
+  src: url(typeface/Raleway/Raleway-Thin.ttf);
 }
 
 @font-face {
   font-family: Raleway-Light;
-  src: url(typeface/Raleway-Light.ttf);
+  src: url(typeface/Raleway/Raleway-Light.ttf);
 }
 
 @font-face {
   font-family: Raleway-Medium;
-  src: url(typeface/Raleway-Medium.ttf);
+  src: url(typeface/Raleway/Raleway-Medium.ttf);
 }
 
 @font-face {
   font-family: Raleway-SemiBold;
-  src: url(typeface/Raleway-SemiBold.ttf);
+  src: url(typeface/Raleway/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Raleway-Black;
+  src: url(typeface/Raleway/Raleway-Black.ttf);
+}
+
+/*Lato family*/
+@font-face {
+  font-family: Lato-Regular;
+  src: url(typeface/Lato/Lato-Regular.ttf);
 }
 
 html{
@@ -41,34 +53,23 @@ body{
   font-family: Raleway, sans-serif;
   padding: 0;
   margin: 0;
-  display: flex;
 }
 a{
   text-decoration: none;
   background-color: #7a6f73;
 }
 
-aside{
-  width: 72px;
-  background-color: #aaaaaa;
-  height: 400px;
-}
-
-main{
-  width: 720px;
-  height: 3000px;
-  background-color: black;
-}
 .topnav{
   position: fixed;
   width: 100%;
   top: 0;
   display: flex;
   flex-direction: row;
-  height: 42px;
+  height: 48px;
   justify-content:space-between;
   align-items:center;
   margin: 0;
+  z-index: 3;
 }
 
 .topnav-right,.topnav-left,.logo ,.signin-button , .topnav-searchbar-form,.search-input, .search-btn{
@@ -76,23 +77,40 @@ main{
 }
 .logo{
   margin: auto 5px;
-  width: 240px;
-  height: 24px;
+  height: 40px;
 }
 .topnav-left{
+  height: 100%;
   display:flex;
   position: absolute;
   left: 48px;
 }
 
 .topnav-right{
+  height: 100%;
   display:flex;
   position: absolute;
   right: 48px;
 }
+
+.topnav-right p{
+  display: block;
+  height: 24px;
+  margin: 15px 12px auto 8px;
+  padding: 2px;
+  font-family: Raleway-Light, sans-serif;
+}
+
+.topnav-right img{
+  width: 32px;
+  height: 32px;
+  background-color: #fee6b8;
+  margin: auto;
+  padding: 0;
+}
 .topnav-searchbar-form{
   display: flex;
-  margin-left: 4px;
+  margin: auto 4px;
 }
 .search-input{
   width: 320px;
@@ -284,40 +302,220 @@ fieldset{
   margin-right: auto;
 }
 
+main{
+  margin-left: 16px;
+  margin-top: 5px;
+  width: 60%;
+  z-index: -2;
+}
 
-.card,.next-card{
+h1{
+  font-family: Raleway-Black, sans-serif;
+  border-bottom: #454755 solid 1px;
+  margin-top: 100px;
+  margin-left: 16px;
+  width: 58.8%;
+}
+
+.card{
   display: flex;
-  flex-direction: column;
+  position: relative;
+  width: 98%;
+  margin-left: 1px;
+  margin-top: 32px;
+  padding: 2px 2px 10px 5px;
 }
 .author-date{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-content: flex-start;
+  position: absolute;
+  left: 0;
+  top: -12px ;
+  margin: 0;
+  font-size: small;
+  padding: 2px;
 }
 
-.author{
-  font-weight:700;
+.author-date p{
+  margin: 0 0 0 5px;
 }
-.time{
-  font-weight:100;
-}
-.title{
-  text-align:center;
-  font-size:1rem;
-  font-weight:700;
-  padding:0.2rem;
-}
-.story p{
+
+.media-story{
   text-align:justify;
+  font-family: Lato, sans-serif;
+  margin: 0 0 0 5px;
+  padding: 7px 5px;
+  font-size: 1rem;
+  width: 100%;
+  float: none;
 }
-.story p,.title,.author-date,
-.media-story,.next-media-story{
-  margin: 0 auto;
-}
-.media-story p,.next-media-story p{
 
+.media-story img{
+  width: 75%;
+  float: left;
+  margin: 8px 8px auto;
 }
 
-.media-,.next-media-story{
-  display: flex;
+.media-story video{
+  margin: 5px;
+  width: 75%;
+  float: left;
+}
+
+.media-story audio{
+  float: left;
+  margin: 5px;
+}
+
+.impression{
+  color: #aaaaaa;
+  background-color: #282f3f;
+  position: absolute;
+  bottom: -18px;
+  right: 0;
+  font-size: small;
+  font-family: Raleway-Light, sans-serif;
+}
+
+.impression i{
+  padding: 2px;
+  cursor: pointer;
+}
+
+.impression i:hover{
+  text-shadow: 2px 2px 5px #eda948;
+  color: #eda948;
+}
+
+.impression span{
+  padding: 2px;
+}
+
+.card .add{
+  position: absolute;
+  bottom: -18px;
+  right: 90px;
+  background-color: #282f3f;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.add:hover{
+  text-shadow: 2px 2px 5px #eda948;
+  box-shadow: 1px 1px 100px #eda948;
+}
+.card .see{
+  position: absolute;
+  height: 100%;
+  right: -12px;
+  line-height: 2px;
+  top: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  padding-left:6px;
+  padding-right: 3px;
+  writing-mode: tb-rl;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.see:hover{
+  color: #eda948;
+  font-family: Raleway-Bold,sans-serif;
+}
+
+.comment-box{
+  width: 30%;
+  position: fixed;
+  right: 5%;
+  top: 100px;
+  max-height: 500px;
+}
+.comment{
+  display: inline-block;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin: 2px;
+}
+.commenter{
+  display: block;
+  position: absolute;
+  height: 16px;
+  top: -12px;
+  left: 5px;
+  font-family: Raleway-Light, sans-serif;
+  font-size: smaller;
+}
+
+.comment{
+  position: relative;
+  margin-right: 20%;
+  padding-top: 12px;
+}
+
+.comment-time{
+  display: block;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-family: Raleway-Thin, sans-serif;
+  font-size: xx-small;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-text{
+  display: inline-block;
+  margin: 8px 8px 8px 16px;
+  padding: 5px;
+  border-radius: 2px;
+  font-family: Raleway-Light, sans-serif;
+  font-size: small;
+}
+
+.comment-container{
+}
+
+.write-comment{
+  padding: 8px;
+  border-top: #454755 1px solid;
+  height: 40px;
+  width: 100%;
+}
+
+.write-comment input{
+  border: none;
+  height: 24px;
+  color: #fee6b8;
+  background-color: #282f3f;
+  border-bottom: #fee6b8 1px solid;
+  width: 85%;
+  margin: auto;
+  padding: 0;
+}
+
+.write-comment button{
+  border: none;
+  color: #eda948;
+  background-color: #454755;
+  padding: 5px;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+
+aside{
+  position: fixed;
+  top: 42px;
+  width: 100%;
+  background-color: #aaaaaa;
+  height: 42px;
+  z-index: 3;
 }
