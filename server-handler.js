@@ -263,6 +263,11 @@ app.post('/opinion/', (req, res)=>{
   console.log(req.body.userId);
   console.log(req.body.likeDatabaseValue);
   console.log(req.body.storyID);
+  const data =[
+    req.body.userId,
+    req.body.likeDatabaseValue,
+    req.body.storyID
+  ]
 
 
 

@@ -139,7 +139,7 @@ const getAuthor = (connection, id)=>{
     )
   })
 };
-//send like-dislike
+//get from database total like-dislike
 const getOpinion = (connection, id)=>{
   console.log('grab opinion of '+id);
   return new Promise((resolve)=>{
@@ -154,6 +154,18 @@ const getOpinion = (connection, id)=>{
     )
   })
 };
+ const putOpinion= (connection, data) =>{
+   connection.query(
+       `UPDATE Views 
+        SET Views.like_story =${data[1]}
+        WHERE Views.user_Id =${data[0]} and Views.story_Id=${data[2]}`,
+       (err, results)=>{
+         console.log(results);
+         return(results);
+       }
+   )
+ }
+
 /*const data = [
   req.body.author_id,
   req.body.parent_id,
