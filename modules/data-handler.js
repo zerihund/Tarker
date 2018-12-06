@@ -216,5 +216,6 @@ module.exports = {
   getStoryComment:getStoryComment,
   getAuthor:getAuthor,
   getOpinion:getOpinion,
-  upload:upload
+  upload:upload,
+  putOpinion:putOpinion
 };
