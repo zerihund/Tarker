@@ -1,5 +1,5 @@
-console.log('dis run');
 const init =()=>{
+  console.log('dis run');
   document.querySelectorAll('.add').forEach(x => x.addEventListener('click',evt =>{
     console.log(evt.target.id);
     document.getElementById('popup2').style.display='block';
@@ -173,7 +173,7 @@ const grabStory = ()=>{
 };
 //init functions: get story to display inside main tag
 grabStory();
-
+init();
 
 //add story to chosen story
 
