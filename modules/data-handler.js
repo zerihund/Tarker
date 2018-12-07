@@ -157,7 +157,7 @@ const getOpinion = (connection, id)=>{
  const putOpinion= (connection, data) =>{
    connection.query(
        `INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,Views.view_count)
-        VALUES(${data[0]},${data[2]},${data[1]}, 5)`,
+        VALUES(${data[0]},${data[2]},${data[1]}, null)`,
        (err, results)=>{
          console.log(results);
          return(results);
