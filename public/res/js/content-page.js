@@ -70,28 +70,37 @@ const grabStory = ()=>{
       see.id = 'see'+json[i].story_Id;
 
       const commentbox = document.createElement('div');
-      for(let j=0;j<json[i].comment.length;j++){
-        const comment_segment = document.createElement('div');
-        const comment_writer = document.createElement('p');
-        comment_writer.innerText = json[i].comment[j].name;
-        const comment_time = document.createElement('p');
-        comment_time.innerText = json[i].comment[j].comment_time;
-        const comment = document.createElement('p');
-        comment.innerText = json[i].comment[j].comment;
-
-        comment_segment.appendChild(comment_writer);
-        comment_segment.appendChild(comment_time);
-        comment_segment.appendChild(comment);
-        commentbox.appendChild(comment_segment);
-      }
-      commentbox.style.fontSize = 'small';
-      commentbox.style.backgroundColor = 'wheat';
+      commentbox.className = `xsee${json[i].story_Id}`;
+      const comment_container = document.createElement('div');
+      json[i].comment.forEach(x =>{
+        if(x.name !== document.querySelector('#username').value){
+          comment_container.innerHTML+=`<div class="comment">
+            <p class="commenter">${x.name}</p>
+            <p class="comment-time">${x.comment_time}</p>
+            <p class="comment-text">${x.comment}</p>
+          </div>`
+        }
+        else{
+          comment_container.innerHTML+=`<div class="comment">
+            <p class="self-commenter">${x.name}</p>
+            <p class="self-comment-time">${x.comment_time}</p>
+            <p class="self-comment">${x.comment}</p>
+          </div>`
+        }
+      });
+      commentbox.appendChild(comment_container);
+      commentbox.innerHTML +=
+          `<form class="write-comment" enctype="multipart/form-data" id="fxsee${json[i].story_Id}">
+            <input type="text" name="usercomment">
+            <button type="submit"> > </button>
+          </form>`;
 
       container.appendChild(author_date);
       container.appendChild(media_story);
       container.appendChild(impress);
       container.appendChild(add);
       container.appendChild(see);
+      container.appendChild(commentbox);
 
       main.appendChild(container);
     }
