@@ -167,13 +167,12 @@ const grabStory = ()=>{
       container.appendChild(commentbox);
 
       main.appendChild(container);
+      init();
     }
   });
-  init();
 };
 //init functions: get story to display inside main tag
 grabStory();
-init();
 
 //add story to chosen story
 

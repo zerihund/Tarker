@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="" />
+    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/public/res/js/content-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/js/content-page.js" afterDir="false" />
+    </list>
     <list id="3c9e7bb2-7bdb-4887-afeb-1e245b7afc96" name="Revert: " comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="37" />
+            <state relative-caret-position="170">
+              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -41,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
+            <state relative-caret-position="2856">
+              <caret line="168" column="20" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -149,11 +151,10 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1695" />
-    <option name="y" value="30" />
-    <option name="width" value="2005" />
-    <option name="height" value="1990" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="372" />
+    <option name="width" value="1028" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -315,20 +316,6 @@
       <workItem from="1543562692007" duration="2468000" />
       <workItem from="1543577928628" duration="439000" />
       <workItem from="1543997692077" duration="10628000" />
-    </task>
-    <task id="LOCAL-00088" summary="init storm 0.0.13&#10;continue upload test. hopefully it works now">
-      <created>1543836701529</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1543836701529</updated>
-    </task>
-    <task id="LOCAL-00089" summary="init storm 0.0.14&#10;continue upload test. hopefully it works now">
-      <created>1543837064123</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1543837064123</updated>
     </task>
     <task id="LOCAL-00090" summary="init storm 0.0.15&#10;continue upload test. hopefully it works now">
       <created>1543837291491</created>
@@ -659,17 +646,31 @@
       <option name="project" value="LOCAL" />
       <updated>1544181757358</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="fix comment not appearing bug">
+      <created>1544181972797</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1544181972797</updated>
+    </task>
+    <task id="LOCAL-00138" summary="fix comment not appearing function not functioning">
+      <created>1544182030766</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1544182030766</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163908000" />
+    <option name="totallyTimeSpent" value="164566000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
+    <frame x="372" y="0" width="1028" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24444444" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10227273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="File Transfer" order="0" weight="0.3286119" />
@@ -725,8 +726,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init storm 0.0.30&#10;trying to get the info" />
-    <MESSAGE value="init storm 0.0.31&#10;trying to get the info" />
     <MESSAGE value="init storm 0.0.32&#10;trying to get the info" />
     <MESSAGE value="init storm 0.0.33&#10;trying to get the info" />
     <MESSAGE value="init storm 0.0.34&#10;trying to get the info" />
@@ -750,7 +749,9 @@
     <MESSAGE value="add Lato Fonts" />
     <MESSAGE value="add comment section" />
     <MESSAGE value="fix comment class bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix comment class bug" />
+    <MESSAGE value="fix comment not appearing bug" />
+    <MESSAGE value="fix comment not appearing function not functioning" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix comment not appearing function not functioning" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -877,15 +878,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="37" />
+        <state relative-caret-position="170">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
+        <state relative-caret-position="2856">
+          <caret line="168" column="20" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
         </state>
       </provider>
     </entry>
