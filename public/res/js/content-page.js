@@ -91,6 +91,9 @@ const grabStory = ()=>{
             <source src="res/media/${json[i].media}" type="video/mp4">
           </video>${json[i].content}`;
         }
+        else{
+          media_story.innerHTML = json[i].content;
+        }
       }
       else{
         media_story.innerHTML = json[i].content;
