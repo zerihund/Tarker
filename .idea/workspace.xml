@@ -43,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="117" column="22" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
+            <state relative-caret-position="453">
+              <caret line="122" column="19" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -297,20 +297,6 @@
       <workItem from="1543562692007" duration="2468000" />
       <workItem from="1543577928628" duration="439000" />
       <workItem from="1543997692077" duration="10628000" />
-    </task>
-    <task id="LOCAL-00104" summary="init storm 0.0.27&#10;trying to get the info">
-      <created>1543840742265</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1543840742265</updated>
-    </task>
-    <task id="LOCAL-00105" summary="init storm 0.0.28&#10;trying to get the info">
-      <created>1543840959741</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1543840959741</updated>
     </task>
     <task id="LOCAL-00106" summary="init storm 0.0.29&#10;trying to get the info">
       <created>1543841390260</created>
@@ -641,11 +627,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544189073468</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="fixing bugs on content-page.js">
+      <created>1544189204986</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1544189204986</updated>
+    </task>
+    <task id="LOCAL-00154" summary="fixing bugs on content-page.js">
+      <created>1544189371875</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1544189371875</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171224000" />
+    <option name="totallyTimeSpent" value="171570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -862,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="117" column="22" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
+        <state relative-caret-position="453">
+          <caret line="122" column="19" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="19" />
         </state>
       </provider>
     </entry>
