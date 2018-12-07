@@ -72,23 +72,25 @@ const grabStory = ()=>{
       //story and media---------------------------------------
       const media_story = document.createElement('p');
       media_story.className = 'media-story';
-      if(json[i].media.substring(0,3) === 'img'){
-        //const img = document.createElement('img');
-        // img.src = 'res/media/'+json[i].media;
-        // media_story.appendChild(img);
-        media_story.innerHTML = `<img src="res/media/${json[i].media}" alt="cake">${json[i].content}`;
-      }
-      else if(json[i].media.substring(0,3) === 'bgm'){
-        media_story.innerHTML = `
+      if(json[i].media !== ''){
+        if(json[i].media.substring(0,3) === 'img'){
+          //const img = document.createElement('img');
+          // img.src = 'res/media/'+json[i].media;
+          // media_story.appendChild(img);
+          media_story.innerHTML = `<img src="res/media/${json[i].media}" alt="cake">${json[i].content}`;
+        }
+        else if(json[i].media.substring(0,3) === 'bgm'){
+          media_story.innerHTML = `
           <audio controls>
             <source src="res/media/${json[i].media}" type="audio/mp3">
           </audio>${json[i].content}`;
-      }
-      else if(json[i].media.substring(0,3) === 'vid'){
-        media_story.innerHTML = `
+        }
+        else if(json[i].media.substring(0,3) === 'vid'){
+          media_story.innerHTML = `
           <video controls>
             <source src="res/media/${json[i].media}" type="video/mp4">
           </video>${json[i].content}`;
+        }
       }
       else{
         media_story.innerHTML = json[i].content;
