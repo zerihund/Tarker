@@ -4,7 +4,7 @@ const grabStory = ()=>{
   fetch('/node/grabstory')
   .then(res => res.json())
   .then(json =>{
-    main.innerHTML = '';
+    //main.innerHTML = '';
     document.querySelector('h1').innerText = json[0].title;
     for(let i = 0; i<json.length;i++){
       console.log(json[i]);
@@ -36,18 +36,16 @@ const grabStory = ()=>{
         media_story.innerHTML = `<img src="res/media/${json[i].media}" alt="cake">${json[i].content}`;
       }
       else if(json[i].media.substring(0,3) === 'bgm'){
-        media_story.innerHTML = `<audio controls>
-        <source src="res/media/${json[i].media}" type="audio/mp3">
-      </audio>${json[i].content}`;
+        media_story.innerHTML = `
+          <audio controls>
+            <source src="res/media/${json[i].media}" type="audio/mp3">
+          </audio>${json[i].content}`;
       }
       else if(json[i].media.substring(0,3) === 'vid'){
-        const vid = document.createElement('vid');
-        // vid.controls = true;
-        // vid.src = 'res/media/'+json[i].media;
-        // media_story.appendChild(vid);
-        media_story.innerHTML = `<video controls>
-          <source src="res/media/${json[i].media}" type="video/mp4">
-        </video>${json[i].content}`;
+        media_story.innerHTML = `
+          <video controls>
+            <source src="res/media/${json[i].media}" type="video/mp4">
+          </video>${json[i].content}`;
       }
       else{
         media_story.innerHTML = json[i].content;
@@ -87,7 +85,6 @@ const grabStory = ()=>{
           document.getElementById('x'+evt.target.id).style.display='block';
         }
       });
-
       const commentbox = document.createElement('div');
       commentbox.id = `xsee${json[i].story_Id}`;
       commentbox.className = 'comment-box';
@@ -150,14 +147,12 @@ const grabStory = ()=>{
           })
         });
       });
-
       container.appendChild(author_date);
       container.appendChild(media_story);
       container.appendChild(impress);
       container.appendChild(add);
       container.appendChild(see);
       container.appendChild(commentbox);
-
       main.appendChild(container);
     }
   });
