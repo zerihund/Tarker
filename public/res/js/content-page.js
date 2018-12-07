@@ -113,7 +113,9 @@ const grabStory = ()=>{
             <input type="text" name="usercomment">
             <button type="submit"> > </button>
           </form>`;
-      document.querySelector(`#fxsee${json[i].story_Id}`).addEventListener('submit',evt =>{
+
+      document.getElementById(`#fxsee${json[i].story_Id}`).addEventListener('submit',evt =>{
+        console.log('xxxxxxxxxxxxxxxxxxxxxxx');
         evt.preventDefault();
         const storyid = evt.target.id.substring(5);
         const authorid = document.querySelector('main').id;
