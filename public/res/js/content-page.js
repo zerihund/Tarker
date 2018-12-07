@@ -129,7 +129,7 @@ const grabStory = ()=>{
         .then(json =>{
           console.log(json);
           const commentContainer = document.getElementById(`#xseek${storyid}`);
-          commentContainer.innerHTML = '';
+          //commentContainer.innerHTML = '';
           json.forEach(x =>{
             if(x.name !== document.querySelector('#username').value){
               commentContainer.innerHTML+=`<div class="comment">
