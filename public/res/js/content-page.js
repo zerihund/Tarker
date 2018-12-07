@@ -169,7 +169,13 @@ const getform = () =>{
     console.log(settings.body.get('storyid'));
     console.log(settings.body.get('userid'));
     console.log(settings.body.get('usercomment'));
-    fetch('/node/comment/', settings)
+    fetch('/node/comment/', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }),
+      body: `storyide=${storyid}&userid=${userid}&usercomment=${usercomment}`
+    })
     .then((res) => res.json())
     .then(json =>{
       console.log(json);
