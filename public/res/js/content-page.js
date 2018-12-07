@@ -6,7 +6,8 @@ const grabStory = ()=>{
   .then(json =>{
     main.innerHTML = '';
     document.querySelector('h1').innerText = json[0].title;
-    for(let i = 0; i<json.length;i++){
+    for(let i = 0; i<json.length;i++)
+    {
       console.log(json[i]);
       const container = document.createElement('div');
       container.id = json[i].story_Id;
@@ -121,8 +122,8 @@ const grabStory = ()=>{
       container.appendChild(see);
       container.appendChild(commentbox);
       main.appendChild(container);
-      return 0;
     }
+    return 0;
   }).then(x =>{
     getform();
   });

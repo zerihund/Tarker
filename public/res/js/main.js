@@ -37,18 +37,16 @@ const grabStory = ()=>{
         media_story.innerHTML = `<img src="res/media/${json[i].media}" alt="cake">${json[i].content}`;
       }
       else if(json[i].media.substring(0,3) === 'bgm'){
-        media_story.innerHTML = `<audio controls>
-        <source src="res/media/${json[i].media}" type="audio/mp3">
-      </audio>${json[i].content}`;
+        media_story.innerHTML = `
+          <audio controls>
+            <source src="res/media/${json[i].media}" type="audio/mp3">
+          </audio>${json[i].content}`;
       }
       else if(json[i].media.substring(0,3) === 'vid'){
-        const vid = document.createElement('vid');
-        // vid.controls = true;
-        // vid.src = 'res/media/'+json[i].media;
-        // media_story.appendChild(vid);
-        media_story.innerHTML = `<video controls>
-          <source src="res/media/${json[i].media}" type="video/mp4">
-        </video>${json[i].content}`;
+        media_story.innerHTML = `
+          <video controls>
+            <source src="res/media/${json[i].media}" type="video/mp4">
+          </video>${json[i].content}`;
       }
       else{
         media_story.innerHTML = json[i].content;
@@ -57,9 +55,9 @@ const grabStory = ()=>{
       const impress = document.createElement('div');
       impress.className = 'impression';
       impress.innerHTML =
-          `<i id='+${json[i].story_Id}' class="fa fa-caret-up"></i>
+          `<i id='+${json[i].story_Id}' class="fa fa-caret-up" onclick="likeOrNot()"></i>
           <span>${json[i].like}</span>
-          <i id='-${json[i].story_Id}' class="fa fa-caret-down""></i>
+          <i id='-${json[i].story_Id}' class="fa fa-caret-down" onclick="dislikeOrNot()"></i>
           <span>${json[i].dislike}</span>`;
 
       const add = document.createElement('button');
@@ -88,12 +86,12 @@ const grabStory = ()=>{
           document.getElementById('x'+evt.target.id).style.display='block';
         }
       });
-
       const commentbox = document.createElement('div');
       commentbox.id = `xsee${json[i].story_Id}`;
       commentbox.className = 'comment-box';
       const comment_container = document.createElement('div');
       comment_container.className = 'comment-container';
+      comment_container.id = `xseek${json[i].story_Id}`;
       json[i].comment.forEach(x =>{
         if(x.name !== document.querySelector('#username').value){
           comment_container.innerHTML+=`<div class="comment">
@@ -111,15 +109,25 @@ const grabStory = ()=>{
         }
       });
       commentbox.appendChild(comment_container);
+      commentbox.innerHTML +=
+          `<form class="write-comment" enctype="multipart/form-data" id="fxsee${json[i].story_Id}">
+            <input type="text" name="usercomment">
+            <button type="submit"> > </button>
+          </form>`;
 
       container.appendChild(author_date);
       container.appendChild(media_story);
       container.appendChild(impress);
+      container.appendChild(add);
+      container.appendChild(see);
       container.appendChild(commentbox);
-
       main.appendChild(container);
+      return 0;
     }
+  }).then(x =>{
+    getform();
   });
+
 };
 
 grabStory();
