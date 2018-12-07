@@ -233,7 +233,9 @@ const comment = (connection, req, res)=>{
         console.log(err);
         console.log(results);
         connection.query(
-            'SELECT FROM comments WHERE',
+            `SELECT user.name, comments.comment, comments.comment_time 
+       FROM comments, user 
+       WHERE comments.story_id = ? AND user.user_Id = comments.user_Id`, req.body.storyid,
             (error, result)=>{
               console.log(error);
               console.log(result);
