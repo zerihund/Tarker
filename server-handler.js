@@ -268,7 +268,6 @@ app.post('/opinion/', (req, res)=>{
   db.putOpinion(connection,data);
 });
 
-
 //add comments to database
 app.post('/comment/', (req, res)=>{
   console.log(req.body.storyid);

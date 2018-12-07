@@ -139,16 +139,16 @@ const passRepeat=document.querySelector("#passwordRpeat").value;
     document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
     return false;
   }
-  if (email==="" || (email.length<5||!email.includes('@') || (!email.includes('.')))) {
-    document.querySelector('#userE').innerHTML="** please fill your email/use the correct format**";
+  if (user ===""|| (user.length<3 || user>20)) {
+    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
     return false;
   }
-  if (pass ===""|| (pass.length<6 || pass>20)) {
-    document.querySelector('#userP1').innerHTML="** please fill your password/use the correct format**";
+  if (user ===""|| (user.length<3 || user>20)) {
+    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
     return false;
   }
-  if (user ===""|| (passRepeat!==pass)) {
-    document.querySelector('#userp2').innerHTML="**password do not match**";
+  if (user ===""|| (user.length<3 || user>20)) {
+    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
     return false;
   }
 }
