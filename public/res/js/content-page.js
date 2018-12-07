@@ -90,6 +90,7 @@ const grabStory = ()=>{
       commentbox.className = 'comment-box';
       const comment_container = document.createElement('div');
       comment_container.className = 'comment-container';
+      comment_container.id = `xseef${json[i].story_Id}`;
       json[i].comment.forEach(x =>{
         if(x.name !== document.querySelector('#username').value){
           comment_container.innerHTML+=`<div class="comment">
@@ -112,41 +113,41 @@ const grabStory = ()=>{
             <input type="text" name="usercomment">
             <button type="submit"> > </button>
           </form>`;
-      // document.querySelector(`#fxsee${json[i].story_Id}`).addEventListener('submit',evt =>{
-      //   evt.preventDefault();
-      //   const storyid = evt.target.id.substring(5);
-      //   const authorid = document.querySelector('main').id;
-      //   const fd = new FormData(evt.target);
-      //   fd.append('storyid', storyid);
-      //   fd.append('userid', authorid);
-      //   const settings = {
-      //     method: 'post',
-      //     body: fd,
-      //   };
-      //   fetch('/node/comment/', settings)
-      //   .then((res) => res.json())
-      //   .then(json =>{
-      //     console.log(json);
-      //     const comment_container = document.querySelector(`#xsee${storyid} .comment-container`);
-      //     comment_container.innerHTML = '';
-      //     json.forEach(x =>{
-      //       if(x.name !== document.querySelector('#username').value){
-      //         comment_container.innerHTML+=`<div class="comment">
-      //       <p class="commenter">${x.name}</p>
-      //       <p class="comment-time">${x.comment_time}</p>
-      //       <p class="comment-text">${x.comment}</p>
-      //     </div>`
-      //       }
-      //       else{
-      //         comment_container.innerHTML+=`<div class="comment">
-      //       <p class="self-commenter">${x.name}</p>
-      //       <p class="self-comment-time">${x.comment_time}</p>
-      //       <p class="self-comment">${x.comment}</p>
-      //     </div>`
-      //       }
-      //     })
-      //   });
-      // });
+      document.querySelector(`#fxsee${json[i].story_Id}`).addEventListener('submit',evt =>{
+        evt.preventDefault();
+        const storyid = evt.target.id.substring(5);
+        const authorid = document.querySelector('main').id;
+        const fd = new FormData(evt.target);
+        fd.append('storyid', storyid);
+        fd.append('userid', authorid);
+        const settings = {
+          method: 'post',
+          body: fd,
+        };
+        fetch('/node/comment/', settings)
+        .then((res) => res.json())
+        .then(json =>{
+          console.log(json);
+          const commentContainer = document.getElementById(`#xseef${storyid} .comment-container`);
+          commentContainer.innerHTML = '';
+          json.forEach(x =>{
+            if(x.name !== document.querySelector('#username').value){
+              commentContainer.innerHTML+=`<div class="comment">
+            <p class="commenter">${x.name}</p>
+            <p class="comment-time">${x.comment_time}</p>
+            <p class="comment-text">${x.comment}</p>
+          </div>`
+            }
+            else{
+              commentContainer.innerHTML+=`<div class="comment">
+            <p class="self-commenter">${x.name}</p>
+            <p class="self-comment-time">${x.comment_time}</p>
+            <p class="self-comment">${x.comment}</p>
+          </div>`
+            }
+          })
+        });
+      });
       container.appendChild(author_date);
       container.appendChild(media_story);
       container.appendChild(impress);
