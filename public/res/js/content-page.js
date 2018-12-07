@@ -1,3 +1,45 @@
+const getform = () =>{
+  document.querySelectorAll('.write-comment')
+  .forEach(x => {
+    x.addEventListener('submit',evt =>{
+      evt.preventDefault();
+      console.log('xxxxxx');
+      const storyid = evt.target.id.substring(5);
+      const userid = document.querySelector('main').id;
+      const fd = new FormData(evt.target);
+
+      fetch('/node/comment/', {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }),
+        body: `storyid=${storyid}&userid=${userid}&usercomment=${fd.get('usercomment')}`
+      })
+      .then((res) => res.json())
+      .then(json =>{
+        console.log(json);
+        const commentContainer = document.getElementById(`xseek${storyid}`);
+        //commentContainer.innerHTML = '';
+        json.forEach(x =>{
+          if(x.name !== document.querySelector('#username').value){
+            commentContainer.innerHTML+=`<div class="comment">
+            <p class="commenter">${x.name}</p>
+            <p class="comment-time">${x.comment_time}</p>
+            <p class="comment-text">${x.comment}</p>
+          </div>`
+          }
+          else{
+            commentContainer.innerHTML+=`<div class="comment">
+            <p class="self-commenter">${x.name}</p>
+            <p class="self-comment-time">${x.comment_time}</p>
+            <p class="self-comment">${x.comment}</p>
+          </div>`
+          }
+      })
+    });
+  });
+})};
+
 const grabStory = ()=>{
   console.log('dis run 2');
   const main = document.querySelector('main');
@@ -123,9 +165,8 @@ const grabStory = ()=>{
       container.appendChild(commentbox);
       main.appendChild(container);
     }
-    return 0;
-  }).then(x =>{
-    getform();
+  }).then(() =>{
+    //getform();
   });
 
 };
@@ -155,46 +196,5 @@ document.querySelector('#create').addEventListener('click',()=>{
   document.getElementById('popup1').style.display='block'
 });
 
-const getform = () =>{
-  document.querySelectorAll('.write-comment')
-  .forEach(x => {
-    x.addEventListener('submit',evt =>{
-    evt.preventDefault();
-    console.log('xxxxxx');
-    const storyid = evt.target.id.substring(5);
-    const userid = document.querySelector('main').id;
-    const fd = new FormData(evt.target);
-
-    fetch('/node/comment/', {
-      method: 'POST',
-      headers: new Headers({
-        'Content-Type': 'application/x-www-form-urlencoded',
-      }),
-      body: `storyid=${storyid}&userid=${userid}&usercomment=${fd.get('usercomment')}`
-    })
-    .then((res) => res.json())
-    .then(json =>{
-      console.log(json);
-      const commentContainer = document.getElementById(`xseek${storyid}`);
-      //commentContainer.innerHTML = '';
-      json.forEach(x =>{
-        if(x.name !== document.querySelector('#username').value){
-          commentContainer.innerHTML+=`<div class="comment">
-            <p class="commenter">${x.name}</p>
-            <p class="comment-time">${x.comment_time}</p>
-            <p class="comment-text">${x.comment}</p>
-          </div>`
-        }
-        else{
-          commentContainer.innerHTML+=`<div class="comment">
-            <p class="self-commenter">${x.name}</p>
-            <p class="self-comment-time">${x.comment_time}</p>
-            <p class="self-comment">${x.comment}</p>
-          </div>`
-        }
-      })
-    });
-  });
-})};
 
 
