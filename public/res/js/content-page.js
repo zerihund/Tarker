@@ -152,7 +152,9 @@ document.querySelector('#create').addEventListener('click',()=>{
 });
 
 const getform = () =>{
-  document.querySelectorAll('write-comment').forEach(x=>{x.addEventListener('submit',evt =>{
+  document.querySelectorAll('.write-comment')
+  .forEach(x => {
+    x.addEventListener('submit',evt =>{
     console.log('xxxxxxxxxxxxxxxxxxxxxxx');
     evt.preventDefault();
     const storyid = evt.target.id.substring(5);
