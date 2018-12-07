@@ -121,9 +121,12 @@ const grabStory = ()=>{
       container.appendChild(see);
       container.appendChild(commentbox);
       main.appendChild(container);
+      return 0;
     }
+  }).then(x =>{
     getform();
   });
+
 };
 //init functions: get story to display inside main tag
 grabStory();
@@ -139,7 +142,6 @@ window.addEventListener('click',(evt)=>{
 
 //add function to when you click random button you get a random new story read
 document.querySelector('#random').addEventListener('click',()=>{
-  grabStory();
 });
 //add story to chosen story
 document.querySelector('#liked').addEventListener('click',()=>{
@@ -166,7 +168,7 @@ const getform = () =>{
       headers: new Headers({
         'Content-Type': 'application/x-www-form-urlencoded',
       }),
-      body: `storyide=${storyid}&userid=${userid}&usercomment=12345`
+      body: `storyide=${storyid}&userid=${userid}&usercomment=${fd.get('usercomment')}`
     })
     .then((res) => res.json())
     .then(json =>{
@@ -191,8 +193,6 @@ const getform = () =>{
       })
     });
   });
-
-  })}
-
+})};
 
 
