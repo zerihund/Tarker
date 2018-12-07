@@ -97,10 +97,10 @@ const grabStory = ()=>{
     }
   });
 };
-//init functions
+//init functions: get story to display inside main tag
 grabStory();
 
-//add story
+//add story to chosen story
 document.querySelectorAll('.add').forEach(x => x.addEventListener('click',evt =>{
   console.log(evt.target.id);
   document.getElementById('popup2').style.display='block';
@@ -113,6 +113,7 @@ document.querySelectorAll('.add').forEach(x => x.addEventListener('click',evt =>
   });
 }));
 
+//turn on off comment box
 document.querySelectorAll('.see').forEach(x => x.addEventListener('click',evt =>{
   console.log(evt.target.id);
   if(document.getElementById('x'+evt.target.id).style.display==='block'){
@@ -136,11 +137,29 @@ document.querySelectorAll('.write-comment').forEach(x => x.addEventListener('sub
     body: fd,
   };
   fetch('/node/comment/', settings)
-  .then((res) => {
+  .then((res) => res.json())
+  .then(json =>{
+    console.log(json);
+    const comment_container = document.querySelector(`#xsee${storyid} .comment-container`);
+    comment_container.innerHTML = '';
+    json.forEach(x =>{
+      if(x.name !== document.querySelector('#username').value){
+        comment_container.innerHTML+=`<div class="comment">
+            <p class="commenter">${x.name}</p>
+            <p class="comment-time">${x.comment_time}</p>
+            <p class="comment-text">${x.comment}</p>
+          </div>`
+      }
+      else{
+        comment_container.innerHTML+=`<div class="comment">
+            <p class="self-commenter">${x.name}</p>
+            <p class="self-comment-time">${x.comment_time}</p>
+            <p class="self-comment">${x.comment}</p>
+          </div>`
+      }
+    })
   });
 }));
 
-//------------------------------------------------------------------------------
-//close button turns modal display to none
 
 

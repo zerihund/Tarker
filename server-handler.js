@@ -95,8 +95,7 @@ app.post('/emailcheck', (req, res)=>{
 app.get('/grabstory', (req, res)=> {
   //get init story
   console.log('    ');
-  console.log(
-      '-------------------------------www-------------------------------------------------------------');
+  console.log('--g-r--a--b-r-');
   db.getInitStory(connection).then(results => {
     //get parent story and append it to begin of story branch array
     findParent([results], res);
@@ -265,8 +264,18 @@ app.post('/opinion/', (req, res)=>{
     req.body.userId,
     req.body.likeDatabaseValue,
     req.body.storyID
-  ]
+  ];
   db.putOpinion(connection,data);
+});
+
+
+//add comments to database
+app.post('/comment/', (req, res)=>{
+  console.log(req.body.storyid);
+  console.log(req.body.userid);
+  console.log(req.body.usercomment);
+
+  db.comment(connection, req, res);
 });
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
