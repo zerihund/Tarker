@@ -90,7 +90,7 @@ const grabStory = ()=>{
       commentbox.className = 'comment-box';
       const comment_container = document.createElement('div');
       comment_container.className = 'comment-container';
-      comment_container.id = `xseef${json[i].story_Id}`;
+      comment_container.id = `xseek${json[i].story_Id}`;
       json[i].comment.forEach(x =>{
         if(x.name !== document.querySelector('#username').value){
           comment_container.innerHTML+=`<div class="comment">
@@ -128,7 +128,7 @@ const grabStory = ()=>{
         .then((res) => res.json())
         .then(json =>{
           console.log(json);
-          const commentContainer = document.getElementById(`#xseef${storyid} .comment-container`);
+          const commentContainer = document.getElementById(`#xseek${storyid}`);
           commentContainer.innerHTML = '';
           json.forEach(x =>{
             if(x.name !== document.querySelector('#username').value){
