@@ -70,8 +70,10 @@ const grabStory = ()=>{
       see.id = 'see'+json[i].story_Id;
 
       const commentbox = document.createElement('div');
-      commentbox.className = `xsee${json[i].story_Id}`;
+      commentbox.id = `xsee${json[i].story_Id}`;
+      commentbox.className = 'comment-box';
       const comment_container = document.createElement('div');
+      comment_container.className = 'comment-container';
       json[i].comment.forEach(x =>{
         if(x.name !== document.querySelector('#username').value){
           comment_container.innerHTML+=`<div class="comment">
