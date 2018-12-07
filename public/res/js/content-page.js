@@ -72,7 +72,7 @@ const grabStory = ()=>{
       //story and media---------------------------------------
       const media_story = document.createElement('p');
       media_story.className = 'media-story';
-      if(json[i].media !== ''){
+      if(json[i].media !== null){
         if(json[i].media.substring(0,3) === 'img'){
           //const img = document.createElement('img');
           // img.src = 'res/media/'+json[i].media;
