@@ -29,7 +29,7 @@ let dislikable=0;
 let dislikeModulo = 0;
 //this value determines if its the first opinion or subsequent opinion
 // i.e insert to database or update database. updated after each action
-let insertOrUpdate= likable+dislikable;
+let insertOrUpdateCounter= likable+dislikable;
 
 
 //shows on webpage number of likes
@@ -95,8 +95,8 @@ const like=()=>{
   if(dislikeExecuted==true){
     removeDislike();
   }
-  insertOrUpdate++;
-  console.log(insertOrUpdate);
+  insertOrUpdateCounter++;
+  console.log(insertOrUpdateCounter);
   likeValueToDb();
 }
 
@@ -119,8 +119,8 @@ const dislike=()=>{
     //unlike();
     removeLike();
   }
-  insertOrUpdate++;
-  console.log(insertOrUpdate);
+  insertOrUpdateCounter++;
+  console.log(insertOrUpdateCounter);
   likeValueToDb();
 }
 /*you can only unlike if it has been liked
@@ -130,8 +130,8 @@ const unlike=()=>{
   if(likeExecuted==true){
     removeLike();
   }
-  insertOrUpdate++;
-  console.log(insertOrUpdate);
+  insertOrUpdateCounter++;
+  console.log(insertOrUpdateCounter);
   likeValueToDb();
 }
 /*You can only undislike if you have disliked
@@ -140,8 +140,8 @@ const unDislike=()=>{
   if(dislikeExecuted==true){
     removeDislike();
   }
-  insertOrUpdate++;
-  console.log(insertOrUpdate);
+  insertOrUpdateCounter++;
+  console.log(insertOrUpdateCounter);
   likeValueToDb();
 }
 
@@ -175,7 +175,7 @@ const sendToDb=()=>{
       'Content-Type': 'application/x-www-form-urlencoded',
     }),
     //Todo:storyID must be changed to dynamic value, and also userId
-    body: `firstLike=${insertOrUpdate}&userId=11&likeDatabaseValue=${likeDatabaseValue}&storyID=${14}`
+    body: `firstLike=${insertOrUpdateCounter}&userId=11&likeDatabaseValue=${likeDatabaseValue}&storyID=${14}`
   }).then(res =>{
     console.log(res);
   })
