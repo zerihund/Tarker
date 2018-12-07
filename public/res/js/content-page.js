@@ -158,23 +158,15 @@ const getform = () =>{
     console.log('xxxxxxxxxxxxxxxxxxxxxxx');
     evt.preventDefault();
     const storyid = evt.target.id.substring(5);
-    const authorid = document.querySelector('main').id;
+    const userid = document.querySelector('main').id;
     const fd = new FormData(evt.target);
-    fd.append('storyid', storyid);
-    fd.append('userid', authorid);
-    const settings = {
-      method: 'post',
-      body: fd,
-    };
-    console.log(settings.body.get('storyid'));
-    console.log(settings.body.get('userid'));
-    console.log(settings.body.get('usercomment'));
+
     fetch('/node/comment/', {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/x-www-form-urlencoded',
       }),
-      body: `storyide=${storyid}&userid=${userid}&usercomment=${usercomment}`
+      body: `storyide=${storyid}&userid=${userid}&usercomment=12345`
     })
     .then((res) => res.json())
     .then(json =>{
