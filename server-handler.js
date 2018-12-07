@@ -274,7 +274,6 @@ app.post('/comment/', (req, res)=>{
   console.log(req.body.storyid);
   console.log(req.body.userid);
   console.log(req.body.usercomment);
-
   db.comment(connection, req, res);
 });
 //--------------------------------------------------------------------------------------------------------

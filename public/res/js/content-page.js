@@ -166,9 +166,9 @@ const getform = () =>{
       method: 'post',
       body: fd,
     };
-    console.log(fd.get('storyid'));
-    console.log(fd.get('userid'));
-    console.log(fd.get('usercomment'));
+    console.log(settings.body.get('storyid'));
+    console.log(settings.body.get('userid'));
+    console.log(settings.body.get('usercomment'));
     fetch('/node/comment/', settings)
     .then((res) => res.json())
     .then(json =>{
