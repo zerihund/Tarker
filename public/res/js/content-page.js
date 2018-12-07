@@ -171,7 +171,7 @@ const grabStory = ()=>{
       main.appendChild(container);
     }
   }).then(() =>{
-    //getform();
+    getform();
   });
 
 };
