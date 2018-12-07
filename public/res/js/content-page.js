@@ -155,8 +155,8 @@ const getform = () =>{
   document.querySelectorAll('.write-comment')
   .forEach(x => {
     x.addEventListener('submit',evt =>{
-    console.log('xxxxxxxxxxxxxxxxxxxxxxx');
     evt.preventDefault();
+    console.log('xxxxxx');
     const storyid = evt.target.id.substring(5);
     const userid = document.querySelector('main').id;
     const fd = new FormData(evt.target);
