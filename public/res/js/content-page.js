@@ -4,24 +4,20 @@ const init =()=>{
     console.log(evt.target.id);
     document.getElementById('popup2').style.display='block';
     document.querySelector('.follow_form').id = 'f'+evt.target.id;
-
-    window.addEventListener('click',(evt)=>{
-      if(evt.target.id === 'popup2'){
-        document.getElementById('popup2').style.display='none';
-      }
-    });
   }));
 
 //turn on off comment box
   document.querySelectorAll('.see').forEach(x => x.addEventListener('click',evt =>{
     console.log(evt.target.id);
+    console.log(document.getElementById('x'+evt.target.id));
     if(document.getElementById('x'+evt.target.id).style.display==='block'){
-      document.getElementById('x'+evt.target.id).style.display='none';
+        console.log('off');
+       document.getElementById('x'+evt.target.id).style.display='none';
     }
     else{
+      console.log('on');
       document.getElementById('x'+evt.target.id).style.display='block';
     }
-
   }));
 
   document.querySelectorAll('.write-comment').forEach(x => x.addEventListener('submit',evt =>{
@@ -95,19 +91,22 @@ const grabStory = ()=>{
       if(json[i].media.substring(0,3) === 'img'){
         const img = document.createElement('img');
         img.src = 'res/media/'+json[i].media;
-        media_story.innerHTML = img + json[i].content;
+        media_story.appendChild(img);
+        media_story.innerHTML = json[i].content;
       }
       else if(json[i].media.substring(0,3) === 'bgm'){
         const aud = document.createElement('audio');
         aud.src = 'res/media/'+json[i].media;
         aud.controls = true;
-        media_story.innerHTML = aud + json[i].content;
+        media_story.appendChild(aud);
+        media_story.innerHTML = json[i].content;
       }
       else if(json[i].media.substring(0,3) === 'vid'){
         const vid = document.createElement('vid');
         vid.controls = true;
         vid.src = 'res/media/'+json[i].media;
-        media_story.innerHTML = vid + json[i].content;
+        media_story.appendChild(vid);
+        media_story.innerHTML = json[i].content;
       }
       else{
         media_story.innerHTML = json[i].content;
@@ -173,7 +172,11 @@ const grabStory = ()=>{
 };
 //init functions: get story to display inside main tag
 grabStory();
-
+window.addEventListener('click',(evt)=>{
+  if(evt.target.id === 'popup2'){
+    document.getElementById('popup2').style.display='none';
+  }
+});
 //add story to chosen story
 
 

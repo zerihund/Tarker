@@ -446,7 +446,7 @@ h1{
   overflow: auto;
 }
 .comment{
-  display: inline-block;
+  display: flex;
   padding-bottom: 2px;
   position: relative;
   margin-right: 20%;
