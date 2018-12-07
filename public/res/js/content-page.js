@@ -115,7 +115,7 @@ const grabStory = ()=>{
             <input type="text" name="usercomment">
             <button type="submit"> > </button>
           </form>`;
-      document.querySelector('#fxsee${json[i].story_Id}').addEventListener('submit',evt =>{
+      document.querySelector(`#fxsee${json[i].story_Id}`).addEventListener('submit',evt =>{
         evt.preventDefault();
         const storyid = evt.target.id.substring(5);
         const authorid = document.querySelector('main').id;
@@ -179,7 +179,7 @@ document.querySelector('#random').addEventListener('click',()=>{
   grabStory();
 });
 //add story to chosen story
-document.querySelector('#like').addEventListener('click',()=>{
+document.querySelector('#liked').addEventListener('click',()=>{
   console.log('get liked story');
 });
 
