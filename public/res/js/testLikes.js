@@ -27,6 +27,10 @@ let likeModulo = 0;
 let dislikable=0;
 //modulo determines whether its a dislike or undislike
 let dislikeModulo = 0;
+//this value determines if its the first opinion or subsequent opinion
+// i.e insert to database or update database. updated after each action
+let insertOrUpdateCounter= likable+dislikable;
+
 
 //shows on webpage number of likes
 const showLike=()=>{
@@ -74,18 +78,13 @@ const removeDislike =()=>{
   showDislike();
   unRedDislike();
 }
-
-
-
-
-/*
-like only happens if like.executed= false.
+/**like only happens if like.executed= false.
 if i like, like.executed= true and i cant like again, then add 1 to likes.
 if dislike is true (meaning they had first disliked), make dislike.executed=false;
 and if dislike.executed is true at that point then subtract 1 from dislikes and set it to false
 display dislike- basically do nothing
-if dislike.executed is not true then that means they havent disliked before
-liking and so i dont have to subtract from the dislike.
+if dislike.executed is not true then that means they haven't disliked before
+liking and so i don't have to subtract from the dislike.
 */
 const like=()=>{
   //add to like
@@ -96,6 +95,8 @@ const like=()=>{
   if(dislikeExecuted==true){
     removeDislike();
   }
+  insertOrUpdateCounter++;
+  console.log(insertOrUpdateCounter);
   likeValueToDb();
 }
 
@@ -118,6 +119,8 @@ const dislike=()=>{
     //unlike();
     removeLike();
   }
+  insertOrUpdateCounter++;
+  console.log(insertOrUpdateCounter);
   likeValueToDb();
 }
 /*you can only unlike if it has been liked
@@ -127,6 +130,8 @@ const unlike=()=>{
   if(likeExecuted==true){
     removeLike();
   }
+  insertOrUpdateCounter++;
+  console.log(insertOrUpdateCounter);
   likeValueToDb();
 }
 /*You can only undislike if you have disliked
@@ -135,6 +140,8 @@ const unDislike=()=>{
   if(dislikeExecuted==true){
     removeDislike();
   }
+  insertOrUpdateCounter++;
+  console.log(insertOrUpdateCounter);
   likeValueToDb();
 }
 
@@ -160,6 +167,7 @@ const dislikeOrNot=()=>{
   dislikable++;
   dislikeModulo= dislikable % 2;
 }
+//fetch sends to server-handler.js 'opinion'
 const sendToDb=()=>{
   fetch('/node/opinion/',{
     method: 'POST',
@@ -167,7 +175,7 @@ const sendToDb=()=>{
       'Content-Type': 'application/x-www-form-urlencoded',
     }),
     //Todo:storyID must be changed to dynamic value, and also userId
-    body: `userId=11&likeDatabaseValue=${likeDatabaseValue}&storyID=${14}`
+    body: `firstLike=${insertOrUpdateCounter}&userId=11&likeDatabaseValue=${likeDatabaseValue}&storyID=${14}`
   }).then(res =>{
     console.log(res);
   })
