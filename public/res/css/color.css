@@ -94,6 +94,11 @@ aside{
   color: #aaaaaa;
 }
 
+.self-comment-time{
+  background-color: #282f3f;
+  color: #aaaaaa;
+}
+
 .comment-text{
   color: white;
   background-color: #454755;
@@ -102,4 +107,14 @@ aside{
 .commenter{
   color: #eda948;
   background-color: #282f3f;
+}
+
+.self-commenter{
+  color: #eda948;
+  background-color: #282f3f;
+}
+
+aside button{
+  color: #eda948;
+  background-color: #454755;
 }
