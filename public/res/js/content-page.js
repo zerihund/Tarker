@@ -142,6 +142,7 @@ window.addEventListener('click',(evt)=>{
 
 //add function to when you click random button you get a random new story read
 document.querySelector('#random').addEventListener('click',()=>{
+  grabStory();
 });
 //add story to chosen story
 document.querySelector('#liked').addEventListener('click',()=>{
