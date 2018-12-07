@@ -45,9 +45,9 @@
     </div>
 </div>
 <aside>
-  <button>NEW</button>
-  <button>LIKED</button>
-  <button>CREATE</button>
+  <button id="random">RANDOM</button>
+  <button id="liked">LIKED</button>
+  <button id="create">CREATE</button>
 </aside>
 
 <h1>The Sound And The Fury</h1>
@@ -365,6 +365,15 @@
 <section id="popup2" class="modal modal2 ">
   <form id="14" enctype="multipart/form-data" method="post" class="follow_form">
     <input type="file" name="media" accept="media">
+    <textarea name="story"></textarea>
+    <input type="submit">
+  </form>
+</section>
+
+<section id="popup1" class="modal modal2 ">
+  <form id="0" enctype="multipart/form-data" method="post" class="follow_form">
+    <input type="file" name="media" accept="media">
+    <input type="text" name="title">
     <textarea name="story"></textarea>
     <input type="submit">
   </form>

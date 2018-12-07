@@ -1,41 +1,3 @@
-const init =()=>{
-    document.querySelectorAll('.write-comment').forEach(x => x.addEventListener('submit',evt =>{
-    evt.preventDefault();
-    const storyid = evt.target.id.substring(5);
-    const authorid = document.querySelector('main').id;
-    const fd = new FormData(evt.target);
-    fd.append('storyid', storyid);
-    fd.append('userid', authorid);
-    const settings = {
-      method: 'post',
-      body: fd,
-    };
-    fetch('/node/comment/', settings)
-    .then((res) => res.json())
-    .then(json =>{
-      console.log(json);
-      const comment_container = document.querySelector(`#xsee${storyid} .comment-container`);
-      comment_container.innerHTML = '';
-      json.forEach(x =>{
-        if(x.name !== document.querySelector('#username').value){
-          comment_container.innerHTML+=`<div class="comment">
-            <p class="commenter">${x.name}</p>
-            <p class="comment-time">${x.comment_time}</p>
-            <p class="comment-text">${x.comment}</p>
-          </div>`
-        }
-        else{
-          comment_container.innerHTML+=`<div class="comment">
-            <p class="self-commenter">${x.name}</p>
-            <p class="self-comment-time">${x.comment_time}</p>
-            <p class="self-comment">${x.comment}</p>
-          </div>`
-        }
-      })
-    });
-  }));
-};
-
 const grabStory = ()=>{
   console.log('dis run 2');
   const main = document.querySelector('main');
@@ -206,9 +168,25 @@ window.addEventListener('click',(evt)=>{
   if(evt.target.id === 'popup2'){
     document.getElementById('popup2').style.display='none';
   }
+
+  if(evt.target.id === 'popup1'){
+    document.getElementById('popup1').style.display='none';
+  }
+});
+
+//add function to when you click random button you get a random new story read
+document.querySelector('#random').addEventListener('click',()=>{
+  grabStory();
 });
 //add story to chosen story
+document.querySelector('#like').addEventListener('click',()=>{
+  console.log('get liked story');
+});
 
+//call up form for creating original story
+document.querySelector('#create').addEventListener('click',()=>{
+  document.getElementById('popup1').style.display='block'
+});
 
 
 

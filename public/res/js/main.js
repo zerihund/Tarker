@@ -1,97 +1,128 @@
 //-----------------------------------------------------------------------------
 const grabStory = ()=>{
+  console.log('dis run 2');
   const main = document.querySelector('main');
   fetch('/node/grabstory')
   .then(res => res.json())
   .then(json =>{
     main.innerHTML = '';
-    const title = document.createElement('h');
-    title.innerText = json[0].title;
-    title.style.backgroundColor = 'yellow';
-    main.appendChild(title);
-
+    document.querySelector('h1').innerText = json[0].title;
     for(let i = 0; i<json.length;i++){
       console.log(json[i]);
       const container = document.createElement('div');
       container.id = json[i].story_Id;
       container.className = 'card';
 
-      const author_date = document.createElement('dive');
+      //writer and time-----------------------------------------
+      const author_date = document.createElement('div');
       author_date.className = 'author-date';
       const author = document.createElement('p');
-      author.className = 'author';
       author.innerText = json[i].author;
-
       const time = document.createElement('p');
-      time.className = 'time';
       time.innerText = json[i].time;
+      const dash = document.createElement('p');
+      dash.innerText = '-';
+      //--
       author_date.appendChild(author);
+      author_date.appendChild(dash);
       author_date.appendChild(time);
 
-      const like = document.createElement('p');
-      like.innerText = json[i].like;
-      like.style.color = 'blue';
-
-      const dislike = document.createElement('p');
-      dislike.innerText = json[i].dislike;
-      dislike.style.color = 'red';
-
-      const media_story = document.createElement('div');
+      //story and media---------------------------------------
+      const media_story = document.createElement('p');
       media_story.className = 'media-story';
-
-      const text = document.createElement('p');
-      text.innerText = json[i].content;
-      text.className = 'story';
-
-      media_story.appendChild(text);
       if(json[i].media.substring(0,3) === 'img'){
-        const img = document.createElement('img');
-        img.src = 'res/media/'+json[i].media;
-        media_story.appendChild(img);
+        //const img = document.createElement('img');
+        // img.src = 'res/media/'+json[i].media;
+        // media_story.appendChild(img);
+        media_story.innerHTML = `<img src="res/media/${json[i].media}" alt="cake">${json[i].content}`;
       }
       else if(json[i].media.substring(0,3) === 'bgm'){
-        const aud = document.createElement('audio');
-        aud.src = 'res/media/'+json[i].media;
-        media_story.appendChild(aud);
+        media_story.innerHTML = `<audio controls>
+        <source src="res/media/${json[i].media}" type="audio/mp3">
+      </audio>${json[i].content}`;
       }
       else if(json[i].media.substring(0,3) === 'vid'){
         const vid = document.createElement('vid');
-        vid.src = 'res/media/'+json[i].media;
-        media_story.appendChild(vid);
+        // vid.controls = true;
+        // vid.src = 'res/media/'+json[i].media;
+        // media_story.appendChild(vid);
+        media_story.innerHTML = `<video controls>
+          <source src="res/media/${json[i].media}" type="video/mp4">
+        </video>${json[i].content}`;
       }
+      else{
+        media_story.innerHTML = json[i].content;
+      }
+
+      const impress = document.createElement('div');
+      impress.className = 'impression';
+      impress.innerHTML =
+          `<i id='+${json[i].story_Id}' class="fa fa-caret-up"></i>
+          <span>${json[i].like}</span>
+          <i id='-${json[i].story_Id}' class="fa fa-caret-down""></i>
+          <span>${json[i].dislike}</span>`;
+
+      const add = document.createElement('button');
+      add.className = 'add';
+      add.innerText = '+';
+      add.id = 'add'+json[i].story_Id;
+      add.addEventListener('click',evt =>{
+        console.log(evt.target.id);
+        document.getElementById('popup2').style.display='block';
+        document.querySelector('.follow_form').id = 'f'+evt.target.id;
+      });
+
+      const see = document.createElement('button');
+      see.className = 'see';
+      see.innerText = '...';
+      see.id = 'see'+json[i].story_Id;
+      see.addEventListener('click',evt =>{
+        console.log(evt.target.id);
+        console.log(document.getElementById('x'+evt.target.id));
+        if(document.getElementById('x'+evt.target.id).style.display==='block'){
+          console.log('off');
+          document.getElementById('x'+evt.target.id).style.display='none';
+        }
+        else{
+          console.log('on');
+          document.getElementById('x'+evt.target.id).style.display='block';
+        }
+      });
 
       const commentbox = document.createElement('div');
-      for(let j=0;j<json[i].comment.length;j++){
-        const comment_segment = document.createElement('div');
-        const comment_writer = document.createElement('p');
-        comment_writer.innerText = json[i].comment[j].name;
-        const comment_time = document.createElement('p');
-        comment_time.innerText = json[i].comment[j].comment_time;
-        const comment = document.createElement('p');
-        comment.innerText = json[i].comment[j].comment;
-
-        comment_segment.appendChild(comment_writer);
-        comment_segment.appendChild(comment_time);
-        comment_segment.appendChild(comment);
-        commentbox.appendChild(comment_segment);
-      }
-      commentbox.style.fontSize = 'small';
-      commentbox.style.backgroundColor = 'wheat';
+      commentbox.id = `xsee${json[i].story_Id}`;
+      commentbox.className = 'comment-box';
+      const comment_container = document.createElement('div');
+      comment_container.className = 'comment-container';
+      json[i].comment.forEach(x =>{
+        if(x.name !== document.querySelector('#username').value){
+          comment_container.innerHTML+=`<div class="comment">
+            <p class="commenter">${x.name}</p>
+            <p class="comment-time">${x.comment_time}</p>
+            <p class="comment-text">${x.comment}</p>
+          </div>`
+        }
+        else{
+          comment_container.innerHTML+=`<div class="comment">
+            <p class="self-commenter">${x.name}</p>
+            <p class="self-comment-time">${x.comment_time}</p>
+            <p class="self-comment">${x.comment}</p>
+          </div>`
+        }
+      });
+      commentbox.appendChild(comment_container);
 
       container.appendChild(author_date);
       container.appendChild(media_story);
-      container.appendChild(like);
-      container.appendChild(dislike);
+      container.appendChild(impress);
       container.appendChild(commentbox);
 
       main.appendChild(container);
     }
   });
 };
-//init functions
+
 grabStory();
-
-
 //------------------------------------------------------------------------------
 //close button turns modal display to none
 const loginClose= document.querySelector('#login-close');
@@ -151,7 +182,7 @@ const passRepeat=document.querySelector("#passwordRpeat").value;
     document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
     return false;
   }
-}
+};
 
 
 

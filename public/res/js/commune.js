@@ -59,6 +59,9 @@ nameinput.addEventListener('focusout', (evt) =>{
             error_span[0].style.color = 'green';
             name_error = false;
           }
+          else{
+            error_span[0].style.color = '#c61766';
+          }
         })
   }
 });
@@ -83,6 +86,8 @@ email.addEventListener('focusout', (evt) =>{
       if (text === 'email ok.'){
         error_span[1].style.color = 'green';
         email_error = false;
+      }else{
+        error_span[0].style.color = '#c61766';
       }
     })
   }
