@@ -1,26 +1,5 @@
 const init =()=>{
-  console.log('dis run');
-  document.querySelectorAll('.add').forEach(x => x.addEventListener('click',evt =>{
-    console.log(evt.target.id);
-    document.getElementById('popup2').style.display='block';
-    document.querySelector('.follow_form').id = 'f'+evt.target.id;
-  }));
-
-//turn on off comment box
-  document.querySelectorAll('.see').forEach(x => x.addEventListener('click',evt =>{
-    console.log(evt.target.id);
-    console.log(document.getElementById('x'+evt.target.id));
-    if(document.getElementById('x'+evt.target.id).style.display==='block'){
-        console.log('off');
-       document.getElementById('x'+evt.target.id).style.display='none';
-    }
-    else{
-      console.log('on');
-      document.getElementById('x'+evt.target.id).style.display='block';
-    }
-  }));
-
-  document.querySelectorAll('.write-comment').forEach(x => x.addEventListener('submit',evt =>{
+    document.querySelectorAll('.write-comment').forEach(x => x.addEventListener('submit',evt =>{
     evt.preventDefault();
     const storyid = evt.target.id.substring(5);
     const authorid = document.querySelector('main').id;
@@ -124,11 +103,28 @@ const grabStory = ()=>{
       add.className = 'add';
       add.innerText = '+';
       add.id = 'add'+json[i].story_Id;
+      add.addEventListener('click',evt =>{
+        console.log(evt.target.id);
+        document.getElementById('popup2').style.display='block';
+        document.querySelector('.follow_form').id = 'f'+evt.target.id;
+      })
 
       const see = document.createElement('button');
       see.className = 'see';
       see.innerText = '...';
       see.id = 'see'+json[i].story_Id;
+      see.addEventListener('click',evt =>{
+        console.log(evt.target.id);
+        console.log(document.getElementById('x'+evt.target.id));
+        if(document.getElementById('x'+evt.target.id).style.display==='block'){
+          console.log('off');
+          document.getElementById('x'+evt.target.id).style.display='none';
+        }
+        else{
+          console.log('on');
+          document.getElementById('x'+evt.target.id).style.display='block';
+        }
+      });
 
       const commentbox = document.createElement('div');
       commentbox.id = `xsee${json[i].story_Id}`;
