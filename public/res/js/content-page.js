@@ -1,4 +1,66 @@
 console.log('dis run');
+const init =()=>{
+  document.querySelectorAll('.add').forEach(x => x.addEventListener('click',evt =>{
+    console.log(evt.target.id);
+    document.getElementById('popup2').style.display='block';
+    document.querySelector('.follow_form').id = 'f'+evt.target.id;
+
+    window.addEventListener('click',(evt)=>{
+      if(evt.target.id === 'popup2'){
+        document.getElementById('popup2').style.display='none';
+      }
+    });
+  }));
+
+//turn on off comment box
+  document.querySelectorAll('.see').forEach(x => x.addEventListener('click',evt =>{
+    console.log(evt.target.id);
+    if(document.getElementById('x'+evt.target.id).style.display==='block'){
+      document.getElementById('x'+evt.target.id).style.display='none';
+    }
+    else{
+      document.getElementById('x'+evt.target.id).style.display='block';
+    }
+
+  }));
+
+  document.querySelectorAll('.write-comment').forEach(x => x.addEventListener('submit',evt =>{
+    evt.preventDefault();
+    const storyid = evt.target.id.substring(5);
+    const authorid = document.querySelector('main').id;
+    const fd = new FormData(evt.target);
+    fd.append('storyid', storyid);
+    fd.append('userid', authorid);
+    const settings = {
+      method: 'post',
+      body: fd,
+    };
+    fetch('/node/comment/', settings)
+    .then((res) => res.json())
+    .then(json =>{
+      console.log(json);
+      const comment_container = document.querySelector(`#xsee${storyid} .comment-container`);
+      comment_container.innerHTML = '';
+      json.forEach(x =>{
+        if(x.name !== document.querySelector('#username').value){
+          comment_container.innerHTML+=`<div class="comment">
+            <p class="commenter">${x.name}</p>
+            <p class="comment-time">${x.comment_time}</p>
+            <p class="comment-text">${x.comment}</p>
+          </div>`
+        }
+        else{
+          comment_container.innerHTML+=`<div class="comment">
+            <p class="self-commenter">${x.name}</p>
+            <p class="self-comment-time">${x.comment_time}</p>
+            <p class="self-comment">${x.comment}</p>
+          </div>`
+        }
+      })
+    });
+  }));
+};
+
 const grabStory = ()=>{
   console.log('dis run 2');
   const main = document.querySelector('main');
@@ -112,67 +174,7 @@ const grabStory = ()=>{
 //init functions: get story to display inside main tag
 grabStory();
 
-const init =()=>{
-  document.querySelectorAll('.add').forEach(x => x.addEventListener('click',evt =>{
-    console.log(evt.target.id);
-    document.getElementById('popup2').style.display='block';
-    document.querySelector('.follow_form').id = 'f'+evt.target.id;
 
-    window.addEventListener('click',(evt)=>{
-      if(evt.target.id === 'popup2'){
-        document.getElementById('popup2').style.display='none';
-      }
-    });
-  }));
-
-//turn on off comment box
-  document.querySelectorAll('.see').forEach(x => x.addEventListener('click',evt =>{
-    console.log(evt.target.id);
-    if(document.getElementById('x'+evt.target.id).style.display==='block'){
-      document.getElementById('x'+evt.target.id).style.display='none';
-    }
-    else{
-      document.getElementById('x'+evt.target.id).style.display='block';
-    }
-
-  }));
-
-  document.querySelectorAll('.write-comment').forEach(x => x.addEventListener('submit',evt =>{
-    evt.preventDefault();
-    const storyid = evt.target.id.substring(5);
-    const authorid = document.querySelector('main').id;
-    const fd = new FormData(evt.target);
-    fd.append('storyid', storyid);
-    fd.append('userid', authorid);
-    const settings = {
-      method: 'post',
-      body: fd,
-    };
-    fetch('/node/comment/', settings)
-    .then((res) => res.json())
-    .then(json =>{
-      console.log(json);
-      const comment_container = document.querySelector(`#xsee${storyid} .comment-container`);
-      comment_container.innerHTML = '';
-      json.forEach(x =>{
-        if(x.name !== document.querySelector('#username').value){
-          comment_container.innerHTML+=`<div class="comment">
-            <p class="commenter">${x.name}</p>
-            <p class="comment-time">${x.comment_time}</p>
-            <p class="comment-text">${x.comment}</p>
-          </div>`
-        }
-        else{
-          comment_container.innerHTML+=`<div class="comment">
-            <p class="self-commenter">${x.name}</p>
-            <p class="self-comment-time">${x.comment_time}</p>
-            <p class="self-comment">${x.comment}</p>
-          </div>`
-        }
-      })
-    });
-  }));
-};
 //add story to chosen story
 
 

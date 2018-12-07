@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="add Lato Fonts">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/res/js/content-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/js/content-page.js" afterDir="false" />
-    </list>
+    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="" />
     <list id="3c9e7bb2-7bdb-4887-afeb-1e245b7afc96" name="Revert: " comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,26 +23,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4556">
+            <state relative-caret-position="433">
               <caret line="268" column="3" selection-start-line="268" selection-start-column="3" selection-end-line="268" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1122">
-              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+            <state relative-caret-position="272">
+              <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="92" column="11" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
+            <state relative-caret-position="416">
+              <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -318,20 +315,6 @@
       <workItem from="1543562692007" duration="2468000" />
       <workItem from="1543577928628" duration="439000" />
       <workItem from="1543997692077" duration="10628000" />
-    </task>
-    <task id="LOCAL-00086" summary="init storm 0.0.13&#10;continue upload test. hopefully i work now">
-      <created>1543836575441</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1543836575441</updated>
-    </task>
-    <task id="LOCAL-00087" summary="init storm 0.0.13&#10;continue upload test. hopefully it works now">
-      <created>1543836673155</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1543836673155</updated>
     </task>
     <task id="LOCAL-00088" summary="init storm 0.0.13&#10;continue upload test. hopefully it works now">
       <created>1543836701529</created>
@@ -662,11 +645,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544180932323</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="add comment section">
+      <created>1544181621673</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1544181621673</updated>
+    </task>
+    <task id="LOCAL-00136" summary="fix comment class bug">
+      <created>1544181757358</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1544181757358</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163570000" />
+    <option name="totallyTimeSpent" value="163908000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -728,8 +725,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init storm 0.0.28&#10;trying to get the info" />
-    <MESSAGE value="init storm 0.0.29&#10;trying to get the info" />
     <MESSAGE value="init storm 0.0.30&#10;trying to get the info" />
     <MESSAGE value="init storm 0.0.31&#10;trying to get the info" />
     <MESSAGE value="init storm 0.0.32&#10;trying to get the info" />
@@ -753,7 +748,9 @@
     <MESSAGE value="Working on session" />
     <MESSAGE value="fixing mistake of sign up and log in form" />
     <MESSAGE value="add Lato Fonts" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Lato Fonts" />
+    <MESSAGE value="add comment section" />
+    <MESSAGE value="fix comment class bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix comment class bug" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -853,13 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server-handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4556">
-          <caret line="268" column="3" selection-start-line="268" selection-start-column="3" selection-end-line="268" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3825">
@@ -878,17 +868,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
+    <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
-          <caret line="92" column="11" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
+          <caret line="268" column="3" selection-start-line="268" selection-start-column="3" selection-end-line="268" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1122">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="272">
+          <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
         </state>
       </provider>
     </entry>
