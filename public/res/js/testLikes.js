@@ -166,6 +166,7 @@ const sendToDb=()=>{
     headers: new Headers({
       'Content-Type': 'application/x-www-form-urlencoded',
     }),
+    //Todo:storyID must be changed to dynamic value, and also userId
     body: `userId=11&likeDatabaseValue=${likeDatabaseValue}&storyID=${14}`
   }).then(res =>{
     console.log(res);
