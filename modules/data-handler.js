@@ -225,6 +225,24 @@ const upload = (connection, data, res)=>{
   )
 };
 
+const comment = (connection, req, res)=>{
+  connection.query(
+      `INSERT INTO comments ()`,
+      (err, results)=>{
+        console.log(err);
+        console.log(results);
+        connection.query(
+            'SELECT FROM comments WHERE',
+            (error, result)=>{
+              console.log(error);
+              console.log(result);
+              res.send(result);
+            }
+        )
+      }
+  )
+};
+
 module.exports = {
   connect:connect,
   insertUser: insertUser,
@@ -237,5 +255,6 @@ module.exports = {
   getAuthor:getAuthor,
   getOpinion:getOpinion,
   upload:upload,
-  putOpinion:putOpinion
+  putOpinion:putOpinion,
+  comment:comment
 };

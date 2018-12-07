@@ -109,10 +109,10 @@ loginClose.onclick = (event)=> {
 
 //toggles the mobile dropdown menu on or off
 window.onclick = (event)=> {
-  if(event.target == document.getElementById('user-icon')) {
+  if(event.target === document.getElementById('user-icon')) {
     document.getElementById('login-dropdown').style.display = "block";
   }
-  else if(event.target != document.getElementById('user-icon')){
+  else if(event.target !== document.getElementById('user-icon')){
     document.getElementById('login-dropdown').style.display = "none";
   }
 };
@@ -124,7 +124,7 @@ signupClose.onclick = (event)=> {
 const  modalSignUp =document.querySelector("#popup2");
 
 window.onclick =(event)=>{
-  if(event.target ===modalSignUp){
+  if(event.target === modalSignUp){
     modalSignUp.style.display ="none";
   }
 };
