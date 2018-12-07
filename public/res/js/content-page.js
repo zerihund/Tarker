@@ -168,7 +168,7 @@ const getform = () =>{
       headers: new Headers({
         'Content-Type': 'application/x-www-form-urlencoded',
       }),
-      body: `storyide=${storyid}&userid=${userid}&usercomment=${fd.get('usercomment')}`
+      body: `storyid=${storyid}&userid=${userid}&usercomment=${fd.get('usercomment')}`
     })
     .then((res) => res.json())
     .then(json =>{
