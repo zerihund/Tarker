@@ -21,6 +21,7 @@ document.querySelector('.login-form')
     .then(text =>{
       if(text === 'log in failed'){
         console.log(text);
+        errorMsg.style.color = '#c61766';
         errorMsg.innerHTML ="*incorrect user name or password*"
       }else{
         document.body.innerHTML = text;
