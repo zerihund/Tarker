@@ -12,7 +12,7 @@ let dislikeExecuted=false;
 let likeDatabaseValue=0;
 const likeValueToDb= ()=>{
   likeDatabaseValue= numOfLikes + numOfDislikes;
-  if(likeDatabaseValue==1 && numOfDislikes==1){
+  if(likeDatabaseValue===1 && numOfDislikes===1){
     likeDatabaseValue=-1;
 
   }
@@ -110,12 +110,12 @@ const like=()=>{
  */
 const dislike=()=>{
   //dislike
-  if(dislikeExecuted==false){
+  if(dislikeExecuted===false){
     addDislike();
   }
 
   //remove like
-  if(likeExecuted==true){
+  if(likeExecuted===true){
     //unlike();
     removeLike();
   }
@@ -127,7 +127,7 @@ const dislike=()=>{
 i.e likeExecuted=true
 */
 const unlike=()=>{
-  if(likeExecuted==true){
+  if(likeExecuted===true){
     removeLike();
   }
   insertOrUpdateCounter++;
@@ -137,7 +137,7 @@ const unlike=()=>{
 /*You can only undislike if you have disliked
 */
 const unDislike=()=>{
-  if(dislikeExecuted==true){
+  if(dislikeExecuted===true){
     removeDislike();
   }
   insertOrUpdateCounter++;
@@ -146,10 +146,10 @@ const unDislike=()=>{
 }
 
 const likeOrNot=()=>{
-  if(likeModulo == 1){
+  if(likeModulo === 1){
     unlike();
   }
-  else if (likeModulo == 0){
+  else if (likeModulo === 0){
     like();
   }
   likable++;
@@ -158,10 +158,10 @@ const likeOrNot=()=>{
 
 //increases likable each time it is clicked so we know is it a like or unlike
 const dislikeOrNot=()=>{
-  if(dislikeModulo == 1){
+  if(dislikeModulo === 1){
     unDislike();
   }
-  else if (dislikeModulo == 0){
+  else if (dislikeModulo === 0){
     dislike();
   }
   dislikable++;

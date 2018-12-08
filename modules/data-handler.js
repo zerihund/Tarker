@@ -24,6 +24,29 @@ const insertUser = (connection, data, res) =>{
         },
   );
 };
+// moderator remove user
+const  removeUser = (connection, userName,)=> {
+  connection.query(
+      `DELETE FROM user where user.name = '${userName}'`,
+      (err, results)=>{
+        console.log(results);
+        return(results);
+      }
+  )
+};
+
+//remove a story content
+const removeStory =(connection, title)=>{
+  connection.query(
+      `UPDATE story
+      SET content="This Content has been removed due to copy right issue or it is offensive to some groups",media =""
+      WHERE title= "${title}"`,
+      (err,results)=>{
+        console.log(results);
+        return(results);
+      }
+  )
+};
 //check if user already exists
 const checkUser = (connection, username, res)=>{
   connection.query(
@@ -246,6 +269,7 @@ const comment = (connection, req, res)=>{
   )
 };
 
+
 module.exports = {
   connect:connect,
   insertUser: insertUser,
@@ -259,5 +283,7 @@ module.exports = {
   getOpinion:getOpinion,
   upload:upload,
   putOpinion:putOpinion,
-  comment:comment
+  comment:comment,
+  removeUser:removeUser,
+  removeStory:removeStory,
 };

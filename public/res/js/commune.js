@@ -18,6 +18,7 @@ document.querySelector('.login-form')
   evt.preventDefault();
   const username = evt.target.elements['username'].value;
   const password = evt.target.elements['password'].value;
+  const errorMsg =document.querySelector('#signIn-error')
   fetch('/node/login', {
       method: 'POST',
       headers: new Headers({
@@ -29,11 +30,30 @@ document.querySelector('.login-form')
     .then(text =>{
       if(text === 'log in failed'){
         console.log(text);
+        errorMsg.style.color = '#c61766';
+        errorMsg.innerHTML ="*incorrect user name or password*"
       }else{
         console.log(text)
       }
   });
 });
+
+const  user =document.querySelectorAll('.login-form input')[0];
+const pass = document.querySelectorAll('login-form input')[1];
+const login_span = document.querySelectorAll('.login-error')
+user.addEventListener('focusout',evt => {
+  console.log('focusout on' + evt.target.value);
+  login_span.style.color = '#c61766';
+  if (evt.target.value ===''){
+    login_span[0].innerText = '*must have user name*';
+  }
+});
+/*pass.addEventListener('focusout',evt => {
+  console.log('focusout on' + evt.target.value);
+  if (evt.target.value ===''){
+    login_span[1].innerText = '*must have password*';
+  }
+});*/
 
 
 //------------------------------------------------------------------------------
@@ -46,8 +66,11 @@ const error_span = document.querySelectorAll('.form-error');
 //check user existence when out of focus of name input
 nameinput.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
-  if(evt.target.value === ''){
-    error_span[0].innerText = '*Must have username';
+  if(evt.target.value === '' ){
+    error_span[0].innerText = '*Must have username*';
+  }
+  else if (evt.target.value.length<3 || evt.target.value.length>15){
+    error_span[0].innerText ='*must have at least 3 characters*'
   }
   else{
     fetch('/node/usercheck', {
@@ -81,7 +104,11 @@ email.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
   if(evt.target.value === ''){
     error_span[1].innerText = '*Must have email';
-  }else{
+  }
+  else if(evt.target.value.length<5|| !evt.target.value.includes('@')|| !evt.target.value.includes('.')){
+    error_span[1].innerText = '*incorrect email format*';
+  }
+  else{
     fetch('/node/emailcheck', {
       method: 'POST',
       headers: new Headers({
@@ -103,7 +130,16 @@ email.addEventListener('focusout', (evt) =>{
     })
   }
 });
-
+//password check
+password.addEventListener('focusout', (evt)=>{
+  console.log('focusout on' + evt.target.value);
+  if(evt.target.value === ''){
+    error_span[2].innerText = '*must have password*';
+  }
+  else if(evt.target.value.length<5){
+    error_span[2].innerText = '*password must be at least 5 characters*';
+  }
+});
 //check password matches retyping
 passwordcheck.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
@@ -126,7 +162,7 @@ passwordcheck.addEventListener('focusout', (evt) =>{
 //sign up user to user database
 document.querySelector('.sign-up-form')
 .addEventListener('submit', evt => {
-  evt.preventDefault();
+  // evt.preventDefault();
   const username = evt.target.elements['username'].value;
   const email = evt.target.elements['email'].value;
   const password = evt.target.elements['password'].value;

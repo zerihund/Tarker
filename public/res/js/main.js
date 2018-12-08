@@ -167,30 +167,7 @@ window.onclick =(event)=>{
     modalSignUp.style.display ="none";
   }
 };
-//front end form validation for sign up
-const signUpForm =()=>{
-const user=document.querySelector("username").value;
-const email=document.querySelector("#email").value;
-const pass=document.querySelector("#password").value;
-const passRepeat=document.querySelector("#passwordRpeat").value;
 
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-};
 
 
 
