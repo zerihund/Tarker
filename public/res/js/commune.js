@@ -39,12 +39,12 @@ user.addEventListener('focusout',evt => {
     login_span[0].innerText = '*must have user name*';
   }
 });
-pass.addEventListener('focusout',evt => {
+/*pass.addEventListener('focusout',evt => {
   console.log('focusout on' + evt.target.value);
   if (evt.target.value ===''){
     login_span[1].innerText = '*must have password*';
   }
-});
+});*/
 
 
 //------------------------------------------------------------------------------
