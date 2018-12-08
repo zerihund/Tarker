@@ -115,17 +115,21 @@ password.addEventListener('foucusout', (evt)=>{
       }),
       body: `password=${evt.target.value}`
     })
-    .then(res => res.text())
-    .then(text =>{
-      error_span[2].innerText = text;
-      password_error = true;
-      if (text === 'password ok.'){
-        error_span[2].style.color = 'green';
-        password_error = false;
-      }else{
-        error_span[1].style.color = '#c61766';
-      }
-    })
+    .then(res => {
+      console.log(res);
+      return res.text();
+    }).then(
+        text => {
+          error_span[2].innerText = text;
+          password_error = true;
+          if (text === 'password ok.'){
+            error_span[2].style.color = 'green';
+            password_error = false;
+          }
+          else{
+            error_span[2].style.color = '#c61766';
+          }
+        })
   }
 
 });
