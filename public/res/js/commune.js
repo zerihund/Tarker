@@ -128,7 +128,7 @@ password.addEventListener('focusout', (evt)=>{
             password_error = false;
           }
           else{
-            error_span[2].style.color = '#c61766';
+            error_span[1].style.color = '#c61766';
           }
         })
   }
