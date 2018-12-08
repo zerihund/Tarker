@@ -131,6 +131,7 @@
       <find>form</find>
       <find>main</find>
       <find>Ale</find>
+      <find>emailcheck</find>
     </findStrings>
   </component>
   <component name="Git.Settings">

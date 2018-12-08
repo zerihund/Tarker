@@ -109,7 +109,7 @@ password.addEventListener('focusout', (evt)=>{
     error_span[2].innerText = '*password must be at least 5 characters*';
   }
   else{
-    fetch('/node/passwordCheck', {
+    fetch('/node/passwordcheck', {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/x-www-form-urlencoded',
