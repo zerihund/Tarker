@@ -7,6 +7,7 @@ const multer = require('multer');
 const img = require('./modules/img-handler');
 const fs = require('fs');
 const app = express();
+app.set('trust proxy', 1);
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
