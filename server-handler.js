@@ -13,10 +13,17 @@ app.use(express.static('public'));
 const vidupload = multer({dest: 'public/res/media/vid'});
 const audupload = multer({dest: 'public/res/media/bgm'});
 const imgupload = multer({dest: 'public/res/media/img'});
-
+const passport = require('passport');
+const morgan = require('morgan');
+app.use(morgan('dev'));
+const LocalStrategy = require('passport-local').Strategy;
+const session = require('express-session');
+let MemoryStore = session.MemoryStore;
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 //nodeJs builtin module, we might need to use this one
 const wilson = require('wilson-score');
-const contentGiver = require('./modules/content');
+//const contentGiver = require('./modules/content');
 //---------------------------------------------------------------------------------------
 //database thing
 const db = require('./modules/data-handler');
@@ -24,49 +31,72 @@ const connection = db.connect();
 
 //-----------------------------------------------------------------------------------------
 //concerning passport
-//set up passport and log in procedure
-// app.use(passport.initialize());
-// app.use(passport.session());
-//
-// passport.use(new LocalStrategy((username, password, done)=>{
-//   db.checkCredentials(connection, username,  password).then(valid =>{
-//     console.log(valid);
-//     if(valid === true){
-//       return done(null, {username: username} );
-//     }
-//     else{
-//       return done(null, false);
-//     }
-//   })
-// }));
-// app.post('/login',
-//     passport.authenticate('local', {successRedirect: '/node/abc/', failureRedirect: '/node/xyz/', session: false}));
-//
-// app.get('/abc/', (req, res)=>{
-//   console.log(req);
-//   res.send(content);
-// });
-//
-// app.get('/xyz/', (req, res)=>{
-//   res.send('failed log in');
-// });
+//set up passport and log in procedure. also session
+app.use(session({
+  name: 'app.sid',
+  secret: 'MNoVPKGEZrXLeevEIijOCjvLb6rAexvmRHr57hsdiphJv3mJhEXweWB4g25B',
+  resave: false,
+  saveUninitialized: false,
+  store: new MemoryStore(),
+  cookie: { secure: true, maxAge:8640000000 }
+}));
 
-app.post('/login', (req, res)=>{
-  db.checkCredentials(connection, req.body.username, req.body.password)
-  .then(valid=>{
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.all('*', (req, res, next)=>{
+  console.log(req.user);
+  console.log(req.isAuthenticated());
+  next();
+});
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(id, done) {
+  done(err, user);
+});
+
+passport.use(new LocalStrategy((username, password, done)=>{
+  db.checkCredentials(connection, username,  password).then(valid =>{
+    console.log(valid);
     if(valid === 'not exist'){
-      res.send('log in failed');
+      return done(null, false);
     }
     else{
-      const content = contentGiver.giveContent(req.body.username, valid);
-      res.send(content);
+      return done(null, {username: username, id: valid});
     }
   })
+}));
+
+app.post('/login', passport.authenticate('local', {failureRedirect: '/', session: true}), (req, res)=>{
+  return new Promise(((resolve) => {
+    console.log('xx');
+    req.session.save();
+    resolve();
+  })).then(()=>{
+    console.log(req.session.passport);
+    console.log(req.user);
+    console.log(req.isAuthenticated());
+    res.redirect('/content.html');
+  });
 });
+
+app.get('/abc/', (req, res)=>{
+  console.log(req);
+  res.send('success-log-in');
+});
+
+app.get('/xyz/', (req, res)=>{
+  res.send('failed log in');
+});
+
 app.post('/check/', (req, res)=>{
   console.log(req);
   res.send(':v')
 });
+//----------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------
 //concerning users
 //add user to user database
@@ -118,22 +148,23 @@ const findParent = (storybranch, res)=>{
     })
   }
 };
+
 //get comments
 const familyTalk = (storybranch, i, res)=>{
-    db.getStoryComment(connection,  storybranch[i].story_Id)
-    .then(result => {
-      storybranch[i].comment = result; //this may not work but let's see
-      i++;
-      console.log(i);
-      if (i < storybranch.length) {
-        familyTalk(storybranch, i, res);
-      }
-      else {
-        console.log(storybranch);
-        //res.send(storybranch);
-        authorTalk(storybranch, 0, res);
-      }
-    });
+  db.getStoryComment(connection,  storybranch[i].story_Id)
+  .then(result => {
+    storybranch[i].comment = result; //this may not work but let's see
+    i++;
+    console.log(i);
+    if (i < storybranch.length) {
+      familyTalk(storybranch, i, res);
+    }
+    else {
+      console.log(storybranch);
+      //res.send(storybranch);
+      authorTalk(storybranch, 0, res);
+    }
+  });
 };
 
 //get author
@@ -255,7 +286,7 @@ app.post('/uploadtext/', (req, res)=>{
   db.upload(connection,data, res);
 });
 
-
+//-------------------------------------------------------------------------------------------------------------
 //add like, dislike to +database
 app.post('/opinion/', (req, res)=>{
   console.log(`action number ${req.body.firstLike}`);

@@ -2,6 +2,15 @@
 let name_error = true;
 let email_error = true;
 let password_error = true;
+
+//------------------------------------------------------------------------------
+//check the data and check if user is able to submit
+const allowSubmit = ()=>{
+  document.querySelector('.login-form button').disabled = !(!name_error &&
+      !email_error && !password_error);
+};
+
+allowSubmit();
 //------------------------------------------------------------------------------
 //concerning log in form
 document.querySelector('.login-form')
@@ -21,7 +30,7 @@ document.querySelector('.login-form')
       if(text === 'log in failed'){
         console.log(text);
       }else{
-        document.body.innerHTML = text;
+        console.log(text)
       }
   });
 });
@@ -62,6 +71,7 @@ nameinput.addEventListener('focusout', (evt) =>{
           else{
             error_span[0].style.color = '#c61766';
           }
+          allowSubmit();
         })
   }
 });
@@ -89,6 +99,7 @@ email.addEventListener('focusout', (evt) =>{
       }else{
         error_span[0].style.color = '#c61766';
       }
+      allowSubmit();
     })
   }
 });
@@ -109,6 +120,7 @@ passwordcheck.addEventListener('focusout', (evt) =>{
     error_span[3].style.color = 'green';
     error_span[3].innerHTML = 'OK';
   }
+  allowSubmit();
 });
 
 //sign up user to user database
