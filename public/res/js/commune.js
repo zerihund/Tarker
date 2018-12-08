@@ -100,7 +100,7 @@ email.addEventListener('focusout', (evt) =>{
   }
 });
 //password check
-password.addEventListener('foucusout', (evt)=>{
+password.addEventListener('focusout', (evt)=>{
   console.log('focusout on' + evt.target.value);
   if(evt.target.value === ''){
     error_span[2].innerText = '*must have password*';
