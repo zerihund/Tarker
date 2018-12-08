@@ -44,9 +44,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.all('*', (req, res, next)=>{
-  next();
-});
+// app.all('*', (req, res, next)=>{
+//   next();
+// });
 
 passport.serializeUser(function(user, done) {
   done(null, user);
