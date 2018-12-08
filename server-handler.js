@@ -20,7 +20,6 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 let MemoryStore = session.MemoryStore;
 const cookieParser = require('cookie-parser');
-app.use(cookieParser());
 //nodeJs builtin module, we might need to use this one
 const wilson = require('wilson-score');
 //const contentGiver = require('./modules/content');
@@ -45,8 +44,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.all('*', (req, res, next)=>{
-  console.log(req.user);
-  console.log(req.isAuthenticated());
   next();
 });
 
