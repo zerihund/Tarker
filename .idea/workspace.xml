@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/modules/data-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/data-handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/res/js/commune.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/js/commune.js" afterDir="false" />
     </list>
     <list id="3c9e7bb2-7bdb-4887-afeb-1e245b7afc96" name="Revert: " comment="" />
@@ -23,13 +23,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="147" />
-          <entry key="js" value="1278" />
+          <entry key="js" value="1297" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="147" />
-          <entry key="JavaScript" value="1278" />
+          <entry key="JavaScript" value="1297" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -48,11 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+            <state relative-caret-position="306">
+              <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -60,17 +60,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+            <state relative-caret-position="348">
+              <caret line="41" column="19" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/res/js/commune.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="33" column="11" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="11" />
+            <state relative-caret-position="219">
+              <caret line="153" column="2" lean-forward="true" selection-start-line="153" selection-start-column="2" selection-end-line="153" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -123,8 +123,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="369">
+              <caret line="87" column="64" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -157,8 +157,9 @@
       <find>emailcheck</find>
       <find>e</find>
       <find>insert</find>
-      <find>login</find>
       <find>sig</find>
+      <find>login</find>
+      <find>logi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,15 +182,15 @@
         <option value="$PROJECT_DIR$/public/feed.html" />
         <option value="$PROJECT_DIR$/public/res/css/default.css" />
         <option value="$PROJECT_DIR$/public/res/css/color.css" />
-        <option value="$PROJECT_DIR$/server-handler.js" />
         <option value="$PROJECT_DIR$/public/content.html" />
         <option value="$PROJECT_DIR$/modules/content.js" />
         <option value="$PROJECT_DIR$/public/res/js/content-page.js" />
         <option value="$PROJECT_DIR$/public/res/js/main.js" />
         <option value="$PROJECT_DIR$/public/res/js/testLikes.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/res/js/commune.js" />
         <option value="$PROJECT_DIR$/modules/data-handler.js" />
+        <option value="$PROJECT_DIR$/server-handler.js" />
+        <option value="$PROJECT_DIR$/public/res/js/commune.js" />
       </list>
     </option>
   </component>
@@ -312,7 +313,7 @@
       <workItem from="1543562692007" duration="2468000" />
       <workItem from="1543577928628" duration="439000" />
       <workItem from="1543997692077" duration="10628000" />
-      <workItem from="1544232211870" duration="17131000" />
+      <workItem from="1544232211870" duration="19231000" />
     </task>
     <task id="LOCAL-00122" summary="Fixed some of Patrick's complaint (those == things)&#10;Made the form-error work when there is an error such us user's name is used.">
       <created>1544001639935</created>
@@ -661,7 +662,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194359000" />
+    <option name="totallyTimeSpent" value="196459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -687,6 +688,27 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32997987" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22126816" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="File Transfer" order="0" weight="0.3286119" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49920633" weight="0.32872504" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50079364" side_tool="true" weight="0.42089093" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.32997987" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -787,13 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -822,24 +837,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/js/commune.js">
+    <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="33" column="11" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="11" />
+        <state relative-caret-position="306">
+          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+        <state relative-caret-position="348">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+        <state relative-caret-position="369">
+          <caret line="87" column="64" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/js/commune.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="153" column="2" lean-forward="true" selection-start-line="153" selection-start-column="2" selection-end-line="153" selection-end-column="2" />
         </state>
       </provider>
     </entry>
