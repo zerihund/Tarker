@@ -108,31 +108,6 @@ password.addEventListener('focusout', (evt)=>{
   else if(evt.target.value.length<5){
     error_span[2].innerText = '*password must be at least 5 characters*';
   }
-  /*else{
-    fetch('/node/passwordcheck', {
-      method: 'POST',
-      headers: new Headers({
-        'Content-Type': 'application/x-www-form-urlencoded',
-      }),
-      body: `password=${evt.target.value}`
-    })
-    .then(res => {
-      console.log(res);
-      return res.text();
-    }).then(
-        text => {
-          error_span[2].innerText = text;
-          password_error = true;
-          if (text === 'password ok.'){
-            error_span[2].style.color = 'green';
-            password_error = false;
-          }
-          else{
-            error_span[1].style.color = '#c61766';
-          }
-        })
-  }*/
-
 });
 //check password matches retyping
 passwordcheck.addEventListener('focusout', (evt) =>{
