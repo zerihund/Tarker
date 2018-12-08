@@ -37,8 +37,11 @@ const error_span = document.querySelectorAll('.form-error');
 //check user existence when out of focus of name input
 nameinput.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
-  if(evt.target.value === ''){
-    error_span[0].innerText = '*Must have username';
+  if(evt.target.value === '' ){
+    error_span[0].innerText = '*Must have username/';
+  }
+  else if (evt.target.value.length<3 || evt.target.value.length>15){
+    error_span[0].innerText ='*must have at least 3 characters/'
   }
   else{
     fetch('/node/usercheck', {
