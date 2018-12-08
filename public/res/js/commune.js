@@ -38,10 +38,10 @@ const error_span = document.querySelectorAll('.form-error');
 nameinput.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
   if(evt.target.value === '' ){
-    error_span[0].innerText = '*Must have username/';
+    error_span[0].innerText = '*Must have username*';
   }
   else if (evt.target.value.length<3 || evt.target.value.length>15){
-    error_span[0].innerText ='*must have at least 3 characters/'
+    error_span[0].innerText ='*must have at least 3 characters*'
   }
   else{
     fetch('/node/usercheck', {
@@ -74,7 +74,11 @@ email.addEventListener('focusout', (evt) =>{
   console.log('focusout on' + evt.target.value);
   if(evt.target.value === ''){
     error_span[1].innerText = '*Must have email';
-  }else{
+  }
+  else if(evt.target.value.length<5|| !evt.target.value.includes('@')|| !evt.target.value.includes('.')){
+    error_span[1].innerText = '*incorrect email format*';
+  }
+  else{
     fetch('/node/emailcheck', {
       method: 'POST',
       headers: new Headers({
@@ -136,27 +140,3 @@ document.querySelector('.sign-up-form')
   }
 });
 
-//front end form validation for sign up
-const signUpForm =()=>{
-  const user=document.querySelector("username").value;
-  const email=document.querySelector("#email").value;
-  const pass=document.querySelector("#password").value;
-  const passRepeat=document.querySelector("#passwordRpeat").value;
-
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-};
