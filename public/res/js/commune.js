@@ -9,6 +9,7 @@ document.querySelector('.login-form')
   evt.preventDefault();
   const username = evt.target.elements['username'].value;
   const password = evt.target.elements['password'].value;
+  const errorMsg =document.querySelector('#signIn-error')
   fetch('/node/login', {
       method: 'POST',
       headers: new Headers({
@@ -20,6 +21,7 @@ document.querySelector('.login-form')
     .then(text =>{
       if(text === 'log in failed'){
         console.log(text);
+        errorMsg.innerHTML ="*incorrect user name or password*"
       }else{
         document.body.innerHTML = text;
       }
