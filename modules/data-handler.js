@@ -16,7 +16,7 @@ const connect = ()=>{
 //insert user
 const insertUser = (connection, data, res) =>{
   connection.query(
-      `INSERT INTO user (name, email, password) VALUE ('${data[0]}','${data[1]}','${data[2]}');`,
+      'INSERT INTO user (name, email, password) VALUE (?,?,?);', data,
         (err, results) =>{
           console.log(err);
           console.log(results);
