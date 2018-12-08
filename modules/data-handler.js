@@ -16,7 +16,7 @@ const connect = ()=>{
 //insert user
 const insertUser = (connection, data, res) =>{
   connection.query(
-      'INSERT INTO user (name, email, password) VALUE (?,?,?);', data,
+      `INSERT INTO user (name, email, password) VALUE ('${data[0]}','${data[1]}','${data[2]}');`,
         (err, results) =>{
           console.log(err);
           console.log(results);
@@ -285,5 +285,5 @@ module.exports = {
   putOpinion:putOpinion,
   comment:comment,
   removeUser:removeUser,
-  removeStory:removeUser,
+  removeStory:removeStory,
 };

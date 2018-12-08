@@ -34,8 +34,8 @@ const pass = document.querySelectorAll('login-form input')[1];
 const login_span = document.querySelectorAll('.login-error')
 user.addEventListener('focusout',evt => {
   console.log('focusout on' + evt.target.value);
+  login_span.style.color = '#c61766';
   if (evt.target.value ===''){
-    login_span.style.color = '#c61766';
     login_span[0].innerText = '*must have user name*';
   }
 });
