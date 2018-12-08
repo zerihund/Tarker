@@ -5,12 +5,12 @@ let password_error = true;
 
 //------------------------------------------------------------------------------
 //check the data and check if user is able to submit
-/*const allowSubmit = ()=>{
+const allowSubmit = ()=>{
   document.querySelector('.login-form button').disabled = !(!name_error &&
       !email_error && !password_error);
 };
 
-allowSubmit();*/
+allowSubmit();
 //------------------------------------------------------------------------------
 //concerning log in form
 document.querySelector('.login-form')
