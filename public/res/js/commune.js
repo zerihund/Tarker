@@ -26,18 +26,15 @@ document.querySelector('.login-form')
       }),
       body: `username=${username}&password=${password}`
     })
-     .then((res) => res.text())
-    .then(text =>{
-      if(text === 'log in failed'){
-        console.log(text);
-        errorMsg.style.color = '#c61766';
-        errorMsg.innerHTML ="*incorrect user name or password*"
-      }else{
-        console.log(text);
-        window.location.replace(text);
-      }
+     .then((res) => {
+       console.log(res);
+       return res.text();
+    })
+     .then(text =>{
+      console.log(text);
+      })
   });
-});
+
 
 /*const  user =document.querySelectorAll('.login-form input')[0];
 const pass = document.querySelectorAll('login-form input')[1];
