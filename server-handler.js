@@ -76,7 +76,7 @@ passport.use(new LocalStrategy((username, password, done)=>{
       return done(null, false);
     }
     else{
-      return done(null, {username: username, id: valid});
+      return done(null, [{username: username, id: valid}]);
     }
   })
 }));
@@ -366,8 +366,9 @@ app.post('/removeStory/',(req,res)=>{
 });
 
 app.get('/username', (req, res)=>{
+  console.log(req.user);
   console.log(req.session);
-  console.log(req.session);
+  console.log(req.session.passport);
   console.log(req.session.passport.user[0].username);
   res.send();
 });
