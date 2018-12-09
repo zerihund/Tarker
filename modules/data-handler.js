@@ -159,7 +159,7 @@ const getlikedStory = (connection, userid) =>{
           console.log(err);
           const y = math.random(results.length);
           console.log(results[y].story_Id);
-          resolve(results[y]);
+          resolve(results[y].story_Id);
         }
     )
   })
