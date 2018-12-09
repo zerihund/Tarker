@@ -343,6 +343,15 @@ app.post('/comment/', (req, res)=>{
   console.log(req.body.usercomment);
   db.comment(connection, req, res);
 });
+
+// remove the content and media from story by the moderator
+
+app.post('/removeStory/',(req,res)=>{
+  console.log(req.body.title);
+  console.log(req.body.content);
+  console.log(req.body.media);
+  db.removeStory(connection,req,res);
+})
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site
