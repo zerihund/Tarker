@@ -144,7 +144,7 @@ app.get('/grabstory', (req, res)=> {
 app.get('/likestory', (req, res)=>{
   console.log('    ');
   console.log('get favorite story of user id '+req.session.user.id);
-  db.getlikedStory(connection,  req.session.user.id)
+  db.getlikedStory(connection,  req.user.id)
   .then(id =>{
     db.getStoryByID(id)
   .then(story =>{
