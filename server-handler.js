@@ -70,6 +70,18 @@ passport.deserializeUser(function(user, done) {
   done(null,user);
 });
 
+app.all('*', (req, res, next)=>{
+  console.log(' ');
+  console.log(' ');
+  console.log(' =========================================================================================');
+  console.log(' ==================================init===================================================');
+  //console.log(req.session.passport.user.username);
+  console.log(req.user);
+  console.log(req.session);
+  console.log(req.session.passport);
+  console.log(req.session.passport.user);
+  next();
+});
 passport.use(new LocalStrategy((username, password, done)=>{
   db.checkCredentials(connection, username,  password).then(valid =>{
     console.log(valid);
