@@ -23,7 +23,7 @@
         <counts>
           <entry key="css" value="11" />
           <entry key="html" value="250" />
-          <entry key="js" value="1595" />
+          <entry key="js" value="1619" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
@@ -31,7 +31,7 @@
         <counts>
           <entry key="CSS" value="11" />
           <entry key="HTML" value="250" />
-          <entry key="JavaScript" value="1595" />
+          <entry key="JavaScript" value="1619" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -65,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+            <state relative-caret-position="457">
+              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
             </state>
           </provider>
         </entry>
@@ -691,7 +691,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206472000" />
+    <option name="totallyTimeSpent" value="206720000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
@@ -761,18 +761,6 @@
     <MESSAGE value="fixing" />
     <MESSAGE value="fixing sinin" />
     <option name="LAST_COMMIT_MESSAGE" value="fixing sinin" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server-handler.js</url>
-          <line>55</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -887,8 +875,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+        <state relative-caret-position="457">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
         </state>
       </provider>
     </entry>
