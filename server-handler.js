@@ -168,7 +168,7 @@ app.get('/storybyid', (req, res)=>{
 
 //get children of a story
 const findChildren = (storybranch, res)=>{
-  db.getChildrenStory(connection,storybranch[0].story_Id)
+  db.getChildrenStory(connection,storybranch[storybranch.length-1].story_Id)
   .then(results =>{
     if(results.length === 0){
       findParent(storybranch, res);
