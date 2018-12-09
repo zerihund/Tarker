@@ -50,6 +50,8 @@ app.all('*', (req, res, next)=>{
   console.log(req.user);
   console.log(req.session);
   console.log(req.session.passport);
+  console.log(req.session.passport[0]);
+  console.log(req.session.passport.user);
   next();
 });
 app.use(passport.initialize());
