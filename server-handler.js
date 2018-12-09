@@ -46,7 +46,8 @@ app.all('*', (req, res, next)=>{
   console.log(' ');
   console.log(' =========================================================================================');
   console.log(' ==================================init===================================================');
-  console.log(req.session);
+  console.log(req.user);
+  console.log(req.session.passport);
   next();
 });
 app.use(passport.initialize());
@@ -86,7 +87,6 @@ app.post('/login', passport.authenticate('local', {failureRedirect: '/node/', se
     console.log(req.session.passport);
     console.log(req.user);
     console.log(req.isAuthenticated());
-    console.log(res);
     res.redirect('https://10.114.32.123/node/content.html');
   });
 });
