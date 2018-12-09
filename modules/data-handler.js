@@ -139,8 +139,13 @@ const getChildrenStory = (connection,id)=>{
          WHERE c.story_id = d.parent_story AND c.story_Id = '${id}'`,
         (err, results)=>{
           console.log(err);
-          const y = math.random(results.length);
-          resolve(results[y]);
+          if(results.length === 0){
+            resolve([]);
+          }
+          else{
+            const y = math.random(results.length);
+            resolve(results[y]);
+          }
         }
     )
   })

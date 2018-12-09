@@ -168,18 +168,15 @@ app.get('/storybyid', (req, res)=>{
 
 //get children of a story
 const findChildren = (storybranch, res)=>{
-  if(storybranch[0].parent_story === 0){
-    console.log('--find children story--');
-    findParent(storybranch, res);
-  }
-  else{
-    db.getChildrenStory(connection,storybranch[0].story_Id)
-    .then(results =>{
-      storybranch.push(results[0]);
-      console.log('1111');
+  db.getChildrenStory(connection,storybranch[0].story_Id)
+  .then(results =>{
+    if(results.length === 0){
       findParent(storybranch, res);
-    })
-  }
+    }
+    else{
+      storybranch.push(results[0]);
+    }
+  })
 };
 //get story from top to end
 //get parent story
