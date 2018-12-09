@@ -123,7 +123,7 @@ email.addEventListener('focusout', (evt) =>{
     .then(text =>{
       error_span[1].innerText = text;
       email_error = true;
-      if (text === 'email ok.'){
+      if (text === 'email ok'){
         error_span[1].style.color = 'green';
         email_error = false;
       }else{
