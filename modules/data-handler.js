@@ -158,7 +158,7 @@ const getlikedStory = (connection, userid) =>{
           console.log('------l-i-k-e------');
           console.log(err);
           const y = math.random(results.length);
-          console.log(results[y].getStoryByID.story_Id);
+          console.log(results[y].getlikedStory().story_Id);
           resolve(results[y]);
         }
     )
