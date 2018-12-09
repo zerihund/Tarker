@@ -366,7 +366,10 @@ app.post('/removeStory/',(req,res)=>{
 });
 
 app.get('/username', (req, res)=>{
-  res.send(req.passport.user.username);
+  console.log(req.session);
+  console.log(req.session);
+  console.log(req.session.passport.user[0].username);
+  res.send();
 });
 //
 //--------------------------------------------------------------------------------------------------------

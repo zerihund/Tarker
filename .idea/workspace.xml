@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+            <state relative-caret-position="131">
+              <caret line="368" column="27" selection-start-line="368" selection-start-column="27" selection-end-line="368" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -273,28 +273,7 @@
       <workItem from="1543577928628" duration="439000" />
       <workItem from="1543997692077" duration="10628000" />
       <workItem from="1544232211870" duration="21407000" />
-      <workItem from="1544354173356" duration="9426000" />
-    </task>
-    <task id="LOCAL-00157" summary="fixing bugs on content-page.js">
-      <created>1544189785488</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1544189785488</updated>
-    </task>
-    <task id="LOCAL-00158" summary="fixing bugs on content-page.js">
-      <created>1544190080632</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1544190080632</updated>
-    </task>
-    <task id="LOCAL-00159" summary="fixing bugs on content-page.js">
-      <created>1544190482921</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1544190482921</updated>
+      <workItem from="1544354173356" duration="9779000" />
     </task>
     <task id="LOCAL-00160" summary="sending comments from front end">
       <created>1544190725334</created>
@@ -618,11 +597,32 @@
       <option name="project" value="LOCAL" />
       <updated>1544363577293</updated>
     </task>
-    <option name="localTasksCounter" value="206" />
+    <task id="LOCAL-00206" summary="trying to get to username in passport session">
+      <created>1544363715989</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1544363715989</updated>
+    </task>
+    <task id="LOCAL-00207" summary="trying to get to username in passport session">
+      <created>1544363797331</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1544363797331</updated>
+    </task>
+    <task id="LOCAL-00208" summary="trying to get to username in passport session">
+      <created>1544363818889</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1544363818889</updated>
+    </task>
+    <option name="localTasksCounter" value="209" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216016000" />
+    <option name="totallyTimeSpent" value="216369000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -829,8 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+        <state relative-caret-position="131">
+          <caret line="368" column="27" selection-start-line="368" selection-start-column="27" selection-end-line="368" selection-end-column="27" />
         </state>
       </provider>
     </entry>
