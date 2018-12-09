@@ -370,7 +370,7 @@ app.get('/username', (req, res)=>{
   console.log(req.session);
   console.log(req.session.passport);
   console.log(req.session.passport.user[0].username);
-  res.send();
+  res.send(req.session.passport.user[0].username);
 });
 //
 //--------------------------------------------------------------------------------------------------------
