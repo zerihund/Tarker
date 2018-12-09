@@ -117,7 +117,7 @@ const getInitStory = (connection)=>{
 const getStoryByID = (connection, id)=>{
   console.log('---------------------------------------------init-------------------------------------------');
   return new Promise((resolve)=>{
-    connection.execute(
+    connection.query(
         `SELECT c.story_Id, c.parent_story, c.content, c.media, c.title
          FROM story c
          WHERE c.story_Id '${id}'`,
