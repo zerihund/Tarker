@@ -175,6 +175,7 @@ const findChildren = (storybranch, res)=>{
     }
     else{
       storybranch.push(results[0]);
+      findChildren(storybranch, res);
     }
   })
 };

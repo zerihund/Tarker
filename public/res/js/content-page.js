@@ -218,7 +218,9 @@ document.querySelector('#liked').addEventListener('click',()=>{
   document.querySelector('#liked').disabled = true;
   document.querySelector('#random').className = 'off';
   document.querySelector('#random').disabled = false;
-  fetch('/node/likestory')
+  fetch('/node/likestory', {
+    method: 'get'
+  })
   .then(res => res.json())
   .then(json => {
     displayStoryByJson(json);
