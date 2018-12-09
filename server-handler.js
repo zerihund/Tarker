@@ -174,6 +174,7 @@ const storyOpinion = (storybranch, i, res)=>{
     console.log(i);
     if (i < storybranch.length) {
       storyOpinion(storybranch, i, res);
+      storyOpinion(storybranch, i, res);
     }
     else {
       console.log('^^^^^^^-------');

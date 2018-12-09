@@ -1,3 +1,220 @@
+let  thumbsUp ,thumbsDown,dislikeDisplay,likeDisplay,numOfLikes,numOfDislikes;
+
+
+
+  console.log(`like system made for ${theLikeId}`);
+  numOfLikes = 0;
+  numOfDislikes = 0;
+  likeDisplay = document.getElementById(`${theLikeDisplay}`);//Todo: dynamic value
+  likeDisplay.innerHTML = numOfLikes;
+  dislikeDisplay = document.getElementById(`${theDislikeDisplay}`);//Todo: dynamic value
+  dislikeDisplay.innerHTML = numOfDislikes;
+  thumbsUp = document.getElementById(`${theLikeId}`);//Todo: dynamic value
+  thumbsDown = document.getElementById(`${theDislikeId}`);//Todo: dynamic value
+
+  let likeExecuted = false;
+  let dislikeExecuted = false;
+
+  let likeDatabaseValue = 0;
+  const likeValueToDb = () => {
+    likeDatabaseValue = numOfLikes + numOfDislikes;
+    if (likeDatabaseValue == 1 && numOfDislikes == 1) {
+      likeDatabaseValue = -1;
+
+    }
+    console.log(`likeDatabaseValue = ${likeDatabaseValue}`);
+    sendToDb();
+  };
+//adds 1 each time you click like
+  let likable = 0;
+//modulo determines whether its a like or unlike
+  let likeModulo = 0;
+//adds 1 each time you click dislike
+  let dislikable = 0;
+//modulo determines whether its a dislike or undislike
+  let dislikeModulo = 0;
+//this value determines if its the first opinion or subsequent opinion
+// i.e insert to database or update database. updated after each action
+  let insertOrUpdateCounter = likable + dislikable;
+
+//shows on webpage number of likes
+  const showLike = () => {
+    likeDisplay.innerHTML = numOfLikes;
+  };
+  const blueLike = () => {
+    thumbsUp.style.color = "blue";
+  };
+  const unBlueLike = () => {
+    thumbsUp.style.color = "black";
+  };
+
+//shows on webpage number of dislikes
+  const showDislike = () => {
+    dislikeDisplay.innerHTML = numOfDislikes;
+  }
+  const redDislike = () => {
+    thumbsDown.style.color = "red";
+  };
+  const unRedDislike = () => {
+    thumbsDown.style.color = "black";
+  };
+  const addLike = () => {
+    likeExecuted = true;
+    numOfLikes++;
+    showLike();
+    blueLike();
+  };
+
+  const addDislike = () => {
+    dislikeExecuted = true;
+    numOfDislikes++;
+    showDislike();
+    redDislike();
+  };
+  const removeLike = () => {
+    likeExecuted = false;
+    numOfLikes--;
+    showLike();
+    unBlueLike();
+  };
+  const removeDislike = () => {
+    dislikeExecuted = false;
+    numOfDislikes--;
+    showDislike();
+    unRedDislike();
+  };
+  /**like only happens if like.executed= false.
+   if i like, like.executed= true and i cant like again, then add 1 to likes.
+   if dislike is true (meaning they had first disliked), make dislike.executed=false;
+   and if dislike.executed is true at that point then subtract 1 from dislikes and set it to false
+   display dislike- basically do nothing
+   if dislike.executed is not true then that means they haven't disliked before
+   liking and so i don't have to subtract from the dislike.
+   */
+  const like = () => {
+    //add to like
+    if (likeExecuted === false) {
+      addLike();
+    }
+    //remove dislike
+    if (dislikeExecuted === true) {
+      removeDislike();
+    }
+    insertOrUpdateCounter++;
+    console.log(insertOrUpdateCounter);
+    likeValueToDb();
+  };
+
+  /**dislike only happens if dislike.executed=false.
+   if i dislike, set dislike.executed=true and add 1 to dislike.
+
+   in that instance of disliking, if they had already liked, i.e like.executed= true
+   then set like.executed=false and subtract 1 from likes and then display it.
+   if like.executed=false then they havent liked it prior and no subtraction is
+   necessary from the num of liked
+   */
+  const dislike = () => {
+    //dislike
+    if (dislikeExecuted === false) {
+      addDislike();
+    }
+
+    //remove like
+    if (likeExecuted === true) {
+      //unlike();
+      removeLike();
+    }
+    insertOrUpdateCounter++;
+    console.log(insertOrUpdateCounter);
+    likeValueToDb();
+  };
+  /*you can only unlike if it has been liked
+  i.e likeExecuted=true
+  */
+  const unlike = () => {
+    if (likeExecuted === true) {
+      removeLike();
+    }
+    insertOrUpdateCounter++;
+    console.log(insertOrUpdateCounter);
+    likeValueToDb();
+  };
+  /*You can only undislike if you have disliked
+  */
+  const unDislike = () => {
+    if (dislikeExecuted === true) {
+      removeDislike();
+    }
+    insertOrUpdateCounter++;
+    console.log(insertOrUpdateCounter);
+    likeValueToDb();
+  };
+
+  const likeOrNot = () => {
+    if (likeModulo === 1) {
+      unlike();
+    }
+    else if (likeModulo == 0) {
+      like();
+    }
+    likable++;
+    likeModulo = likable % 2;
+  };
+
+//increases likable each time it is clicked so we know is it a like or unlike
+  const dislikeOrNot = () => {
+    if (dislikeModulo == 1) {
+      unDislike();
+    }
+    else if (dislikeModulo == 0) {
+      dislike();
+    }
+    dislikable++;
+    dislikeModulo = dislikable % 2;
+  };
+//fetch sends to server-handler.js 'opinion'
+  const sendToDb = (storyid, value) => {
+    fetch('/node/opinion/', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }),
+      //Todo:storyID must be changed to dynamic value, and also userId
+      body: `firstLike=${insertOrUpdateCounter}&userId=11&likeDatabaseValue=${value}&storyID=${storyid}`
+    }).then(res => {
+      console.log(res);
+    })
+  };
+
+  //ADD EVENT LISTENER FOR BUTTONS
+const addFunctoLike = () =>{
+  document.querySelectorAll('.fa-caret-down').forEach(button => button.addEventListener('click', evt =>{
+  console.log(evt.target.id);
+  const storyId  = evt.target.id.substring(1);
+  if(evt.target.className === 'fa fa-caret-down unclicked'){
+    sendToDb(storyId, -1);
+    evt.target.className = 'fa fa-caret-down clicked'
+  }
+  else{
+    sendToDb(storyId, 0);
+    evt.target.className = 'fa fa-caret-down unclicked'
+  }
+}));
+
+document.querySelectorAll('.fa-caret-up').forEach(button => button.addEventListener('click', evt =>{
+  console.log(evt.target.id);
+  const storyId  = evt.target.id.substring(1);
+  if(evt.target.className === 'fa fa-caret-up unclicked'){
+    sendToDb(storyId, 1);
+    evt.target.className = 'fa fa-caret-up clicked'
+  }
+  else{
+    sendToDb(storyId, 0);
+    evt.target.className = 'fa fa-caret-up unclicked'
+  }
+}));};
+
+/*--------------------------------------------------------------------------------------------------------------*/
 const grabStory = ()=>{
   console.log('dis run 2');
   const main = document.querySelector('main');
@@ -53,11 +270,20 @@ const grabStory = ()=>{
 
       const impress = document.createElement('div');
       impress.className = 'impression';
+      let likeBtnId=`+${json[i].story_Id}`;
+      let dislikeBtnId =`-${json[i].story_Id}`;
+      let likeAmountDisplay=`likeAmountOf${json[i].story_Id}`;
+      let dislikeAmountDisplay=`dislikeAmountOf${json[i].story_Id}`;
+
       impress.innerHTML =
-          `<i id='+${json[i].story_Id}' class="fa fa-caret-up" onclick="likeOrNot()"></i>
-          <span>${json[i].like}</span>
-          <i id='-${json[i].story_Id}' class="fa fa-caret-down" onclick="dislikeOrNot()"></i>
-          <span>${json[i].dislike}</span>`;
+          `<i id='${likeBtnId}' class="fa fa-caret-up unclicked" onclick="likeOrNot()"></i>
+          <span id='${likeAmountDisplay}' >${json[i].like}</span>
+          <i id='${dislikeBtnId}' class="fa fa-caret-down unclicked" onclick="dislikeOrNot()"></i>
+          <span id='${dislikeAmountDisplay}' >${json[i].dislike}</span> <script src="res/js/contentLikes.js"></script>`;
+      /** I put this function to run each time one of these are created*/
+
+
+
 
       const add = document.createElement('button');
       add.className = 'add';
@@ -125,6 +351,7 @@ const grabStory = ()=>{
     }
   }).then(x =>{
     getform();
+    addFunctoLike();
   });
 
 };
@@ -153,6 +380,7 @@ document.querySelector('#liked').addEventListener('click',()=>{
 document.querySelector('#create').addEventListener('click',()=>{
   document.getElementById('popup1').style.display='block'
 });
+//Todo: copy the for each and the fetch for the
 
 const getform = () =>{
   document.querySelectorAll('.write-comment')

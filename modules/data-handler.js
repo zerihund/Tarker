@@ -157,26 +157,31 @@ const getOpinion = (connection, id)=>{
  const putOpinion= (connection, data) =>{
    //data[0]<1 means they are liking for the first time so insert
    // else update because they have liked before
-   if(data[0]==1){
-     connection.query(
-         `INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,Views.view_count)
+   connection.query(
+       `SELECT * FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= ${data[3]}`,
+       (err, result) =>{
+          if(result.length === 0){
+            connection.query(
+                `INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,Views.view_count)
         VALUES(${data[1]},${data[3]},${data[2]}, 5)`,
-         (err, results)=>{
-           console.log(results);
-           return(results);
-         }
-     )
-   }else{
-     connection.query(
-         `UPDATE Views
+                (err, results)=>{
+                  console.log(results);
+                  return(results);
+                }
+            )
+          }
+          else{
+            connection.query(
+                `UPDATE Views
         SET Views.like_story = ${data[2]}
         WHERE Views.user_Id = ${data[1]} && Views.story_Id= ${data[3]}`,
-         (err, results)=>{
-           console.log(results);
-           return(results);
-         }
-     )
-   }
+                (err, results)=>{
+                  console.log(results);
+                  return(results);
+                }
+            )
+          }
+       });
  };
  //UPDATE OR INSERT QUERY
 /*      UPDATE Views

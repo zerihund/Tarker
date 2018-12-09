@@ -359,7 +359,8 @@ const giveContent =(username, id)=>{
     <input type="submit">
   </form>
 </section>
-<script src="res/js/content-page.js"></script>`
+<script src="res/js/content-page.js"></script>
+<script src="res/js/testLikes.js"></script>`
 };
 
 module.exports = {

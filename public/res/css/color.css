@@ -118,3 +118,11 @@ aside button{
   color: #eda948;
   background-color: #454755;
 }
+
+.clicked{
+  color: #eda948;
+}
+
+.unclicked{
+  color: #454755;
+}
