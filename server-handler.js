@@ -176,7 +176,7 @@ const findChildren = (storybranch, res)=>{
       findParent(storybranch, res);
     }
     else{
-      storybranch[storybranch.length] = results[0];
+      storybranch.push(results);
       console.log(storybranch);
       findChildren(storybranch, res);
     }
