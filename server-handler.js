@@ -46,8 +46,7 @@ app.all('*', (req, res, next)=>{
   console.log(' ');
   console.log(' =========================================================================================');
   console.log(' ==================================init===================================================');
-  console.log(req.user);
-  console.log(req.session.passport);
+  console.log(req.session.passport.user);
   next();
 });
 app.use(passport.initialize());

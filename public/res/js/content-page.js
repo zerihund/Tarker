@@ -187,6 +187,10 @@ const grabStory = ()=>{
     displayStoryByJson(json);
   })
 };
+
+fetch('/username')
+.then(res=>res.text())
+.then(text =>document.getElementById('username').innerText = text);
 //init functions: get story to display inside main tag
 grabStory();
 window.addEventListener('click',(evt)=>{
