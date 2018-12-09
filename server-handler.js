@@ -41,6 +41,9 @@ app.use(session({
   cookie: { secure: true, maxAge:8640000000 }
 }));
 
+app.all('*', (req, res)=>{
+  console.log(req.session);
+});
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -69,7 +72,7 @@ passport.use(new LocalStrategy((username, password, done)=>{
   })
 }));
 
-app.post('/login', passport.authenticate('local', {failureRedirect: '/', session: true}), (req, res)=>{
+app.post('/login', passport.authenticate('local', {failureRedirect: '/node/', session: true}), (req, res)=>{
   return new Promise(((resolve) => {
     console.log('xx');
     req.session.save();

@@ -41,6 +41,7 @@ const getform = () =>{
 })};
 
 const displayStoryByJson =(json)=>{
+  main = document.querySelector('main');
   main.innerHTML = '';
   document.querySelector('h1').innerText = json[0].title;
   for(let i = 0; i<json.length;i++)

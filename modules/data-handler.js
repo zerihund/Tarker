@@ -136,7 +136,7 @@ const getChildrenStory = (connection,id)=>{
     connection.query(
         `SELECT c.story_Id, c.parent_story, c.content, c.media, c.title
          FROM story c, story d
-         WHERE c.story_id = d.parent_story AND d.story_Id = '${id}'`,
+         WHERE c.story_id = d.parent_story AND c.story_Id = '${id}'`,
         (err, results)=>{
           console.log(err);
           const y = math.random(results.length);
@@ -171,8 +171,8 @@ const getParentStory = (connection, id) =>{
   return new Promise((resolve)=>{
     connection.query(
       `SELECT d.story_Id, d.parent_story, d.content, d.media, c.title
-      FROM story c, story d
-      WHERE c.story_id = d.parent_story AND c.story_Id = '${id}'`,
+       FROM story c, story d
+       WHERE c.story_id = d.parent_story AND d.story_Id = '${id}'`,
       (err, results)=>{
         console.log(err);
         console.log('--p-a--r--e-nt--');
