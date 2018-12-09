@@ -149,7 +149,7 @@ app.get('/likestory', (req, res)=>{
   console.log('get favorite story of user id '+req.session.passport.user[0].id);
   db.getlikedStory(connection,  req.session.passport.user[0].id)
   .then(id =>{
-    db.getStoryByID(id)
+    db.getStoryByID(connection, id)
   .then(story =>{
     findChildren([story], res);
     })
