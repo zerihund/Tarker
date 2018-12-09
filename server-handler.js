@@ -168,6 +168,8 @@ app.get('/storybyid', (req, res)=>{
 
 //get children of a story
 const findChildren = (storybranch, res)=>{
+  console.log('0000000000000000000000000000000000000000000000000000000');
+  console.log(storybranch.length - 1);
   db.getChildrenStory(connection,storybranch[storybranch.length-1].story_Id)
   .then(results =>{
     if(results.length === 0){
@@ -175,6 +177,7 @@ const findChildren = (storybranch, res)=>{
     }
     else{
       storybranch.push(results[0]);
+      console.log(storybranch);
       findChildren(storybranch, res);
     }
   })
