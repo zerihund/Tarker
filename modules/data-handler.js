@@ -148,12 +148,12 @@ const getChildrenStory = (connection,id)=>{
 
 //get one liked story
 const getlikedStory = (connection, userid) =>{
-  console.log('get children story of story '+id);
+  console.log('get liked  story of user with id: '+ userid);
   return new Promise((resolve)=>{
     connection.query(
         `SELECT story_Id
          FROM Views
-         WHERE user_Id = '${userid}'`,
+         WHERE user_Id = '${userid}' AND like_story = 1`,
         (err, results)=>{
           console.log('------l-i-k-e------');
           console.log(err);
