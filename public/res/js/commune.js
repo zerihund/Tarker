@@ -33,6 +33,7 @@ document.querySelector('.login-form')
         errorMsg.style.color = '#c61766';
         errorMsg.innerHTML ="*incorrect user name or password*"
       }else{
+        console.log(text);
         window.location.replace(text);
       }
   });
