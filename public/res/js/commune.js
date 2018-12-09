@@ -6,6 +6,10 @@ let password_error = true;
 //------------------------------------------------------------------------------
 //check the data and check if user is able to submit
 const allowSubmit = ()=>{
+  console.log('ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc');
+  console.log(name_error);
+  console.log(email_error);
+  console.log(password_error);
   document.getElementById('signUpButton').disabled = !(!name_error &&
       !email_error && !password_error);
 };
@@ -146,7 +150,7 @@ passwordcheck.addEventListener('focusout', (evt) =>{
     password.value = '';
     passwordcheck.value = '';
     password.focus();
-    password_error = true;
+    password_error = false;
   }
   else{
     password_error = false;
@@ -161,7 +165,7 @@ passwordcheck.addEventListener('focusout', (evt) =>{
 //sign up user to user database
 document.querySelector('.sign-up-form')
 .addEventListener('submit', evt => {
-  // evt.preventDefault();
+  evt.preventDefault();
   const username = evt.target.elements['username'].value;
   const email = evt.target.elements['email'].value;
   const password = evt.target.elements['password'].value;
