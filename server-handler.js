@@ -360,6 +360,11 @@ app.post('/removeStory/',(req,res)=>{
   console.log(req.body.media);
   db.removeStory(connection,req,res);
 });
+
+app.get('/username', (req, res)=>{
+  res.send(req.passport.user.username);
+});
+//
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site
