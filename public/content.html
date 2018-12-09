@@ -37,7 +37,7 @@
             </ul>
 
         </div>
-        <img src="res/media/profilepic/default.png" alt="profile pic">
+        <img id="profilepic" src="res/media/profilepic/default.png" alt="profile pic">
         <p id="username">Alexander</p>
         <button id="user-icon" class="user-icon">
             <i class="fa fa-caret-down fa-2x " aria-hidden="true"></i>
@@ -76,7 +76,7 @@
       <div class="impression">
         <i class="fa fa-caret-up" onclick="likeOrNot()"></i>
         <span >50</span>
-        <i class="fa fa-caret-down" onclick="dislikeOrNot()"></i>
+        <i class="fa fa-caret-down" onclick="dislikeOrNot()" title="123456789"></i>
         <span>600</span>
       </div>
       <button class="add" id="add1">+</button>
@@ -371,22 +371,13 @@
   </div>
 </main>
 
-<section id="popup2" class="modal modal2 ">
+<section id="popup1" class="modal modal2 ">
   <form id="14" enctype="multipart/form-data" method="post" class="follow_form">
-      <legend>Post Story</legend>
+      <p>Post Story</p>
+      <label id="unseen">Title</label>
+      <input type="text" name="title" value="My Story">
       <label ></label>
       <textarea name="status" id="post_story1" cols="30" rows="20" placeholder="write your story"></textarea>
-      <label >Upload Media</label>
-      <input type="file" name="media" accept="media"/>
-      <input type="submit">
-  </form>
-</section>
-
-<section id="popup1" class="modal modal2 ">
-  <form id="0" enctype="multipart/form-data" method="post" class="follow_form">
-      <legend>Post Story</legend>
-      <label ></label>
-      <textarea name="status" id="post_story2" cols="30" rows="20" placeholder="write your story"></textarea>
       <label >Upload Media</label>
       <input type="file" name="media" accept="media"/>
       <input type="submit">

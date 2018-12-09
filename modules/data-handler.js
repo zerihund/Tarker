@@ -317,7 +317,7 @@ const upload = (connection, data, res)=>{
 const comment = (connection, req, res)=>{
   connection.query(
       `INSERT INTO comments (user_Id,story_Id,comment)
-        VALUES(${req.body.userid},'${req.body.storyid}','${req.body.usercomment}')`,
+        VALUES(${req.session.passport.user[0].id},'${req.body.storyid}','${req.body.usercomment}')`,
       (err, results)=>{
         console.log(err);
         console.log(results);

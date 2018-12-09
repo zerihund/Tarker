@@ -40,6 +40,7 @@ const addFunctoLike = () =>{
     }
   }));};
 
+//add fetch to comment form
 const getform = () =>{
   document.querySelectorAll('.write-comment')
   .forEach(x => {
@@ -82,6 +83,7 @@ const getform = () =>{
   });
 })};
 
+//display story onto main
 const displayStoryByJson =(json)=>{
   main = document.querySelector('main');
   main.innerHTML = '';
@@ -225,8 +227,9 @@ const displayStoryByJson =(json)=>{
   }
   getform();
   addFunctoLike();
-}
+};
 
+//grab story from database-backend
 const grabStory = ()=>{
   console.log('dis run 2');
   const main = document.querySelector('main');
@@ -278,7 +281,11 @@ document.querySelector('#liked').addEventListener('click',()=>{
 
 //call up form for creating original story
 document.querySelector('#create').addEventListener('click',()=>{
-  document.getElementById('popup1').style.display='block'
+  document.getElementById('popup1').style.display = 'block';
+  const followfrm = document.querySelector('.follow_form');
+  followfrm.id= `xadd0`;
+  followfrm[0].style.display = 'block';
+  document.getElementById('unseen').style.display = 'block';
 });
 //Todo: copy the for each and the fetch for the
 
@@ -296,12 +303,66 @@ document.getElementById('getstorybyidform').addEventListener('submit', evt=>{
     displayStoryByJson(json);
   })
 });
-//copy story to share
-// document.querySelectorAll('.storyid').forEach(x => x.addEventListener('click',evt =>{
-//   document.getElementById('hidden-unseen').value = '12345';
-//   document.getElementById('hidden-unseen').select();
-//   document.execCommand('copy');
-// }));
+
+//copy story to share with others
+document.querySelectorAll('.storyid').forEach(x => x.addEventListener('click',evt =>{
+  document.getElementById('hidden-unseen').value = '12345';
+  document.getElementById('hidden-unseen').select();
+  document.execCommand('copy');
+}));
+
+//get all add elements which are to pop up the follow-form
+document.querySelectorAll('.add').forEach(x=>x.addEventListener('click', evt=>{
+  document.getElementById('popup1').style.display = 'block';
+  const followfrm = document.querySelector('.follow_form');
+  followfrm.id= `x${evt.target.id}`;
+  followfrm[0].style.display = 'none';
+  document.getElementById('unseen').style.display = 'none';
+}));
+
+document.querySelector('.follow_form').addEventListener('submit',evt =>{
+  if(document.querySelectorAll('.follow_form input')[1].files.length === 0){
+    uploadMedia('text',evt);}
+
+  else if(document.querySelectorAll('.follow_form input')[1].files[0].type.substring(0,5) === 'audio'){
+    uploadMedia('audio',  evt);
+  }
+  else if(document.querySelectorAll('.follow_form input')[1].files[0].type.substring(0,5) === 'image'){
+    uploadMedia('image',  evt);
+  }
+  else if(document.querySelectorAll('.follow_form input')[1].files[0].type.substring(0,5) === 'video'){
+    uploadMedia('video',  evt);
+  }
+  else {
+    console.log('incorrect file type');
+  }
+});
+
+const uploadMedia = (type, evt)=>{
+  console.log('------------------------');
+  console.log('trying to /upload'+type+'/');
+  evt.preventDefault();
+  const fd = new FormData(evt.target);
+  const settings = {
+    method: 'post',
+    body: fd,
+  };
+  settings.body.append('author_id', document.querySelector('main').id);
+  settings.body.append('parent_id', evt.target.id.substring(4));
+  settings.body.append('story', document.getElementById('post_story1').value);
+
+  console.log('author: '+settings.body.get('author_id'));
+  console.log('parent: '+settings.body.get('parent_id'));
+  console.log('file: '+ settings.body.get('file'));
+  console.log('title: '+settings.body.get('title'));
+  console.log('story: '+settings.body.get('story'));
+
+  // fetch('/node/upload'+type+'/', settings)
+  // .then((res) => {
+  // });
+};
+
+
 
 
 
