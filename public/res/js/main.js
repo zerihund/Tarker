@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+//grab story index.html version-------------------------------------------------
 const grabStory = ()=>{
   console.log('dis run 2');
   const main = document.querySelector('main');
@@ -7,7 +7,8 @@ const grabStory = ()=>{
   .then(json =>{
     main.innerHTML = '';
     document.querySelector('h1').innerText = json[0].title;
-    for(let i = 0; i<json.length;i++){
+    for(let i = 0; i<json.length;i++)
+    {
       console.log(json[i]);
       const container = document.createElement('div');
       container.id = json[i].story_Id;
@@ -30,25 +31,28 @@ const grabStory = ()=>{
       //story and media---------------------------------------
       const media_story = document.createElement('p');
       media_story.className = 'media-story';
-      if(json[i].media.substring(0,3) === 'img'){
-        //const img = document.createElement('img');
-        // img.src = 'res/media/'+json[i].media;
-        // media_story.appendChild(img);
-        media_story.innerHTML = `<img src="res/media/${json[i].media}" alt="cake">${json[i].content}`;
-      }
-      else if(json[i].media.substring(0,3) === 'bgm'){
-        media_story.innerHTML = `<audio controls>
-        <source src="res/media/${json[i].media}" type="audio/mp3">
-      </audio>${json[i].content}`;
-      }
-      else if(json[i].media.substring(0,3) === 'vid'){
-        const vid = document.createElement('vid');
-        // vid.controls = true;
-        // vid.src = 'res/media/'+json[i].media;
-        // media_story.appendChild(vid);
-        media_story.innerHTML = `<video controls>
-          <source src="res/media/${json[i].media}" type="video/mp4">
-        </video>${json[i].content}`;
+      if(json[i].media !== null){
+        if(json[i].media.substring(0,3) === 'img'){
+          //const img = document.createElement('img');
+          // img.src = 'res/media/'+json[i].media;
+          // media_story.appendChild(img);
+          media_story.innerHTML = `<img src="res/media/${json[i].media}" alt="cake">${json[i].content}`;
+        }
+        else if(json[i].media.substring(0,3) === 'bgm'){
+          media_story.innerHTML = `
+          <audio controls>
+            <source src="res/media/${json[i].media}" type="audio/mp3">
+          </audio>${json[i].content}`;
+        }
+        else if(json[i].media.substring(0,3) === 'vid'){
+          media_story.innerHTML = `
+          <video controls>
+            <source src="res/media/${json[i].media}" type="video/mp4">
+          </video>${json[i].content}`;
+        }
+        else{
+          media_story.innerHTML = json[i].content;
+        }
       }
       else{
         media_story.innerHTML = json[i].content;
@@ -59,7 +63,7 @@ const grabStory = ()=>{
       impress.innerHTML =
           `<i id='+${json[i].story_Id}' class="fa fa-caret-up"></i>
           <span>${json[i].like}</span>
-          <i id='-${json[i].story_Id}' class="fa fa-caret-down""></i>
+          <i id='-${json[i].story_Id}' class="fa fa-caret-down"></i>
           <span>${json[i].dislike}</span>`;
 
       const add = document.createElement('button');
@@ -67,9 +71,7 @@ const grabStory = ()=>{
       add.innerText = '+';
       add.id = 'add'+json[i].story_Id;
       add.addEventListener('click',evt =>{
-        console.log(evt.target.id);
-        document.getElementById('popup2').style.display='block';
-        document.querySelector('.follow_form').id = 'f'+evt.target.id;
+
       });
 
       const see = document.createElement('button');
@@ -88,12 +90,12 @@ const grabStory = ()=>{
           document.getElementById('x'+evt.target.id).style.display='block';
         }
       });
-
       const commentbox = document.createElement('div');
       commentbox.id = `xsee${json[i].story_Id}`;
       commentbox.className = 'comment-box';
       const comment_container = document.createElement('div');
       comment_container.className = 'comment-container';
+      comment_container.id = `xseek${json[i].story_Id}`;
       json[i].comment.forEach(x =>{
         if(x.name !== document.querySelector('#username').value){
           comment_container.innerHTML+=`<div class="comment">
@@ -115,18 +117,18 @@ const grabStory = ()=>{
       container.appendChild(author_date);
       container.appendChild(media_story);
       container.appendChild(impress);
+      container.appendChild(add);
+      container.appendChild(see);
       container.appendChild(commentbox);
-
       main.appendChild(container);
     }
-  });
+  })
 };
 
 grabStory();
 //------------------------------------------------------------------------------
 //close button turns modal display to none
-const loginClose= document.querySelector('#login-close');
-loginClose.onclick = (event)=> {
+document.querySelector('#login-close').onclick = (event)=> {
   document.getElementById('popup').style.display = "none";
 };
 // Get the modal
@@ -148,41 +150,25 @@ window.onclick = (event)=> {
   }
 };
 //close the sign up form
-const signupClose= document.querySelector('#signup-close');
-signupClose.onclick = (event)=> {
+document.querySelector('#signup-close').onclick = ()=> {
   document.getElementById('popup2').style.display = "none";
 };
-const  modalSignUp =document.querySelector("#popup2");
 
 window.onclick =(event)=>{
-  if(event.target === modalSignUp){
-    modalSignUp.style.display ="none";
+  if(event.target.id === 'popup2'){
+    document.getElementById("popup").style.display ="none";
+    document.getElementById("popup2").style.display ="none";
+  }
+  else if (event.target.id === 'popup'){
+    document.getElementById("popup").style.display ="none";
+    document.getElementById("popup2").style.display ="none";
   }
 };
-//front end form validation for sign up
-const signUpForm =()=>{
-const user=document.querySelector("username").value;
-const email=document.querySelector("#email").value;
-const pass=document.querySelector("#password").value;
-const passRepeat=document.querySelector("#passwordRpeat").value;
 
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-  if (user ===""|| (user.length<3 || user>20)) {
-    document.querySelector('#userN').innerHTML="** please fill your user name/use the correct format**";
-    return false;
-  }
-};
+document.querySelector('#random').addEventListener('click',()=>{
+  grabStory();
+});
+
 
 
 

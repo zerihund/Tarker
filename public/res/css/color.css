@@ -114,6 +114,23 @@ aside{
   background-color: #282f3f;
 }
 
+aside button:hover{
+  text-shadow: 0 0 3px #eda948;
+  box-shadow: 0 0 1px #aaaaaa;
+}
+
+.off{
+  color: #7a6f73;
+}
+.off:hover{
+  text-shadow: 0 0 8px white;
+  color: white;
+}
+
+.on{
+  color: #eda948;
+}
+
 aside button{
   color: #eda948;
   background-color: #454755;
