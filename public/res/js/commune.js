@@ -28,13 +28,14 @@ document.querySelector('.login-form')
     })
      .then((res) => {
        console.log(res);
-       return res.text();
+       try{
+         window.location.replace(res.url);
+       }
+       catch (e) {
+        console.log(e);
+       }
     })
-     .then(text =>{
-      console.log(text);
-      })
-  });
-
+});
 
 /*const  user =document.querySelectorAll('.login-form input')[0];
 const pass = document.querySelectorAll('login-form input')[1];
