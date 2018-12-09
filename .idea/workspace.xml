@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+            <state relative-caret-position="420">
+              <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -154,9 +154,10 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-30" />
-    <option name="width" value="2005" />
-    <option name="height" value="1990" />
+    <option name="x" value="507" />
+    <option name="y" value="2" />
+    <option name="width" value="742" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -272,49 +273,7 @@
       <workItem from="1543577928628" duration="439000" />
       <workItem from="1543997692077" duration="10628000" />
       <workItem from="1544232211870" duration="21407000" />
-      <workItem from="1544354173356" duration="8650000" />
-    </task>
-    <task id="LOCAL-00151" summary="fixing bugs on content-page.js">
-      <created>1544188967741</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1544188967741</updated>
-    </task>
-    <task id="LOCAL-00152" summary="fixing bugs on content-page.js">
-      <created>1544189073468</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1544189073468</updated>
-    </task>
-    <task id="LOCAL-00153" summary="fixing bugs on content-page.js">
-      <created>1544189204986</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1544189204986</updated>
-    </task>
-    <task id="LOCAL-00154" summary="fixing bugs on content-page.js">
-      <created>1544189371875</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1544189371875</updated>
-    </task>
-    <task id="LOCAL-00155" summary="fixing bugs on content-page.js">
-      <created>1544189551933</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1544189551933</updated>
-    </task>
-    <task id="LOCAL-00156" summary="fixing bugs on content-page.js">
-      <created>1544189668746</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1544189668746</updated>
+      <workItem from="1544354173356" duration="9426000" />
     </task>
     <task id="LOCAL-00157" summary="fixing bugs on content-page.js">
       <created>1544189785488</created>
@@ -617,11 +576,53 @@
       <option name="project" value="LOCAL" />
       <updated>1544362794443</updated>
     </task>
-    <option name="localTasksCounter" value="200" />
+    <task id="LOCAL-00200" summary="trying to get to username in passport session">
+      <created>1544362937241</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1544362937241</updated>
+    </task>
+    <task id="LOCAL-00201" summary="trying to get to username in passport session">
+      <created>1544363033131</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1544363033131</updated>
+    </task>
+    <task id="LOCAL-00202" summary="trying to get to username in passport session">
+      <created>1544363326938</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1544363326938</updated>
+    </task>
+    <task id="LOCAL-00203" summary="trying to get to username in passport session">
+      <created>1544363449737</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1544363449737</updated>
+    </task>
+    <task id="LOCAL-00204" summary="trying to get to username in passport session">
+      <created>1544363505204</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1544363505204</updated>
+    </task>
+    <task id="LOCAL-00205" summary="trying to get to username in passport session">
+      <created>1544363577293</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
+      <option name="project" value="LOCAL" />
+      <updated>1544363577293</updated>
+    </task>
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215240000" />
+    <option name="totallyTimeSpent" value="216016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -828,8 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        <state relative-caret-position="420">
+          <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
         </state>
       </provider>
     </entry>
