@@ -41,15 +41,6 @@ app.use(session({
   cookie: { secure: true, maxAge:8640000000 }
 }));
 
-app.all('*', (req, res, next)=>{
-  console.log(' ');
-  console.log(' ');
-  console.log(' =========================================================================================');
-  console.log(' ==================================init===================================================');
-  //console.log(req.session.passport.user.username);
-  console.log(req.user.user);
-  next();
-});
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -73,6 +64,7 @@ app.all('*', (req, res, next)=>{
   console.log(' ==================================init===================================================');
   //console.log(req.session.passport.user.username);
   console.log(req.user);
+  console.log(req.user.username);
   console.log(req.session);
   console.log(req.session.passport);
   console.log(req.session.passport.user);
