@@ -52,7 +52,7 @@ const displayStoryByJson =(json)=>{
     container.className = 'card';
 
     const storyid = document.createElement('button');
-    storyid.innerText = jsonp[i].story_Id;
+    storyid.innerText = json[i].story_Id;
     storyid.className = 'storyid';
     storyid.addEventListener('click',evt =>{
       document.getElementById('hidden-unseen').value = evt.target.innerText;
