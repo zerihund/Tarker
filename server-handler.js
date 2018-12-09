@@ -52,9 +52,9 @@ passport.serializeUser(function(user, done) {
   done(null, user);
 });
 
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser(function(user, done) {
   /*done(err, user);*/
-  done(null,id);
+  done(null,user);
 });
 
 passport.use(new LocalStrategy((username, password, done)=>{
@@ -344,7 +344,7 @@ app.post('/comment/', (req, res)=>{
   db.comment(connection, req, res);
 });
 
-// remove the content and media from story by the moderator
+// remove the content and media and replace it in the data base by the moderator
 
 app.post('/removeStory/',(req,res)=>{
   console.log(req.body.title);
