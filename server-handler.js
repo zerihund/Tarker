@@ -78,7 +78,7 @@ app.post('/login', passport.authenticate('local', {failureRedirect: '/node/', se
     console.log(req.session.passport);
     console.log(req.user);
     console.log(req.isAuthenticated());
-    res.redirect('/node/content.html');
+    res.redirect('/content.html');
   });
 });
 
