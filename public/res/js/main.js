@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+//grab story index.html version-------------------------------------------------
 const grabStory = ()=>{
   console.log('dis run 2');
   const main = document.querySelector('main');
@@ -7,7 +7,8 @@ const grabStory = ()=>{
   .then(json =>{
     main.innerHTML = '';
     document.querySelector('h1').innerText = json[0].title;
-    for(let i = 0; i<json.length;i++){
+    for(let i = 0; i<json.length;i++)
+    {
       console.log(json[i]);
       const container = document.createElement('div');
       container.id = json[i].story_Id;
@@ -30,23 +31,28 @@ const grabStory = ()=>{
       //story and media---------------------------------------
       const media_story = document.createElement('p');
       media_story.className = 'media-story';
-      if(json[i].media.substring(0,3) === 'img'){
-        //const img = document.createElement('img');
-        // img.src = 'res/media/'+json[i].media;
-        // media_story.appendChild(img);
-        media_story.innerHTML = `<img src="res/media/${json[i].media}" alt="cake">${json[i].content}`;
-      }
-      else if(json[i].media.substring(0,3) === 'bgm'){
-        media_story.innerHTML = `
+      if(json[i].media !== null){
+        if(json[i].media.substring(0,3) === 'img'){
+          //const img = document.createElement('img');
+          // img.src = 'res/media/'+json[i].media;
+          // media_story.appendChild(img);
+          media_story.innerHTML = `<img src="res/media/${json[i].media}" alt="cake">${json[i].content}`;
+        }
+        else if(json[i].media.substring(0,3) === 'bgm'){
+          media_story.innerHTML = `
           <audio controls>
             <source src="res/media/${json[i].media}" type="audio/mp3">
           </audio>${json[i].content}`;
-      }
-      else if(json[i].media.substring(0,3) === 'vid'){
-        media_story.innerHTML = `
+        }
+        else if(json[i].media.substring(0,3) === 'vid'){
+          media_story.innerHTML = `
           <video controls>
             <source src="res/media/${json[i].media}" type="video/mp4">
           </video>${json[i].content}`;
+        }
+        else{
+          media_story.innerHTML = json[i].content;
+        }
       }
       else{
         media_story.innerHTML = json[i].content;
@@ -55,9 +61,9 @@ const grabStory = ()=>{
       const impress = document.createElement('div');
       impress.className = 'impression';
       impress.innerHTML =
-          `<i id='+${json[i].story_Id}' class="fa fa-caret-up" onclick="likeOrNot()"></i>
+          `<i id='+${json[i].story_Id}' class="fa fa-caret-up"></i>
           <span>${json[i].like}</span>
-          <i id='-${json[i].story_Id}' class="fa fa-caret-down" onclick="dislikeOrNot()"></i>
+          <i id='-${json[i].story_Id}' class="fa fa-caret-down"></i>
           <span>${json[i].dislike}</span>`;
 
       const add = document.createElement('button');
@@ -65,9 +71,7 @@ const grabStory = ()=>{
       add.innerText = '+';
       add.id = 'add'+json[i].story_Id;
       add.addEventListener('click',evt =>{
-        console.log(evt.target.id);
-        document.getElementById('popup2').style.display='block';
-        document.querySelector('.follow_form').id = 'f'+evt.target.id;
+
       });
 
       const see = document.createElement('button');
@@ -109,11 +113,6 @@ const grabStory = ()=>{
         }
       });
       commentbox.appendChild(comment_container);
-      commentbox.innerHTML +=
-          `<form class="write-comment" enctype="multipart/form-data" id="fxsee${json[i].story_Id}">
-            <input type="text" name="usercomment">
-            <button type="submit"> > </button>
-          </form>`;
 
       container.appendChild(author_date);
       container.appendChild(media_story);
@@ -122,12 +121,8 @@ const grabStory = ()=>{
       container.appendChild(see);
       container.appendChild(commentbox);
       main.appendChild(container);
-      return 0;
     }
-  }).then(x =>{
-    getform();
-  });
-
+  })
 };
 
 grabStory();
@@ -167,6 +162,10 @@ window.onclick =(event)=>{
     modalSignUp.style.display ="none";
   }
 };
+
+document.querySelector('#random').addEventListener('click',()=>{
+  grabStory();
+});
 
 
 

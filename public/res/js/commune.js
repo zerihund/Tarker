@@ -6,7 +6,7 @@ let password_error = true;
 //------------------------------------------------------------------------------
 //check the data and check if user is able to submit
 const allowSubmit = ()=>{
-  document.querySelector('.login-form button').disabled = !(!name_error &&
+  document.getElementById('signUpButton').disabled = !(!name_error &&
       !email_error && !password_error);
 };
 
@@ -18,7 +18,7 @@ document.querySelector('.login-form')
   evt.preventDefault();
   const username = evt.target.elements['username'].value;
   const password = evt.target.elements['password'].value;
-  const errorMsg =document.querySelector('#signIn-error')
+  const errorMsg = document.querySelector('#signIn-error');
   fetch('/node/login', {
       method: 'POST',
       headers: new Headers({
@@ -40,7 +40,7 @@ document.querySelector('.login-form')
 
 const  user =document.querySelectorAll('.login-form input')[0];
 const pass = document.querySelectorAll('login-form input')[1];
-const login_span = document.querySelectorAll('.login-error')
+const login_span = document.querySelectorAll('.login-error');
 user.addEventListener('focusout',evt => {
   console.log('focusout on' + evt.target.value);
   login_span.style.color = '#c61766';

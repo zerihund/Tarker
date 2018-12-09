@@ -107,10 +107,60 @@ const getInitStory = (connection)=>{
        WHERE c.story_Id != Isparent.story_Id GROUP BY c.story_Id`,
       (err, results)=> {
         const y = math.random(results.length);
-        const x = Math.floor(Math.random() * results.length);
-        console.log(results[0]);
         resolve(results[y]);
       }
+    )
+  })
+};
+
+//get story of certain id
+const getStoryByID = (connection, id)=>{
+  console.log('---------------------------------------------init-------------------------------------------');
+  return new Promise((resolve)=>{
+    connection.execute(
+        `SELECT c.story_Id, c.parent_story, c.content, c.media, c.title
+         FROM story c
+         WHERE c.story_Id '${id}'`,
+        (err, results)=> {
+          console.log(err);
+          console.log(results[0]);
+          resolve(results[0]);
+        }
+    )
+  })
+};
+
+const getChildrenStory = (connection,id)=>{
+  console.log('get children story of story '+id);
+  return new Promise((resolve)=>{
+    connection.query(
+        `SELECT c.story_Id, c.parent_story, c.content, c.media, c.title
+         FROM story c, story d
+         WHERE c.story_id = d.parent_story AND d.story_Id = '${id}'`,
+        (err, results)=>{
+          console.log(err);
+          const y = math.random(results.length);
+          resolve(results[y]);
+        }
+    )
+  })
+};
+
+//get one liked story
+const getlikedStory = (connection, userid) =>{
+  console.log('get children story of story '+id);
+  return new Promise((resolve)=>{
+    connection.query(
+        `SELECT story_Id
+         FROM Views
+         WHERE user_Id = '${userid}'`,
+        (err, results)=>{
+          console.log('------l-i-k-e------');
+          console.log(err);
+          console.log(results);
+          const y = math.random(results.length);
+          resolve(results[y]);
+        }
     )
   })
 };
@@ -120,11 +170,12 @@ const getParentStory = (connection, id) =>{
   console.log('get parent story of story '+ id);
   return new Promise((resolve)=>{
     connection.query(
-      `SELECT c.story_Id, c.parent_story, c.content, c.media, c.title
+      `SELECT d.story_Id, d.parent_story, d.content, d.media, c.title
       FROM story c, story d
-      WHERE c.story_id = d.parent_story AND d.story_Id = '${id}'`,
+      WHERE c.story_id = d.parent_story AND c.story_Id = '${id}'`,
       (err, results)=>{
-        console.log('------abc------');
+        console.log(err);
+        console.log('--p-a--r--e-nt--');
         resolve(results);
       }
     )
@@ -177,6 +228,7 @@ const getOpinion = (connection, id)=>{
     )
   })
 };
+//put user like/dislike into views table
  const putOpinion= (connection, data) =>{
    //data[0]<1 means they are liking for the first time so insert
    // else update because they have liked before
@@ -185,6 +237,7 @@ const getOpinion = (connection, id)=>{
          `INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,Views.view_count)
         VALUES(${data[1]},${data[3]},${data[2]}, 5)`,
          (err, results)=>{
+           console.log(err);
            console.log(results);
            return(results);
          }
@@ -286,4 +339,7 @@ module.exports = {
   comment:comment,
   removeUser:removeUser,
   removeStory:removeStory,
+  getlikedStory:getlikedStory,
+  getChildrenStory:getChildrenStory,
+  getStoryByID:getStoryByID
 };

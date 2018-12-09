@@ -130,11 +130,48 @@ app.get('/grabstory', (req, res)=> {
   })
 });
 
+//get a story that the user has liked
+app.get('/likestory', (req, res)=>{
+  console.log('    ');
+  console.log('get favorite story of user id '+req.session.user.id);
+  db.getlikedStory(connection,  req.session.user.id)
+  .then(id =>{
+    db.getStoryByID(id)
+  .then(story =>{
+    findChildren([story], res);
+    })
+  })
+});
+
+//get story by id
+app.get('/storybyid', (req, res)=>{
+  console.log('    ');
+  console.log('get story id '+storyid);
+    db.getStoryByID(req.body.storyid)
+    .then(story =>{
+      findChildren([story], res);
+    })
+});
+
+//get children of a story
+const findChildren = (storybranch, res)=>{
+  if(storybranch[0].parent_story === 0){
+    console.log('--find children story--');
+    findParent(storybranch, res);
+  }
+  else{
+    db.getChildrenStory(connection,storybranch[0].story_Id)
+    .then(results =>{
+      storybranch.push(results[0]);
+      console.log('1111');
+      findParent(storybranch, res);
+    })
+  }
+};
 //get story from top to end
 //get parent story
 const findParent = (storybranch, res)=>{
   if(storybranch[0].parent_story === 0){
-    console.log('999999999999999999999999999999');
     familyTalk(storybranch, 0, res);
   }
   else{
