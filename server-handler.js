@@ -78,7 +78,7 @@ app.post('/login', passport.authenticate('local', {failureRedirect: '/node/', se
     console.log(req.session.passport);
     console.log(req.user);
     console.log(req.isAuthenticated());
-    res.redirect('/htttps://www.google.com/');
+    res.redirect('https://www.google.com/');
   });
 });
 
@@ -351,7 +351,7 @@ app.post('/removeStory/',(req,res)=>{
   console.log(req.body.content);
   console.log(req.body.media);
   db.removeStory(connection,req,res);
-})
+});
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site
