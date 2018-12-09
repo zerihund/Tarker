@@ -146,6 +146,8 @@ const getChildrenStory = (connection,id)=>{
           else{
             console.log('==========');
             const y = math.random(results.length);
+            console.log(y);
+            console.log(results[y]);
             resolve(results[y]);
           }
         }
