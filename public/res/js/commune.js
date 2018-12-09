@@ -179,6 +179,10 @@ document.querySelector('.sign-up-form')
     })
     .then((res) => res.text())
     .then( text => {
+      if(text === 'User registered success. Yay!!!!!!'){
+        document.getElementById('popup2').style.display = 'none';
+        document.getElementById('popup1').style.display = 'block';
+      }
       console.log(text);
     })
   }

@@ -128,8 +128,7 @@ const grabStory = ()=>{
 grabStory();
 //------------------------------------------------------------------------------
 //close button turns modal display to none
-const loginClose= document.querySelector('#login-close');
-loginClose.onclick = (event)=> {
+document.querySelector('#login-close').onclick = (event)=> {
   document.getElementById('popup').style.display = "none";
 };
 // Get the modal
@@ -151,15 +150,18 @@ window.onclick = (event)=> {
   }
 };
 //close the sign up form
-const signupClose= document.querySelector('#signup-close');
-signupClose.onclick = (event)=> {
+document.querySelector('#signup-close').onclick = ()=> {
   document.getElementById('popup2').style.display = "none";
 };
-const  modalSignUp =document.querySelector("#popup2");
 
 window.onclick =(event)=>{
-  if(event.target === modalSignUp){
-    modalSignUp.style.display ="none";
+  if(event.target.id === 'popup2'){
+    document.getElementById("popup").style.display ="none";
+    document.getElementById("popup2").style.display ="none";
+  }
+  else if (event.target.id === 'popup'){
+    document.getElementById("popup").style.display ="none";
+    document.getElementById("popup2").style.display ="none";
   }
 };
 
