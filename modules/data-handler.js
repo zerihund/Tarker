@@ -134,7 +134,7 @@ const getChildrenStory = (connection,id)=>{
   console.log('get children story of story '+id);
   return new Promise((resolve)=>{
     connection.query(
-        `SELECT c.story_Id, c.parent_story, c.content, c.media, c.title
+        `SELECT d.story_Id, d.parent_story, d.content, d.media, d.title
          FROM story c, story d
          WHERE c.story_id = d.parent_story AND c.story_Id = '${id}'`,
         (err, results)=>{
