@@ -69,7 +69,7 @@ passport.use(new LocalStrategy((username, password, done)=>{
   })
 }));
 
-app.post('/login', passport.authenticate('local', {failureRedirect: '/node/', session: true}), (req, res,next)=>{
+app.post('/login', passport.authenticate('local', {failureRedirect: '/node/', session: true}), (req, res)=>{
   return new Promise(((resolve) => {
     console.log('xx');
     req.session.save();
@@ -79,7 +79,7 @@ app.post('/login', passport.authenticate('local', {failureRedirect: '/node/', se
     console.log(req.user);
     console.log(req.isAuthenticated());
     res.redirect('/node/content.html');
-  })(next);
+  });
 });
 
 app.get('/abc/', (req, res)=>{
