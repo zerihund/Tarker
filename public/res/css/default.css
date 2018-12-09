@@ -146,8 +146,20 @@ a{
   border-radius: 0.5rem;
 }
 .login-dropdown{
-  display: none;
+  /*display: none;*/
 }
+.login-dropdown-content{
+    display: block;
+    list-style-type: none;
+    width:80px;
+    border-radius: 0  0 5px 5px;
+    position: absolute;
+    top: 39px;
+    right: 0px;
+    z-index: 3;
+    padding: 0 3px 5px 3px;
+    margin: 0;
+  }
 .btn{
   height: 1rem;
   padding: 0 1rem;
@@ -571,7 +583,7 @@ aside{
   width: 100%;
   background-color: #aaaaaa;
   height: 48px;
-  z-index: 3;
+  z-index: 2;
   padding-left: 8px;
 }
 

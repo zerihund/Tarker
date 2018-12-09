@@ -141,14 +141,18 @@ document.querySelector('#login-close').onclick = (event)=> {
  */
 
 //toggles the mobile dropdown menu on or off
-window.onclick = (event)=> {
-  if(event.target === document.getElementById('user-icon')) {
-    document.getElementById('login-dropdown').style.display = "block";
+const dropdownMenu = document.querySelector('.login-dropdown-content');
+const dropdownButton =document.querySelector('#user-icon');
+dropdownMenu.style.display='none';
+dropdownButton.addEventListener("click",(evt)=>{
+  if(dropdownMenu.style.display=='none'){
+    dropdownMenu.style.display='block';
+  }else{
+    dropdownMenu.style.display='none';
   }
-  else if(event.target !== document.getElementById('user-icon')){
-    document.getElementById('login-dropdown').style.display = "none";
-  }
-};
+});
+
+
 //close the sign up form
 document.querySelector('#signup-close').onclick = ()=> {
   document.getElementById('popup2').style.display = "none";

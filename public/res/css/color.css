@@ -12,6 +12,9 @@
 {
   color: #fee6b8;
 }
+.login-dropdown-content{
+  border: 1px solid #fee6b8;
+}
 
 .user-icon{
   color: wheat;
