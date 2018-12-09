@@ -37,7 +37,7 @@ app.use(session({
   secret: 'MNoVPKGEZrXLeevEIijOCjvLb6rAexvmRHr57hsdiphJv3mJhEXweWB4g25B',
   resave: false,
   saveUninitialized: false,
-  HttpOnly: false,
+  httpOnly: false,
   store: new MemoryStore(),
   cookie: { secure: true, maxAge:8640000000 }
 }));
@@ -66,7 +66,7 @@ app.all('*', (req, res, next)=>{
   //console.log(req.session.passport.user.username);
   console.log(req.user);
   console.log(req.session);
-  console.log(req.session.passport.user);
+  //console.log(req.session.passport.user);
   next();
 });
 passport.use(new LocalStrategy((username, password, done)=>{
