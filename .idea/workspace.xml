@@ -46,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+            <state relative-caret-position="221">
+              <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
               <folding>
                 <element signature="e#82#421#0" />
                 <element signature="e#1452#2875#0" />
@@ -279,21 +279,7 @@
       <workItem from="1543997692077" duration="10628000" />
       <workItem from="1544232211870" duration="21407000" />
       <workItem from="1544354173356" duration="37749000" />
-      <workItem from="1544439062378" duration="14250000" />
-    </task>
-    <task id="LOCAL-00222" summary="fixing findstorychildren">
-      <created>1544367994847</created>
-      <option name="number" value="00222" />
-      <option name="presentableId" value="LOCAL-00222" />
-      <option name="project" value="LOCAL" />
-      <updated>1544367994847</updated>
-    </task>
-    <task id="LOCAL-00223" summary="fixing findstorychildren">
-      <created>1544368295040</created>
-      <option name="number" value="00223" />
-      <option name="presentableId" value="LOCAL-00223" />
-      <option name="project" value="LOCAL" />
-      <updated>1544368295040</updated>
+      <workItem from="1544439062378" duration="14519000" />
     </task>
     <task id="LOCAL-00224" summary="fixing findstorychildren">
       <created>1544368502066</created>
@@ -624,11 +610,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544453232002</updated>
     </task>
-    <option name="localTasksCounter" value="271" />
+    <task id="LOCAL-00271" summary="fixed front end like dislike stuff">
+      <created>1544453612371</created>
+      <option name="number" value="00271" />
+      <option name="presentableId" value="LOCAL-00271" />
+      <option name="project" value="LOCAL" />
+      <updated>1544453612371</updated>
+    </task>
+    <task id="LOCAL-00272" summary="fixed front end like dislike stuff 0.1">
+      <created>1544453713495</created>
+      <option name="number" value="00272" />
+      <option name="presentableId" value="LOCAL-00272" />
+      <option name="project" value="LOCAL" />
+      <updated>1544453713495</updated>
+    </task>
+    <option name="localTasksCounter" value="273" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258589000" />
+    <option name="totallyTimeSpent" value="258858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -690,8 +690,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="getting the liked stories" />
-    <MESSAGE value="fixing storybyid not working" />
     <MESSAGE value="fixing not passing correct story id" />
     <MESSAGE value="fixing missing = at line 126" />
     <MESSAGE value="fixing findstorychildren" />
@@ -715,7 +713,9 @@
     <MESSAGE value="finished getting user opinion.&#10;Added visual feedback for userclick" />
     <MESSAGE value="setting like value null to 0" />
     <MESSAGE value="fixing front end like dislike bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing front end like dislike bugs" />
+    <MESSAGE value="fixed front end like dislike stuff" />
+    <MESSAGE value="fixed front end like dislike stuff 0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed front end like dislike stuff 0.1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -856,8 +856,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+        <state relative-caret-position="221">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
           <folding>
             <element signature="e#82#421#0" />
             <element signature="e#1452#2875#0" />
