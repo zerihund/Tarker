@@ -349,6 +349,13 @@ app.post('/opinion/', (req, res)=>{
   db.putOpinion(connection,data);
 });
 
+app.post('/checkopinion', (req, res)=>{
+  const data = [
+      req.session.passport.user[0].id,
+      req.body.storyid];
+  db.checkOpinion(connection, data, res);
+});
+
 //add comments to database
 app.post('/comment/', (req, res)=>{
   console.log(req.body.storyid);
