@@ -240,9 +240,9 @@ const grabStory = ()=>{
   })
 };
 
-fetch('/node/username', )
-.then(res=>res.text())
-.then(text =>document.getElementById('username').innerText = text);
+// fetch('/node/username', )
+// .then(res=>res.text())
+// .then(text =>document.getElementById('username').innerText = text);
 //init functions: get story to display inside main tag
 grabStory();
 window.addEventListener('click',(evt)=>{
