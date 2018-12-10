@@ -36,9 +36,9 @@ const  removeUser = (connection, id, res)=> {
       }
   )
 };
-
 //remove a story content
 const removeStory =(connection, id, res)=>{
+  console.log('rm story '+id);
   connection.query(
       `UPDATE story
       SET content="This Content has been removed due to copy right issue or it is offensive to some groups", media =""
@@ -50,7 +50,6 @@ const removeStory =(connection, id, res)=>{
   )
 };
 //remove comment
-
 const removeComment = (connection, id, res)=>{
   connection.query(
       `UPDATE comments

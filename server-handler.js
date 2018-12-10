@@ -403,8 +403,8 @@ app.post('/removeUser',(req,res)=>{
   db.removeUser(connection, y.userid, res);
 });
 //remove the content and media and replace it in the data base by the moderator
-app.post('/removeStory',(req,res)=>{
-  console.log(req.body);
+app.post('/removestory',(req,res)=>{
+  console.log('rmst');
   console.log(req.body.storyid);
   db.removeStory(connection, req.body.storyid, res);
 });

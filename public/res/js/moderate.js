@@ -140,9 +140,10 @@ const showComment = (commentlist)=>{
 const addFunc = ()=>{
   document.querySelectorAll('.rmStory').forEach(x =>{
     x.addEventListener('click', evt =>{
+      console.log('+++++++++++++');
       console.log(evt.target.id);
       const y = evt.target.id;
-      fetch('/node/removeStory', {
+      fetch('/node/removestory', {
         method: 'POST',
         headers: new Headers({
           'Content-Type': 'application/x-www-form-urlencoded',
