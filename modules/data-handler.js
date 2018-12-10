@@ -245,10 +245,6 @@ const checkOpinion = (connection, data, res) =>{
         console.log('+++++++++++++++++++++++++++++++');
         console.log(result);
         if(result){
-          console.log('nope');
-          res.send('nope')
-        }
-        else{
           console.log('yep');
           console.log(result[0].plus);
           console.log(result[0].minus);
@@ -258,6 +254,10 @@ const checkOpinion = (connection, data, res) =>{
           else if(result[0].minus < 0){
             res.send('-1');
           }
+        }
+        else{
+          console.log('nope');
+          res.send('nope')
         }
 })
 };
