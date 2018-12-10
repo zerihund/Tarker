@@ -21,10 +21,12 @@ const addFunctoLike = () =>{
       sendToDb(storyId, -1);
       evt.target.className = 'fa fa-caret-down clicked';
       document.getElementById(`+${evt.target.id.substring(1)}`).className = 'fa fa-caret-up unclicked';
+      document.getElementById(`dislikeAmountOf${x.id}`).innerText++;
     }
     else{
       sendToDb(storyId, 0);
-      evt.target.className = 'fa fa-caret-down unclicked'
+      evt.target.className = 'fa fa-caret-down unclicked';
+      document.getElementById(`dislikeAmountOf${x.id}`).innerText--;
     }
   }));
 
@@ -35,10 +37,12 @@ const addFunctoLike = () =>{
       sendToDb(storyId, 1);
       evt.target.className = 'fa fa-caret-up clicked';
       document.getElementById(`-${evt.target.id.substring(1)}`).className = 'fa fa-caret-down unclicked';
+      document.getElementById(`likeAmountOf${x.id}`).innerText++;
     }
     else{
       sendToDb(storyId, 0);
-      evt.target.className = 'fa fa-caret-up unclicked'
+      evt.target.className = 'fa fa-caret-up unclicked';
+      document.getElementById(`likeAmountOf${x.id}`).innerText--;
     }
   }));};
 
