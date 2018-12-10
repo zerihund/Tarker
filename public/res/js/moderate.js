@@ -161,7 +161,7 @@ const addFunc = ()=>{
     x.addEventListener('click', evt =>{
       console.log(evt.target.id);
       const y = evt.target.id;
-      fetch('/node/removeStory', {
+      fetch('/node/removeComment', {
         method: 'POST',
         headers: new Headers({
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -180,7 +180,7 @@ const addFunc = ()=>{
     x.addEventListener('click', evt =>{
       console.log(evt.target.id);
       const y = evt.target.id;
-      fetch('/node/removeStory', {
+      fetch('/node/removeUser', {
         method: 'POST',
         headers: new Headers({
           'Content-Type': 'application/x-www-form-urlencoded',
