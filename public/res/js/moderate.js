@@ -13,6 +13,7 @@ document.querySelector('.login-form').addEventListener('submit', evt => {
     if(text === 'allowed'){
       alert(`Welcome moderator ${name}`);
       document.getElementById('popup').style.display = 'none';
+      populate();
     }
     else{
       document.getElementById('signIn-error').innerText = 'YOU ARE NOT SUPPOSED TO BE HERE'
@@ -21,9 +22,10 @@ document.querySelector('.login-form').addEventListener('submit', evt => {
 });
 
 const populate = ()=>{
-  fetch('/everything')
+  fetch('/node/userlist/')
   .then(res => res.json())
   .then(json =>{
-
+    console.log('get user list');
+    console.log(json);
   })
 };

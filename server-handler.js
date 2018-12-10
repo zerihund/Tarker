@@ -382,7 +382,10 @@ app.post('/moderatorlog', (req, res)=>{
   ];
   db.checkModerator(connection, data, res);
 });
-
+//get userlist
+app.get('/userlist/', (req, res)=>{
+  db.getUser(connection, res);
+});
 //remove the user
 app.post('/removeUser',(req,res)=>{
   db.removeUser(connection,req.body.userid,res);

@@ -396,6 +396,15 @@ const checkModerator = (connection, data, res)=>{
   )
 };
 
+const getUser = (connection, res)=>{
+  connection.query(
+      'SELECT user_Id, name FROM user',
+      (err, result)=>{
+        res.send(result);
+      }
+  )
+};
+
 module.exports = {
   connect:connect,
   insertUser: insertUser,
@@ -417,5 +426,6 @@ module.exports = {
   getStoryByID:getStoryByID,
   checkOpinion:checkOpinion,
   removeComment:removeComment,
-  checkModerator:checkModerator
+  checkModerator:checkModerator,
+  getUser:getUser
 };
