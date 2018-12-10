@@ -398,14 +398,17 @@ app.get('/commentlist/', (req, res)=>{
 });
 //remove the user
 app.post('/removeUser',(req,res)=>{
-  db.removeUser(connection,req.body.userid,res);
+  console.log('rmuser');
+  db.removeUser(connection, req.body.userid, res);
 });
 //remove the content and media and replace it in the data base by the moderator
 app.post('/removeStory',(req,res)=>{
-  db.removeStory(connection,req.body.storyid, res);
+  console.log('rmstory');
+  db.removeStory(connection,req. body.storyid, res);
 });
 app.post('/removeComment',(req,res)=>{
-  db.removeComment(connection,req.body.commentid,res);
+  console.log('rmcomment');
+  db.removeComment(connection, req.body.commentid, res);
 });
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection

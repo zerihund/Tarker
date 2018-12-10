@@ -25,12 +25,13 @@ const insertUser = (connection, data, res) =>{
   );
 };
 // moderator remove user
-const  removeUser = (connection, userName,)=> {
+const  removeUser = (connection, userName, res)=> {
   connection.query(
       `DELETE FROM user where user.name = '${userName}'`,
       (err, results)=>{
         console.log(results);
-        return(results);
+
+        res.send('remove succeeded: ' +id);
       }
   )
 };
@@ -43,20 +44,20 @@ const removeStory =(connection, id, res)=>{
       WHERE story_Id= "${id}"`,
       (err,results)=>{
         console.log(results);
-        res.send('remove succeeded');
+        res.send('remove succeeded: ' +id);
       }
   )
 };
 //remove comment
 
-const removeComment =(connection,id, res)=>{
+const removeComment =(connection, id, res)=>{
   connection.query(
       `UPDATE comments
       SET comment="some comment has been removed"
       WHERE comments.comment_Id ='${id}'`,
       (err,result)=>{
         console.log(result);
-        res.send('remove succeeded')
+        res.send('remove succeeded: ' +id);
       }
   )
 
