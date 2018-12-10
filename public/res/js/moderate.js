@@ -24,8 +24,31 @@ document.querySelector('.login-form').addEventListener('submit', evt => {
 const populate = ()=>{
   fetch('/node/userlist/')
   .then(res => res.json())
-  .then(json =>{
+  .then(userlist => {
     console.log('get user list');
-    console.log(json);
+    console.log(userlist);
+    showUser(userlist);
+
+    fetch('/node/storylist/').then(res => res.json())
+    .then(story => {
+      console.log('get story list');
+      console.log(story);
+    })
+  })
+};
+
+const showUser = (userlist) =>{
+  const main = document.getElementById('userlist');
+  main.innerHTML ='';
+  userlist.forEach(x => {
+    const card = document.createElement('div');
+    const username = document.createElement('p');
+    username.innerText = x.name;
+    const rmbutton = document.createElement('button');
+    rmbutton.id = x.user_Id;
+
+    card.appendChild(username);
+    card.appendChild(rmbutton);
+    main.appendChild(card);
   })
 };
