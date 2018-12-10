@@ -365,11 +365,18 @@ app.post('/comment/', (req, res)=>{
   db.comment(connection, req, res);
 });
 
-// remove the content and media and replace it in the data base by the moderator
+// remove the user
+ap.post('/removeUser',(req,res)=>{
+  db.removeUser(connection,req.body.userid,res);
+})
 
+// remove the content and media and replace it in the data base by the moderator
 app.post('/removeStory',(req,res)=>{
   db.removeStory(connection,req.body.storyid, res);
 });
+app.post('/removeComment',(req,res)=>{
+  db.removeComment(connection,req,res);
+})
 
 app.get('/username', (req, res)=>{
   console.log(req.user);

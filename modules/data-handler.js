@@ -41,11 +41,25 @@ const removeStory =(connection, id, res)=>{
       `UPDATE story
       SET content="This Content has been removed due to copy right issue or it is offensive to some groups", media =""
       WHERE story_Id= "${id}"`,
-        (err,results)=>{
+      (err,results)=>{
         console.log(results);
-        res.send('remove successed');
+        res.send('remove succeeded');
       }
   )
+};
+//remove comment
+
+const removeComment =(connection,id, res)=>{
+  connection.query(
+      `UPDATE comments
+      SET comment="some comment has been removed"
+      WHERE comments.comment_Id ='${id}'`,
+      (err,result)=>{
+        console.log(result);
+        res.send('remove succeeded')
+      }
+  )
+
 };
 //check if user already exists
 const checkUser = (connection, username, res)=>{
@@ -387,5 +401,6 @@ module.exports = {
   getlikedStory:getlikedStory,
   getChildrenStory:getChildrenStory,
   getStoryByID:getStoryByID,
-  checkOpinion:checkOpinion
+  checkOpinion:checkOpinion,
+  removeComment:removeComment,
 };
