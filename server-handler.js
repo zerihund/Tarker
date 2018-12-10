@@ -274,14 +274,14 @@ app.post('/uploadvideo/', vidupload.single('media'), (req, res, next)=>{
 app.use('/uploadvideo/', (req, res)=>{
   console.log('receiving upload video');
   const data = [
-    req.body.author_id,
+    req.session.passport.user[0].id,
     req.body.parent_id,
     req.body.title,
     req.body.story,
     'vid/'+req.file.filename
   ];
   console.log(data);
-  db.upload(connection,data, res);
+  db.upload(connection, data, res);
 });
 
 //----------------------------------------------------------------------
@@ -293,7 +293,7 @@ app.post('/uploadaudio/', audupload.single('media'), (req, res, next)=>{
 
 app.use('/uploadaudio/', (req, res)=>{
   const data = [
-    req.body.author_id,
+    req.session.passport.user[0].id,
     req.body.parent_id,
     req.body.title,
     req.body.story,
@@ -312,7 +312,7 @@ app.post('/uploadimage/', imgupload.single('media'), (req, res, next)=>{
 
 app.use('/uploadimage/', (req, res)=>{
   const data = [
-    req.body.author_id,
+    req.session.passport.user[0].id,
     req.body.parent_id,
     req.body.title,
     req.body.story,
@@ -325,7 +325,7 @@ app.use('/uploadimage/', (req, res)=>{
 //upload text only
 app.post('/uploadtext/', (req, res)=>{
   const data = [
-    req.body.author_id,
+    req.session.passport.user[0].id,
     req.body.parent_id,
     req.body.title,
     req.body.story,
@@ -339,7 +339,7 @@ app.post('/uploadtext/', (req, res)=>{
 //add like, dislike to +database
 app.post('/opinion/', (req, res)=>{
   console.log(`action number ${req.body.firstLike}`);
-  console.log(`user-> ${req.body.userId} ,did (${req.body.likeDatabaseValue}) for story-> ${req.body.storyID}`);
+  console.log(`user-> ${req.session.passport.user[0].id} ,did (${req.body.likeDatabaseValue}) for story-> ${req.body.storyID}`);
   const data =[
     req.body.firstLike,
     req.body.userId,
@@ -352,7 +352,7 @@ app.post('/opinion/', (req, res)=>{
 //add comments to database
 app.post('/comment/', (req, res)=>{
   console.log(req.body.storyid);
-  console.log(req.body.userid);
+  console.log(req.session.passport.user[0].id);
   console.log(req.body.usercomment);
   db.comment(connection, req, res);
 });

@@ -182,7 +182,7 @@ const displayStoryByJson =(json)=>{
     add.id = 'add'+json[i].story_Id;
     add.addEventListener('click',evt =>{
       console.log(evt.target.id);
-      document.getElementById('popup2').style.display='block';
+      document.getElementById('popup1').style.display='block';
       document.querySelector('.follow_form').id = 'f'+evt.target.id;
     });
     // remove button for moderator
