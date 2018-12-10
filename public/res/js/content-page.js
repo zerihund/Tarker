@@ -260,6 +260,7 @@ const displayStoryByJson =(json)=>{
   }
   getform();
   addFunctoLike();
+  checkOpinion();
 };
 
 //grab story from database-backend
