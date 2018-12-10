@@ -241,12 +241,12 @@ const getOpinion = (connection, id)=>{
    //data[0]<1 means they are liking for the first time so insert
    // else update because they have liked before
    connection.query(
-       `SELECT * FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= ${data[3]}`,
+       `SELECT * FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= '${data[3]}'`,
        (err, result) =>{
           if(result === undefined){
             connection.query(
                 `INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,Views.view_count)
-        VALUES(${data[1]},${data[3]},${data[2]}, 5)`,
+        VALUES(${data[1]},'${data[3]}',${data[2]}, 5)`,
                 (err, results)=>{
                   console.log(results);
                   return(results);
