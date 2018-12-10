@@ -243,7 +243,7 @@ const getOpinion = (connection, id)=>{
    connection.query(
        `SELECT * FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= ${data[3]}`,
        (err, result) =>{
-          if(result.length === 0){
+          if(result === undefined){
             connection.query(
                 `INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,Views.view_count)
         VALUES(${data[1]},${data[3]},${data[2]}, 5)`,
