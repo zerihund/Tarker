@@ -247,7 +247,11 @@ const checkOpinion = (connection, data, res) =>{
         if(result.length !== 0){
           console.log('yep');
           console.log(result[0]);
-          res.send(result[0].like_story)
+          if(result[0].like_story > 0){
+            res.send('like');
+          }else{
+            res.send('hate');
+          }
         }
         else{
           console.log('nope');
