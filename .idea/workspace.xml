@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/moderate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/res/js/moderate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/data-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/data-handler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/res/js/content-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/js/content-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-handler.js" afterDir="false" />
     </list>
     <list id="3c9e7bb2-7bdb-4887-afeb-1e245b7afc96" name="Revert: " comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,9 +26,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="55" column="35" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+            <state relative-caret-position="323">
+              <caret line="57" column="17" lean-forward="true" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
               <folding>
+                <element signature="e#82#421#0" />
+                <element signature="e#485#1415#0" />
                 <element signature="e#1452#2875#0" />
               </folding>
             </state>
@@ -51,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="243" column="28" selection-start-line="243" selection-start-column="28" selection-end-line="243" selection-end-column="28" />
+            <state relative-caret-position="114">
+              <caret line="244" column="31" selection-start-line="244" selection-start-column="31" selection-end-line="244" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -330,28 +328,7 @@
       <workItem from="1543997692077" duration="10628000" />
       <workItem from="1544232211870" duration="21407000" />
       <workItem from="1544354173356" duration="37749000" />
-      <workItem from="1544439062378" duration="9732000" />
-    </task>
-    <task id="LOCAL-00199" summary="trying to get to username in passport session">
-      <created>1544362794443</created>
-      <option name="number" value="00199" />
-      <option name="presentableId" value="LOCAL-00199" />
-      <option name="project" value="LOCAL" />
-      <updated>1544362794443</updated>
-    </task>
-    <task id="LOCAL-00200" summary="trying to get to username in passport session">
-      <created>1544362937241</created>
-      <option name="number" value="00200" />
-      <option name="presentableId" value="LOCAL-00200" />
-      <option name="project" value="LOCAL" />
-      <updated>1544362937241</updated>
-    </task>
-    <task id="LOCAL-00201" summary="trying to get to username in passport session">
-      <created>1544363033131</created>
-      <option name="number" value="00201" />
-      <option name="presentableId" value="LOCAL-00201" />
-      <option name="project" value="LOCAL" />
-      <updated>1544363033131</updated>
+      <workItem from="1544439062378" duration="10242000" />
     </task>
     <task id="LOCAL-00202" summary="trying to get to username in passport session">
       <created>1544363326938</created>
@@ -675,11 +652,32 @@
       <option name="project" value="LOCAL" />
       <updated>1544447929136</updated>
     </task>
-    <option name="localTasksCounter" value="248" />
+    <task id="LOCAL-00248" summary="like dislike work now&#10;getting user opinion on story">
+      <created>1544449097936</created>
+      <option name="number" value="00248" />
+      <option name="presentableId" value="LOCAL-00248" />
+      <option name="project" value="LOCAL" />
+      <updated>1544449097936</updated>
+    </task>
+    <task id="LOCAL-00249" summary="getting user opinion on story">
+      <created>1544449180492</created>
+      <option name="number" value="00249" />
+      <option name="presentableId" value="LOCAL-00249" />
+      <option name="project" value="LOCAL" />
+      <updated>1544449180492</updated>
+    </task>
+    <task id="LOCAL-00250" summary="getting user opinion on story">
+      <created>1544449299145</created>
+      <option name="number" value="00250" />
+      <option name="presentableId" value="LOCAL-00250" />
+      <option name="project" value="LOCAL" />
+      <updated>1544449299145</updated>
+    </task>
+    <option name="localTasksCounter" value="251" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254071000" />
+    <option name="totallyTimeSpent" value="254581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -741,8 +739,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing sign button forever disabled" />
-    <MESSAGE value="fixed sign up form malfunction" />
     <MESSAGE value="optimizing sign up sign in things" />
     <MESSAGE value="getting started on getting liked story" />
     <MESSAGE value="put user name on content page" />
@@ -766,7 +762,9 @@
     <MESSAGE value="storyid parentid fixing" />
     <MESSAGE value="working on like/dislikes" />
     <MESSAGE value="fixing some small like/dislike bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing some small like/dislike bugs" />
+    <MESSAGE value="like dislike work now&#10;getting user opinion on story" />
+    <MESSAGE value="getting user opinion on story" />
+    <option name="LAST_COMMIT_MESSAGE" value="getting user opinion on story" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -897,16 +895,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="243" column="28" selection-start-line="243" selection-start-column="28" selection-end-line="243" selection-end-column="28" />
+        <state relative-caret-position="114">
+          <caret line="244" column="31" selection-start-line="244" selection-start-column="31" selection-end-line="244" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="55" column="35" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+        <state relative-caret-position="323">
+          <caret line="57" column="17" lean-forward="true" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
           <folding>
+            <element signature="e#82#421#0" />
+            <element signature="e#485#1415#0" />
             <element signature="e#1452#2875#0" />
           </folding>
         </state>

@@ -247,7 +247,7 @@ const checkOpinion = (connection, data, res) =>{
         }
         else{
           console.log('yep');
-          res.send(result[0]);
+          res.send('yep');
         }
 })
 };
