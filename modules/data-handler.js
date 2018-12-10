@@ -38,7 +38,9 @@ const  removeUser = (connection, id, res)=> {
 };
 //remove a story content
 const removeStory =(connection, id, res)=>{
-  console.log('rm story '+id);
+  console.log(`UPDATE story
+      SET content="This Content has been removed due to copy right issue or it is offensive to some groups", media =""
+      WHERE story_Id= '${id}'`);
   connection.query(
       `UPDATE story
       SET content="This Content has been removed due to copy right issue or it is offensive to some groups", media =""
