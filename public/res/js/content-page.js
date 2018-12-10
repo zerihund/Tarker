@@ -21,12 +21,12 @@ const addFunctoLike = () =>{
       sendToDb(storyId, -1);
       evt.target.className = 'fa fa-caret-down clicked';
       document.getElementById(`+${evt.target.id.substring(1)}`).className = 'fa fa-caret-up unclicked';
-      document.getElementById(`dislikeAmountOf${storyId}`).innerText++;
+      document.getElementById(`dislikeAmountOf${storyId}`).innerText--;
     }
     else{
       sendToDb(storyId, 0);
       evt.target.className = 'fa fa-caret-down unclicked';
-      document.getElementById(`dislikeAmountOf${storyIdid}`).innerText--;
+      document.getElementById(`dislikeAmountOf${storyId}`).innerText++;
     }
   }));
 
