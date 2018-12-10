@@ -570,11 +570,11 @@ h1{
 
 .follow_form{
   display: block;
-  width: 320px;
-  height: 400px;
+  width: 470px;
   margin: auto;
   z-index: 5;
-  background-color: pink;
+  background-color: #282f3f;
+  color: #fee6b8;
 }
 aside{
   position: fixed;
