@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="getting userlist on moderate.html">
+    <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/moderate.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/moderate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/res/js/moderate.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/js/moderate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-handler.js" afterDir="false" />
     </list>
     <list id="3c9e7bb2-7bdb-4887-afeb-1e245b7afc96" name="Revert: " comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,20 +30,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/res/js/moderate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3128">
-              <caret line="184" column="21" selection-start-line="184" selection-start-column="21" selection-end-line="184" selection-end-column="21" />
+            <state relative-caret-position="128">
+              <caret line="142" column="33" selection-start-line="142" selection-start-column="33" selection-end-line="142" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="398" column="17" lean-forward="true" selection-start-line="398" selection-start-column="17" selection-end-line="398" selection-end-column="17" />
+            <state relative-caret-position="436">
+              <caret line="411" column="24" selection-start-line="411" selection-start-column="24" selection-end-line="411" selection-end-column="24" />
               <folding>
                 <element signature="e#14#104#0" />
                 <element signature="e#1045#1097#0" />
@@ -61,23 +60,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
+        <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="195" column="4" lean-forward="true" selection-start-line="195" selection-start-column="4" selection-end-line="197" selection-end-column="5" />
-              <folding>
-                <element signature="e#82#421#0" />
-                <element signature="e#1452#2875#0" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
+        <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="420" column="16" selection-start-line="420" selection-start-column="16" selection-end-line="420" selection-end-column="16" />
+            <state relative-caret-position="-2411">
+              <caret line="197" column="4" lean-forward="true" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="4" />
+              <folding>
+                <element signature="e#82#421#0" />
+                <element signature="e#2850#4345#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,13 +116,13 @@
       <find>//fetch</find>
       <find>.logo</find>
       <find>.search-</find>
-      <find>remove</find>
       <find>send</find>
       <find>upload</find>
       <find>author</find>
       <find>parent</find>
       <find>username</find>
       <find>put</find>
+      <find>remove</find>
       <find>login</find>
     </findStrings>
   </component>
@@ -154,10 +153,10 @@
         <option value="$PROJECT_DIR$/public/res/css/default.css" />
         <option value="$PROJECT_DIR$/public/res/css/secondcolor.css" />
         <option value="$PROJECT_DIR$/public/res/js/content-page.js" />
-        <option value="$PROJECT_DIR$/modules/data-handler.js" />
-        <option value="$PROJECT_DIR$/server-handler.js" />
         <option value="$PROJECT_DIR$/public/moderate.html" />
+        <option value="$PROJECT_DIR$/modules/data-handler.js" />
         <option value="$PROJECT_DIR$/public/res/js/moderate.js" />
+        <option value="$PROJECT_DIR$/server-handler.js" />
       </list>
     </option>
   </component>
@@ -306,34 +305,6 @@
       <workItem from="1544232211870" duration="21407000" />
       <workItem from="1544354173356" duration="37749000" />
       <workItem from="1544439062378" duration="10698000" />
-    </task>
-    <task id="LOCAL-00217" summary="getting the liked stories">
-      <created>1544366276944</created>
-      <option name="number" value="00217" />
-      <option name="presentableId" value="LOCAL-00217" />
-      <option name="project" value="LOCAL" />
-      <updated>1544366276944</updated>
-    </task>
-    <task id="LOCAL-00218" summary="fixing storybyid not working">
-      <created>1544366588944</created>
-      <option name="number" value="00218" />
-      <option name="presentableId" value="LOCAL-00218" />
-      <option name="project" value="LOCAL" />
-      <updated>1544366588944</updated>
-    </task>
-    <task id="LOCAL-00219" summary="fixing not passing correct story id">
-      <created>1544366644685</created>
-      <option name="number" value="00219" />
-      <option name="presentableId" value="LOCAL-00219" />
-      <option name="project" value="LOCAL" />
-      <updated>1544366644685</updated>
-    </task>
-    <task id="LOCAL-00220" summary="fixing missing = at line 126">
-      <created>1544366802805</created>
-      <option name="number" value="00220" />
-      <option name="presentableId" value="LOCAL-00220" />
-      <option name="project" value="LOCAL" />
-      <updated>1544366802805</updated>
     </task>
     <task id="LOCAL-00221" summary="fixing findstorychildren">
       <created>1544367160729</created>
@@ -650,11 +621,39 @@
       <option name="project" value="LOCAL" />
       <updated>1544462252957</updated>
     </task>
-    <option name="localTasksCounter" value="266" />
+    <task id="LOCAL-00266" summary="added func to the buttons">
+      <created>1544462943770</created>
+      <option name="number" value="00266" />
+      <option name="presentableId" value="LOCAL-00266" />
+      <option name="project" value="LOCAL" />
+      <updated>1544462943770</updated>
+    </task>
+    <task id="LOCAL-00267" summary="added func to the buttons">
+      <created>1544463334318</created>
+      <option name="number" value="00267" />
+      <option name="presentableId" value="LOCAL-00267" />
+      <option name="project" value="LOCAL" />
+      <updated>1544463334318</updated>
+    </task>
+    <task id="LOCAL-00268" summary="added func to the buttons">
+      <created>1544463667141</created>
+      <option name="number" value="00268" />
+      <option name="presentableId" value="LOCAL-00268" />
+      <option name="project" value="LOCAL" />
+      <updated>1544463667141</updated>
+    </task>
+    <task id="LOCAL-00269" summary="added func to the buttons">
+      <created>1544463936870</created>
+      <option name="number" value="00269" />
+      <option name="presentableId" value="LOCAL-00269" />
+      <option name="project" value="LOCAL" />
+      <updated>1544463936870</updated>
+    </task>
+    <option name="localTasksCounter" value="270" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260191000" />
+    <option name="totallyTimeSpent" value="261365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -662,7 +661,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.22386895" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.22386895" />
       <window_info anchor="bottom" id="File Transfer" order="0" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
@@ -716,7 +715,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="strory id thing again" />
     <MESSAGE value="getting the liked stories" />
     <MESSAGE value="fixing storybyid not working" />
     <MESSAGE value="fixing not passing correct story id" />
@@ -741,7 +739,8 @@
     <MESSAGE value="display stories and comments and users on moderator screens" />
     <MESSAGE value="putting story and comment on moderator" />
     <MESSAGE value="getting userlist on moderate.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="getting userlist on moderate.html" />
+    <MESSAGE value="added func to the buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="added func to the buttons" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -822,13 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/img-handler.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -857,17 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="195" column="4" lean-forward="true" selection-start-line="195" selection-start-column="4" selection-end-line="197" selection-end-column="5" />
-          <folding>
-            <element signature="e#82#421#0" />
-            <element signature="e#1452#2875#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/moderate.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -882,17 +863,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2411">
+          <caret line="197" column="4" lean-forward="true" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="4" />
+          <folding>
+            <element signature="e#82#421#0" />
+            <element signature="e#2850#4345#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1131">
+          <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/js/moderate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="142" column="33" selection-start-line="142" selection-start-column="33" selection-end-line="142" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="420" column="16" selection-start-line="420" selection-start-column="16" selection-end-line="420" selection-end-column="16" />
+        <state relative-caret-position="306">
+          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="398" column="17" lean-forward="true" selection-start-line="398" selection-start-column="17" selection-end-line="398" selection-end-column="17" />
+        <state relative-caret-position="436">
+          <caret line="411" column="24" selection-start-line="411" selection-start-column="24" selection-end-line="411" selection-end-column="24" />
           <folding>
             <element signature="e#14#104#0" />
             <element signature="e#1045#1097#0" />
@@ -904,13 +910,6 @@
             <element signature="e#2023#2446#0" />
             <element signature="e#2508#2755#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/js/moderate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3128">
-          <caret line="184" column="21" selection-start-line="184" selection-start-column="21" selection-end-line="184" selection-end-column="21" />
         </state>
       </provider>
     </entry>
