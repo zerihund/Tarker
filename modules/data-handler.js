@@ -26,9 +26,11 @@ const insertUser = (connection, data, res) =>{
 };
 // moderator remove user
 const  removeUser = (connection, id, res)=> {
+  console.log(`DELETE FROM user where user_Id = ${id}`);
   connection.query(
       `DELETE FROM user where user_Id = ${id}`,
       (err, results)=>{
+        console.log(err);
         console.log(results);
         res.send('remove succeeded: ' + id);
       }
