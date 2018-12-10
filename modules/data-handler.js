@@ -243,7 +243,7 @@ const checkOpinion = (connection, data, res) =>{
       `SELECT like_story FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= '${data[3]}'`,
       (err, result) =>{
         console.log(result);
-        if(result === undefined){
+        if(result.length === 0){
           console.log('nope');
           res.send('nope')
         }
