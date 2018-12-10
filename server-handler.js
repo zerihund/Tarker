@@ -360,11 +360,8 @@ app.post('/comment/', (req, res)=>{
 
 // remove the content and media and replace it in the data base by the moderator
 
-app.post('/removeStory/',(req,res)=>{
-  console.log(req.body.title);
-  console.log(req.body.content);
-  console.log(req.body.media);
-  db.removeStory(connection,req,res);
+app.post('/removeStory',(req,res)=>{
+  db.removeStory(connection,req.body.storyid, res);
 });
 
 app.get('/username', (req, res)=>{

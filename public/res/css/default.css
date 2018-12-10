@@ -76,8 +76,10 @@ a{
     height: 24px;
 }
 .logo{
-    margin: auto 5px;
-    height: 40px;
+  margin: auto 5px;
+  height: 42px;
+  font-family: Raleway-Black, sans-serif;
+  font-size: 36px;
 }
 .topnav-left{
     height: 100%;
@@ -94,40 +96,42 @@ a{
 }
 
 .topnav-right p{
-    display: block;
-    height: 24px;
-    margin: 15px 12px auto 8px;
-    padding: 2px;
-    font-family: Raleway-Light, sans-serif;
+  display: block;
+  height: 24px;
+  margin: 15px 20px auto 8px;
+  padding: 2px;
+  font-family: Raleway-Light, sans-serif;
 }
 
 .topnav-right img{
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
+  margin: auto 10px auto auto;
+  padding: 0;
     background-color: #fee6b8;
-    margin: auto;
-    padding: 0;
+
 }
 .topnav-searchbar-form{
     display: flex;
     margin: auto 4px;
 }
 .search-input{
-    width: 320px;
-    font-size: 1rem;
-    color: wheat;
-    background-color:#282f3f;
-    border: solid #fee6b8 1px;
-    padding: 2px 8px;
-    margin-left: 4px;
-    margin-right: 4px;
+  font-family: Raleway-Light, sans-serif;
+  width: 75px;
+  font-size: 1rem;
+  color: wheat;
+  background-color:#282f3f;
+  border: solid #fee6b8 1px;
+  padding: 2px 8px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 .search-btn{
-    width: 48px;
-    height: 24px;
-    margin-left: 4px;
-    border:none;
-    cursor: pointer;
+  width: 90px;
+  height: 24px;
+  margin-left: 4px;
+  border:none;
+  cursor: pointer;
 }
 
 .search-btn i{
@@ -323,12 +327,15 @@ main{
 }
 
 h1{
-    font-family: Raleway-Black, sans-serif;
-    border-bottom: #454755 solid 1px;
-    margin-top: 120px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+  font-family: Raleway-Black, sans-serif;
+  border-bottom: #454755 solid 1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  margin-top: 100px;
+  margin-left: 0;
+  margin-right: auto;
+  width: 100%;
 }
 
 .card{
@@ -341,13 +348,14 @@ h1{
 }
 
 .storyid{
-    position: absolute;
-    bottom: -15px;
-    left: 0;
-    font-family: Raleway-Light,  sans-serif;
-    font-size: xx-small;
-    color: #aaaaaa;
-    background-color: #282f3f;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  font-family: Raleway-Thin,  sans-serif;
+  font-size: xx-small;
+  border: none;
+  opacity: 0.7;
+
 }
 
 .author-date{
@@ -404,6 +412,7 @@ h1{
     right: 0;
     font-size: small;
     font-family: Raleway-Light, sans-serif;
+
 }
 
 .impression i{
@@ -421,16 +430,16 @@ h1{
 }
 
 .card .add{
-    position: absolute;
-    bottom: -18px;
-    right: 90px;
+  position: absolute;
+  bottom: -18px;
+  right: 90px;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
     background-color: #282f3f;
-    border: none;
-    cursor: pointer;
-    padding: 5px 8px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
 }
 
 .card .remove{
@@ -448,8 +457,8 @@ h1{
 }
 
 .add:hover{
-    text-shadow: 2px 2px 5px #eda948;
-    box-shadow: 1px 1px 100px #eda948;
+  text-shadow: 2px 2px 5px #eda948;
+  box-shadow: 1px 1px 100px #eda948;
 }
 .card .see{
     position: absolute;
@@ -618,6 +627,11 @@ h1{
     color:#282f3f;
     border:none;
     border-radius:3px;
+  display: block;
+  width: 320px;
+  height: 400px;
+  margin: auto;
+  z-index: 5;
 }
 aside{
     position: fixed;
@@ -628,6 +642,7 @@ aside{
     height: 48px;
     z-index: 2;
     padding-left: 8px;
+  padding-top: 6px;
 }
 
 aside form input{
@@ -635,13 +650,26 @@ aside form input{
 }
 
 aside button{
-    border: none;
-    height: 32px;
-    margin: auto 8px auto auto;
-    font-family: Raleway-Black, sans-serif;
-    cursor: pointer;
+  border: none;
+  height: 32px;
+  margin: auto 8px auto 0;
+  font-family: Raleway-Black, sans-serif;
+  cursor: pointer;
 }
 
-#popup2{
-    z-index: 3;
+#popup2, #popup{
+  z-index: 3;
+  background: url(../media/logo/background.png) rgba(0,0,0,0.2) center;
 }
+
+.sign-up-container, .login-container{
+  position: relative;
+  opacity: 1;
+  border-radius: 5px;
+}
+
+.sign-up-container img, .login-container img{
+  position: absolute;
+  top:-120px;
+}
+

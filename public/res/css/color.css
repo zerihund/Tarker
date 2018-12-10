@@ -1,7 +1,5 @@
 /*       COLORS          */
 /*Dark*/
-
-
 /*Light*/
 .yellow-btn{
   background-color: #eda948;
@@ -27,6 +25,12 @@ body{
 
 .author-date{
   color:#282f3f;
+}
+
+.search-input{
+  color: wheat;
+  background-color:#282f3f;
+  border: solid #fee6b8 1px;
 }
 
 .close{
@@ -72,6 +76,7 @@ h1{
 
 .impression{
   color: #aaaaaa;
+  background-color: #282f3f;
 }
 
 .see{
@@ -117,6 +122,10 @@ aside{
   background-color: #282f3f;
 }
 
+.topnav-right img{
+  background-color: #fee6b8;
+}
+
 aside button:hover{
   text-shadow: 0 0 3px #eda948;
   box-shadow: 0 0 1px #aaaaaa;
@@ -145,4 +154,14 @@ aside button{
 
 .unclicked{
   color: #454755;
+}
+
+.impression i:hover{
+  text-shadow: 2px 2px 5px #eda948;
+  color: #eda948;
+}
+
+.storyid{
+  color: #aaaaaa;
+  background-color: #282f3f;
 }
