@@ -627,7 +627,7 @@ fieldset textarea{
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
-    top: 15%;
+    top: 5%;
 }
 .follow_form input[type='submit']{
     background-color:#fee6b8;
