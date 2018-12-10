@@ -378,7 +378,14 @@ app.get('/username', (req, res)=>{
   console.log(req.session.passport.user[0].username);
   res.send(req.session.passport.user[0].username);
 });
-//
+//--------------------------------------------------------------------------------------------------------
+//concerning moderator
+app.post('/moderatorlog', (req, res)=>{
+  const data = [
+      req.body.name,
+      req.body.password
+  ]
+});
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
 //set up secure certification for site
