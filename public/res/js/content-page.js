@@ -115,7 +115,7 @@ const getform = () =>{
           }
       })
     });
-      document.querySelector(`cmtBox${json[i].story_Id}`).innerHTML="";
+      document.querySelector(`cmtBox${json[i].story_Id}`).value=" ";
   });
 })};
 
