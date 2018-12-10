@@ -12,19 +12,19 @@
 .login-dropdown-content a,.login-dropdown,.sign-up-container
 {
   color: #232323;
-  background-color: #FFFFFF;
+  background-color: #f2f2f2;
 }
 
-.user-icon{
-  color: #FFFFFF;
+.login-dropdown-content a,.user-icon{
+  color: #f2f2f2;
   background-color: #232323;
   border: none;
 }
 .login-dropdown-content,
 .outsider-dropdown-content{
-  color: #FFFFFF;
+  color: #f2f2f2;
   background-color: #232323;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #f2f2f2;
 }
 body{
   background-color: #BABABA;
