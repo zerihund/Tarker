@@ -21,22 +21,20 @@
 
 <!-- <div style="width: 30px; display: block">Test</div> -->
 <div class="topnav">
-
-    <div class="topnav-right">
-
-
+        <div class="topnav-left">
+            <p class="logo">THE ARCHIVE</p>
+        </div>
     </div>
 </div>
 
-<section id="popup" class="modal modal1" style="display: block">
+<section id="popup" class="modal modal1" style="display: block;">
     <div  class="login-container animate">
-        <span class="close" id="login-close">&times;</span>
         <img src="res/media/logo/logo.png" alt="logo" style="width: 300px">
 
         <form  class="login-form" action="/" method="post">
 
             <fieldset class="input-fieldset">
-                <label>USER NAME</label>
+                <label>MODERATOR</label>
                 <input type="text" name="username" >
                 <span class="login-error"></span>
             </fieldset>
@@ -57,13 +55,22 @@
     </div>
 </section>
 
+<section class="main" style="display: flex; flex-direction: row">
+    <div id="userlist" class="list" style="width: 30%; height: 1000px; margin: 120px 2% 2%;background-color: #aaaaaa; border: #282f3f solid 1px">
 
+    </div>
+    <div id="storylist" class="list" style="width: 30%; height: 1000px; margin: 120px 2% 2%;background-color: #aaaaaa; border: #282f3f solid 1px">
+
+    </div>
+    <div id="commentlist" class="list" style="width: 30%; height: 1000px; margin: 120px 2% 2%;background-color: #aaaaaa; border: #282f3f solid 1px">
+
+    </div>
+</section>
 
 <aside>
-    <button id="user">User</button>
-    <button id="story">Story</button>
-    <button id="comment">Comment</button>
-
+    <button id="user">USER</button>
+    <button id="story">STORY</button>
+    <button id="comment">COMMENT</button>
 </aside>
 
 
