@@ -349,6 +349,8 @@ app.post('/opinion/', (req, res)=>{
 });
 
 app.post('/checkopinion', (req, res)=>{
+  console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+  console.log(req.body.storyid);
   const data = [
       req.session.passport.user[0].id,
       req.body.storyid];

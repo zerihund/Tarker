@@ -238,18 +238,24 @@ const getOpinion = (connection, id)=>{
 };
 //check if user like/dislike story before
 const checkOpinion = (connection, data, res) =>{
-  console.log(`SELECT like_story FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= '${data[3]}'`);
+  console.log(`SELECT like_story FROM Views WHERE Views.user_Id = ${data[0]} && Views.story_Id= '${data[1]}'`);
   connection.query(
-      `SELECT like_story FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= '${data[3]}'`,
+      `SELECT like_story FROM Views WHERE Views.user_Id = ${data[0]} && Views.story_Id= '${data[1]}'`,
       (err, result) =>{
+        console.log('+++++++++++++++++++++++++++++++');
         console.log(result);
-        if(result === undefined){
-          console.log('nope');
-          res.send('nope')
+        if(result.length !== 0){
+          console.log('yep');
+          console.log(result[0]);
+          if(result[0].like_story > 0){
+            res.send('like');
+          }else{
+            res.send('hate');
+          }
         }
         else{
-          console.log('yep');
-          res.send('yep');
+          console.log('nope');
+          res.send('nope')
         }
 })
 };
