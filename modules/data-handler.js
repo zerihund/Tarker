@@ -25,13 +25,12 @@ const insertUser = (connection, data, res) =>{
   );
 };
 // moderator remove user
-const  removeUser = (connection, userName, res)=> {
+const  removeUser = (connection, id, res)=> {
   connection.query(
-      `DELETE FROM user where user.name = '${userName}'`,
+      `DELETE FROM user where user.name = ${id}`,
       (err, results)=>{
         console.log(results);
-
-        res.send('remove succeeded: ' +id);
+        res.send('remove succeeded: ' + id);
       }
   )
 };
@@ -41,20 +40,20 @@ const removeStory =(connection, id, res)=>{
   connection.query(
       `UPDATE story
       SET content="This Content has been removed due to copy right issue or it is offensive to some groups", media =""
-      WHERE story_Id= "${id}"`,
+      WHERE story_Id= '${id}'`,
       (err,results)=>{
         console.log(results);
-        res.send('remove succeeded: ' +id);
+        res.send('remove succeeded: ' + id);
       }
   )
 };
 //remove comment
 
-const removeComment =(connection, id, res)=>{
+const removeComment = (connection, id, res)=>{
   connection.query(
       `UPDATE comments
-      SET comment="some comment has been removed"
-      WHERE comments.comment_Id ='${id}'`,
+       SET comment="some comment has been removed"
+       WHERE comments.comment_Id ='${id}'`,
       (err,result)=>{
         console.log(result);
         res.send('remove succeeded: ' +id);

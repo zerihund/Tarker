@@ -140,6 +140,7 @@ const showComment = (commentlist)=>{
 const addFunc = ()=>{
   document.querySelectorAll('.rmStory').forEach(x =>{
     x.addEventListener('click', evt =>{
+      console.log(evt.target.id);
       fetch('/node/removeStory', {
         method: 'POST',
         headers: new Headers({
@@ -157,6 +158,7 @@ const addFunc = ()=>{
 
   document.querySelectorAll('.rmComment').forEach(x =>{
     x.addEventListener('click', evt =>{
+      console.log(evt.target.id);
       fetch('/node/removeStory', {
         method: 'POST',
         headers: new Headers({
@@ -174,6 +176,7 @@ const addFunc = ()=>{
 
   document.querySelectorAll('.rmUser').forEach(x =>{
     x.addEventListener('click', evt =>{
+      console.log(evt.target.id);
       fetch('/node/removeStory', {
         method: 'POST',
         headers: new Headers({
