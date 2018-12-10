@@ -149,6 +149,9 @@ a{
     margin: auto 8px;
     border-radius: 0.5rem;
 }
+.outsider-dropdown-content{
+    display: none;
+}
 /*.login-dropdown{
     display: none;
 }*/
@@ -255,7 +258,10 @@ a{
 of the section, sign-up-container has to have its bottom padding
 equal to half the height of the button. specified in form-submit-btn*/
 .user-icon{
-    font-size: 0.6rem;
+     font-size: 0.6rem;
+ }
+#outsider-dropdown-btn{
+    display: none;
 }
 form{
     width: 100%;

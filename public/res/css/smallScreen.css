@@ -33,6 +33,7 @@
     display: block;
   }
 
+
   /*.login-dropdown-content{
     display: block;
     list-style-type: none;
@@ -45,6 +46,25 @@
     padding: 0 3px 5px 3px;
     margin: 0;
   }*/
+  .user-icon{
+    font-size: 0.6rem;
+    display:block;
+  }
+  #outsider-dropdown-btn{
+    display: block;
+  }
+  .outsider-dropdown-content{
+    display: block;
+    list-style-type: none;
+    width:120px;
+    border-radius: 0  0 5px 5px;
+    position: absolute;
+    top: 39px;
+    right: 0px;
+    z-index: 3;
+    padding: 0 3px 5px 3px;
+    margin: 0;
+  }
   .sign-up-form,.login-form{
     width: 100%;
   }

@@ -10,7 +10,7 @@
 {
   color: #fee6b8;
 }
-.login-dropdown-content{
+.login-dropdown-content,.outsider-dropdown-content{
   border: 1px solid #fee6b8;
 }
 
@@ -37,7 +37,7 @@ body{
   color: #aaaaaa;
 }
 .topnav,.sign-up-container,.login-container,
-.login-dropdown-content, .login-dropdown{
+.login-dropdown-content, .login-dropdown,.outsider-dropdown-content{
   background-color: #282f3f;
 }
 .pink-btn {
