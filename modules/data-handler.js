@@ -291,7 +291,7 @@ const upload = (connection, data, res)=>{
   const file = data[4];
   console.log(author +' '+ parent +' '+title + ' '+ file +' '+ story);
   const storyid = math.idGenerate();
-  console.log(`INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) VALUES ('${storyid}','${title}','${story}',${parent},'something here', null)`);
+  console.log(`INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) VALUES ('${storyid}','${title}','${story}','${parent}','something here', null)`);
   console.log(storyid);
   connection.query(
       //'INSERT INTO story (story_Id,content,parent_story,media,story_Flag) VALUES (12345,"heloolwo oid",14,"ddi",null)',

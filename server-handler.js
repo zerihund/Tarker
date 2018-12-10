@@ -185,7 +185,7 @@ const findChildren = (storybranch, res)=>{
 //get story from top to end
 //get parent story
 const findParent = (storybranch, res)=>{
-  if(storybranch[0].parent_story === 0){
+  if(storybranch[0].parent_story === '0'){
     familyTalk(storybranch, 0, res);
   }
   else{
