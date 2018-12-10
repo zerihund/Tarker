@@ -47,11 +47,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+            <state relative-caret-position="561">
+              <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
               <folding>
                 <element signature="e#82#421#0" />
-                <element signature="e#1617#2045#0" />
                 <element signature="e#1452#2875#0" />
               </folding>
             </state>
@@ -281,28 +280,7 @@
       <workItem from="1543997692077" duration="10628000" />
       <workItem from="1544232211870" duration="21407000" />
       <workItem from="1544354173356" duration="37749000" />
-      <workItem from="1544439062378" duration="13101000" />
-    </task>
-    <task id="LOCAL-00217" summary="getting the liked stories">
-      <created>1544366276944</created>
-      <option name="number" value="00217" />
-      <option name="presentableId" value="LOCAL-00217" />
-      <option name="project" value="LOCAL" />
-      <updated>1544366276944</updated>
-    </task>
-    <task id="LOCAL-00218" summary="fixing storybyid not working">
-      <created>1544366588944</created>
-      <option name="number" value="00218" />
-      <option name="presentableId" value="LOCAL-00218" />
-      <option name="project" value="LOCAL" />
-      <updated>1544366588944</updated>
-    </task>
-    <task id="LOCAL-00219" summary="fixing not passing correct story id">
-      <created>1544366644685</created>
-      <option name="number" value="00219" />
-      <option name="presentableId" value="LOCAL-00219" />
-      <option name="project" value="LOCAL" />
-      <updated>1544366644685</updated>
+      <workItem from="1544439062378" duration="13712000" />
     </task>
     <task id="LOCAL-00220" summary="fixing missing = at line 126">
       <created>1544366802805</created>
@@ -626,11 +604,32 @@
       <option name="project" value="LOCAL" />
       <updated>1544452115630</updated>
     </task>
-    <option name="localTasksCounter" value="266" />
+    <task id="LOCAL-00266" summary="finished getting user opinion.&#10;Added visual feedback for userclick">
+      <created>1544452470507</created>
+      <option name="number" value="00266" />
+      <option name="presentableId" value="LOCAL-00266" />
+      <option name="project" value="LOCAL" />
+      <updated>1544452470507</updated>
+    </task>
+    <task id="LOCAL-00267" summary="setting like value null to 0">
+      <created>1544452566465</created>
+      <option name="number" value="00267" />
+      <option name="presentableId" value="LOCAL-00267" />
+      <option name="project" value="LOCAL" />
+      <updated>1544452566465</updated>
+    </task>
+    <task id="LOCAL-00268" summary="setting like value null to 0">
+      <created>1544452807279</created>
+      <option name="number" value="00268" />
+      <option name="presentableId" value="LOCAL-00268" />
+      <option name="project" value="LOCAL" />
+      <updated>1544452807279</updated>
+    </task>
+    <option name="localTasksCounter" value="269" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257440000" />
+    <option name="totallyTimeSpent" value="258051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -692,8 +691,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="getting liked story to work&#10;change 120: execute to query" />
-    <MESSAGE value="story id" />
     <MESSAGE value="strory id thing again" />
     <MESSAGE value="getting the liked stories" />
     <MESSAGE value="fixing storybyid not working" />
@@ -717,7 +714,9 @@
     <MESSAGE value="testing getting user opinion" />
     <MESSAGE value="fixing getting user opinion" />
     <MESSAGE value="finishing getting user opinion" />
-    <option name="LAST_COMMIT_MESSAGE" value="finishing getting user opinion" />
+    <MESSAGE value="finished getting user opinion.&#10;Added visual feedback for userclick" />
+    <MESSAGE value="setting like value null to 0" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting like value null to 0" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -858,11 +857,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+        <state relative-caret-position="561">
+          <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
           <folding>
             <element signature="e#82#421#0" />
-            <element signature="e#1617#2045#0" />
             <element signature="e#1452#2875#0" />
           </folding>
         </state>

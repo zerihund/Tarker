@@ -21,12 +21,12 @@ const addFunctoLike = () =>{
       sendToDb(storyId, -1);
       evt.target.className = 'fa fa-caret-down clicked';
       document.getElementById(`+${evt.target.id.substring(1)}`).className = 'fa fa-caret-up unclicked';
-      document.getElementById(`dislikeAmountOf${x.id}`).innerText++;
+      document.getElementById(`dislikeAmountOf${storyId}`).innerText++;
     }
     else{
       sendToDb(storyId, 0);
       evt.target.className = 'fa fa-caret-down unclicked';
-      document.getElementById(`dislikeAmountOf${x.id}`).innerText--;
+      document.getElementById(`dislikeAmountOf${storyIdid}`).innerText--;
     }
   }));
 
@@ -37,12 +37,12 @@ const addFunctoLike = () =>{
       sendToDb(storyId, 1);
       evt.target.className = 'fa fa-caret-up clicked';
       document.getElementById(`-${evt.target.id.substring(1)}`).className = 'fa fa-caret-down unclicked';
-      document.getElementById(`likeAmountOf${x.id}`).innerText++;
+      document.getElementById(`likeAmountOf${storyId}`).innerText++;
     }
     else{
       sendToDb(storyId, 0);
       evt.target.className = 'fa fa-caret-up unclicked';
-      document.getElementById(`likeAmountOf${x.id}`).innerText--;
+      document.getElementById(`likeAmountOf${storyId}`).innerText--;
     }
   }));};
 
@@ -63,7 +63,7 @@ const checkOpinion = ()=>{
         document.getElementById(`-${x.id}`).className = 'fa fa-caret-down clicked';
       }
       else if(text === 'like'){
-        document.getElementById(`+${x.id}`).className = 'fa fa-caret-down clicked';
+        document.getElementById(`+${x.id}`).className = 'fa fa-caret-up clicked';
       }
     })
   })
