@@ -75,8 +75,9 @@
         <i class="fa fa-caret-down" onclick="dislikeOrNot()" title="123456789"></i>
         <span>600</span>
       </div>
-      <button class="add" id="add1">+</button>
-      <button class="see" id="see1">...</button>
+        <button class="remove" id="remove1">x</button>
+        <button class="add" id="add1">+</button>
+        <button class="see" id="see1">...</button>
       <div class="comment-box" id="xsee1">
         <div class="comment-container">
           <div class="comment">
@@ -141,8 +142,10 @@
       <i class="fa fa-caret-down" onclick="dislikeOrNot()"></i>
       <span>60</span>
     </div>
-    <button class="add" id="add2">+</button>
+      <button class="remove" id="remove2">x</button>
+      <button class="add" id="add2">+</button>
     <button class="see" id="see2">...</button>
+
     <div class="comment-box" id="xsee2">
       <div class="comment-container">
         <div class="comment">
@@ -204,7 +207,8 @@
       <i class="fa fa-caret-down" onclick="dislikeOrNot()"></i>
       <span>60</span>
     </div>
-    <button class="add" id="add3">+</button>
+      <button class="remove" id="remove3">x</button>
+      <button class="add" id="add3">+</button>
     <button class="see" id="see3">...</button>
     <div class="comment-box" id="xsee3">
       <div class="comment-container">
@@ -264,6 +268,7 @@
       <i class="fa fa-caret-down" onclick="dislikeOrNot()"></i>
       <span>60</span>
     </div>
+      <button class="remove" id="remove4">x</button>
     <button class="add" id="add4">+</button>
     <button class="see" id="see4">.</button>
     <div class="comment-box" id="xsee4">
@@ -329,6 +334,7 @@
       <i class="fa fa-caret-down" onclick="dislikeOrNot()"></i>
       <span>60</span>
     </div>
+      <button class="remove" id="remove5">x</button>
     <button class="add" id="add5">+</button>
     <button class="see" id="see5">...</button>
     <div class="comment-box" id="xsee5">
@@ -369,14 +375,16 @@
 
 <section id="popup1" class="modal modal2 ">
   <form id="14" enctype="multipart/form-data" method="post" class="follow_form">
+      <fieldset>
       <p>Post Story</p>
       <label id="unseen">Title</label>
       <input type="text" name="title" value="My Story">
       <label ></label>
-      <textarea name="status" id="post_story1" cols="30" rows="20" placeholder="write your story"></textarea>
+      <textarea name="status" id="post_story1" cols="60" rows="25" placeholder="write your story"></textarea>
       <label >Upload Media</label>
       <input type="file" name="media" accept="media"/>
       <input type="submit">
+      </fieldset>
   </form>
 </section>
 

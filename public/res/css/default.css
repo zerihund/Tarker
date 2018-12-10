@@ -117,11 +117,15 @@ a{
   font-family: Raleway-Light, sans-serif;
   width: 75px;
   font-size: 1rem;
+  color: wheat;
+  background-color:#282f3f;
+  border: solid #fee6b8 1px;
   padding: 2px 8px;
   margin-left: 4px;
   margin-right: 4px;
 }
 .search-btn{
+  width: 48px;
   height: 24px;
   margin-left: 4px;
   border:none;
@@ -426,6 +430,24 @@ h1{
   text-align: center;
 }
 
+.card .remove{
+  position: absolute;
+  bottom: -18px;
+  right: 150px;
+  background-color: #282f3f;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #c61766;
+}
+
+.add:hover{
+  text-shadow: 2px 2px 5px #eda948;
+  box-shadow: 1px 1px 100px #eda948;
+}
 .card .see{
   position: absolute;
   height: 100%;
@@ -563,19 +585,18 @@ h1{
   height: 400px;
   margin: auto;
   z-index: 5;
-  background-color: pink;
+  background-color: #282f3f;
+  color: #fee6b8;
 }
 aside{
   position: fixed;
   display: flex;
-  flex-direction: row;
   top: 42px;
   width: 100%;
   background-color: #aaaaaa;
   height: 48px;
   z-index: 2;
   padding-left: 8px;
-  padding-top: 6px;
 }
 
 aside form input{

@@ -171,6 +171,12 @@ const displayStoryByJson =(json)=>{
       document.getElementById('popup2').style.display='block';
       document.querySelector('.follow_form').id = 'f'+evt.target.id;
     });
+    // remove button for moderator
+
+    const remove =document.createElement('button')
+    remove.className ='remove';
+    remove.innerText = 'x';
+    remove.id ='remove'+ json[i].story_ID;
 
     const see = document.createElement('button');
     see.className = 'see';
@@ -221,6 +227,7 @@ const displayStoryByJson =(json)=>{
     container.appendChild(media_story);
     container.appendChild(impress);
     container.appendChild(add);
+    container.appendChild(remove);
     container.appendChild(see);
     container.appendChild(commentbox);
     main.appendChild(container);
