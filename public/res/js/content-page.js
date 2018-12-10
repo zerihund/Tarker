@@ -115,6 +115,7 @@ const getform = () =>{
           }
       })
     });
+      document.querySelector(`cmtBox${json[i].story_Id}`).innerHTML="";
   });
 })};
 
@@ -281,7 +282,7 @@ const displayStoryByJson =(json)=>{
     commentbox.appendChild(comment_container);
     commentbox.innerHTML +=
         `<form class="write-comment" enctype="multipart/form-data" id="fxsee${json[i].story_Id}">
-            <input type="text" name="usercomment">
+            <input type="text" name="usercomment" id="cmtBox${json[i].story_Id}">
             <button type="submit"> > </button>
           </form>`;
 

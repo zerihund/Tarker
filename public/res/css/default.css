@@ -647,6 +647,9 @@ aside{
     padding-left: 8px;
   padding-top: 6px;
 }
+.dropdown-option{
+    cursor: pointer;
+}
 
 aside form input{
     width: 2rem;
