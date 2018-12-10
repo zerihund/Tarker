@@ -141,12 +141,13 @@ const addFunc = ()=>{
   document.querySelectorAll('.rmStory').forEach(x =>{
     x.addEventListener('click', evt =>{
       console.log(evt.target.id);
+      const y = evt.target.id;
       fetch('/node/removeStory', {
         method: 'POST',
         headers: new Headers({
           'Content-Type': 'application/x-www-form-urlencoded',
         }),
-        body: `storyid=${evt.target.id}`
+        body: `storyid=${y}`
       })
       .then(res => res.text())
       .then(text => {
@@ -159,12 +160,13 @@ const addFunc = ()=>{
   document.querySelectorAll('.rmComment').forEach(x =>{
     x.addEventListener('click', evt =>{
       console.log(evt.target.id);
+      const y = evt.target.id;
       fetch('/node/removeStory', {
         method: 'POST',
         headers: new Headers({
           'Content-Type': 'application/x-www-form-urlencoded',
         }),
-        body: `commentid=${evt.target.id}`
+        body: `commentid=${y}`
       })
       .then(res => res.text())
       .then(text => {
@@ -177,12 +179,13 @@ const addFunc = ()=>{
   document.querySelectorAll('.rmUser').forEach(x =>{
     x.addEventListener('click', evt =>{
       console.log(evt.target.id);
+      const y = evt.target.id;
       fetch('/node/removeStory', {
         method: 'POST',
         headers: new Headers({
           'Content-Type': 'application/x-www-form-urlencoded',
         }),
-        body: `userid=${evt.target.id}`
+        body: `userid=${y}`
       })
       .then(res => res.text())
       .then(text => {
