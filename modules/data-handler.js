@@ -244,10 +244,9 @@ const checkOpinion = (connection, data, res) =>{
       (err, result) =>{
         console.log('+++++++++++++++++++++++++++++++');
         console.log(result);
-        if(result){
+        if(result.length !== 0){
           console.log('yep');
-          console.log(result[0].plus);
-          console.log(result[0].minus);
+          console.log(result[0]);
           if(result[0].plus > 0){
             res.send('1');
           }
