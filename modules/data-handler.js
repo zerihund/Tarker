@@ -236,6 +236,25 @@ const getOpinion = (connection, id)=>{
     )
   })
 };
+//check if user like/dislike story before
+const checkOpinion = (connection, data, res) =>{
+  console.log(`SELECT like_story FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= '${data[3]}'`);
+  connection.query(
+      `SELECT like_story FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= '${data[3]}'`,
+      (err, result) =>{
+        console.log(result);
+        if(result === undefined){
+          console.log('nope');
+          res.send('nope')
+        }
+        else{
+          console.log('yep');
+          res.send('yep');
+        }
+})
+};
+
+
 //put user like/dislike into views table
  const putOpinion= (connection, data) =>{
    //data[0]<1 means they are liking for the first time so insert
@@ -361,5 +380,6 @@ module.exports = {
   removeStory:removeStory,
   getlikedStory:getlikedStory,
   getChildrenStory:getChildrenStory,
-  getStoryByID:getStoryByID
+  getStoryByID:getStoryByID,
+  checkOpinion:checkOpinion
 };

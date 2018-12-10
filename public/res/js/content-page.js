@@ -38,9 +38,27 @@ const addFunctoLike = () =>{
     }
     else{
       sendToDb(storyId, 0);
-      evt.target.className = 'fa fa-caret-down unclicked'
+      evt.target.className = 'fa fa-caret-up unclicked'
     }
   }));};
+
+const checkOpinion = ()=>{
+  document.querySelectorAll('.card').forEach(x => {
+    fetch('/node/checkopinion', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }),
+      body: `storyid=${x.id}`
+    })
+    .then(res => {
+      return res.text()})
+    .then(text =>{
+      console.log(text);
+      console.log(x.id+' : '+text);
+    })
+  })
+};
 
 //add fetch to comment form
 const getform = () =>{
@@ -244,6 +262,7 @@ const displayStoryByJson =(json)=>{
   }
   getform();
   addFunctoLike();
+  checkOpinion();
 };
 
 //grab story from database-backend
