@@ -349,7 +349,7 @@ document.querySelector('#create').addEventListener('click',()=>{
   document.getElementById('popup1').style.display = 'block';
   const followfrm = document.querySelector('.follow_form');
   followfrm.id= `xadd0`;
-  followfrm[0].style.display = 'block';
+  followfrm[0].style.display = 'flex';
   document.getElementById('unseen').style.display = 'block';
 });
 //Todo: copy the for each and the fetch for the

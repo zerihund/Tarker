@@ -292,6 +292,7 @@ fieldset{
     width: 100%;
     height: 24px;
 }
+
 .form-center{
     text-align: center;
 }
@@ -445,7 +446,7 @@ h1{
   width: 30px;
   height: 30px;
   text-align: center;
-    background-color: #282f3f;
+    font-size: 20px;
 }
 
 .card .remove{
@@ -597,25 +598,25 @@ h1{
     margin: auto;
 }
 
-.follow_form{
-    display: block;
-    width: 320px;
+fieldset textarea{
+    width: 500px;
     height: 400px;
-    margin: auto;
-    z-index: 5;
-    background-color: pink;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
-    top: 15%;
+}
+#getstorybyidform ::placeholder ,fieldset ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #282f3f;
+    opacity: 0.7; /* Firefox */
+}
+
+#getstorybyidform ::placeholder ,fieldset ::placeholder { /* Internet Explorer 10-11 */
+    color: #282f3f;
+}
+
+#getstorybyidform ::placeholder ,fieldset ::placeholder  { /* Microsoft Edge */
+    color: #282f3f;
 }
 .follow_form{
-    display: block;
-    width: 320px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     margin: auto;
     z-index: 5;
     background-color: #282f3f;
@@ -633,11 +634,7 @@ h1{
     color:#282f3f;
     border:none;
     border-radius:3px;
-  display: block;
-  width: 320px;
-  height: 400px;
-  margin: auto;
-  z-index: 5;
+    z-index: 5;
 }
 aside{
     position: fixed;
