@@ -382,6 +382,20 @@ const comment = (connection, req, res)=>{
   )
 };
 
+const checkModerator = (connection, data, res)=>{
+  connection.query(
+      `SELECT * FROM moderator WHERE name = '${data[0]}' AND PASSWORD = '${data[1]}'`,
+      (err, result)=>{
+        if(result.length ===0){
+          res.send('allowed');
+        }
+        else{
+          res.send('forbidden');
+        }
+      }
+  )
+};
+
 module.exports = {
   connect:connect,
   insertUser: insertUser,
@@ -403,4 +417,5 @@ module.exports = {
   getStoryByID:getStoryByID,
   checkOpinion:checkOpinion,
   removeComment:removeComment,
+  checkModerator:checkModerator
 };

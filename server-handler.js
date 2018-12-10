@@ -365,19 +365,7 @@ app.post('/comment/', (req, res)=>{
   db.comment(connection, req, res);
 });
 
-// remove the user
-ap.post('/removeUser',(req,res)=>{
-  db.removeUser(connection,req.body.userid,res);
-})
-
-// remove the content and media and replace it in the data base by the moderator
-app.post('/removeStory',(req,res)=>{
-  db.removeStory(connection,req.body.storyid, res);
-});
-app.post('/removeComment',(req,res)=>{
-  db.removeComment(connection,req,res);
-})
-
+//get username for user
 app.get('/username', (req, res)=>{
   console.log(req.user);
   console.log(req.session);
@@ -391,7 +379,20 @@ app.post('/moderatorlog', (req, res)=>{
   const data = [
       req.body.name,
       req.body.password
-  ]
+  ];
+  db.checkModerator(connection, data, res);
+});
+
+//remove the user
+app.post('/removeUser',(req,res)=>{
+  db.removeUser(connection,req.body.userid,res);
+});
+//remove the content and media and replace it in the data base by the moderator
+app.post('/removeStory',(req,res)=>{
+  db.removeStory(connection,req.body.storyid, res);
+});
+app.post('/removeComment',(req,res)=>{
+  db.removeComment(connection,req.body.commentid,res);
 });
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
