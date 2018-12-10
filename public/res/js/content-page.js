@@ -51,8 +51,10 @@ const checkOpinion = ()=>{
       }),
       body: `storyid=${x.id}`
     })
-    .then(res => res.text())
+    .then(res => {
+      return res.text()})
     .then(text =>{
+      console.log(text);
       console.log(x.id+' : '+text);
     })
   })

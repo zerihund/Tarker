@@ -246,6 +246,7 @@ const checkOpinion = (connection, data, res) =>{
           res.send('nope')
         }
         else{
+          console.log('yep');
           res.send(result[0]);
         }
 })
