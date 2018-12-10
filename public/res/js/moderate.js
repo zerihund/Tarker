@@ -41,6 +41,7 @@ const populate = ()=>{
           console.log('get comment');
           console.log(commentlist);
           showComment(commentlist);
+          addFunc();
         }
       )
     })
@@ -123,5 +124,68 @@ const showComment = (commentlist)=>{
     card.appendChild(commenttext);
     card.appendChild(rmbutton);
     main.appendChild(card);
+  })
+};
+
+// app.post('/removeUser',(req,res)=>{
+//   db.removeUser(connection,req.body.userid,res);
+// });
+// //remove the content and media and replace it in the data base by the moderator
+// app.post('/removeStory',(req,res)=>{
+//   db.removeStory(connection,req.body.storyid, res);
+// });
+// app.post('/removeComment',(req,res)=>{
+//   db.removeComment(connection,req.body.commentid,res);
+// });
+const addFunc = ()=>{
+  document.querySelectorAll('.rmStory').forEach(x =>{
+    x.addEventListener('click', evt =>{
+      fetch('/node/removeStory', {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }),
+        body: `storyid=${evt.target.id}`
+      })
+      .then(res => res.text())
+      .then(text => {
+        console.log(text);
+        populate();
+      })
+    })
+  });
+
+  document.querySelectorAll('.rmComment').forEach(x =>{
+    x.addEventListener('click', evt =>{
+      fetch('/node/removeStory', {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }),
+        body: `commentid=${evt.target.id}`
+      })
+      .then(res => res.text())
+      .then(text => {
+        console.log(text);
+        populate();
+      })
+    })
+  });
+
+  document.querySelectorAll('.rmUser').forEach(x =>{
+    x.addEventListener('click', evt =>{
+      fetch('/node/removeStory', {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }),
+        body: `userid=${evt.target.id}`
+      })
+      .then(res => res.text())
+      .then(text => {
+        console.log(text);
+        populate();
+      })
+    })
   })
 };
