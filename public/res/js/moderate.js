@@ -16,14 +16,16 @@ document.querySelector('.login-form').addEventListener('submit', evt => {
     }
     else{
       document.getElementById('signIn-error').innerText = 'YOU ARE NOT SUPPOSED TO BE HERE'
+      populate();
     }
   })
 });
 
 const populate = ()=>{
-  fetch('/everything')
+  fetch('/userlist')
   .then(res => res.json())
   .then(json =>{
-
+    console.log('get user list');
+    console.log(json);
   })
 };
