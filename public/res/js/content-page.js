@@ -197,6 +197,12 @@ const displayStoryByJson =(json)=>{
       let dislikeBtnId =`-${json[i].story_Id}`;
       let likeAmountDisplay=`likeAmountOf${json[i].story_Id}`;
       let dislikeAmountDisplay=`dislikeAmountOf${json[i].story_Id}`;
+      if(json[i].like === null){
+        json[i].like = 0;
+      }
+    if(json[i].dislike === null){
+      json[i].dislike = 0;
+    }
 
       impress.innerHTML =
           `<i id='${likeBtnId}' class="fa fa-caret-up unclicked"></i>
