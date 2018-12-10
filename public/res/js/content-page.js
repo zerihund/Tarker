@@ -6,7 +6,7 @@ const sendToDb = (storyid, value) => {
       'Content-Type': 'application/x-www-form-urlencoded',
     }),
     //Todo:storyID must be changed to dynamic value, and also userId
-    body: `firstLike=${insertOrUpdateCounter}&userId=11&likeDatabaseValue=${value}&storyID=${storyid}`
+    body: `firstLike=6&userId=11&likeDatabaseValue=${value}&storyID=${storyid}`
   }).then(res => {
     console.log(res);
   })
@@ -170,9 +170,9 @@ const displayStoryByJson =(json)=>{
       let dislikeAmountDisplay=`dislikeAmountOf${json[i].story_Id}`;
 
       impress.innerHTML =
-          `<i id='${likeBtnId}' class="fa fa-caret-up unclicked" onclick="likeOrNot()"></i>
+          `<i id='${likeBtnId}' class="fa fa-caret-up unclicked"></i>
           <span id='${likeAmountDisplay}' >${json[i].like}</span>
-          <i id='${dislikeBtnId}' class="fa fa-caret-down unclicked" onclick="dislikeOrNot()"></i>
+          <i id='${dislikeBtnId}' class="fa fa-caret-down unclicked"></i>
           <span id='${dislikeAmountDisplay}' >${json[i].dislike}</span> <script src="res/js/contentLikes.js"></script>`;
       /** I put this function to run each time one of these are created*/
 
@@ -182,7 +182,7 @@ const displayStoryByJson =(json)=>{
     add.id = 'add'+json[i].story_Id;
     add.addEventListener('click',evt =>{
       console.log(evt.target.id);
-      document.getElementById('popup2').style.display='block';
+      document.getElementById('popup1').style.display='block';
       document.querySelector('.follow_form').id = 'f'+evt.target.id;
     });
     // remove button for moderator
@@ -236,7 +236,6 @@ const displayStoryByJson =(json)=>{
     container.appendChild(media_story);
     container.appendChild(impress);
     container.appendChild(add);
-    container.appendChild(remove);
     container.appendChild(see);
     container.appendChild(commentbox);
     main.appendChild(container);

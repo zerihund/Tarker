@@ -167,7 +167,6 @@ const getlikedStory = (connection, userid) =>{
           console.log('------l-i-k-e------');
           console.log(err);
           const y = math.random(results.length);
-          console.log(results[y].story_Id);
           resolve(results[y].story_Id);
         }
     )
@@ -290,14 +289,14 @@ const upload = (connection, data, res)=>{
   const title = data[2];
   const story = data[3];
   const file = data[4];
-  console.log(author +' '+ parent +' '+title + ' '+ story);
+  console.log(author +' '+ parent +' '+title + ' '+ file +' '+ story);
   const storyid = math.idGenerate();
-  console.log(`INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) VALUES ('${storyid}','${title}','${story}',${parent},'something here', null)`);
+  console.log(`INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag) VALUES ('${storyid}','${title}','${story}','${parent}','something here', null)`);
   console.log(storyid);
   connection.query(
       //'INSERT INTO story (story_Id,content,parent_story,media,story_Flag) VALUES (12345,"heloolwo oid",14,"ddi",null)',
       `INSERT INTO story (story_Id, title,content,parent_story,media,story_Flag)
-       VALUES ('${storyid}','${title}','${story}',${parent},'${file}', null);`
+       VALUES ('${storyid}','${title}','${story}','${parent}','${file}', null);`
        , (err, results)=>{
         connection.query(
             `INSERT INTO writes (user_Id,story_Id) VALUES (${author},'${storyid}')`
