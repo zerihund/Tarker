@@ -243,6 +243,7 @@ const checkOpinion = (connection, data, res) =>{
       (err, result) =>{
         console.log(result);
         if(result === undefined){
+          console.log('nope');
           res.send('nope')
         }
         else{
