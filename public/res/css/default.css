@@ -125,7 +125,7 @@ a{
   margin-right: 4px;
 }
 .search-btn{
-  width: 48px;
+  width: 90px;
   height: 24px;
   margin-left: 4px;
   border:none;
@@ -597,6 +597,7 @@ aside{
   height: 48px;
   z-index: 2;
   padding-left: 8px;
+  padding-top: 6px;
 }
 
 aside form input{
@@ -617,7 +618,13 @@ aside button{
 }
 
 .sign-up-container, .login-container{
-  background: #FFFFFF;
+  position: relative;
   opacity: 1;
   border-radius: 5px;
 }
+
+.sign-up-container img, .login-container img{
+  position: absolute;
+  top:-120px;
+}
+

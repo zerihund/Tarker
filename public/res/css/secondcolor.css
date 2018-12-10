@@ -7,11 +7,12 @@
   background-color: deeppink;
   color: #232323;
 }
-.sign-up-container,
+
 .login-container,
 .login-dropdown-content a,.login-dropdown
 {
-  color: #fee6b8;
+  color: #232323;
+  background-color: #FFFFFF;
 }
 .login-dropdown-content{
   border: 1px solid #fee6b8;
@@ -48,6 +49,8 @@ body{
 }
 .pink-text,.close:hover, .form-error{
   color: #c61766;
+  background-color: #FFFFFF;
+  border-radius: 2px;
 }
 .modal{
   background-color: rgb(255, 255, 255); /* Fallback color */
@@ -170,5 +173,5 @@ aside button:hover{
 
 .logo{
   color: #FFFFFF;
-  background: url(../media/logo/logo.png) black;
+  background: url(../media/logo/logo.png);
 }
