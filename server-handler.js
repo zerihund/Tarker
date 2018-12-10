@@ -185,18 +185,17 @@ const findChildren = (storybranch, res)=>{
 //get story from top to end
 //get parent story
 const findParent = (storybranch, res)=>{
-  if(storybranch[0].parent_story === '0'){
-    familyTalk(storybranch, 0, res);
-  }
-  else{
     db.getParentStory(connection,storybranch[0].story_Id)
     .then(results =>{
+      if((results.length === 0)){
+        familyTalk(storybranch, 0, res);
+      }
+      else{
       storybranch.unshift(results[0]);
       console.log('1111');
       findParent(storybranch, res);
-    })
-  }
-};
+    }
+})};
 
 //get comments
 const familyTalk = (storybranch, i, res)=>{
@@ -342,11 +341,20 @@ app.post('/opinion/', (req, res)=>{
   console.log(`user-> ${req.session.passport.user[0].id} ,did (${req.body.likeDatabaseValue}) for story-> ${req.body.storyID}`);
   const data =[
     req.body.firstLike,
-    req.body.userId,
+    req.session.passport.user[0].id,
     req.body.likeDatabaseValue,
     req.body.storyID
   ];
   db.putOpinion(connection,data);
+});
+
+app.post('/checkopinion', (req, res)=>{
+  console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+  console.log(req.body.storyid);
+  const data = [
+      req.session.passport.user[0].id,
+      req.body.storyid];
+  db.checkOpinion(connection, data, res);
 });
 
 //add comments to database

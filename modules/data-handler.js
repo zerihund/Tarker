@@ -236,28 +236,62 @@ const getOpinion = (connection, id)=>{
     )
   })
 };
+//check if user like/dislike story before
+const checkOpinion = (connection, data, res) =>{
+  console.log(`SELECT like_story FROM Views WHERE Views.user_Id = ${data[0]} && Views.story_Id= '${data[1]}'`);
+  connection.query(
+      `SELECT like_story FROM Views WHERE Views.user_Id = ${data[0]} && Views.story_Id= '${data[1]}'`,
+      (err, result) =>{
+        console.log('+++++++++++++++++++++++++++++++');
+        console.log(result);
+        if(result.length !== 0){
+          console.log('yep');
+          console.log(result[0]);
+          if(result[0].like_story > 0){
+            res.send('like');
+          }else{
+            res.send('hate');
+          }
+        }
+        else{
+          console.log('nope');
+          res.send('nope')
+        }
+})
+};
+
+
 //put user like/dislike into views table
  const putOpinion= (connection, data) =>{
    //data[0]<1 means they are liking for the first time so insert
    // else update because they have liked before
+   console.log(`SELECT * FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= '${data[3]}'`);
+   console.log(`INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,Views.view_count)
+                 VALUES(${data[1]},'${data[3]}',${data[2]}, 5)`);
+   console.log(`UPDATE Views
+                 SET Views.like_story = ${data[2]}
+                 WHERE Views.user_Id = ${data[1]} && Views.story_Id= '${data[3]}'`);
    connection.query(
-       `SELECT * FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= ${data[3]}`,
+       `SELECT * FROM Views WHERE Views.user_Id = ${data[1]} && Views.story_Id= '${data[3]}'`,
        (err, result) =>{
+         console.log(result);
           if(result.length === 0){
             connection.query(
                 `INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,Views.view_count)
-        VALUES(${data[1]},${data[3]},${data[2]}, 5)`,
+                 VALUES(${data[1]},'${data[3]}',${data[2]}, 5)`,
                 (err, results)=>{
+                  console.log('insert');
                   console.log(results);
                   return(results);
                 }
             )
           }
           else{
+            console.log('update');
             connection.query(
                 `UPDATE Views
-        SET Views.like_story = ${data[2]}
-        WHERE Views.user_Id = ${data[1]} && Views.story_Id= ${data[3]}`,
+                 SET Views.like_story = ${data[2]}
+                 WHERE Views.user_Id = ${data[1]} && Views.story_Id= '${data[3]}'`,
                 (err, results)=>{
                   console.log(results);
                   return(results);
@@ -352,5 +386,6 @@ module.exports = {
   removeStory:removeStory,
   getlikedStory:getlikedStory,
   getChildrenStory:getChildrenStory,
-  getStoryByID:getStoryByID
+  getStoryByID:getStoryByID,
+  checkOpinion:checkOpinion
 };

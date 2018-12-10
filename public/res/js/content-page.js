@@ -19,11 +19,17 @@ const addFunctoLike = () =>{
     const storyId  = evt.target.id.substring(1);
     if(evt.target.className === 'fa fa-caret-down unclicked'){
       sendToDb(storyId, -1);
-      evt.target.className = 'fa fa-caret-down clicked'
+      evt.target.className = 'fa fa-caret-down clicked';
+      if(document.getElementById(`+${storyId}`).className === 'fa fa-caret-up clicked'){
+        document.getElementById(`+${storyId}`).className = 'fa fa-caret-up unclicked';
+        document.getElementById(`+likeAmountOf${storyId}`).innerText--;
+      }
+      document.getElementById(`dislikeAmountOf${storyId}`).innerText--;
     }
     else{
       sendToDb(storyId, 0);
-      evt.target.className = 'fa fa-caret-down unclicked'
+      evt.target.className = 'fa fa-caret-down unclicked';
+      document.getElementById(`dislikeAmountOf${storyId}`).innerText++;
     }
   }));
 
@@ -32,13 +38,42 @@ const addFunctoLike = () =>{
     const storyId  = evt.target.id.substring(1);
     if(evt.target.className === 'fa fa-caret-up unclicked'){
       sendToDb(storyId, 1);
-      evt.target.className = 'fa fa-caret-up clicked'
+      evt.target.className = 'fa fa-caret-up clicked';
+      if(document.getElementById(`-${storyId}`).className === 'fa fa-caret-down clicked'){
+        document.getElementById(`-${storyId}`).className = 'fa fa-caret-down unclicked';
+        document.getElementById(`+dislikeAmountOf${storyId}`).innerText++;
+      }
+      document.getElementById(`likeAmountOf${storyId}`).innerText++;
     }
     else{
       sendToDb(storyId, 0);
-      evt.target.className = 'fa fa-caret-up unclicked'
+      evt.target.className = 'fa fa-caret-up unclicked';
+      document.getElementById(`likeAmountOf${storyId}`).innerText--;
     }
   }));};
+
+const checkOpinion = ()=>{
+  document.querySelectorAll('.card').forEach(x => {
+    fetch('/node/checkopinion', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }),
+      body: `storyid=${x.id}`
+    })
+    .then(res => {
+      return res.text()})
+    .then(text =>{
+      console.log(text);
+      if(text === 'hate'){
+        document.getElementById(`-${x.id}`).className = 'fa fa-caret-down clicked';
+      }
+      else if(text === 'like'){
+        document.getElementById(`+${x.id}`).className = 'fa fa-caret-up clicked';
+      }
+    })
+  })
+};
 
 //add fetch to comment form
 const getform = () =>{
@@ -168,12 +203,30 @@ const displayStoryByJson =(json)=>{
       let dislikeBtnId =`-${json[i].story_Id}`;
       let likeAmountDisplay=`likeAmountOf${json[i].story_Id}`;
       let dislikeAmountDisplay=`dislikeAmountOf${json[i].story_Id}`;
+      let like_value = 0;
+      let dislike_value = 0;
+      if(json[i].like === null){
+        console.log('12345');
+        like_value = 0;
+      }
+      else{
+        like_value = json[i].like
+      }
+      if(json[i].dislike === null){
+        console.log('67890');
+        dislike_value = 0;
+      }
+      else {
+        dislike_value = json[i].dislike
+      }
+
+      console.log(''+like_value+' '+dislike_value);
 
       impress.innerHTML =
           `<i id='${likeBtnId}' class="fa fa-caret-up unclicked"></i>
-          <span id='${likeAmountDisplay}' >${json[i].like}</span>
+          <span id='${likeAmountDisplay}' >${like_value}</span>
           <i id='${dislikeBtnId}' class="fa fa-caret-down unclicked"></i>
-          <span id='${dislikeAmountDisplay}' >${json[i].dislike}</span> <script src="res/js/contentLikes.js"></script>`;
+          <span id='${dislikeAmountDisplay}' >${dislike_value}</span> <script src="res/js/contentLikes.js"></script>`;
       /** I put this function to run each time one of these are created*/
 
     const add = document.createElement('button');
@@ -242,6 +295,7 @@ const displayStoryByJson =(json)=>{
   }
   getform();
   addFunctoLike();
+  checkOpinion();
 };
 
 //grab story from database-backend
