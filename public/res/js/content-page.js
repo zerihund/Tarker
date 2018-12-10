@@ -83,6 +83,20 @@ const getform = () =>{
   });
 })};
 
+const getRemove = () =>{
+  document.querySelectorAll('.remove').forEach(x => x.addEventListener('click', evt =>{
+    console.log(evt.target.id);
+    const id = evt.target.id.substring(6);
+    fetch('/node/removeStory', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }),
+      body: `storyid=${id}`
+    }).then(res => res.text()).then(text => console.log(text))
+  }))
+};
+
 //display story onto main
 const displayStoryByJson =(json)=>{
   main = document.querySelector('main');
@@ -173,11 +187,6 @@ const displayStoryByJson =(json)=>{
     });
     // remove button for moderator
 
-    const remove =document.createElement('button')
-    remove.className ='remove';
-    remove.innerText = 'x';
-    remove.id ='remove'+ json[i].story_ID;
-
     const see = document.createElement('button');
     see.className = 'see';
     see.innerText = '...';
@@ -246,10 +255,10 @@ const grabStory = ()=>{
     displayStoryByJson(json);
   })
 };
-
-// fetch('/node/username', )
-// .then(res=>res.text())
-// .then(text =>document.getElementById('username').innerText = text);
+//display user name on page
+fetch('/node/username', )
+.then(res=>res.text())
+.then(text =>document.getElementById('username').innerText = text);
 //init functions: get story to display inside main tag
 grabStory();
 window.addEventListener('click',(evt)=>{
@@ -266,17 +275,13 @@ window.addEventListener('click',(evt)=>{
 document.querySelector('#random').addEventListener('click',()=>{
   grabStory();
   document.querySelector('#liked').className = 'off';
-  document.querySelector('#liked').disabled = false;
   document.querySelector('#random').className = 'on';
-  document.querySelector('#random').disabled = true;
 });
 //add story to chosen story
 document.querySelector('#liked').addEventListener('click',()=>{
   console.log('get liked story');
   document.querySelector('#liked').className = 'on';
-  document.querySelector('#liked').disabled = true;
   document.querySelector('#random').className = 'off';
-  document.querySelector('#random').disabled = false;
   fetch('/node/likestory', {
     method: 'get'
   })
@@ -364,9 +369,10 @@ const uploadMedia = (type, evt)=>{
   console.log('title: '+settings.body.get('title'));
   console.log('story: '+settings.body.get('story'));
 
-  // fetch('/node/upload'+type+'/', settings)
-  // .then((res) => {
-  // });
+  fetch('/node/upload'+type+'/', settings)
+  .then((res) => {
+    document.getElementById('popup1').style.display = 'none';
+  });
 };
 
 

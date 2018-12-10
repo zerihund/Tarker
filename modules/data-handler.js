@@ -36,14 +36,14 @@ const  removeUser = (connection, userName,)=> {
 };
 
 //remove a story content
-const removeStory =(connection, title)=>{
+const removeStory =(connection, id, res)=>{
   connection.query(
       `UPDATE story
-      SET content="This Content has been removed due to copy right issue or it is offensive to some groups",media =""
-      WHERE title= "${title}"`,
-      (err,results)=>{
+      SET content="This Content has been removed due to copy right issue or it is offensive to some groups", media =""
+      WHERE story_Id= "${id}"`,
+        (err,results)=>{
         console.log(results);
-        return(results);
+        res.send('remove successed');
       }
   )
 };
