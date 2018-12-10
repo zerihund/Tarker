@@ -81,6 +81,7 @@ const getform = () =>{
   .forEach(x => {
     x.addEventListener('submit',evt =>{
       evt.preventDefault();
+      document.querySelector(`cmtBox${json[i].story_Id}`).value=" ";
       console.log('xxxxxx');
       const storyid = evt.target.id.substring(5);
       const userid = document.querySelector('main').id;
@@ -115,7 +116,7 @@ const getform = () =>{
           }
       })
     });
-      document.querySelector(`cmtBox${json[i].story_Id}`).value=" ";
+      //document.querySelector(`cmtBox${json[i].story_Id}`).value=" ";
   });
 })};
 
