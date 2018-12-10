@@ -22,7 +22,7 @@ document.querySelector('.login-form').addEventListener('submit', evt => {
 });
 
 const populate = ()=>{
-  fetch('/userlist')
+  fetch('/node/userlist')
   .then(res => res.json())
   .then(json =>{
     console.log('get user list');
