@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<link rel="stylesheet" href="res/css/reset.css">-->
     <link rel="stylesheet" href="res/css/default.css">
-    <!--<link rel="stylesheet" href="res/css/color.css">-->
     <link rel="stylesheet" href="res/css/secondcolor.css">
     <link rel="stylesheet" href="res/css/mediumScreen.css">
     <link rel="stylesheet" href="res/css/smallScreen.css">
@@ -22,35 +21,52 @@
 
 <!-- <div style="width: 30px; display: block">Test</div> -->
 <div class="topnav">
-    <div class="topnav-left">
-      <p class="logo">THE ARCHIVE</p>
-    </div>
-    <div class="topnav-right">
-        <div id="login-dropdown" class="login-dropdown">
-            <ul class="login-dropdown-content">
-                <li href="#smth">some function</li>
-                <li href="#smth">some function</li>
-            </ul>
 
-        </div>
-        <img id="profilepic" src="res/media/profilepic/default.png" alt="profile pic">
-        <p id="username">Alexander</p>
-        <button id="user-icon" class="user-icon">
-            <i class="fa fa-caret-down fa-2x " aria-hidden="true"></i>
-        </button>
+    <div class="topnav-right">
+
+
     </div>
 </div>
-<aside>
-  <button id="user">USER</button>
-  <button id="liked">STORY</button>
-  <button id="create">COMMENTS</button>
-</aside>
-<main>
 
-</main>
+<section id="popup" class="modal modal1" style="display: block">
+    <div  class="login-container animate">
+        <span class="close" id="login-close">&times;</span>
+        <img src="res/media/logo/logo.png" alt="logo" style="width: 300px">
+
+        <form  class="login-form" action="/" method="post">
+
+            <fieldset class="input-fieldset">
+                <label>USER NAME</label>
+                <input type="text" name="username" >
+                <span class="login-error"></span>
+            </fieldset>
+
+            <fieldset class="input-fieldset">
+                <label>PASSWORD</label>
+                <input type="password" name="password" >
+                <span  class="login-error" id ='signIn-error'></span>
+
+            </fieldset>
+
+            <fieldset class="form-center btn-bottom-edge">
+
+                <input type="submit" class="form-submit-btn btn-sign-in gray-btn" name="sign-up" value="Sign In" id="signInButton">
+            </fieldset>
+
+        </form>
+    </div>
+</section>
+
+
+
+<aside>
+    <button id="user">User</button>
+    <button id="story">Story</button>
+    <button id="comment">Comment</button>
+
+</aside>
+
+
 <script src="res/js/moderate.js"></script>
 </body>
 </html>
-/**What I did since i don't have access to the
-
-*/
