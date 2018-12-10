@@ -249,7 +249,14 @@ const checkOpinion = (connection, data, res) =>{
         }
         else{
           console.log('yep');
-          res.send('yep');
+          console.log(result[0].plus);
+          console.log(result[0].minus);
+          if(result[0].plus > 0){
+            res.send('1');
+          }
+          else if(result[0].minus < 0){
+            res.send('-1');
+          }
         }
 })
 };
