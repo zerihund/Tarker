@@ -398,9 +398,9 @@ app.get('/commentlist/', (req, res)=>{
 });
 //remove the user
 app.post('/removeUser',(req,res)=>{
-  console.log(req.body);
-  console.log(req.body.userid);
-  db.removeUser(connection, req.body.userid, res);
+  const y = req.body;
+  console.log(y.userid);
+  db.removeUser(connection, y.userid, res);
 });
 //remove the content and media and replace it in the data base by the moderator
 app.post('/removeStory',(req,res)=>{
