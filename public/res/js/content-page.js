@@ -19,7 +19,8 @@ const addFunctoLike = () =>{
     const storyId  = evt.target.id.substring(1);
     if(evt.target.className === 'fa fa-caret-down unclicked'){
       sendToDb(storyId, -1);
-      evt.target.className = 'fa fa-caret-down clicked'
+      evt.target.className = 'fa fa-caret-down clicked';
+      document.getElementById(`+${evt.target.id.substring(1)}`).className = 'fa fa-caret-up unclicked';
     }
     else{
       sendToDb(storyId, 0);
@@ -32,7 +33,8 @@ const addFunctoLike = () =>{
     const storyId  = evt.target.id.substring(1);
     if(evt.target.className === 'fa fa-caret-up unclicked'){
       sendToDb(storyId, 1);
-      evt.target.className = 'fa fa-caret-up clicked'
+      evt.target.className = 'fa fa-caret-up clicked';
+      document.getElementById(`-${evt.target.id.substring(1)}`).className = 'fa fa-caret-up unclicked';
     }
     else{
       sendToDb(storyId, 0);

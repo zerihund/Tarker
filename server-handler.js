@@ -342,7 +342,7 @@ app.post('/opinion/', (req, res)=>{
   console.log(`user-> ${req.session.passport.user[0].id} ,did (${req.body.likeDatabaseValue}) for story-> ${req.body.storyID}`);
   const data =[
     req.body.firstLike,
-    req.body.userId,
+    req.session.passport.user[0].id,
     req.body.likeDatabaseValue,
     req.body.storyID
   ];
