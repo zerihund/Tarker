@@ -185,18 +185,17 @@ const findChildren = (storybranch, res)=>{
 //get story from top to end
 //get parent story
 const findParent = (storybranch, res)=>{
-  if(storybranch[0].parent_story === '0'){
-    familyTalk(storybranch, 0, res);
-  }
-  else{
     db.getParentStory(connection,storybranch[0].story_Id)
     .then(results =>{
+      if((results.length === 0)){
+        familyTalk(storybranch, 0, res);
+      }
+      else{
       storybranch.unshift(results[0]);
       console.log('1111');
       findParent(storybranch, res);
-    })
-  }
-};
+    }
+})};
 
 //get comments
 const familyTalk = (storybranch, i, res)=>{
