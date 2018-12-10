@@ -197,18 +197,30 @@ const displayStoryByJson =(json)=>{
       let dislikeBtnId =`-${json[i].story_Id}`;
       let likeAmountDisplay=`likeAmountOf${json[i].story_Id}`;
       let dislikeAmountDisplay=`dislikeAmountOf${json[i].story_Id}`;
+      let like_value = 0;
+      let dislike_value = 0;
       if(json[i].like === null){
-        json[i].like = 0;
+        console.log('12345');
+        like_value = 0;
       }
-    if(json[i].dislike === null){
-      json[i].dislike = 0;
-    }
+      else{
+        like_value = json[i].like
+      }
+      if(json[i].dislike === null){
+        console.log('67890');
+        dislike_value = 0;
+      }
+      else {
+        dislike_value = json[i].dislike
+      }
+
+      console.log(''+like_value+' '+dislike_value);
 
       impress.innerHTML =
           `<i id='${likeBtnId}' class="fa fa-caret-up unclicked"></i>
-          <span id='${likeAmountDisplay}' >${json[i].like}</span>
+          <span id='${likeAmountDisplay}' >${like_value}</span>
           <i id='${dislikeBtnId}' class="fa fa-caret-down unclicked"></i>
-          <span id='${dislikeAmountDisplay}' >${json[i].dislike}</span> <script src="res/js/contentLikes.js"></script>`;
+          <span id='${dislikeAmountDisplay}' >${dislike_value}</span> <script src="res/js/contentLikes.js"></script>`;
       /** I put this function to run each time one of these are created*/
 
     const add = document.createElement('button');
