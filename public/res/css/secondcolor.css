@@ -14,14 +14,17 @@
   color: #232323;
   background-color: #FFFFFF;
 }
-.login-dropdown-content{
-  border: 1px solid #fee6b8;
-}
 
 .user-icon{
   color: #FFFFFF;
   background-color: #232323;
   border: none;
+}
+.login-dropdown-content,
+.outsider-dropdown-content{
+  color: #FFFFFF;
+  background-color: #232323;
+  border: 1px solid #FFFFFF;
 }
 body{
   background-color: #BABABA;
