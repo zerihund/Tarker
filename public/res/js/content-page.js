@@ -55,7 +55,12 @@ const checkOpinion = ()=>{
       return res.text()})
     .then(text =>{
       console.log(text);
-      console.log(x.id+' : '+text);
+      if(text === 'hate'){
+        document.getElementById(`-${x.id}`).className = 'fa fa-caret-down clicked';
+      }
+      else if(text === 'like'){
+        document.getElementById(`+${x.id}`).className = 'fa fa-caret-down clicked';
+      }
     })
   })
 };
