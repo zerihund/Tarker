@@ -22,7 +22,7 @@ const addFunctoLike = () =>{
       evt.target.className = 'fa fa-caret-down clicked';
       if(document.getElementById(`+${storyId}`).className === 'fa fa-caret-up clicked'){
         document.getElementById(`+${storyId}`).className = 'fa fa-caret-up unclicked';
-        document.getElementById(`+likeAmoutOf${storyId}`).innerText--;
+        document.getElementById(`+likeAmountOf${storyId}`).innerText--;
       }
       document.getElementById(`dislikeAmountOf${storyId}`).innerText--;
     }
