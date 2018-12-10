@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/res/js/content-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/js/content-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/data-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/data-handler.js" afterDir="false" />
     </list>
     <list id="3c9e7bb2-7bdb-4887-afeb-1e245b7afc96" name="Revert: " comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="184" column="46" selection-start-line="184" selection-start-column="46" selection-end-line="184" selection-end-column="46" />
+            <state relative-caret-position="304">
+              <caret line="372" column="35" selection-start-line="372" selection-start-column="35" selection-end-line="372" selection-end-column="35" />
               <folding>
                 <element signature="e#1452#2875#0" />
               </folding>
@@ -48,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="308" column="22" selection-start-line="308" selection-start-column="18" selection-end-line="308" selection-end-column="22" />
+            <state relative-caret-position="292">
+              <caret line="298" column="71" selection-start-line="298" selection-start-column="71" selection-end-line="298" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -120,7 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>email_err</find>
       <find>Alex</find>
       <find>likeds</find>
       <find>comme</find>
@@ -148,6 +146,7 @@
       <find>.search-</find>
       <find>remove</find>
       <find>send</find>
+      <find>upload</find>
       <find>author</find>
       <find>username</find>
     </findStrings>
@@ -181,9 +180,9 @@
         <option value="$PROJECT_DIR$/public/content.html" />
         <option value="$PROJECT_DIR$/public/res/css/default.css" />
         <option value="$PROJECT_DIR$/public/res/css/secondcolor.css" />
-        <option value="$PROJECT_DIR$/modules/data-handler.js" />
         <option value="$PROJECT_DIR$/server-handler.js" />
         <option value="$PROJECT_DIR$/public/res/js/content-page.js" />
+        <option value="$PROJECT_DIR$/modules/data-handler.js" />
       </list>
     </option>
   </component>
@@ -244,6 +243,14 @@
               <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="res" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="media" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="StoryTeller" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="res" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="media" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="logo" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -316,14 +323,7 @@
       <workItem from="1543997692077" duration="10628000" />
       <workItem from="1544232211870" duration="21407000" />
       <workItem from="1544354173356" duration="37749000" />
-      <workItem from="1544439062378" duration="4494000" />
-    </task>
-    <task id="LOCAL-00188" summary="optimizing sign up sign in things">
-      <created>1544360936664</created>
-      <option name="number" value="00188" />
-      <option name="presentableId" value="LOCAL-00188" />
-      <option name="project" value="LOCAL" />
-      <updated>1544360936664</updated>
+      <workItem from="1544439062378" duration="5464000" />
     </task>
     <task id="LOCAL-00189" summary="getting started on getting liked story">
       <created>1544361128697</created>
@@ -661,11 +661,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544443089096</updated>
     </task>
-    <option name="localTasksCounter" value="237" />
+    <task id="LOCAL-00237" summary="fixed adding story not work&#10;fixed always user hh is the author">
+      <created>1544443680330</created>
+      <option name="number" value="00237" />
+      <option name="presentableId" value="LOCAL-00237" />
+      <option name="project" value="LOCAL" />
+      <updated>1544443680330</updated>
+    </task>
+    <option name="localTasksCounter" value="238" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248833000" />
+    <option name="totallyTimeSpent" value="249803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -673,7 +680,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.22386895" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.22386895" />
       <window_info anchor="bottom" id="File Transfer" order="0" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
@@ -683,7 +690,7 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49867898" visible="true" weight="0.23655914" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49867898" visible="true" weight="0.04608295" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.501321" side_tool="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -727,7 +734,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed sign in thing&#10;fixing getting parent story error" />
     <MESSAGE value="fixed sign in thing&#10;fixing getting parent story error&#10;adding a small check for session in front end" />
     <MESSAGE value="fixed sign in thing&#10;fixing getting parent story error&#10;added a small check for session in front end&#10;added some flavor text on the front end" />
     <MESSAGE value="fixed jsonp bug on content-page.js" />
@@ -752,7 +758,8 @@
     <MESSAGE value="revert some changes overriden by merge" />
     <MESSAGE value="fixed bugs when logged in" />
     <MESSAGE value="fixed like/dislike bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed like/dislike bug" />
+    <MESSAGE value="fixed adding story not work&#10;fixed always user hh is the author" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed adding story not work&#10;fixed always user hh is the author" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -867,20 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="308" column="22" selection-start-line="308" selection-start-column="18" selection-end-line="308" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2679">
-          <caret line="354" column="45" selection-start-line="354" selection-start-column="45" selection-end-line="354" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
@@ -891,13 +884,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server-handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2679">
+          <caret line="354" column="45" selection-start-line="354" selection-start-column="45" selection-end-line="354" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="184" column="46" selection-start-line="184" selection-start-column="46" selection-end-line="184" selection-end-column="46" />
+        <state relative-caret-position="304">
+          <caret line="372" column="35" selection-start-line="372" selection-start-column="35" selection-end-line="372" selection-end-column="35" />
           <folding>
             <element signature="e#1452#2875#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="298" column="71" selection-start-line="298" selection-start-column="71" selection-end-line="298" selection-end-column="71" />
         </state>
       </provider>
     </entry>
