@@ -34,11 +34,11 @@ const addFunctoLike = () =>{
     if(evt.target.className === 'fa fa-caret-up unclicked'){
       sendToDb(storyId, 1);
       evt.target.className = 'fa fa-caret-up clicked';
-      document.getElementById(`-${evt.target.id.substring(1)}`).className = 'fa fa-caret-up unclicked';
+      document.getElementById(`-${evt.target.id.substring(1)}`).className = 'fa fa-caret-down unclicked';
     }
     else{
       sendToDb(storyId, 0);
-      evt.target.className = 'fa fa-caret-up unclicked'
+      evt.target.className = 'fa fa-caret-down unclicked'
     }
   }));};
 
