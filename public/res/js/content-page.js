@@ -81,7 +81,6 @@ const getform = () =>{
   .forEach(x => {
     x.addEventListener('submit',evt =>{
       evt.preventDefault();
-      document.querySelector(`cmtBox${json[i].story_Id}`).value=" ";
       console.log('xxxxxx');
       const storyid = evt.target.id.substring(5);
       const userid = document.querySelector('main').id;
@@ -116,7 +115,6 @@ const getform = () =>{
           }
       })
     });
-      //document.querySelector(`cmtBox${json[i].story_Id}`).value=" ";
   });
 })};
 
@@ -283,7 +281,7 @@ const displayStoryByJson =(json)=>{
     commentbox.appendChild(comment_container);
     commentbox.innerHTML +=
         `<form class="write-comment" enctype="multipart/form-data" id="fxsee${json[i].story_Id}">
-            <input type="text" name="usercomment" id="cmtBox${json[i].story_Id}">
+            <input type="text" name="usercomment">
             <button type="submit"> > </button>
           </form>`;
 
