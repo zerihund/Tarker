@@ -236,7 +236,6 @@ const displayStoryByJson =(json)=>{
     container.appendChild(media_story);
     container.appendChild(impress);
     container.appendChild(add);
-    container.appendChild(remove);
     container.appendChild(see);
     container.appendChild(commentbox);
     main.appendChild(container);
