@@ -39,8 +39,8 @@ const addFunctoLike = () =>{
     if(evt.target.className === 'fa fa-caret-up unclicked'){
       sendToDb(storyId, 1);
       evt.target.className = 'fa fa-caret-up clicked';
-      if(document.getElementById(`+${storyId}`).className === 'fa fa-caret-down clicked'){
-        document.getElementById(`+${storyId}`).className = 'fa fa-caret-down unclicked';
+      if(document.getElementById(`-${storyId}`).className === 'fa fa-caret-down clicked'){
+        document.getElementById(`-${storyId}`).className = 'fa fa-caret-down unclicked';
         document.getElementById(`+dislikeAmountOf${storyId}`).innerText++;
       }
       document.getElementById(`likeAmountOf${storyId}`).innerText++;
