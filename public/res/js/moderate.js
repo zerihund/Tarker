@@ -33,6 +33,14 @@ const populate = ()=>{
     .then(story => {
       console.log('get story list');
       console.log(story);
+
+      fetch('/node/commentlist/')
+      .then(res=>res.json())
+      .then(commentlist =>{
+          console.log('get comment');
+          console.log(commentlist);
+        }
+      )
     })
   })
 };
