@@ -405,6 +405,24 @@ const getUser = (connection, res)=>{
   )
 };
 
+const getAllStory = (connection, res)=>{
+  connection.query(
+      'SELECT story_Id, content, media FROM story',
+      (err, result)=>{
+        res.send(result);
+      }
+  )
+};
+
+const getAllComment = (connection, res)=>{
+  connection.query(
+      'SELECT comment_Id, comment FROM comments',
+      (err, result)=>{
+        res.send(result);
+      }
+  )
+};
+
 module.exports = {
   connect:connect,
   insertUser: insertUser,
@@ -427,5 +445,7 @@ module.exports = {
   checkOpinion:checkOpinion,
   removeComment:removeComment,
   checkModerator:checkModerator,
-  getUser:getUser
+  getUser:getUser,
+  getAllStory:getAllStory,
+  getAllComment:getAllComment
 };

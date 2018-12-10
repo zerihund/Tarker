@@ -386,6 +386,16 @@ app.post('/moderatorlog', (req, res)=>{
 app.get('/userlist/', (req, res)=>{
   db.getUser(connection, res);
 });
+
+//get storylist
+app.get('/storylist/', (req, res)=>{
+  db.getAllStory(connection, res);
+});
+
+//get list of all comments
+app.get('/commentlist/', (req, res)=>{
+  db.getAllComment(connection, res);
+});
 //remove the user
 app.post('/removeUser',(req,res)=>{
   db.removeUser(connection,req.body.userid,res);
