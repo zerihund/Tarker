@@ -70,8 +70,6 @@ const showStory = (story)=>{
   main.innerHTML ='';
   story.forEach(x => {
     const card = document.createElement('div');
-    const rmbutton = document.createElement('button');
-
     const media_story = document.createElement('p');
     media_story.className = 'media-story';
     if(x.media !== null){
@@ -94,11 +92,16 @@ const showStory = (story)=>{
         media_story.innerHTML = x.content;
       }
     }
+    else{
+      media_story.innerHTML = x.content;
+    }
+
+    const rmbutton = document.createElement('button');
     rmbutton.className = 'rmStory';
     rmbutton.id = x.story_Id;
     rmbutton.innerText = 'remove';
 
-    card.appendChild(username);
+    card.appendChild(media_story);
     card.appendChild(rmbutton);
     main.appendChild(card);
   })
