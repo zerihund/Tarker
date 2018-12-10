@@ -433,6 +433,20 @@ h1{
     text-align: center;
 }
 
+.card .remove{
+  position: absolute;
+  bottom: -18px;
+  right: 150px;
+  background-color: #282f3f;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #c61766;
+}
+
 .add:hover{
     text-shadow: 2px 2px 5px #eda948;
     box-shadow: 1px 1px 100px #eda948;
