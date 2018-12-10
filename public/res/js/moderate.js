@@ -70,31 +70,12 @@ const showStory = (story)=>{
   main.innerHTML ='';
   story.forEach(x => {
     const card = document.createElement('div');
-    const username = document.createElement('p');
-    username.innerText = x.name;
     const rmbutton = document.createElement('button');
-    rmbutton.className = 'rmStory';
-    rmbutton.id = x.story_Id;
-    rmbutton.innerText = 'remove';
 
-    card.appendChild(username);
-    card.appendChild(rmbutton);
-    main.appendChild(card);
-  })
-};
-
-const showComment = (commentlist)=>{
-  const main = document.getElementById('commentlist');
-  main.innerHTML ='';
-  commentlist.forEach(x => {
-    const card = document.createElement('div');
     const media_story = document.createElement('p');
     media_story.className = 'media-story';
     if(x.media !== null){
       if(x.media.substring(0,3) === 'img'){
-        //const img = document.createElement('img');
-        // img.src = 'res/media/'+json[i].media;
-        // media_story.appendChild(img);
         media_story.innerHTML = `<img src="res/media/${x.media}" alt="cake">${x.content}`;
       }
       else if(x.media.substring(0,3) === 'bgm'){
@@ -113,16 +94,30 @@ const showComment = (commentlist)=>{
         media_story.innerHTML = x.content;
       }
     }
-    else{
-      media_story.innerHTML = x.content;
-    }
-    const rmbutton = document.createElement('button');
-    rmbutton.className = 'rmComment';
-    rmbutton.id = x.user_Id;
+    rmbutton.className = 'rmStory';
+    rmbutton.id = x.story_Id;
     rmbutton.innerText = 'remove';
 
-    card.appendChild(media_story);
     card.appendChild(username);
+    card.appendChild(rmbutton);
+    main.appendChild(card);
+  })
+};
+
+const showComment = (commentlist)=>{
+  const main = document.getElementById('commentlist');
+  main.innerHTML ='';
+  commentlist.forEach(x => {
+    const card = document.createElement('div');
+    const commenttext = document.createElement('p');
+    commenttext.innerText = x.comment;
+
+    const rmbutton = document.createElement('button');
+    rmbutton.className = 'rmComment';
+    rmbutton.id = x.comment_Id;
+    rmbutton.innerText = 'remove';
+
+    card.appendChild(commenttext);
     card.appendChild(rmbutton);
     main.appendChild(card);
   })
