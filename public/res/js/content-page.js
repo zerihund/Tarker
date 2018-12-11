@@ -134,8 +134,9 @@ const displayStoryByJson =(json)=>{
     storyid.innerText = json[i].story_Id;
     storyid.className = 'storyid';
     storyid.addEventListener('click',evt =>{
-      document.getElementById('hidden-unseen').value = evt.target.innerText;
-      document.getElementById('hidden-unseen').select();
+      console.log(evt.target.id + ' get clicked');
+      document.querySelector('search-input').value = evt.target.innerText;
+      document.querySelector('search-input').select();
       document.execCommand('copy');
     });
     container.appendChild(storyid);
