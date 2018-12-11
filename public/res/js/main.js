@@ -13,7 +13,6 @@ const grabStory = ()=>{
       const container = document.createElement('div');
       container.id = json[i].story_Id;
       container.className = 'card';
-
       //writer and time-----------------------------------------
       const author_date = document.createElement('div');
       author_date.className = 'author-date';
@@ -139,7 +138,6 @@ document.querySelector('#login-close').onclick = (event)=> {
   }
 };
  */
-
 //toggles the mobile dropdown menu on or off
 const dropdownMenu = document.querySelector('.outsider-dropdown-content');
 const dropdownButton =document.querySelector('#outsider-dropdown-btn');

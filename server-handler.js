@@ -1,5 +1,4 @@
 'use strict';
-//----------------------------------------------------------------------------------------
 //set up modules and necessary plugins
 require('dotenv').config();
 const express = require('express');
@@ -24,13 +23,9 @@ let MemoryStore = session.MemoryStore;
 const cookieParser = require('cookie-parser');
 //nodeJs builtin module, we might need to use this one
 const wilson = require('wilson-score');
-//const contentGiver = require('./modules/content');
-//---------------------------------------------------------------------------------------
-//database thing
+//database module
 const db = require('./modules/data-handler');
 const connection = db.connect();
-
-//-----------------------------------------------------------------------------------------
 //concerning passport
 //set up passport and log in procedure. also session
 app.use(session({
@@ -42,31 +37,16 @@ app.use(session({
   store: new MemoryStore(),
   cookie: { secure: true, maxAge:8640000000 }
 }));
-
 app.use(passport.initialize());
 app.use(passport.session());
-
-// app.all('*', (req, res, next)=>{
-//   next();
-// });
 
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
-
 passport.deserializeUser(function(user, done) {
-  /*done(err, user);*/
   done(null,user);
 });
-
-// app.all('*', (req, res, next)=>{
-//   console.log(' ');
-//   console.log(' ');
-//   console.log(req.session);
-//   //console.log(req.session.passport.user);
-//   next();
-// });
-
+//checking if someone wants to the content page
 app.all('/content', (req, res, next)=>{
   console.log('   ');
   console.log('   ');
@@ -118,8 +98,6 @@ app.post('/check/', (req, res)=>{
   console.log(req);
   res.send(':v')
 });
-//----------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------
 //concerning users
 //add user to user database
 app.post('/signup/',(req, res)=>{
@@ -131,7 +109,6 @@ app.post('/signup/',(req, res)=>{
   ];
   db.insertUser(connection, data, res);
 });
-
 //check user exists
 app.post('/usercheck', (req, res)=>{
   db.checkUser(connection, req.body.username, res);
@@ -142,7 +119,6 @@ app.post('/emailcheck', (req, res)=>{
   db.checkEmail(connection, req.body.email, res);
 });
 
-//-----------------------------------------------------------------------------------------
 //concerning stories
 //get random story to display
 app.get('/grabstory', (req, res)=> {
@@ -226,7 +202,6 @@ const familyTalk = (storybranch, i, res)=>{
     }
   });
 };
-
 //get author
 const authorTalk = (storybranch, i, res)=>{
   db.getAuthor(connection,  storybranch[i].story_Id)
