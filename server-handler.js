@@ -275,12 +275,13 @@ const storyOpinion = (storybranch, i, res)=>{
   });
 };
 //upload user profile pic
-app.post('/uploadprofile/', vidupload.single('media'), (req, res, next)=>{
+app.post('/uploadprofile', profileupload.single('profile'), (req, res, next)=>{
   next();
 });
 
-app.use('/uploadprofile/', (req, res)=>{
+app.use('/uploadprofile', (req, res)=>{
   console.log('receiving profile');
+  console.log(req.body);
   const data = [
     req.session.passport.user[0].id,
     req.file.filename
