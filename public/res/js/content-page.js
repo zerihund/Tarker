@@ -118,20 +118,6 @@ const getform = () =>{
   });
 })};
 
-const getRemove = () =>{
-  document.querySelectorAll('.remove').forEach(x => x.addEventListener('click', evt =>{
-    console.log(evt.target.id);
-    const id = evt.target.id.substring(6);
-    fetch('/node/removeStory', {
-      method: 'POST',
-      headers: new Headers({
-        'Content-Type': 'application/x-www-form-urlencoded',
-      }),
-      body: `storyid=${id}`
-    }).then(res => res.text()).then(text => console.log(text))
-  }))
-};
-
 //display story onto main
 const displayStoryByJson =(json)=>{
   main = document.querySelector('main');
@@ -184,10 +170,17 @@ const displayStoryByJson =(json)=>{
           </audio>${json[i].content}`;
       }
       else if(json[i].media.substring(0,3) === 'vid'){
-        media_story.innerHTML = `
+        if(json[i].story_Id === 'SpEcIaLsToRyFoRiDiOt'){
+          media_story.innerHTML = `
+          <video autoplay loop>
+            <source src="res/media/vid/rickroll.mp4" type="video/mp4">
+          </video>${json[i].content}`;
+        }else{
+          media_story.innerHTML = `
           <video controls>
             <source src="res/media/${json[i].media}" type="video/mp4">
           </video>${json[i].content}`;
+        }
       }
       else{
         media_story.innerHTML = json[i].content;
@@ -308,10 +301,28 @@ const grabStory = ()=>{
     displayStoryByJson(json);
   })
 };
+
+//upload profile pic onto server
 //display user name on page
-fetch('/node/username', )
-.then(res=>res.text())
-.then(text =>document.getElementById('username').innerText = text);
+fetch('/node/custom')
+.then(res => res.text())
+.then(text => {
+  if(text === 'YOU ARE NOT ALLOWED HERE'){
+    alert('YOU ARE NOT ALLOWED HERE!!!!!!!!');
+    window.location.replace('https://10.114.32.123/node/')
+  }
+  else{
+    console.log(text);
+    fetch('/node/username')
+    .then(res=>res.json())
+    .then(json => {
+      console.log(json);
+      document.getElementById('username').innerText = json.username;
+      document.getElementById('profilepic').src = 'res/media/profilepic/'+json.photo
+    });
+  }
+});
+
 //init functions: get story to display inside main tag
 grabStory();
 window.addEventListener('click',(evt)=>{
@@ -385,6 +396,34 @@ document.querySelectorAll('.add').forEach(x=>x.addEventListener('click', evt=>{
   document.getElementById('unseen').style.display = 'none';
 }));
 
+//upload profile pic
+document.getElementById('profilepic').addEventListener('click',evt=>{
+  if(document.getElementById('profileupload').style.display === 'block'){
+    document.getElementById('profileupload').style.display = 'none'
+  }else{
+    document.getElementById('profileupload').style.display = 'block';
+  }
+});
+
+document.getElementById('profileupload').addEventListener('submit', evt => {
+  evt.preventDefault();
+  const frm = document.getElementById('profileupload');
+  if(frm[0].files[0].type.substring(0,5) !== 'image'){
+    console.log('incorrect file type')
+  }
+  else{
+    const fd = new FormData(frm);
+    const settings = {
+      method: 'post',
+      body: fd,
+    };
+    fetch('/node/uploadprofile',settings)
+    .then(res => res.text())
+    .then(text => console.log(text))
+  }
+});
+
+//upload files and story
 document.querySelector('.follow_form').addEventListener('submit',evt =>{
   if(document.querySelectorAll('.follow_form input')[1].files.length === 0){
     uploadMedia('text',evt);}

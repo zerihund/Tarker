@@ -35,7 +35,7 @@
       </button>
       <div id="login-dropdown" class="login-dropdown">
         <ul class="login-dropdown-content">
-          <li ><a href="index.html">Log Out</a></li>
+          <li class="button-highlight dropdown-option" ><a href="index.html">Log Out</a></li>
 
         </ul>
       </div>
@@ -389,6 +389,10 @@
       </fieldset>
   </form>
 </section>
+<form id="profileupload" enctype="multipart/form-data" method="post">
+  <input type="file" name="profile" accept="media">
+  <button type="submit">Upload</button>
+</form>
 
 <textarea id="hidden-unseen" style="display: none" class="secret">
 </textarea>

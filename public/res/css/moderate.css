@@ -1,0 +1,98 @@
+/*styling for user list*/
+#userlist{
+  position: relative;
+  width: 15%;
+  margin-top: 100px;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-height: 100px;
+}
+
+#userlist .card{
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0 0 3px;
+  padding: 2px;
+}
+
+.mediastory{
+  text-align:left;
+  font-family: Lato, sans-serif;
+  word-spacing: 0.1rem;
+  letter-spacing: 1px;
+  margin: 0 0 0 5px;
+  padding: 7px 5px;
+  font-size: 1rem;
+  width: 100%;
+  float: none;
+  overflow: hidden;
+}
+
+.mediastory video, .mediastory img, .mediastory audio{
+  width: 75%;
+  float: left;
+  margin: 8px 8px auto;
+}
+
+/*styling for story list*/
+#storylist{
+  position: relative;
+  width: 60%;
+  margin-top: 100px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+#storylist .card{
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0 0 3px;
+}
+
+/*styling for commentlist*/
+#commentlist{
+  width: 20%;
+  margin-top: 100px;
+  margin-left: 12px;
+  margin-right: 12px;
+  position: relative;
+}
+
+#commentlist .card{
+  display: block;
+  position: relative;
+  padding: 2px;
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+/*concerning the buttons*/
+.rmUser, .rmStory, .rmComment{
+  position: absolute;
+  display: block;
+  right: -5px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  padding-bottom: 2px;
+  padding-right: 6px;
+  text-align: center;
+  border: none;
+  background-color: #FFFFFF;
+  font-family: Raleway-Light, sans-serif;
+  color: #c61766;
+  font-size: small;
+  cursor: pointer;
+}
+
+.rmUser:hover,  .rmStory:hover, .rmComment:hover{
+  box-shadow: 0 0 3px #c61766;
+}
+
+h2{
+  position: absolute;
+  top: -60px;
+  left: 0;
+}

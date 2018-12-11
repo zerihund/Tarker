@@ -145,7 +145,7 @@ const dropdownMenu = document.querySelector('.outsider-dropdown-content');
 const dropdownButton =document.querySelector('#outsider-dropdown-btn');
 dropdownMenu.style.display='none';
 dropdownButton.addEventListener("click",(evt)=>{
-  if(dropdownMenu.style.display=='none'){
+  if(dropdownMenu.style.display==='none'){
     dropdownMenu.style.display='block';
   }else{
     dropdownMenu.style.display='none';

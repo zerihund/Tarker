@@ -41,6 +41,7 @@ const populate = ()=>{
           console.log('get comment');
           console.log(commentlist);
           showComment(commentlist);
+          addFunc();
         }
       )
     })
@@ -50,15 +51,18 @@ const populate = ()=>{
 const showUser = (userlist) =>{
   const main = document.getElementById('userlist');
   main.innerHTML ='';
+  const h = document.createElement('h2');
+  h.innerText = 'COMMENTS';
+  main.appendChild(h);
   userlist.forEach(x => {
     const card = document.createElement('div');
+    card.className = 'card';
     const username = document.createElement('p');
     username.innerText = x.name;
     const rmbutton = document.createElement('button');
     rmbutton.id = x.user_Id;
     rmbutton.className = 'rmUser';
-    rmbutton.innerText = 'remove';
-
+    rmbutton.innerText = 'X';
     card.appendChild(username);
     card.appendChild(rmbutton);
     main.appendChild(card);
@@ -68,10 +72,12 @@ const showUser = (userlist) =>{
 const showStory = (story)=>{
   const main = document.getElementById('storylist');
   main.innerHTML ='';
+  const h = document.createElement('h2');
+  h.innerText = 'STORY';
+  main.appendChild(h);
   story.forEach(x => {
     const card = document.createElement('div');
-    const rmbutton = document.createElement('button');
-
+    card.className = 'card';
     const media_story = document.createElement('p');
     media_story.className = 'media-story';
     if(x.media !== null){
@@ -94,11 +100,15 @@ const showStory = (story)=>{
         media_story.innerHTML = x.content;
       }
     }
+    else{
+      media_story.innerHTML = x.content;
+    }
+
+    const rmbutton = document.createElement('button');
     rmbutton.className = 'rmStory';
     rmbutton.id = x.story_Id;
-    rmbutton.innerText = 'remove';
-
-    card.appendChild(username);
+    rmbutton.innerText = 'X';
+    card.appendChild(media_story);
     card.appendChild(rmbutton);
     main.appendChild(card);
   })
@@ -107,18 +117,92 @@ const showStory = (story)=>{
 const showComment = (commentlist)=>{
   const main = document.getElementById('commentlist');
   main.innerHTML ='';
+  const h = document.createElement('h2');
+  h.innerText = 'COMMENTS';
+  main.appendChild(h);
   commentlist.forEach(x => {
     const card = document.createElement('div');
+    card.className = 'card';
     const commenttext = document.createElement('p');
     commenttext.innerText = x.comment;
 
     const rmbutton = document.createElement('button');
     rmbutton.className = 'rmComment';
     rmbutton.id = x.comment_Id;
-    rmbutton.innerText = 'remove';
+    rmbutton.innerText = 'X';
 
     card.appendChild(commenttext);
     card.appendChild(rmbutton);
     main.appendChild(card);
+  })
+};
+
+// app.post('/removeUser',(req,res)=>{
+//   db.removeUser(connection,req.body.userid,res);
+// });
+// //remove the content and media and replace it in the data base by the moderator
+// app.post('/removeStory',(req,res)=>{
+//   db.removeStory(connection,req.body.storyid, res);
+// });
+// app.post('/removeComment',(req,res)=>{
+//   db.removeComment(connection,req.body.commentid,res);
+// });
+const addFunc = ()=>{
+  document.querySelectorAll('.rmStory').forEach(x =>{
+    x.addEventListener('click', evt =>{
+      console.log('+++++++++++++');
+      console.log(evt.target.id);
+      const y = evt.target.id;
+      fetch('/node/removestory', {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }),
+        body: `storyid=${y}`
+      })
+      .then(res => res.text())
+      .then(text => {
+        console.log(text);
+        populate();
+      })
+    })
+  });
+
+  document.querySelectorAll('.rmComment').forEach(x =>{
+    x.addEventListener('click', evt =>{
+      console.log(evt.target.id);
+      const y = evt.target.id;
+      fetch('/node/removeComment', {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }),
+        body: `commentid=${y}`
+      })
+      .then(res => res.text())
+      .then(text => {
+        console.log(text);
+        populate();
+      })
+    })
+  });
+
+  document.querySelectorAll('.rmUser').forEach(x =>{
+    x.addEventListener('click', evt =>{
+      console.log(evt.target.id);
+      const y = evt.target.id;
+      fetch('/node/removeUser', {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }),
+        body: `userid=${y}`
+      })
+      .then(res => res.text())
+      .then(text => {
+        console.log(text);
+        populate();
+      })
+    })
   })
 };

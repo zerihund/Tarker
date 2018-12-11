@@ -14,6 +14,7 @@ app.use(express.static('public'));
 const vidupload = multer({dest: 'public/res/media/vid'});
 const audupload = multer({dest: 'public/res/media/bgm'});
 const imgupload = multer({dest: 'public/res/media/img'});
+const profileupload = multer({dest: 'public/res/media/profilepic'});
 const passport = require('passport');
 const morgan = require('morgan');
 app.use(morgan('dev'));
@@ -58,17 +59,22 @@ passport.deserializeUser(function(user, done) {
   done(null,user);
 });
 
-app.all('*', (req, res, next)=>{
-  console.log(' ');
-  console.log(' ');
-  console.log(' =========================================================================================');
-  console.log(' ==================================init===================================================');
-  //console.log(req.session.passport.user.username);
-  //console.log(req.user);
-  console.log(req.session);
-  //console.log(req.session.passport.user);
+// app.all('*', (req, res, next)=>{
+//   console.log(' ');
+//   console.log(' ');
+//   console.log(req.session);
+//   //console.log(req.session.passport.user);
+//   next();
+// });
+
+app.all('/content', (req, res, next)=>{
+  console.log('   ');
+  console.log('   ');
+  console.log('   ');
+  console.log('someone tries to go to content page');
   next();
 });
+
 passport.use(new LocalStrategy((username, password, done)=>{
   db.checkCredentials(connection, username,  password).then(valid =>{
     console.log(valid);
@@ -76,11 +82,16 @@ passport.use(new LocalStrategy((username, password, done)=>{
       return done(null, false);
     }
     else{
-      return done(null, [{username: username, id: valid}]);
+      return done(null, [{username: username, id: valid.user_Id, photo: valid.photo}]);
     }
   })
 }));
 
+
+app.all('/content', (req, res, next)=>{
+  console.log('someone tries to go to content page');
+  next();
+});
 app.post('/login', passport.authenticate('local', {failureRedirect: '/node/', session: true}), (req, res)=>{
   return new Promise(((resolve) => {
     console.log('xx');
@@ -115,9 +126,10 @@ app.post('/signup/',(req, res)=>{
   const data = [
     req.body.username,
     req.body.email,
-    req.body.password
+    req.body.password,
+    'default.png'
   ];
-  db.insertUser(connection, data, res );
+  db.insertUser(connection, data, res);
 });
 
 //check user exists
@@ -262,6 +274,21 @@ const storyOpinion = (storybranch, i, res)=>{
     }
   });
 };
+//upload user profile pic
+app.post('/uploadprofile', profileupload.single('profile'), (req, res, next)=>{
+  next();
+});
+
+app.use('/uploadprofile', (req, res)=>{
+  console.log('receiving profile');
+  console.log(req.body);
+  const data = [
+    req.session.passport.user[0].id,
+    req.file.filename
+  ];
+  console.log(data);
+  db.uploadprofile(connection, data, res);
+});
 
 //--------------------------------------------------------------------------------------------------------
 //concerning uploading stories----------------------------------------------------------------------------
@@ -365,13 +392,23 @@ app.post('/comment/', (req, res)=>{
   db.comment(connection, req, res);
 });
 
+//check passport
+app.get('/custom',(req, res)=>{
+  console.log(req.session);
+  if(req.session.passport === undefined){
+    res.send('YOU ARE NOT ALLOWED HERE');
+  }
+  else{
+    res.send('Welcome.')
+  }
+});
+
 //get username for user
 app.get('/username', (req, res)=>{
   console.log(req.user);
   console.log(req.session);
   console.log(req.session.passport);
-  console.log(req.session.passport.user[0].username);
-  res.send(req.session.passport.user[0].username);
+  res.send({username:req.session.passport.user[0].username, photo: req.session.passport.user[0].photo});
 });
 //--------------------------------------------------------------------------------------------------------
 //concerning moderator
@@ -398,14 +435,20 @@ app.get('/commentlist/', (req, res)=>{
 });
 //remove the user
 app.post('/removeUser',(req,res)=>{
-  db.removeUser(connection,req.body.userid,res);
+  const y = req.body;
+  console.log(y.userid);
+  db.removeUser(connection, y.userid, res);
 });
 //remove the content and media and replace it in the data base by the moderator
-app.post('/removeStory',(req,res)=>{
-  db.removeStory(connection,req.body.storyid, res);
+app.post('/removestory',(req,res)=>{
+  console.log('rmst');
+  console.log(req.body.storyid);
+  db.removeStory(connection, req.body.storyid, res);
 });
 app.post('/removeComment',(req,res)=>{
-  db.removeComment(connection,req.body.commentid,res);
+  console.log(req.body);
+  console.log(req.body.commentid);
+  db.removeComment(connection, req.body.commentid, res);
 });
 //--------------------------------------------------------------------------------------------------------
 //set up the http and https redirection
