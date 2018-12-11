@@ -616,26 +616,86 @@ fieldset textarea{
     color: #282f3f;
 }
 .follow_form{
-    width: 600px;
-    height: 600px;
-    margin: auto;
-    z-index: 5;
-    background-color: #282f3f;
-    color:#fee6b8;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
-    top: 5%;
+  width: 320px;
+  margin: 10px auto auto;
+  z-index: 5;
+  background-color: white;
+  position: relative;
+  align-items: center;
+  top: 5%;
+  display: block;
+  font-family: Raleway, sans-serif;
+  padding: 12px 8px 20px;
+}
+
+.follow_form input{
+  width: 90%;
+  margin-left: 5%;
+  background-color: #FFFFFF;
+  margin-top: 1px;
+  margin-bottom: 5px;
+  height: 28px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color:  #232323;
+  border: #414141 1px solid;
 }
 .follow_form input[type='submit']{
-    background-color:#fee6b8;
-    color:#282f3f;
-    border:none;
-    border-radius:3px;
-    z-index: 5;
+  position: absolute;
+  height: 30px;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #FFFFFF;
+  color: #c61766;
+  font-family: Raleway-Black,sans-serif;
+  border: #BABABA 1px solid;
+  width: 150px;
+  cursor: pointer;
+}
+
+.follow_form input[type='submit']:hover{
+  color: #FFFFFF;
+  background-color: #c61766;
+  box-shadow: 0 0 3px #c61766;
+}
+
+.follow_form p{
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -70px;
+  font-family: Raleway-Black, sans-serif;
+  color: #0865B2;
+  background-color: #FFFFFF;
+  z-index: 4;
+  font-size: 2rem;
+  width: 100%;
+  padding: 3px;
+  text-align: center;
+}
+
+.follow_form textarea{
+  width: 90%;
+  height: 300px;
+  padding: 5px;
+  margin-top: 1px;
+  margin-bottom: 5px;
+  margin-left: 5%;
+  background-color: #FFFFFF;
+  color: #232323;
+  border: #414141 1px solid;
+}
+
+.follow_form label{
+  display: block;
+  color: #232323;
+  margin-left: 5%;
+  margin-bottom: 0;
+  width: 90%;
+  padding: 5px 5px 5px 0;
+  font-family: Raleway-Light,sans-serif;
 }
 aside{
     position: fixed;

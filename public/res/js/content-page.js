@@ -304,27 +304,27 @@ const grabStory = ()=>{
 
 //upload profile pic onto server
 //display user name on page
-fetch('/node/custom')
-.then(res => res.text())
-.then(text => {
-  if(text === 'YOU ARE NOT ALLOWED HERE'){
-    alert('YOU ARE NOT ALLOWED HERE!!!!!!!!');
-    window.location.replace('https://10.114.32.123/node/')
-  }
-  else{
-    console.log(text);
-    fetch('/node/username')
-    .then(res=>res.json())
-    .then(json => {
-      console.log(json);
-      document.getElementById('username').innerText = json.username;
-      document.getElementById('profilepic').src = 'res/media/profilepic/'+json.photo
-    });
-  }
-});
+const updateName = ()=>{
+  fetch('/node/custom')
+  .then(res => res.text())
+  .then(text => {
+    if(text === 'YOU ARE NOT ALLOWED HERE'){
+      alert('YOU ARE NOT ALLOWED HERE!!!!!!!!');
+      window.location.replace('https://10.114.32.123/node/')
+    }
+    else{
+      console.log(text);
+      fetch('/node/username')
+      .then(res=>res.json())
+      .then(json => {
+        console.log(json);
+        document.getElementById('username').innerText = json.username;
+        document.getElementById('profilepic').src = 'res/media/profilepic/'+json.photo
+      });
+    }
+  });
+};
 
-//init functions: get story to display inside main tag
-grabStory();
 window.addEventListener('click',(evt)=>{
   if(evt.target.id === 'popup2'){
     document.getElementById('popup2').style.display='none';
@@ -396,6 +396,7 @@ document.querySelectorAll('.add').forEach(x=>x.addEventListener('click', evt=>{
   document.getElementById('unseen').style.display = 'none';
 }));
 
+//-------------------------------------------------------------------------------------------
 //upload profile pic
 document.getElementById('profilepic').addEventListener('click',evt=>{
   if(document.getElementById('profileupload').style.display === 'block'){
@@ -419,10 +420,15 @@ document.getElementById('profileupload').addEventListener('submit', evt => {
     };
     fetch('/node/uploadprofile',settings)
     .then(res => res.text())
-    .then(text => console.log(text))
+    .then(text => {
+      //init functions: get story to display inside main tag
+      console.log(text);
+      updateName();
+    });
   }
 });
 
+//---------------------------------------------------------------------------------------------
 //upload files and story
 document.querySelector('.follow_form').addEventListener('submit',evt =>{
   if(document.querySelectorAll('.follow_form input')[1].files.length === 0){
@@ -480,6 +486,8 @@ dropdownButton.addEventListener("click",(evt)=>{
   }
 });
 
-
+//init functions: get story to display inside main tag
+grabStory();
+updateName();
 
 
