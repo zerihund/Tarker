@@ -356,13 +356,13 @@ h1{
 
 .storyid{
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   left: 0;
   font-family: Raleway-Thin,  sans-serif;
   font-size: xx-small;
   border: none;
   opacity: 0.7;
-
+  cursor: pointer;
 }
 
 .author-date{
