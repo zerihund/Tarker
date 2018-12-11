@@ -147,8 +147,15 @@ const getStoryByID = (connection, id)=>{
          WHERE c.story_Id = '${id}'`,
         (err, results)=> {
           console.log(err);
-          console.log(results[0]);
-          resolve(results[0]);
+          console.log(results);
+          if(results.length === 0){
+            resolve('FoRtHoSeWhOaReLoSt');
+          }
+          else{
+            console.log(results[0]);
+            resolve(results[0]);
+          }
+
         }
     )
   })

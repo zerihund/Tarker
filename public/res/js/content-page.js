@@ -99,7 +99,7 @@ const getform = () =>{
         const commentContainer = document.getElementById(`xseek${storyid}`);
         commentContainer.innerHTML = '';
         json.forEach(x =>{
-          if(x.name !== document.querySelector('#username').value){
+          if(x.name !== document.querySelector('#username').innerText){
             commentContainer.innerHTML+=`<div class="comment">
             <p class="commenter">${x.name}</p>
             <p class="comment-time">${x.comment_time}</p>
@@ -368,17 +368,22 @@ document.querySelector('#create').addEventListener('click',()=>{
 
 document.getElementById('getstorybyidform').addEventListener('submit', evt=>{
   evt.preventDefault();
-  fetch('/node/storybyid', {
-    method: 'POST',
-    headers: new Headers({
-      'Content-Type': 'application/x-www-form-urlencoded',
-    }),
-    body: `storyid=${evt.target[0].value}`
-  })
-  .then(res => res.json())
-  .then(json => {
-    displayStoryByJson(json);
-  })
+  if(evt.target[0].value !== ''){
+    fetch('/node/storybyid', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }),
+      body: `storyid=${evt.target[0].value}`
+    })
+    .then(res => res.json())
+    .then(json => {
+      displayStoryByJson(json);
+    })
+  }
+  else{
+    evt.target[0].focus();
+  }
 });
 
 //copy story to share with others
