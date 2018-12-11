@@ -145,7 +145,7 @@ app.get('/likestory', (req, res)=>{
 });
 
 //get story by id
-app.get('/storybyid', (req, res)=>{
+app.post('/storybyid', (req, res)=>{
   console.log('    ');
   console.log('get story id '+req.body.storyid);
     db.getStoryByID(connection, req.body.storyid)
