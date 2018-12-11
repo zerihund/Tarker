@@ -148,7 +148,6 @@ const displayStoryByJson =(json)=>{
     time.innerText = json[i].time;
     const dash = document.createElement('p');
     dash.innerText = '-';
-    //--
     author_date.appendChild(author);
     author_date.appendChild(dash);
     author_date.appendChild(time);
@@ -472,8 +471,6 @@ const uploadMedia = (type, evt)=>{
     document.getElementById('popup1').style.display = 'none';
   });
 };
-
-
 //toggles the mobile dropdown menu on or off
 const dropdownMenu = document.querySelector('.login-dropdown-content');
 const dropdownButton =document.querySelector('#user-icon');

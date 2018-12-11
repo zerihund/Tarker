@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
 const math  = require('./math');
 
-//set up connection to the database
+//set up connection to the database using the .env file
 const connect = ()=>{
   const x = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -12,8 +12,7 @@ const connect = ()=>{
   console.log('Connection to database established');
   return x;
 };
-//user--------------------------------------------------
-//insert user
+//insert user to the data base for registration
 const insertUser = (connection, data, res) =>{
   connection.query(
       'INSERT INTO user (name, email, password, photo) VALUE (?,?,?,?);', data,
@@ -24,8 +23,7 @@ const insertUser = (connection, data, res) =>{
         },
   );
 };
-
-//upload user pic
+//upload user pic or profile picture
 const uploadprofile = (connection, data, res) =>{
   console.log(`UPDATE user SET photo = '${data[1]}' WHERE user_Id = '${data[0]}'`);
   connection.query(
@@ -37,8 +35,7 @@ const uploadprofile = (connection, data, res) =>{
       }
   )
 };
-
-// moderator remove user
+// moderator remove user when it is necessary
 const  removeUser = (connection, id, res)=> {
   console.log(`DELETE FROM user where user_Id = ${id}`);
   connection.query(
@@ -50,7 +47,7 @@ const  removeUser = (connection, id, res)=> {
       }
   )
 };
-//remove a story content
+//remove a story content is offensive or contain copy right fragment
 const removeStory =(connection, id, res)=>{
   console.log(`UPDATE story
       SET content="This Content has been removed due to copy right issue or it is offensive to some groups", media =""
@@ -65,7 +62,7 @@ const removeStory =(connection, id, res)=>{
       }
   )
 };
-//remove comment
+//remove comment by moderator when it is not appropriate
 const removeComment = (connection, id, res)=>{
   connection.query(
       `UPDATE comments
@@ -74,11 +71,9 @@ const removeComment = (connection, id, res)=>{
       (err,result)=>{
         console.log(result);
         res.send('remove succeeded: ' +id);
-      }
-  )
-
+      })
 };
-//check if user already exists
+//check if user already exists when I user tries to register
 const checkUser = (connection, username, res)=>{
   connection.query(
     'SELECT * FROM user WHERE name = ?',  username,
@@ -125,12 +120,10 @@ const checkCredentials = (connection, username, password)=>{
         })
   })
 };
-//log user in
-
-//story-------------------------------------------------
+//story sending and graping process
 //send story
 const getInitStory = (connection)=>{
-  console.log('---------------------------------------------init-------------------------------------------');
+  console.log('--init-');
   return new Promise((resolve)=>{
     connection.execute(
       `SELECT c.story_Id, c.parent_story, c.content, c.media, c.title
@@ -146,7 +139,7 @@ const getInitStory = (connection)=>{
 
 //get story of certain id
 const getStoryByID = (connection, id)=>{
-  console.log('---------------------------------------------init-------------------------------------------');
+  console.log('----init----');
   return new Promise((resolve)=>{
     connection.query(
         `SELECT c.story_Id, c.parent_story, c.content, c.media, c.title
@@ -160,7 +153,7 @@ const getStoryByID = (connection, id)=>{
     )
   })
 };
-
+//getting children story of  a given story
 const getChildrenStory = (connection,id)=>{
   console.log('get children story of story '+id);
   return new Promise((resolve)=>{
@@ -185,8 +178,7 @@ const getChildrenStory = (connection,id)=>{
     )
   })
 };
-
-//get one liked story
+//get liked story of a user of with given id
 const getlikedStory = (connection, userid) =>{
   console.log('get liked  story of user with id: '+ userid);
   return new Promise((resolve)=>{
@@ -208,8 +200,7 @@ const getlikedStory = (connection, userid) =>{
     )
   })
 };
-
-//get parent of story
+//get parent of story of a story with a given id
 const getParentStory = (connection, id) =>{
   console.log('get parent story of story '+ id);
   return new Promise((resolve)=>{
@@ -225,7 +216,6 @@ const getParentStory = (connection, id) =>{
     )
   })
 };
-
 //get comments get comment writer, get comments date
 const getStoryComment = (connection, id)=>{
   console.log('grab comments of ' + id);
@@ -272,7 +262,7 @@ const getOpinion = (connection, id)=>{
     )
   })
 };
-//check if user like/dislike story before
+//check if user like/dislike a given story before
 const checkOpinion = (connection, data, res) =>{
   console.log(`SELECT like_story FROM Views WHERE Views.user_Id = ${data[0]} && Views.story_Id= '${data[1]}'`);
   connection.query(
@@ -295,8 +285,6 @@ const checkOpinion = (connection, data, res) =>{
         }
 })
 };
-
-
 //put user like/dislike into views table
  const putOpinion= (connection, data) =>{
    //data[0]<1 means they are liking for the first time so insert
@@ -339,7 +327,6 @@ const checkOpinion = (connection, data, res) =>{
 
 const upload = (connection, data, res)=>{
   console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
-
   const author = data[0];
   const parent = data[1];
   const title = data[2];
@@ -364,11 +351,10 @@ const upload = (connection, data, res)=>{
               console.log(results);
               res.send('123');
             });
-
       }
   )
 };
-
+// inserting comment in to the database
 const comment = (connection, req, res)=>{
   connection.query(
       `INSERT INTO comments (user_Id,story_Id,comment)
@@ -389,7 +375,7 @@ const comment = (connection, req, res)=>{
       }
   )
 };
-
+//check moderator credential
 const checkModerator = (connection, data, res)=>{
   connection.query(
       `SELECT * FROM moderator WHERE name = '${data[0]}' AND PASSWORD = '${data[1]}'`,
@@ -403,16 +389,15 @@ const checkModerator = (connection, data, res)=>{
       }
   )
 };
-
+//get list of user from the database for the moderator
 const getUser = (connection, res)=>{
   connection.query(
       'SELECT user_Id, name FROM user',
       (err, result)=>{
         res.send(result);
-      }
-  )
+      })
 };
-
+//get list of all stories from the database for the moderator
 const getAllStory = (connection, res)=>{
   connection.query(
       'SELECT story_Id, content, media FROM story',
@@ -421,7 +406,7 @@ const getAllStory = (connection, res)=>{
       }
   )
 };
-
+//get all comment form the database for the moderator
 const getAllComment = (connection, res)=>{
   connection.query(
       'SELECT comment_Id, comment FROM comments',
@@ -430,7 +415,7 @@ const getAllComment = (connection, res)=>{
       }
   )
 };
-
+//module export to the server handler.js
 module.exports = {
   connect:connect,
   insertUser: insertUser,

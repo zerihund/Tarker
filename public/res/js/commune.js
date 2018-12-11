@@ -40,26 +40,6 @@ document.querySelector('.login-form')
        }
     })
 });
-
-/*const  user =document.querySelectorAll('.login-form input')[0];
-const pass = document.querySelectorAll('login-form input')[1];
-const login_span = document.querySelectorAll('.login-error')
-user.addEventListener('focusout',evt => {
-  console.log('focusout on' + evt.target.value);
-  login_span.style.color = '#c61766';
-  if (evt.target.value ===''){
-    login_span[0].innerText = '*must have user name*';
-  }
-});*/
-/*pass.addEventListener('focusout',evt => {
-  console.log('focusout on' + evt.target.value);
-  if (evt.target.value ===''){
-    login_span[1].innerText = '*must have password*';
-  }
-});*/
-
-
-//------------------------------------------------------------------------------
 //concerning sign up form
 const nameinput = document.querySelectorAll('.sign-up-form input')[0];
 const email = document.querySelectorAll('.sign-up-form input')[1];

@@ -1,6 +1,4 @@
 let  thumbsUp ,thumbsDown,dislikeDisplay,likeDisplay,numOfLikes,numOfDislikes;
-
-
 const createLikeSystem = (theLikeId, theDislikeId, theLikeDisplay, theDislikeDisplay) => {
   console.log(`like system made for ${theLikeId}`);
   numOfLikes = 0;
@@ -160,7 +158,6 @@ const createLikeSystem = (theLikeId, theDislikeId, theLikeDisplay, theDislikeDis
     likable++;
     likeModulo = likable % 2;
   };
-
 //increases likable each time it is clicked so we know is it a like or unlike
   const dislikeOrNot = () => {
     if (dislikeModulo == 1) {
@@ -186,21 +183,6 @@ const createLikeSystem = (theLikeId, theDislikeId, theLikeDisplay, theDislikeDis
     })
   };
 }
-  /*return{
-    likeOrNot:likeOrNot,
-    dislikeOrNot:dislikeOrNot
-  }*/
- let likeAccess=createLikeSystem();
+let likeAccess=createLikeSystem();
 let outerDislikeOrNot= likeAccess.dislikeOrNot();
 let outerLikeOrNot= likeAccess.likeOrNot();
-
-
-
-
-
-/*UPDATE Views
-        SET Views.like_story =1
-        WHERE Views.user_Id =11 and Views.story_Id=14`*/
-/*
-* INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,view_count)
-VALUES(11,'14',1,6)*/
