@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/res/js/content-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/js/content-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/res/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-handler.js" afterDir="false" />
     </list>
     <list id="3c9e7bb2-7bdb-4887-afeb-1e245b7afc96" name="Revert: " comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,15 +38,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/res/js/moderate.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="121" column="22" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/content.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -60,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1958">
-              <caret line="406" column="22" selection-start-line="406" selection-start-column="22" selection-end-line="406" selection-end-column="22" />
+            <state relative-caret-position="241">
+              <caret line="381" column="39" selection-start-line="381" selection-start-column="13" selection-end-line="381" selection-end-column="39" />
               <folding>
                 <element signature="e#14#104#0" />
                 <element signature="e#1045#1097#0" />
@@ -70,8 +64,28 @@
                 <element signature="e#1769#1804#0" />
                 <element signature="e#1870#1893#0" />
                 <element signature="e#1943#1988#0" />
-                <element signature="e#2023#2446#0" />
                 <element signature="e#2508#2755#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/res/js/commune.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="35" column="41" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/res/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="155" column="24" lean-forward="true" selection-start-line="155" selection-start-column="24" selection-end-line="155" selection-end-column="24" />
+              <folding>
+                <element signature="e#103#4684#0" />
               </folding>
             </state>
           </provider>
@@ -86,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1513">
-              <caret line="129" column="25" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
+            <state relative-caret-position="425">
+              <caret line="302" column="28" selection-start-line="302" selection-start-column="28" selection-end-line="302" selection-end-column="28" />
               <folding>
                 <element signature="e#2850#4273#0" />
               </folding>
@@ -111,7 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>B3B3B3</find>
       <find>282f3f</find>
       <find>storyby</find>
       <find>.topnav-right</find>
@@ -141,6 +154,7 @@
       <find>media</find>
       <find>main</find>
       <find>card</find>
+      <find>cus</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,18 +177,18 @@
         <option value="$PROJECT_DIR$/modules/content.js" />
         <option value="$PROJECT_DIR$/public/res/js/testLikes.js" />
         <option value="$PROJECT_DIR$/public/res/js/commune.js" />
-        <option value="$PROJECT_DIR$/public/res/js/main.js" />
         <option value="$PROJECT_DIR$/public/res/css/color.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/content.html" />
         <option value="$PROJECT_DIR$/public/res/css/secondcolor.css" />
-        <option value="$PROJECT_DIR$/public/res/js/content-page.js" />
-        <option value="$PROJECT_DIR$/server-handler.js" />
         <option value="$PROJECT_DIR$/modules/data-handler.js" />
         <option value="$PROJECT_DIR$/public/moderate.html" />
         <option value="$PROJECT_DIR$/public/res/css/moderate.css" />
         <option value="$PROJECT_DIR$/public/res/css/default.css" />
         <option value="$PROJECT_DIR$/public/res/js/moderate.js" />
+        <option value="$PROJECT_DIR$/public/res/js/main.js" />
+        <option value="$PROJECT_DIR$/server-handler.js" />
+        <option value="$PROJECT_DIR$/public/res/js/content-page.js" />
       </list>
     </option>
   </component>
@@ -323,21 +337,7 @@
       <workItem from="1544232211870" duration="21407000" />
       <workItem from="1544354173356" duration="37749000" />
       <workItem from="1544439062378" duration="10698000" />
-      <workItem from="1544474752087" duration="13011000" />
-    </task>
-    <task id="LOCAL-00230" summary="added upload functions.">
-      <created>1544398080229</created>
-      <option name="number" value="00230" />
-      <option name="presentableId" value="LOCAL-00230" />
-      <option name="project" value="LOCAL" />
-      <updated>1544398080229</updated>
-    </task>
-    <task id="LOCAL-00231" summary="added second style.&#10;Still have more front end stuff to do thou">
-      <created>1544407500830</created>
-      <option name="number" value="00231" />
-      <option name="presentableId" value="LOCAL-00231" />
-      <option name="project" value="LOCAL" />
-      <updated>1544407500830</updated>
+      <workItem from="1544474752087" duration="14532000" />
     </task>
     <task id="LOCAL-00232" summary="added second style.&#10;Still have more front end stuff to do thou">
       <created>1544439341804</created>
@@ -668,11 +668,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544487681197</updated>
     </task>
-    <option name="localTasksCounter" value="279" />
+    <task id="LOCAL-00279" summary="trying blocking user to reach content page">
+      <created>1544488647093</created>
+      <option name="number" value="00279" />
+      <option name="presentableId" value="LOCAL-00279" />
+      <option name="project" value="LOCAL" />
+      <updated>1544488647093</updated>
+    </task>
+    <task id="LOCAL-00280" summary="trying blocking user to reach content page">
+      <created>1544488925058</created>
+      <option name="number" value="00280" />
+      <option name="presentableId" value="LOCAL-00280" />
+      <option name="project" value="LOCAL" />
+      <updated>1544488925058</updated>
+    </task>
+    <option name="localTasksCounter" value="281" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276066000" />
+    <option name="totallyTimeSpent" value="277587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -734,7 +748,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added upload functions." />
     <MESSAGE value="added second style.&#10;Still have more front end stuff to do thou" />
     <MESSAGE value="revert some changes overriden by merge" />
     <MESSAGE value="fixed bugs when logged in" />
@@ -759,7 +772,8 @@
     <MESSAGE value="fixing user remove query not working" />
     <MESSAGE value="Moderator stuffs worked now :)" />
     <MESSAGE value="Moderator stuffs worked now :). With a working visual.&#10;Added overflow:hidden to stuffs so the pics and stuffs dont flow out of container when there is little text" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moderator stuffs worked now :). With a working visual.&#10;Added overflow:hidden to stuffs so the pics and stuffs dont flow out of container when there is little text" />
+    <MESSAGE value="trying blocking user to reach content page" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying blocking user to reach content page" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -806,25 +820,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/js/commune.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="171" column="33" selection-start-line="171" selection-start-column="33" selection-end-line="171" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/math.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="158" column="2" lean-forward="true" selection-start-line="158" selection-start-column="2" selection-end-line="158" selection-end-column="2" />
-          <folding>
-            <element signature="e#103#4684#0" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/res/css/color.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -854,34 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1131">
           <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="129" column="25" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
-          <folding>
-            <element signature="e#2850#4273#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1958">
-          <caret line="406" column="22" selection-start-line="406" selection-start-column="22" selection-end-line="406" selection-end-column="22" />
-          <folding>
-            <element signature="e#14#104#0" />
-            <element signature="e#1045#1097#0" />
-            <element signature="e#1285#1376#0" />
-            <element signature="e#1468#1702#0" />
-            <element signature="e#1769#1804#0" />
-            <element signature="e#1870#1893#0" />
-            <element signature="e#1943#1988#0" />
-            <element signature="e#2023#2446#0" />
-            <element signature="e#2508#2755#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -921,6 +890,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/js/moderate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="114" column="2" lean-forward="true" selection-start-line="114" selection-start-column="2" selection-end-line="114" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/res/css/moderate.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -928,10 +904,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/js/moderate.js">
+    <entry file="file://$PROJECT_DIR$/public/res/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="121" column="22" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
+        <state relative-caret-position="527">
+          <caret line="155" column="24" lean-forward="true" selection-start-line="155" selection-start-column="24" selection-end-line="155" selection-end-column="24" />
+          <folding>
+            <element signature="e#103#4684#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server-handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="381" column="39" selection-start-line="381" selection-start-column="13" selection-end-line="381" selection-end-column="39" />
+          <folding>
+            <element signature="e#14#104#0" />
+            <element signature="e#1045#1097#0" />
+            <element signature="e#1285#1376#0" />
+            <element signature="e#1468#1702#0" />
+            <element signature="e#1769#1804#0" />
+            <element signature="e#1870#1893#0" />
+            <element signature="e#1943#1988#0" />
+            <element signature="e#2508#2755#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/js/commune.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="302" column="28" selection-start-line="302" selection-start-column="28" selection-end-line="302" selection-end-column="28" />
+          <folding>
+            <element signature="e#2850#4273#0" />
+          </folding>
         </state>
       </provider>
     </entry>

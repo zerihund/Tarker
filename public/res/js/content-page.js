@@ -118,20 +118,6 @@ const getform = () =>{
   });
 })};
 
-const getRemove = () =>{
-  document.querySelectorAll('.remove').forEach(x => x.addEventListener('click', evt =>{
-    console.log(evt.target.id);
-    const id = evt.target.id.substring(6);
-    fetch('/node/removeStory', {
-      method: 'POST',
-      headers: new Headers({
-        'Content-Type': 'application/x-www-form-urlencoded',
-      }),
-      body: `storyid=${id}`
-    }).then(res => res.text()).then(text => console.log(text))
-  }))
-};
-
 //display story onto main
 const displayStoryByJson =(json)=>{
   main = document.querySelector('main');
@@ -309,9 +295,23 @@ const grabStory = ()=>{
   })
 };
 //display user name on page
-fetch('/node/username', )
-.then(res=>res.text())
-.then(text =>document.getElementById('username').innerText = text);
+fetc('/node/custom')
+.then(res => res.text())
+.then(text => {
+  if(text === 'YOU ARE NOT ALLOWED HERE'){
+    alert('YOU ARE NOT ALLOWED HERE!!!!!!!!');
+    window.location.replace('https://10.114.32.123/node/')
+  }
+  else{
+    console.log(text);
+    fetch('/node/username')
+    .then(res=>res.text())
+    .then(text => {
+      document.getElementById('username').innerText = text;
+    });
+  }
+});
+
 //init functions: get story to display inside main tag
 grabStory();
 window.addEventListener('click',(evt)=>{

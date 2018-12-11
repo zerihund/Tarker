@@ -375,12 +375,22 @@ app.post('/comment/', (req, res)=>{
   db.comment(connection, req, res);
 });
 
+//check passport
+app.get('/custom',(req, res)=>{
+  console.log(req.session);
+  if(req.session.passport === undefined){
+    res.send('YOU ARE NOT ALLOWED HERE');
+  }
+  else{
+    res.send('Welcome.')
+  }
+});
+
 //get username for user
 app.get('/username', (req, res)=>{
   console.log(req.user);
   console.log(req.session);
   console.log(req.session.passport);
-  console.log(req.session.passport.user[0].username);
   res.send(req.session.passport.user[0].username);
 });
 //--------------------------------------------------------------------------------------------------------
