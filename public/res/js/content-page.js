@@ -170,10 +170,17 @@ const displayStoryByJson =(json)=>{
           </audio>${json[i].content}`;
       }
       else if(json[i].media.substring(0,3) === 'vid'){
-        media_story.innerHTML = `
+        if(json[i].story_Id === 'SpEcIaLsToRyFoRiDiOt'){
+          media_story.innerHTML = `
+          <video autoplay loop>
+            <source src="res/media/${json[i].media}" type="video/mp4">
+          </video>${json[i].content}`;
+        }else{
+          media_story.innerHTML = `
           <video controls>
             <source src="res/media/${json[i].media}" type="video/mp4">
           </video>${json[i].content}`;
+        }
       }
       else{
         media_story.innerHTML = json[i].content;
@@ -340,7 +347,6 @@ document.querySelector('#liked').addEventListener('click',()=>{
   })
   .then(res => res.json())
   .then(json => {
-    console.log(json);
     displayStoryByJson(json);
   })
 });

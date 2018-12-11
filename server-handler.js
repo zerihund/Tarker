@@ -159,15 +159,10 @@ app.get('/likestory', (req, res)=>{
   console.log('get favorite story of user id '+req.session.passport.user[0].id);
   db.getlikedStory(connection,  req.session.passport.user[0].id)
   .then(id =>{
-    if(id === 'noliked'){
-      res.send({content:'You should go like something'});
-    }
-    else{
-      db.getStoryByID(connection, id)
-      .then(story =>{
-        findChildren([story], res);
-      })
-    }
+    db.getStoryByID(connection, id)
+  .then(story =>{
+    findChildren([story], res);
+    })
   })
 });
 
