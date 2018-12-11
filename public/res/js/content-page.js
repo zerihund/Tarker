@@ -295,7 +295,7 @@ const grabStory = ()=>{
   })
 };
 //display user name on page
-fetc('/node/custom')
+fetch('/node/custom')
 .then(res => res.text())
 .then(text => {
   if(text === 'YOU ARE NOT ALLOWED HERE'){
