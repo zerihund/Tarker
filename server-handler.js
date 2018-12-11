@@ -150,7 +150,13 @@ app.post('/storybyid', (req, res)=>{
   console.log('get story id '+req.body.storyid);
     db.getStoryByID(connection, req.body.storyid)
     .then(story =>{
-      findChildren([story], res);
+      if(story === 'FoRtHoSeWhOaReLoSt'){
+        db.getStoryByID(connection,'FoRtHoSeWhOaReLoSt')
+        .then(story => findChildren([story], res))
+      }
+      else{
+        findChildren([story], res);
+      }
     })
 });
 
