@@ -14,6 +14,7 @@ app.use(express.static('public'));
 const vidupload = multer({dest: 'public/res/media/vid'});
 const audupload = multer({dest: 'public/res/media/bgm'});
 const imgupload = multer({dest: 'public/res/media/img'});
+const profileupload = multer({dest: 'public/res/media/profilepic'});
 const passport = require('passport');
 const morgan = require('morgan');
 app.use(morgan('dev'));
@@ -81,7 +82,7 @@ passport.use(new LocalStrategy((username, password, done)=>{
       return done(null, false);
     }
     else{
-      return done(null, [{username: username, id: valid}]);
+      return done(null, [{username: username, id: valid.story_Id, photo: valid.photo}]);
     }
   })
 }));
@@ -125,9 +126,10 @@ app.post('/signup/',(req, res)=>{
   const data = [
     req.body.username,
     req.body.email,
-    req.body.password
+    req.body.password,
+    'default.png'
   ];
-  db.insertUser(connection, data, res );
+  db.insertUser(connection, data, res);
 });
 
 //check user exists
@@ -272,6 +274,20 @@ const storyOpinion = (storybranch, i, res)=>{
     }
   });
 };
+//upload user profile pic
+app.post('/uploadprofile/', vidupload.single('media'), (req, res, next)=>{
+  next();
+});
+
+app.use('/uploadprofile/', (req, res)=>{
+  console.log('receiving upload video');
+  const data = [
+    req.session.passport.user[0].id,
+    req.file.filename
+  ];
+  console.log(data);
+  db.uploadprofile(connection, data, res);
+});
 
 //--------------------------------------------------------------------------------------------------------
 //concerning uploading stories----------------------------------------------------------------------------
@@ -391,7 +407,7 @@ app.get('/username', (req, res)=>{
   console.log(req.user);
   console.log(req.session);
   console.log(req.session.passport);
-  res.send(req.session.passport.user[0].username);
+  res.send({username:req.session.passport.user[0].username, photo: req.session.passport.user[0].photo});
 });
 //--------------------------------------------------------------------------------------------------------
 //concerning moderator

@@ -16,7 +16,7 @@ const connect = ()=>{
 //insert user
 const insertUser = (connection, data, res) =>{
   connection.query(
-      'INSERT INTO user (name, email, password) VALUE (?,?,?);', data,
+      'INSERT INTO user (name, email, password, photo) VALUE (?,?,?,?);', data,
         (err, results) =>{
           console.log(err);
           console.log(results);
@@ -24,6 +24,20 @@ const insertUser = (connection, data, res) =>{
         },
   );
 };
+
+//upload user pic
+const uploadprofile = (connection, data, res) =>{
+  console.log(`UPDATE user SET photo = '${data[1]}' WHERE user_Id = '${data[0]}'`);
+  connection.query(
+      `UPDATE user SET photo = '${data[1]}' WHERE user_Id = '${data[0]}'`,
+      (err, result)=>{
+        console.log(err);
+        console.log(result);
+        res.send('profilepic updated');
+      }
+  )
+};
+
 // moderator remove user
 const  removeUser = (connection, id, res)=> {
   console.log(`DELETE FROM user where user_Id = ${id}`);
@@ -100,11 +114,11 @@ const checkEmail = (connection, email, res)=>{
 const checkCredentials = (connection, username, password)=>{
   return new Promise((resolve)=> {
     connection.execute(
-        `SELECT user.user_Id FROM user WHERE name = '${username}' AND password = '${password}'`,
+        `SELECT * FROM user WHERE name = '${username}' AND password = '${password}'`,
         (err, results) => {
           const exist = results.length;
           if (exist === 1) {
-            resolve(results[0].user_Id)
+            resolve(results[0])
           } else {
             resolve('not exist')
           }
@@ -322,21 +336,7 @@ const checkOpinion = (connection, data, res) =>{
           }
        });
  };
- //UPDATE OR INSERT QUERY
-/*      UPDATE Views
-        SET Views.like_story =${data[2]}
-        WHERE Views.user_Id =${data[1]} and Views.story_Id=${data[3]}`*/
-/*
-        `INSERT INTO Views (Views.user_Id,Views.story_Id,Views.like_story,Views.view_count)
-        VALUES(${data[1]},${data[3]},${data[2]}, 5)` */
 
-/*const data = [
-  req.body.author_id,
-  req.body.parent_id,
-  req.body.title,
-  req.body.story,
-  'img'+req.file.filename
-];*/
 const upload = (connection, data, res)=>{
   console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<');
 
@@ -455,5 +455,6 @@ module.exports = {
   checkModerator:checkModerator,
   getUser:getUser,
   getAllStory:getAllStory,
-  getAllComment:getAllComment
+  getAllComment:getAllComment,
+  uploadprofile:uploadprofile
 };

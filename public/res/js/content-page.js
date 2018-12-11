@@ -312,9 +312,10 @@ fetch('/node/custom')
   else{
     console.log(text);
     fetch('/node/username')
-    .then(res=>res.text())
-    .then(text => {
-      document.getElementById('username').innerText = text;
+    .then(res=>res.json())
+    .then(json => {
+      console.log(json);
+      document.getElementById('username').innerText = json[0].username;
     });
   }
 });
