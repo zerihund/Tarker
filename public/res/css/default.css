@@ -392,6 +392,7 @@ h1{
     font-size: 1rem;
     width: 100%;
     float: none;
+    overflow: hidden;
 }
 
 .media-story img{

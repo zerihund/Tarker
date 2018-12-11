@@ -51,15 +51,18 @@ const populate = ()=>{
 const showUser = (userlist) =>{
   const main = document.getElementById('userlist');
   main.innerHTML ='';
+  const h = document.createElement('h2');
+  h.innerText = 'COMMENTS';
+  main.appendChild(h);
   userlist.forEach(x => {
     const card = document.createElement('div');
+    card.className = 'card';
     const username = document.createElement('p');
     username.innerText = x.name;
     const rmbutton = document.createElement('button');
     rmbutton.id = x.user_Id;
     rmbutton.className = 'rmUser';
-    rmbutton.innerText = 'remove';
-
+    rmbutton.innerText = 'X';
     card.appendChild(username);
     card.appendChild(rmbutton);
     main.appendChild(card);
@@ -69,8 +72,12 @@ const showUser = (userlist) =>{
 const showStory = (story)=>{
   const main = document.getElementById('storylist');
   main.innerHTML ='';
+  const h = document.createElement('h2');
+  h.innerText = 'STORY';
+  main.appendChild(h);
   story.forEach(x => {
     const card = document.createElement('div');
+    card.className = 'card';
     const media_story = document.createElement('p');
     media_story.className = 'media-story';
     if(x.media !== null){
@@ -100,8 +107,7 @@ const showStory = (story)=>{
     const rmbutton = document.createElement('button');
     rmbutton.className = 'rmStory';
     rmbutton.id = x.story_Id;
-    rmbutton.innerText = 'remove';
-
+    rmbutton.innerText = 'X';
     card.appendChild(media_story);
     card.appendChild(rmbutton);
     main.appendChild(card);
@@ -111,15 +117,19 @@ const showStory = (story)=>{
 const showComment = (commentlist)=>{
   const main = document.getElementById('commentlist');
   main.innerHTML ='';
+  const h = document.createElement('h2');
+  h.innerText = 'COMMENTS';
+  main.appendChild(h);
   commentlist.forEach(x => {
     const card = document.createElement('div');
+    card.className = 'card';
     const commenttext = document.createElement('p');
     commenttext.innerText = x.comment;
 
     const rmbutton = document.createElement('button');
     rmbutton.className = 'rmComment';
     rmbutton.id = x.comment_Id;
-    rmbutton.innerText = 'remove';
+    rmbutton.innerText = 'X';
 
     card.appendChild(commenttext);
     card.appendChild(rmbutton);
