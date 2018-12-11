@@ -680,3 +680,50 @@ aside button{
   top:-120px;
 }
 
+#profilepic{
+  cursor: pointer;
+}
+
+#profilepic:hover{
+  box-shadow: 0 0 3px #FFFFFF;
+}
+#profileupload{
+  position: fixed;
+  display: none;
+  right: 25px;
+  top: 42px;
+  z-index: 4;
+  width: 200px;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: black;
+  padding: 5px;
+}
+
+#profileupload button{
+  border: none;
+  display: block;
+  background-color: white;
+  color: #232323;
+  font-family: Raleway-Bold, sans-serif;
+  width: 120px;
+  height: 30px;
+  margin: 3px auto;
+  text-align: center;
+  cursor: pointer;
+ }
+
+#profileupload button:hover{
+  box-shadow: 0 0 5px #FFFFFF;
+}
+
+#profileupload input{
+  display: block;
+  width: 120px;
+  border: none;
+  background-color: black;
+  color: #FFFFFF;
+  font-family: Raleway-Bold, sans-serif;
+  margin: 3px auto;
+}
+

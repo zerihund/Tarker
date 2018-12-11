@@ -82,7 +82,7 @@ passport.use(new LocalStrategy((username, password, done)=>{
       return done(null, false);
     }
     else{
-      return done(null, [{username: username, id: valid.story_Id, photo: valid.photo}]);
+      return done(null, [{username: username, id: valid.user_Id, photo: valid.photo}]);
     }
   })
 }));
@@ -280,7 +280,7 @@ app.post('/uploadprofile/', vidupload.single('media'), (req, res, next)=>{
 });
 
 app.use('/uploadprofile/', (req, res)=>{
-  console.log('receiving upload video');
+  console.log('receiving profile');
   const data = [
     req.session.passport.user[0].id,
     req.file.filename

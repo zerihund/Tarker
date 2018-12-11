@@ -301,6 +301,8 @@ const grabStory = ()=>{
     displayStoryByJson(json);
   })
 };
+
+//upload profile pic onto server
 //display user name on page
 fetch('/node/custom')
 .then(res => res.text())
@@ -315,7 +317,8 @@ fetch('/node/custom')
     .then(res=>res.json())
     .then(json => {
       console.log(json);
-      document.getElementById('username').innerText = json[0].username;
+      document.getElementById('username').innerText = json.username;
+      document.getElementById('profilepic').src = 'res/media/profilepic/'+json.photo
     });
   }
 });
@@ -393,6 +396,34 @@ document.querySelectorAll('.add').forEach(x=>x.addEventListener('click', evt=>{
   document.getElementById('unseen').style.display = 'none';
 }));
 
+//upload profile pic
+document.getElementById('profilepic').addEventListener('click',evt=>{
+  if(document.getElementById('profileupload').style.display === 'block'){
+    document.getElementById('profileupload').style.display = 'none'
+  }else{
+    document.getElementById('profileupload').style.display = 'block';
+  }
+});
+
+document.getElementById('profileupload').addEventListener('submit', evt => {
+  evt.preventDefault();
+  const frm = document.getElementById('profileupload');
+  if(frm[0].files[0].type.substring(0,5) !== 'image'){
+    console.log('incorrect file type')
+  }
+  else{
+    const fd = new FormData(frm);
+    const settings = {
+      method: 'post',
+      body: fd,
+    };
+    fetch('/node/uploadprofile',settings)
+    .then(res => res.text())
+    .then(text => console.log(text))
+  }
+});
+
+//upload files and story
 document.querySelector('.follow_form').addEventListener('submit',evt =>{
   if(document.querySelectorAll('.follow_form input')[1].files.length === 0){
     uploadMedia('text',evt);}
