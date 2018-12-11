@@ -14,11 +14,11 @@
   }
 
   .search-input{
-    width: 100px;
+    width: 60px;
     font-size: 1rem;
   }
   .search-btn{
-    width:10vw;
+    width: 40px;
   }
   .new-to-text p{
     padding:1rem;
@@ -31,6 +31,21 @@
   .login-dropdown{
     position: relative;
     display: block;
+  }
+
+  #profilepic{
+    margin-right: 4px;
+  }
+
+  aside{
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+  aside button{
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 
 
@@ -48,11 +63,10 @@
   }*/
     .follow_form{
         width: 320px;
-        height:400px;
     }
-    fieldset textarea{
-        width: 300px;
-        height: 215px;
+
+    .follow_form textarea{
+      height: 240px;
     }
   .user-icon{
     font-size: 0.6rem;

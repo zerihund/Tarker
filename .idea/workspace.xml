@@ -5,8 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/res/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/css/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/res/css/smallScreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/css/smallScreen.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/res/js/content-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/res/js/content-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-handler.js" afterDir="false" />
     </list>
     <list id="3c9e7bb2-7bdb-4887-afeb-1e245b7afc96" name="Revert: " comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,10 +42,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6165">
-              <caret line="374" column="8" lean-forward="true" selection-start-line="374" selection-start-column="8" selection-end-line="374" selection-end-column="8" />
+            <state relative-caret-position="391">
+              <caret line="50" column="43" lean-forward="true" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#form#0;n#aside#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -53,10 +52,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/res/css/smallScreen.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="421" column="23" selection-start-line="421" selection-start-column="23" selection-end-line="421" selection-end-column="23" />
+            <state relative-caret-position="377">
+              <caret line="140" column="36" lean-forward="true" selection-start-line="140" selection-start-column="36" selection-end-line="140" selection-end-column="36" />
               <folding>
                 <element signature="e#2850#4273#0" />
               </folding>
@@ -67,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/res/css/default.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="824">
-              <caret line="687" column="29" selection-start-line="687" selection-start-column="29" selection-end-line="687" selection-end-column="29" />
+            <state relative-caret-position="292">
+              <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -76,17 +84,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="275" column="2" lean-forward="true" selection-start-line="275" selection-start-column="2" selection-end-line="275" selection-end-column="2" />
+            <state relative-caret-position="258">
+              <caret line="255" lean-forward="true" selection-start-line="255" selection-end-line="255" />
               <folding>
                 <element signature="e#14#104#0" />
-                <element signature="e#1045#1097#0" />
-                <element signature="e#1285#1376#0" />
-                <element signature="e#1468#1702#0" />
-                <element signature="e#1769#1804#0" />
-                <element signature="e#1870#1893#0" />
-                <element signature="e#1943#1988#0" />
-                <element signature="e#2508#2755#0" />
               </folding>
             </state>
           </provider>
@@ -95,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2377">
-              <caret line="123" column="11" lean-forward="true" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
+            <state relative-caret-position="-2462">
+              <caret line="118" column="11" lean-forward="true" selection-start-line="118" selection-start-column="11" selection-end-line="118" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -114,9 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>story</find>
-      <find>asi</find>
-      <find>topnav-se</find>
       <find>topnav-sear</find>
       <find>follow</find>
       <find>.si</find>
@@ -144,6 +142,9 @@
       <find>username</find>
       <find>profile</find>
       <find>upload</find>
+      <find>search-in</find>
+      <find>exec</find>
+      <find>search</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,7 +160,6 @@
         <option value="$PROJECT_DIR$/public/.env" />
         <option value="$PROJECT_DIR$/public/res/css/largeScreen.css" />
         <option value="$PROJECT_DIR$/public/res/css/mediumScreen.css" />
-        <option value="$PROJECT_DIR$/public/res/css/smallScreen.css" />
         <option value="$PROJECT_DIR$/modules/math.js" />
         <option value="$PROJECT_DIR$/public/test.html" />
         <option value="$PROJECT_DIR$/public/feed.html" />
@@ -175,9 +175,10 @@
         <option value="$PROJECT_DIR$/public/res/js/main.js" />
         <option value="$PROJECT_DIR$/modules/data-handler.js" />
         <option value="$PROJECT_DIR$/server-handler.js" />
-        <option value="$PROJECT_DIR$/public/content.html" />
         <option value="$PROJECT_DIR$/public/res/css/default.css" />
         <option value="$PROJECT_DIR$/public/res/js/content-page.js" />
+        <option value="$PROJECT_DIR$/public/content.html" />
+        <option value="$PROJECT_DIR$/public/res/css/smallScreen.css" />
       </list>
     </option>
   </component>
@@ -344,20 +345,6 @@
       <workItem from="1544354173356" duration="37749000" />
       <workItem from="1544439062378" duration="10698000" />
       <workItem from="1544474752087" duration="22148000" />
-    </task>
-    <task id="LOCAL-00239" summary="storyid parentid fixing">
-      <created>1544444882001</created>
-      <option name="number" value="00239" />
-      <option name="presentableId" value="LOCAL-00239" />
-      <option name="project" value="LOCAL" />
-      <updated>1544444882001</updated>
-    </task>
-    <task id="LOCAL-00240" summary="working on like/dislikes">
-      <created>1544446322902</created>
-      <option name="number" value="00240" />
-      <option name="presentableId" value="LOCAL-00240" />
-      <option name="project" value="LOCAL" />
-      <updated>1544446322902</updated>
     </task>
     <task id="LOCAL-00241" summary="fixing some small like/dislike bugs">
       <created>1544446612810</created>
@@ -688,11 +675,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544494973227</updated>
     </task>
-    <option name="localTasksCounter" value="288" />
+    <task id="LOCAL-00288" summary="optimise some stuff">
+      <created>1544504809724</created>
+      <option name="number" value="00288" />
+      <option name="presentableId" value="LOCAL-00288" />
+      <option name="project" value="LOCAL" />
+      <updated>1544504809724</updated>
+    </task>
+    <task id="LOCAL-00289" summary="fixing copy story id bug">
+      <created>1544504982516</created>
+      <option name="number" value="00289" />
+      <option name="presentableId" value="LOCAL-00289" />
+      <option name="project" value="LOCAL" />
+      <updated>1544504982516</updated>
+    </task>
+    <option name="localTasksCounter" value="290" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285203000" />
+    <option name="totallyTimeSpent" value="287129000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -754,8 +755,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="storyid parentid fixing" />
-    <MESSAGE value="working on like/dislikes" />
     <MESSAGE value="fixing some small like/dislike bugs" />
     <MESSAGE value="like dislike work now&#10;getting user opinion on story" />
     <MESSAGE value="getting user opinion on story" />
@@ -779,7 +778,9 @@
     <MESSAGE value="added rick" />
     <MESSAGE value="fixed rick bug" />
     <MESSAGE value="making profile pic appear" />
-    <option name="LAST_COMMIT_MESSAGE" value="making profile pic appear" />
+    <MESSAGE value="optimise some stuff" />
+    <MESSAGE value="fixing copy story id bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing copy story id bug" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -793,13 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/css/smallScreen.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -904,56 +898,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2377">
-          <caret line="123" column="11" lean-forward="true" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
+        <state relative-caret-position="-2462">
+          <caret line="118" column="11" lean-forward="true" selection-start-line="118" selection-start-column="11" selection-end-line="118" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/res/media/profilepic/default.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/content.html">
+    <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6165">
-          <caret line="374" column="8" lean-forward="true" selection-start-line="374" selection-start-column="8" selection-end-line="374" selection-end-column="8" />
+        <state relative-caret-position="258">
+          <caret line="255" lean-forward="true" selection-start-line="255" selection-end-line="255" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#aside#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#14#104#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/res/css/default.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="687" column="29" selection-start-line="687" selection-start-column="29" selection-end-line="687" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server-handler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="275" column="2" lean-forward="true" selection-start-line="275" selection-start-column="2" selection-end-line="275" selection-end-column="2" />
-          <folding>
-            <element signature="e#14#104#0" />
-            <element signature="e#1045#1097#0" />
-            <element signature="e#1285#1376#0" />
-            <element signature="e#1468#1702#0" />
-            <element signature="e#1769#1804#0" />
-            <element signature="e#1870#1893#0" />
-            <element signature="e#1943#1988#0" />
-            <element signature="e#2508#2755#0" />
-          </folding>
+        <state relative-caret-position="292">
+          <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/res/js/content-page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="421" column="23" selection-start-line="421" selection-start-column="23" selection-end-line="421" selection-end-column="23" />
+        <state relative-caret-position="377">
+          <caret line="140" column="36" lean-forward="true" selection-start-line="140" selection-start-column="36" selection-end-line="140" selection-end-column="36" />
           <folding>
             <element signature="e#2850#4273#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="50" column="43" lean-forward="true" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/css/smallScreen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
         </state>
       </provider>
     </entry>

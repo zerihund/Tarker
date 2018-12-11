@@ -97,7 +97,7 @@ const getform = () =>{
       .then(json =>{
         console.log(json);
         const commentContainer = document.getElementById(`xseek${storyid}`);
-        //commentContainer.innerHTML = '';
+        commentContainer.innerHTML = '';
         json.forEach(x =>{
           if(x.name !== document.querySelector('#username').value){
             commentContainer.innerHTML+=`<div class="comment">
@@ -138,6 +138,7 @@ const displayStoryByJson =(json)=>{
       document.querySelector('.search-input').value = evt.target.innerText;
       document.querySelector('.search-input').select();
       document.execCommand('copy');
+      alert('id copy to clipboard');
     });
     container.appendChild(storyid);
     //writer and time-----------------------------------------
