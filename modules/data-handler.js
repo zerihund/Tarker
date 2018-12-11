@@ -183,8 +183,13 @@ const getlikedStory = (connection, userid) =>{
         (err, results)=>{
           console.log('------l-i-k-e------');
           console.log(err);
-          const y = math.random(results.length);
-          resolve(results[y].story_Id);
+          if(results.length === 0){
+            resolve('noliked');
+          }
+          else{
+            const y = math.random(results.length);
+            resolve(results[y].story_Id);
+          }
         }
     )
   })

@@ -340,6 +340,7 @@ document.querySelector('#liked').addEventListener('click',()=>{
   })
   .then(res => res.json())
   .then(json => {
+    console.log(json);
     displayStoryByJson(json);
   })
 });
