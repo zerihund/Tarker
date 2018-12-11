@@ -173,7 +173,7 @@ const displayStoryByJson =(json)=>{
         if(json[i].story_Id === 'SpEcIaLsToRyFoRiDiOt'){
           media_story.innerHTML = `
           <video autoplay loop>
-            <source src="res/media/${json[i].media}" type="video/mp4">
+            <source src="res/media/vid/rickroll.mp4" type="video/mp4">
           </video>${json[i].content}`;
         }else{
           media_story.innerHTML = `
