@@ -81,6 +81,11 @@ passport.use(new LocalStrategy((username, password, done)=>{
   })
 }));
 
+
+app.all('/content', (req, res, next)=>{
+  console.log('someone tries to go to content page');
+  next();
+});
 app.post('/login', passport.authenticate('local', {failureRedirect: '/node/', session: true}), (req, res)=>{
   return new Promise(((resolve) => {
     console.log('xx');

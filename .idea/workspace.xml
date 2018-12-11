@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f9753ef4-2c67-4952-b83e-b559b99daad2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/data-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/data-handler.js" afterDir="false" />
     </list>
     <list id="3c9e7bb2-7bdb-4887-afeb-1e245b7afc96" name="Revert: " comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,15 +16,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/moderate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+            <state relative-caret-position="317">
+              <caret line="116" column="53" selection-start-line="116" selection-start-column="53" selection-end-line="116" selection-end-column="53" />
               <folding>
                 <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/res/css/moderate.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -33,8 +38,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/res/js/moderate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1504">
-              <caret line="187" column="24" lean-forward="true" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="24" />
+            <state relative-caret-position="224">
+              <caret line="121" column="22" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/content.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="330" column="79" lean-forward="true" selection-start-line="323" selection-start-column="8" selection-end-line="330" selection-end-column="79" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#form#0;n#aside#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="402" column="26" lean-forward="true" selection-start-line="402" selection-start-column="26" selection-end-line="402" selection-end-column="26" />
+            <state relative-caret-position="1958">
+              <caret line="406" column="22" selection-start-line="406" selection-start-column="22" selection-end-line="406" selection-end-column="22" />
               <folding>
                 <element signature="e#14#104#0" />
                 <element signature="e#1045#1097#0" />
@@ -62,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="782">
+              <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -86,16 +104,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>req.se</find>
-      <find>comment</find>
-      <find>#454755</find>
       <find>B3B3B3</find>
       <find>282f3f</find>
       <find>storyby</find>
@@ -123,6 +138,9 @@
       <find>put</find>
       <find>login</find>
       <find>remove</find>
+      <find>media</find>
+      <find>main</find>
+      <find>card</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,13 +167,14 @@
         <option value="$PROJECT_DIR$/public/res/css/color.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/content.html" />
-        <option value="$PROJECT_DIR$/public/res/css/default.css" />
         <option value="$PROJECT_DIR$/public/res/css/secondcolor.css" />
         <option value="$PROJECT_DIR$/public/res/js/content-page.js" />
-        <option value="$PROJECT_DIR$/public/moderate.html" />
         <option value="$PROJECT_DIR$/server-handler.js" />
-        <option value="$PROJECT_DIR$/public/res/js/moderate.js" />
         <option value="$PROJECT_DIR$/modules/data-handler.js" />
+        <option value="$PROJECT_DIR$/public/moderate.html" />
+        <option value="$PROJECT_DIR$/public/res/css/moderate.css" />
+        <option value="$PROJECT_DIR$/public/res/css/default.css" />
+        <option value="$PROJECT_DIR$/public/res/js/moderate.js" />
       </list>
     </option>
   </component>
@@ -304,35 +323,7 @@
       <workItem from="1544232211870" duration="21407000" />
       <workItem from="1544354173356" duration="37749000" />
       <workItem from="1544439062378" duration="10698000" />
-      <workItem from="1544474752087" duration="1573000" />
-    </task>
-    <task id="LOCAL-00226" summary="fixing findstorychildren">
-      <created>1544369103049</created>
-      <option name="number" value="00226" />
-      <option name="presentableId" value="LOCAL-00226" />
-      <option name="project" value="LOCAL" />
-      <updated>1544369103049</updated>
-    </task>
-    <task id="LOCAL-00227" summary="fixing findstorychildren">
-      <created>1544369218876</created>
-      <option name="number" value="00227" />
-      <option name="presentableId" value="LOCAL-00227" />
-      <option name="project" value="LOCAL" />
-      <updated>1544369218876</updated>
-    </task>
-    <task id="LOCAL-00228" summary="fixing findstorychildren">
-      <created>1544369333141</created>
-      <option name="number" value="00228" />
-      <option name="presentableId" value="LOCAL-00228" />
-      <option name="project" value="LOCAL" />
-      <updated>1544369333141</updated>
-    </task>
-    <task id="LOCAL-00229" summary="added upload functions.">
-      <created>1544397845611</created>
-      <option name="number" value="00229" />
-      <option name="presentableId" value="LOCAL-00229" />
-      <option name="project" value="LOCAL" />
-      <updated>1544397845611</updated>
+      <workItem from="1544474752087" duration="13011000" />
     </task>
     <task id="LOCAL-00230" summary="added upload functions.">
       <created>1544398080229</created>
@@ -649,11 +640,39 @@
       <option name="project" value="LOCAL" />
       <updated>1544475991867</updated>
     </task>
-    <option name="localTasksCounter" value="275" />
+    <task id="LOCAL-00275" summary="fixing user remove query not working">
+      <created>1544476361372</created>
+      <option name="number" value="00275" />
+      <option name="presentableId" value="LOCAL-00275" />
+      <option name="project" value="LOCAL" />
+      <updated>1544476361372</updated>
+    </task>
+    <task id="LOCAL-00276" summary="fixing user remove query not working">
+      <created>1544477043600</created>
+      <option name="number" value="00276" />
+      <option name="presentableId" value="LOCAL-00276" />
+      <option name="project" value="LOCAL" />
+      <updated>1544477043601</updated>
+    </task>
+    <task id="LOCAL-00277" summary="Moderator stuffs worked now :)">
+      <created>1544477273893</created>
+      <option name="number" value="00277" />
+      <option name="presentableId" value="LOCAL-00277" />
+      <option name="project" value="LOCAL" />
+      <updated>1544477273893</updated>
+    </task>
+    <task id="LOCAL-00278" summary="Moderator stuffs worked now :). With a working visual.&#10;Added overflow:hidden to stuffs so the pics and stuffs dont flow out of container when there is little text">
+      <created>1544487681197</created>
+      <option name="number" value="00278" />
+      <option name="presentableId" value="LOCAL-00278" />
+      <option name="project" value="LOCAL" />
+      <updated>1544487681197</updated>
+    </task>
+    <option name="localTasksCounter" value="279" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="264628000" />
+    <option name="totallyTimeSpent" value="276066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -661,7 +680,7 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.22386895" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.22386895" />
       <window_info anchor="bottom" id="File Transfer" order="0" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
@@ -715,9 +734,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing not passing correct story id" />
-    <MESSAGE value="fixing missing = at line 126" />
-    <MESSAGE value="fixing findstorychildren" />
     <MESSAGE value="added upload functions." />
     <MESSAGE value="added second style.&#10;Still have more front end stuff to do thou" />
     <MESSAGE value="revert some changes overriden by merge" />
@@ -740,7 +756,10 @@
     <MESSAGE value="added func to the buttons" />
     <MESSAGE value="fixed wrong fetch coming to wrong app.post :)" />
     <MESSAGE value="fixed user remove query not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed user remove query not working" />
+    <MESSAGE value="fixing user remove query not working" />
+    <MESSAGE value="Moderator stuffs worked now :)" />
+    <MESSAGE value="Moderator stuffs worked now :). With a working visual.&#10;Added overflow:hidden to stuffs so the pics and stuffs dont flow out of container when there is little text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moderator stuffs worked now :). With a working visual.&#10;Added overflow:hidden to stuffs so the pics and stuffs dont flow out of container when there is little text" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/res/images/prelimLogo.PNG" />
@@ -831,42 +850,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/res/css/default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="128" column="12" lean-forward="true" selection-start-line="128" selection-start-column="12" selection-end-line="128" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="26" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#aside#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1131">
           <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/moderate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -882,8 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="402" column="26" lean-forward="true" selection-start-line="402" selection-start-column="26" selection-end-line="402" selection-end-column="26" />
+        <state relative-caret-position="1958">
+          <caret line="406" column="22" selection-start-line="406" selection-start-column="22" selection-end-line="406" selection-end-column="22" />
           <folding>
             <element signature="e#14#104#0" />
             <element signature="e#1045#1097#0" />
@@ -900,15 +887,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/data-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state relative-caret-position="782">
+          <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="330" column="79" lean-forward="true" selection-start-line="323" selection-start-column="8" selection-end-line="330" selection-end-column="79" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#aside#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/moderate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="116" column="53" selection-start-line="116" selection-start-column="53" selection-end-line="116" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/css/default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="394" column="4" selection-start-line="394" selection-start-column="4" selection-end-line="394" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/res/css/moderate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/res/js/moderate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1504">
-          <caret line="187" column="24" lean-forward="true" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="24" />
+        <state relative-caret-position="224">
+          <caret line="121" column="22" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
         </state>
       </provider>
     </entry>
