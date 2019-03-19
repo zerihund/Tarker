@@ -2,7 +2,7 @@
 ##Story Teller Web Application
 
 ## About the project
-This project is part of the web technology course in metropolia uinverisity of applied science. The main purpose of this project is to build a working media sharing web application using meriadb database, nodeJs and centos server. The project includes both the backend and the fornt end.
+This project is part of the web technology course in metropolia uinverisity of applied science. The main purpose of this project is to build a working media sharing web application using meriadb database, nodeJs and centos server. The project includes both the backend and the front end.
 
 ## Get started with this project
 The first step is to download nodeJs, a text editor(webstorm is recommended). For the server said centos server is needed, although one can test this application using a local server. For setting up the server, one should refer to npmjs website for the necessary pakages. Inorder test the application, it is possible to clone the this repository.
