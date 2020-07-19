@@ -8,13 +8,13 @@ This project is part of the web technology course in metropolia uinverisity of a
 The first step is to download nodeJs, a text editor(webstorm is recommended). For the server said centos server is needed, although one can test this application using a local server. For setting up the server, one should refer to npmjs website for the necessary pakages. Inorder test the application, it is possible to clone the this repository.
 
 ## How do set up the data base
-The database used the phpmyadmin sql database. one can use the local version of the phpmyadmin database. The phpmyadmin database can be also use on centos server.
+The database used the phpmyadmin sql database, one can use the local version of the phpmyadmin database. The phpmyadmin database can also be used on centos server.
 ## where can you get help and how can you help?
-If you need help, please leave your comment and we will get back to you as soon as possible. This is a school project, so outside help is not possible at the moment. In the future collaboration might be possible if we decide to take the project to the next levle.
+If you need help, please leave your comment and we will get back to you as soon as possible. This is a school project, so outside help is not possible at the moment. In the future collaboration might be possible if we decide to take the project to the next level.
 
 ## contributors 
 
-At the moment of writing this readme file, the contributors are a team of three second year IT students majoring in mobile solutinon. The team mebers are Oheneba, Son and Zerihun
+At the moment of writing this readme file, the contributors are a team of three IT students majoring in mobile solutinon. The team mebers are Oheneba, Son and Zerihun
 
 ## License information 
 
